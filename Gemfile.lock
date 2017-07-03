@@ -46,6 +46,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    airbrake (6.1.2)
+      airbrake-ruby (~> 2.2, >= 2.2.5)
+    airbrake-ruby (2.2.7)
     arel (7.1.4)
     awesome_print (1.7.0)
     babel-source (5.8.35)
@@ -289,6 +292,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake (~> 6.1)
   awesome_print
   byebug
   capybara
