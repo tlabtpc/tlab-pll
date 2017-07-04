@@ -5,6 +5,8 @@ class Node < ApplicationRecord
 
   INITIAL_NODE_TITLE = "Initial Node".freeze
 
+  scope :terminal, -> { where(terminal: true) }
+
   def self.initial
     Node.find_by(title: INITIAL_NODE_TITLE) # TODO: improve
   end
