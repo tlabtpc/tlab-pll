@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 describe AssessmentsController do
+  describe 'show' do
+    let(:assessment) { create :assessment }
+
+    it 'displays an assessment' do
+      get :show, params: { id: assessment.id }
+      expect(response).to render_template 'assessments/show'
+      expect(assigns[:assessment]).to eq assessment
+    end
+  end
+
   describe 'new' do
     it 'renders new' do
       get :new

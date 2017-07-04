@@ -1,9 +1,8 @@
 class AssessmentsController < ApplicationController
-  include HasAssessment
   skip_before_action :basic_auth, :verify_allowed_user
 
   def show
-    assessment
+    @assessment = Assessment.find(params[:id])
   end
 
   def new
