@@ -12,7 +12,7 @@ class Views::Layouts::Application < Views::Base
         csrf_meta_tags
         stylesheet_link_tag 'application', media: 'all'
         javascript_include_tag 'application'
-        font = 'Open Sans' # go to https://fonts.google.com/ for more free fonts!
+        font = 'Open Sans'
         link rel: "stylesheet", type: "text/css", href: "//fonts.googleapis.com/css?family=#{font}"
         link rel: "stylesheet", type: "text/css", href: "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         style do
@@ -29,10 +29,15 @@ class Views::Layouts::Application < Views::Base
           div msg, "aria-label" => name, "aria-role" => "dialog", class: ['callout', 'flash', name]
         end
 
-        div style: "height: 3rem"
-
         div class: %i[container] do
           yield
+        end
+
+        div class: 'assessments__footer' do
+          link_to assessments_path, method: :post, class: 'button button--next', disabled: true do
+            text 'Next'
+            i class: 'fa fa-arrow-right'
+          end
         end
       end
     end
