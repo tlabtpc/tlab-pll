@@ -18,7 +18,7 @@ class DevController < ActionController::Base
   end
 
   def setup_node_tree
-    Node.create(title: Node::INITIAL_NODE_TITLE).tap do |root|
+    Node.create(title: "Initial Node", root: true).tap do |root|
       Node.create(title: "Node A", parent_node_id: root.id).tap do |a|
         Node.create(title: "Node A1", parent_node_id: a.id,  terminal: true).tap do |a1|
           a1.referrals.push(Referral.create(type: "PrimaryReferral", title: "Referral A1"))

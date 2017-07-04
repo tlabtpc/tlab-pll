@@ -10,7 +10,7 @@ class AssessmentsController < ApplicationController
 
   def create
     if cookies[:assessment] = Assessment.create.token
-      redirect_to Node.initial
+      redirect_to Node.root
     else
       raise "Could not create assessment"
     end

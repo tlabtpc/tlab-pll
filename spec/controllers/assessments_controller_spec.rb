@@ -19,7 +19,7 @@ describe AssessmentsController do
   end
 
   describe 'create' do
-    let!(:initial_node) { create(:node, title: Node::INITIAL_NODE_TITLE) }
+    let!(:initial_node) { create(:node, root: true) }
 
     it 'creates a new assessment' do
       expect { post :create }.to change { Assessment.count }.by(1)

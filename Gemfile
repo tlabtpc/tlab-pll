@@ -36,6 +36,7 @@ group :development, :test do
   gem "poltergeist"
   gem "rspec-rails"
   gem "rspec_junit_formatter"
+  gem "seedbank"
 end
 
 group :development do
