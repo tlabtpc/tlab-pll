@@ -10,6 +10,7 @@ describe NodesController do
       get :show, params: { id: node.id }
       expect(response).to render_template 'nodes/show'
       expect(assigns[:node]).to eq node
+      expect(assigns[:assessment]).to eq assessment
     end
 
     it 'shows a node with assessment as a query param' do
@@ -19,7 +20,8 @@ describe NodesController do
     end
 
     it 'redirects to new assessment if assessment is not found' do
-
+      get :show, params: { id: node.id }
+      expect(response).to redirect_to new_assessment_path
     end
   end
 end
