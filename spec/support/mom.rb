@@ -11,6 +11,20 @@ class Mom
     user "member-#{sequence}"
   end
 
+  def node(parent_node_id: nil, terminal: false, is_category: false, is_county: false, title: "node-#{sequence}")
+    Node.new(
+      parent_node_id: parent_node_id,
+      terminal: terminal,
+      is_category: is_category,
+      is_county: is_county,
+      title: title
+    )
+  end
+
+  def assessment(submitted_at: nil)
+    Assessment.new(submitted_at: submitted_at)
+  end
+
   private
 
   def sequence

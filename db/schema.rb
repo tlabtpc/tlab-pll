@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513202502) do
+ActiveRecord::Schema.define(version: 20170704021155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assessment_nodes", force: :cascade do |t|
+    t.integer  "assessment_id"
+    t.integer  "node_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["assessment_id"], name: "index_assessment_nodes_on_assessment_id", using: :btree
+    t.index ["node_id"], name: "index_assessment_nodes_on_node_id", using: :btree
+  end
+
+  create_table "assessment_referrals", force: :cascade do |t|
+    t.integer  "assessment_id"
+    t.integer  "referrals_id"
+    t.boolean  "is_useful",     default: false, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["assessment_id"], name: "index_assessment_referrals_on_assessment_id", using: :btree
+    t.index ["referrals_id"], name: "index_assessment_referrals_on_referrals_id", using: :btree
+  end
+
+  create_table "assessments", force: :cascade do |t|
+    t.string   "token"
+    t.datetime "submitted_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "counties", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nodes", force: :cascade do |t|
+    t.integer  "parent_node_id"
+    t.boolean  "terminal",       default: false, null: false
+    t.string   "node_type"
+    t.boolean  "is_category",    default: false, null: false
+    t.boolean  "is_county",      default: false, null: false
+    t.string   "title"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
+  end
+
+  create_table "referrals", force: :cascade do |t|
+    t.integer  "terminal_node_id"
+    t.string   "type"
+    t.string   "title"
+    t.text     "description"
+    t.string   "introduction"
+    t.string   "link"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["terminal_node_id"], name: "index_referrals_on_terminal_node_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                            null: false
