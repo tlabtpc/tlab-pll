@@ -4,7 +4,7 @@ class Views::Widgets::TopBar < Views::Base
   needs :title
 
   def content
-    div class: "top-bar" do
+    div class: "top-bar sticky" do
       div class: "top-bar-left" do
         ul class: "menu" do
           li title, class: "menu-text"

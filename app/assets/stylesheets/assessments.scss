@@ -1,10 +1,86 @@
+$gossamer: #09B070;
+$travertine: #FFFDE9;
+$black: #000000;
+$alto: #DADADA;
+$dust: #9B9B9B;
+$footer-height: 54px;
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  height: calc(100% - #{$footer-height*2});
+  max-height: calc(100% - #{$footer-height*2});
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+h4 {
+  text-align: center;
+}
+
 .assessments__footer {
   position: fixed;
+  height: $footer_height;
   bottom: 0;
   width: 100%;
   margin: auto;
   left: 0;
   text-align: center;
-  background: #e6e6e6;
+  background: $alto;
   padding: 15px;
+
+  .button--next, .button--next:hover, .button--next:active {
+    background-color: $gossamer;
+    color: $travertine;
+
+    &:disabled {
+      opacity: .2;
+    }
+  }
+}
+
+label {
+  width: 100%;
+  display:block;
+  border:solid 1px $dust;
+  border-radius:10px;
+  -webkit-font-smoothing: antialiased;
+  color:$dust;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input:checked + label {
+  border: solid 1px $gossamer;
+  color: $gossamer;
+  p {
+    color: $black;
+  }
+}
+
+input:checked + label:before {
+  content: "✓ ";
+}
+
+.label--check {
+  visibility: hidden;
+  float:left;
+  width: 10%;
+  padding-left: 1rem;
+}
+
+.label--text {
+  float: left; width: 90%;
+}
+
+input:checked + label .label--check {
+  visibility: visible;
+}
+
+input.checkbox:checked + label:before {
+  content: "";
 }
