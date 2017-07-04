@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704215537) do
+ActiveRecord::Schema.define(version: 20170704223325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170704215537) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.boolean  "root",           default: false, null: false
+    t.string   "tip"
     t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
   end
 

@@ -30,7 +30,7 @@ class Views::Layouts::Application < Views::Base
         end
 
         div class: %i[container] do
-          yield
+          content_for?(:node) ? yield(:node) : yield
         end
 
         div class: 'assessments__footer' do

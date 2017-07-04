@@ -11,6 +11,10 @@ Node.counties.each do |county|
     "Other issues",
     "I don't know"
   ].each do |category|
-    Node.create(title: category, is_category: true, parent_node: county)
+    Node.create(
+      parent_node: county,
+      is_category: true,
+      title: category
+    )
   end
 end

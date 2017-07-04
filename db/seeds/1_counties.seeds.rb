@@ -9,5 +9,9 @@ Node.counties.destroy_all
   "Santa Clara",
   "Other County"
 ].each do |county|
-  Node.create(title: county, is_county: true, parent_node: Node.root)
+  Node.create(title: county,
+    parent_node: Node.root,
+    is_county: true,
+    tip: :category
+  )
 end
