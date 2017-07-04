@@ -12,6 +12,6 @@ class NodesController < ApplicationController
   def require_assessment
     return if @assessment = Assessment.find_by(token: params[:assessment] || cookies[:assessment])
     flash[:notice] = "Sorry, we couldn't find your current assessment. Please create a new one"
-    redirect_to new_assessments_path
+    redirect_to new_assessment_path
   end
 end

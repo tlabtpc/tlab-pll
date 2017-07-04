@@ -3,6 +3,7 @@ class AssessmentsController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
 
   def show
+    assessment
   end
 
   def new

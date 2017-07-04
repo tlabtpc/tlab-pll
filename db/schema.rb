@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704021155) do
+ActiveRecord::Schema.define(version: 20170704033416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 20170704021155) do
 
   create_table "assessment_referrals", force: :cascade do |t|
     t.integer  "assessment_id"
-    t.integer  "referrals_id"
+    t.integer  "referral_id"
     t.boolean  "is_useful",     default: false, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["assessment_id"], name: "index_assessment_referrals_on_assessment_id", using: :btree
-    t.index ["referrals_id"], name: "index_assessment_referrals_on_referrals_id", using: :btree
+    t.index ["referral_id"], name: "index_assessment_referrals_on_referral_id", using: :btree
   end
 
   create_table "assessments", force: :cascade do |t|

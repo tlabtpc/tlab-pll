@@ -11,12 +11,11 @@ class Assessment < ApplicationRecord
 
   # after terminal node is populated, create primary, secondary, special referral records
   has_many :assessment_referrals
-  has_many :primary_referrals, through: :assessment_referrals, source: "PrimaryReferral"
-  has_many :secondary_referrals, through: :assessment_referrals, source: "SecondaryReferral"
-  has_many :special_referrals, through: :assessment_referrals, source: "SpecialReferral"
+  has_many :referrals, through: :assessment_referrals
 
   def terminate_with!(node)
     return unless node.terminal?
-    node.referrals.each { |referral| self.assessment_referrals.build(referral: referral) }
+    self.nodes.push(node)
+    node.referrals.each { |referral| self.assessment_referrals.create(referral: referral) }
   end
 end

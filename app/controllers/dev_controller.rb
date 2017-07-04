@@ -7,6 +7,7 @@ class DevController < ActionController::Base
   end
 
   def test_assessment_flow
+    cookies[:assessment] = Assessment.create.token
     redirect_to setup_node_tree
   end
 

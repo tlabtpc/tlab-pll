@@ -11,19 +11,9 @@ class Views::Assessments::Show < Views::Base
           assessment.nodes.each { |node| li node.title }
         end
 
-        h3 "Primary Referrals:"
+        h3 "Referrals:"
         ul do
-          assessment.primary_referrals.each { |referral| li referral.title }
-        end
-
-        h3 "Secondary Referrals:"
-        ul do
-          assessment.secondary_referrals.each { |referral| li referral.title }
-        end
-
-        h3 "Special Referrals:"
-        ul do
-          assessment.special_referrals.each { |referral| li referral.title }
+          assessment.referrals.each { |referral| li referral.title }
         end
 
       end
