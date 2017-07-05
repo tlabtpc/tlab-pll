@@ -23,7 +23,7 @@ class Views::Layouts::Nodes < Views::Layouts::Application
         # next button
         form_for :assessment_node, url: assessment_nodes_path do |f|
           f.text_field :node_id, type: :hidden, id: "node_id"
-          button_tag class: :button, type: :submit do
+          button_tag class: "button nodes__submit-button", type: :submit, disabled: true do
             span "Next"
             i class: "fa fa-arrow-right"
           end
