@@ -1,5 +1,10 @@
 @import 'colors';
 
+.nodes__question {
+  text-align: center;
+  font-weight: bold;
+}
+
 .nodes__child-list {
   display: flex;
   flex-direction: row;

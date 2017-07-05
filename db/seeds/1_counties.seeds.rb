@@ -12,6 +12,7 @@ Node.counties.destroy_all
   Node.create(title: county,
     parent_node: Node.root,
     is_county: true,
+    question: "Can you tell what category of legal help your client needs?",
     tip: :category
   )
 end

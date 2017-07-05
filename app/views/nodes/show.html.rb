@@ -5,7 +5,7 @@ class Views::Nodes::Show < Views::Base
   def content
     row do
       columns do
-        h1 "Welcome to your new assessment!"
+        p(node.question, class: "nodes__question") if node.question
 
         ul(class: "nodes__child-list") do
           node.children.each do |child|
