@@ -12,7 +12,10 @@ unless Rails.env.production?
   create_user("member@example.com", false)
 end
 
-Node.root.update(tip: :county)
+Node.root.update(
+  tip: :county,
+  question: "Let's work one issue at a time. What county is the issue in?"
+)
 
 [
   "Alameda",
@@ -23,11 +26,11 @@ Node.root.update(tip: :county)
   "Santa Clara",
   "Other County"
 ].each do |county|
-  Node.find_or_create_by(
+  Node.find_or_create_by(title: county,
     parent_node: Node.root,
-    is_county: true,
-    title: county
+    is_county: true
   ).update(
+    question: "Can you tell what category of legal help your client needs?",
     tip: :category
   )
 end
