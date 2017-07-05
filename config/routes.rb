@@ -16,4 +16,11 @@ Rails.application.routes.draw do
     get ':action'
   end
 
+  namespace :admin do
+    root "primary_referrals#index"
+    resources :primary_referrals
+    resources :secondary_referrals
+    resources :nodes
+  end
+
 end
