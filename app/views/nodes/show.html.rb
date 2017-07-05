@@ -7,12 +7,12 @@ class Views::Nodes::Show < Views::Base
       columns do
         h1 "Welcome to your new assessment!"
 
-        ul do
+        ul(class: "nodes__child-list") do
           node.children.each do |child|
-            form_for :assessment_node, url: assessment_nodes_path do |f|
-              f.text_field :node_id, type: :hidden, value: child.id
-              f.submit child.title
-            end
+            li(child.title, class: "nodes__child-list-item", data: {
+              id: child.id,
+              description: child.description
+            })
           end
         end
       end
