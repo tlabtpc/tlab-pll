@@ -10,6 +10,14 @@ class AssessmentNodesController < ApplicationController
     end
   end
 
+  def destroy
+    if assessment_node = assessment.assessment_nodes.last
+      redirect_to assessment_node.tap(&:destroy).node
+    else
+      redirect_to new_assessment_path
+    end
+  end
+
   private
 
   def node

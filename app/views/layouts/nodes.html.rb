@@ -13,12 +13,24 @@ class Views::Layouts::Nodes < Views::Layouts::Application
     end
 
     content_for(:footer) do
-      form_for :assessment_node, url: assessment_nodes_path do |f|
-        f.text_field :node_id, type: :hidden, id: "node_id"
-        button_tag class: :button, type: :submit do
-          span "Next"
-          i class: "fa fa-arrow-right"
+      div(class: "nodes__footer") do
+        # back button
+        link_to assessment_nodes_path, method: :delete do
+          i class: "fa fa-arrow-left"
+          span "Back"
         end
+
+        # next button
+        form_for :assessment_node, url: assessment_nodes_path do |f|
+          f.text_field :node_id, type: :hidden, id: "node_id"
+          button_tag class: :button, type: :submit do
+            span "Next"
+            i class: "fa fa-arrow-right"
+          end
+        end
+
+        # spacer for flexbox
+        div
       end
     end
     super
