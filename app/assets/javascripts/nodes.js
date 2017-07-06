@@ -1,6 +1,6 @@
 $(function() {
   $('.nodes-show').on('click', '.nodes__child-list-item', function(e) {
-    let target = $(e.target)
+    var target = $(e.target)
 
     // ensure this is the only selected node
     $('.nodes__child-list-item').removeClass('nodes__child-list-item--selected')
