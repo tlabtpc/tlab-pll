@@ -18,7 +18,7 @@ NodePromulgator = Struct.new(:node_types, :parent) do
   end
 
   def data
-    @data ||= YAML.load_file("#{Rails.root}/config/nodes/#{node_types.first}.yml")
+    @data ||= YAML.load_file("#{Rails.root}/config/data/nodes/#{node_types.first}.yml")
   end
 
   def records_to_promulgate
