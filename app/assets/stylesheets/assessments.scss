@@ -23,23 +23,12 @@ h4 {
   left: 0;
   text-align: center;
   background: $alto;
-
-  .button { margin: 0; }
-
-  .button--next, .button--next:hover, .button--next:active {
-    background-color: $gossamer;
-    color: $travertine;
-
-    &:disabled {
-      opacity: .2;
-    }
-  }
 }
 
 label {
   width: 100%;
   display:block;
-  border:solid 1px $dust;
+  border:solid 2px $dust;
   border-radius:10px;
   -webkit-font-smoothing: antialiased;
   color:$dust;
@@ -50,7 +39,7 @@ input[type=checkbox] {
 }
 
 input:checked + label {
-  border: solid 1px $gossamer;
+  border-color: $gossamer;
   color: $gossamer;
   p {
     color: $black;
@@ -81,5 +70,5 @@ input.checkbox:checked + label:before {
 }
 
 .assessments__check {
-  
+
 }

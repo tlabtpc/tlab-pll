@@ -59,3 +59,14 @@
   margin-bottom: 1rem;
   padding: 1rem;
 }
+
+.button {
+  margin: 0;
+  i.fa-arrow-right { margin-left: 10px; }
+  i.fa-arrow-left  { margin-right: 10px; }
+}
+
+.button--green {
+  background: $gossamer;
+  &:hover { background: darken($gossamer, 5%); }
+}
