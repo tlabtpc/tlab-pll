@@ -13,6 +13,10 @@ class Assessment < ApplicationRecord
   has_many :assessment_referrals
   has_many :referrals, through: :assessment_referrals
 
+  def referral_ids=(ids)
+    Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
+  end
+
   def terminate_with!(node)
     return unless node.terminal?
     self.nodes.push(node)
