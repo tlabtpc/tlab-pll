@@ -35,19 +35,18 @@ h4 {
   justify-content: space-between;
 }
 
-label {
+.assessments__checkbox-label {
   display:block;
   border:solid 2px $dust;
   border-radius:10px;
   -webkit-font-smoothing: antialiased;
-  color:$dust;
 }
 
 input[type=checkbox] {
   display: none;
 }
 
-input:checked + label {
+input:checked + .assessments__checkbox-label {
   border-color: $gossamer;
   color: $gossamer;
   p {
@@ -55,25 +54,18 @@ input:checked + label {
   }
 }
 
-input:checked + label:before {
-  content: "✓ ";
-}
-
 .label--check {
   visibility: hidden;
   float:left;
   width: 10%;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .label--text {
   float: left; width: 90%;
 }
 
-input:checked + label .label--check {
+input:checked + label.assessments__checkbox-label .label--check {
   visibility: visible;
-}
-
-input.checkbox:checked + label:before {
-  content: "";
 }

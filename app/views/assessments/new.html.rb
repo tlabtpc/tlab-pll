@@ -1,4 +1,6 @@
 class Views::Assessments::New < Views::Base
+  needs :special_referrals
+
   def content
     form_for :assessment, url: assessments_path do |f|
       columns("small-centered", medium: 8, large: 7) do
@@ -15,6 +17,12 @@ class Views::Assessments::New < Views::Base
         assessment_check 'I understand that Project Legal Link does not provide legal representation for my client.',
           'This tool does not collect client-identifying information and does not create any attorney-client relationships.',
           'legal'
+
+        div(class: "assessments__special_referrals") do
+          ul do
+            special_referrals.each { |referral| special_referral_check f, referral }
+          end
+        end
       end
 
       f.submit(class: "assessments__submit", id: :assessment_submit, disabled: true)
@@ -34,8 +42,8 @@ class Views::Assessments::New < Views::Base
 
   def assessment_check(title, subtitle, id)
     input(class: "checkbox assessments__checkbox confirm", id: "intro[#{id}]", type: "checkbox", name: "intro[#{title}]")
-    label(for: "intro[#{id}]") do
-      div(class: "label--check") { text "✓" }
+    label(class: "assessments__checkbox-label", for: "intro[#{id}]") do
+      div(class: "label--check") { i(class: "fa fa-lg fa-check") }
       div(class: "label--text") do
         strong title
         p subtitle
@@ -43,6 +51,10 @@ class Views::Assessments::New < Views::Base
     end
   end
 
-  def special_referral_check(referral)
+  def special_referral_check(form, referral)
+    li class: "assessments__special-referral" do
+      label(referral.title, for: "referral_ids")
+      form.check_box(:referral_ids, multiple: true)
+    end
   end
 end
