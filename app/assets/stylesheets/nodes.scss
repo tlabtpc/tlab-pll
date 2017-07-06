@@ -35,7 +35,6 @@
 
 .nodes__next-form {
   padding: 15px;
-  .button { margin: 0; }
 }
 
 .nodes__footer-flash {
@@ -53,4 +52,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  i.fa-arrow-right { margin-left: 10px; }
+  i.fa-arrow-left  { margin-right: 10px; }
 }

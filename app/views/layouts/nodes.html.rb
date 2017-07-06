@@ -16,7 +16,7 @@ class Views::Layouts::Nodes < Views::Layouts::Application
       div class: "nodes__footer-flash", id: "node_description"
       div(class: "nodes__footer") do
         # back button
-        link_to assessment_nodes_path, method: :delete do
+        link_to assessment_nodes_path, class: "button secondary", method: :delete do
           i class: "fa fa-arrow-left"
           span "Back"
         end

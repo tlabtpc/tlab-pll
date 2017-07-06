@@ -18,7 +18,7 @@ class Views::Assessments::New < Views::Base
   end
 
   def assessment_check(title, subtitle, id)
-    input(class: "checkbox", id: "intro[#{id}]", type: "checkbox", name: "intro[#{title}]")
+    input(class: "checkbox assessments__checkbox", id: "intro[#{id}]", type: "checkbox", name: "intro[#{title}]")
     label(for: "intro[#{id}]") do
       div(class: "label--check") { text "✓" }
       div(class: "label--text") do

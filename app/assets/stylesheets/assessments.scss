@@ -1,15 +1,16 @@
 @import 'colors';
-$footer-height: 54px;
 
 body {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .container {
-  height: calc(100% - #{$footer-height*2});
-  max-height: calc(100% - #{$footer-height*2});
-  overflow-y: scroll;
-  overflow-x: hidden;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-top: 16px;
+  flex-grow: 1;
 }
 
 h4 {
@@ -17,14 +18,13 @@ h4 {
 }
 
 .footer {
-  position: fixed;
-  height: $footer-height;
-  bottom: 0;
   width: 100%;
   margin: auto;
   left: 0;
   text-align: center;
   background: $alto;
+
+  .button { margin: 0; }
 
   .button--next, .button--next:hover, .button--next:active {
     background-color: $gossamer;
@@ -78,4 +78,8 @@ input:checked + label .label--check {
 
 input.checkbox:checked + label:before {
   content: "";
+}
+
+.assessments__check {
+  
 }
