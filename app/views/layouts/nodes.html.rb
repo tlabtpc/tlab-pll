@@ -13,11 +13,14 @@ class Views::Layouts::Nodes < Views::Layouts::Application
     end
 
     content_for(:footer) do
-      form_for :assessment_node, url: assessment_nodes_path do |f|
-        f.text_field :node_id, type: :hidden, id: "node_id"
-        button_tag class: :button, type: :submit do
-          span "Next"
-          i class: "fa fa-arrow-right"
+      div class: "nodes__footer-flash", id: "node_description"
+      div class: "nodes__next-form" do
+        form_for :assessment_node, url: assessment_nodes_path do |f|
+          f.text_field :node_id, type: :hidden, id: "node_id"
+          button_tag class: :button, type: :submit do
+            span "Next"
+            i class: "fa fa-arrow-right"
+          end
         end
       end
     end

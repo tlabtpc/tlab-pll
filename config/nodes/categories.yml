@@ -3,10 +3,18 @@ defaults:
 
 records:
   - title: "Benefits"
+    description: "For example:  CalFresh, CalWORKS, CAAP, Foster care, Health care, SSI/SSDI, Veteran's, Work-related"
   - title: "Criminal & Tickets"
+    description: "For example:  criminal cases, criminal record cleaning, warrants, tickets, and infractions"
   - title: "Family & Relationships"
+    description: "For example:  divorce, custody, guardianship, restraining orders"
   - title: "Housing"
+    description: "For example: evictions, problems with housing (repairs, harassment, rent increases), discrimination"
   - title: "Immigration"
+    description: "For example:  deportation, naturalization, family petitions, humanitarian relief (asylum, U-Visa, Vawa, etc.)"
   - title: "Work, Credit & Consumer"
+    description: "For example: Issues related to credit/consumer, worker’s rights, work and family."
   - title: "Other issues"
+    description: "For example: Gender or name change, personal injury, police misconduct, taxes, end of life support"
   - title: "I don't know"
+    description: "That's OK.  For the next step we will ask you to describe your client's situation and PLL will provide a cross-check."

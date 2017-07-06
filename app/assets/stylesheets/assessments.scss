@@ -18,14 +18,13 @@ h4 {
 
 .footer {
   position: fixed;
-  height: $footer_height;
+  height: $footer-height;
   bottom: 0;
   width: 100%;
   margin: auto;
   left: 0;
   text-align: center;
   background: $alto;
-  padding: 15px;
 
   .button--next, .button--next:hover, .button--next:active {
     background-color: $gossamer;
