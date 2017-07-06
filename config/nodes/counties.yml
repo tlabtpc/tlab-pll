@@ -1,0 +1,13 @@
+defaults:
+  is_county: true
+  tip: "category"
+  question: "Can you tell what category of legal help your client needs?"
+
+records:
+  - title: "Alameda"
+  - title: "Contra Costa"
+  - title: "Marin"
+  - title: "San Francisco"
+  - title: "San Mateo"
+  - title: "Santa Clara"
+  - title: "Other County"
