@@ -25,8 +25,17 @@ h4 {
   background: $alto;
 }
 
+.assessments__submit {
+  display: none;
+}
+
+.assessments__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 label {
-  width: 100%;
   display:block;
   border:solid 2px $dust;
   border-radius:10px;
@@ -67,8 +76,4 @@ input:checked + label .label--check {
 
 input.checkbox:checked + label:before {
   content: "";
-}
-
-.assessments__check {
-
 }
