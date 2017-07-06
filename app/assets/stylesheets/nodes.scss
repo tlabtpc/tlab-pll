@@ -32,3 +32,9 @@
   border-color: $gossamer;
   color: $gossamer;
 }
+
+.nodes__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
