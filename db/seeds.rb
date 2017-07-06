@@ -12,41 +12,4 @@ unless Rails.env.production?
   create_user("member@example.com", false)
 end
 
-Node.root.update(tip: :county)
-
-[
-  "Alameda",
-  "Contra Costa",
-  "Marin",
-  "San Francisco",
-  "San Mateo",
-  "Santa Clara",
-  "Other County"
-].each do |county|
-  Node.find_or_create_by(
-    parent_node: Node.root,
-    is_county: true,
-    title: county
-  ).update(
-    tip: :category
-  )
-end
-
-Node.counties.each do |county|
-  [
-    "Benefits",
-    "Criminal & Tickets",
-    "Family & Relationships",
-    "Housing",
-    "Immigration",
-    "Work, Credit & Consumer",
-    "Other issues",
-    "I don't know"
-  ].each do |category|
-    Node.find_or_create_by(
-      parent_node: county,
-      is_category: true,
-      title: category
-    )
-  end
-end
+NodePromulgator.new([:root, :counties, :categories]).promulgate!

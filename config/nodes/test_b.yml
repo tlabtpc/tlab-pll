@@ -1,0 +1,6 @@
+defaults:
+  tip: "test_b_tip"
+
+records:
+  - title: "TestB1"
+  - title: "TestB2"
