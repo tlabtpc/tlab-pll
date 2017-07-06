@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
 
   resources :assessments, only: [:new, :create, :show]
-  resources :assessment_nodes, only: :create
+  resources :assessment_nodes, only: :create do
+    delete :destroy, on: :collection
+  end
 
   resources :nodes, only: [:show]
 

@@ -29,16 +29,8 @@ class Views::Layouts::Application < Views::Base
           div msg, "aria-label" => name, "aria-role" => "dialog", class: ['callout', 'flash', name]
         end
 
-        div class: %i[container] do
-          content_for?(:node) ? yield(:node) : yield
-        end
-
-        div class: 'assessments__footer' do
-          link_to assessments_path, method: :post, class: 'button button--next', disabled: true do
-            text 'Next'
-            i class: 'fa fa-arrow-right'
-          end
-        end
+        div(class: :container) { content_for?(:sidebar) ? yield(:sidebar) : yield }
+        div(class: :footer)    { content_for?(:footer)  ? yield(:footer)  : nil }
       end
     end
   end
