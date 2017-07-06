@@ -27,6 +27,14 @@ describe SessionsController do
       expect(response).to redirect_to root_path
     end
 
+    specify "admin case" do
+      user.update(admin: true)
+      expect {
+        post :create, params: { session: { email: "user@example.com", password: "password" } }
+      }.to change { controller.current_user }.from(nil).to(user)
+      expect(response).to redirect_to admin_root_path
+    end
+
     specify "failure case" do
       expect {
         post :create, params: { session: { email: "nonexistant@example.com", password: "flub" } }

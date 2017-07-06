@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(session_params[:email], session_params[:password])
-      redirect_back_or_to root_path
+      redirect_back_or_to after_sign_in_path
     else
       flash.now.alert = "Email or password is invalid"
       render :new
@@ -25,6 +25,14 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def after_sign_in_path
+    if @user.admin
+      admin_root_path
+    else
+      root_path
+    end
+  end
 
   def session_params
     params.require(:session).permit(%i[email password])
