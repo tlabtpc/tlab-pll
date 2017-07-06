@@ -1,5 +1,6 @@
-default:
+defaults:
   type: "SpecialReferral"
 
 records:
-  - title: ""
+  - title: "HIV+ or living with AIDS"
+  - title: "Resident of Bayview or Hunters Point"

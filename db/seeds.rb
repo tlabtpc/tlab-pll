@@ -13,3 +13,4 @@ unless Rails.env.production?
 end
 
 NodePromulgator.new([:root, :counties, :categories]).promulgate!
+ReferralPromulgator.new([:special]).promulgate!
