@@ -70,3 +70,5 @@
   background: $gossamer;
   &:hover { background: darken($gossamer, 5%); }
 }
+
+input[type=checkbox] { display: none; }

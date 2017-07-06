@@ -18,7 +18,8 @@ class Views::Assessments::New < Views::Base
           'This tool does not collect client-identifying information and does not create any attorney-client relationships.',
           'legal'
 
-        div(class: "assessments__special_referrals") do
+        div(class: "assessments__special-referrals") do
+          p "Does your client fit into one of these groups? if so, they might be eligible for special assistance."
           ul do
             special_referrals.each { |referral| special_referral_check f, referral }
           end
@@ -41,8 +42,8 @@ class Views::Assessments::New < Views::Base
   end
 
   def assessment_check(title, subtitle, id)
-    input(class: "checkbox assessments__checkbox confirm", id: "intro[#{id}]", type: "checkbox", name: "intro[#{title}]")
-    label(class: "assessments__checkbox-label", for: "intro[#{id}]") do
+    input(class: "checkbox assessments__checkbox confirm", id: "confirm_#{id}", type: "checkbox")
+    label(class: "assessments__checkbox-label", for: "confirm_#{id}") do
       div(class: "label--check") { i(class: "fa fa-lg fa-check") }
       div(class: "label--text") do
         strong title
@@ -53,8 +54,11 @@ class Views::Assessments::New < Views::Base
 
   def special_referral_check(form, referral)
     li class: "assessments__special-referral" do
-      label(referral.title, for: "referral_ids")
-      form.check_box(:referral_ids, multiple: true)
+      form.check_box(:referral_ids)
+      label(class: "assessments__special-referral-label", for: "referral_ids") do
+        div(class: "label--check") { i(class: "fa fa-lg fa-check") }
+        div(class: "label--text")  { text referral.title }
+      end
     end
   end
 end

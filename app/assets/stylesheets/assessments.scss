@@ -36,36 +36,34 @@ h4 {
 }
 
 .assessments__checkbox-label {
-  display:block;
+  display: flex !important; // :(
+  width: 100%;
   border:solid 2px $dust;
   border-radius:10px;
   -webkit-font-smoothing: antialiased;
+  flex-direction: row;
 }
 
-input[type=checkbox] {
-  display: none;
+.assessments__special-referrals {
+  background: linear-gradient($travertine, $lemon-chiffon);
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
 input:checked + .assessments__checkbox-label {
   border-color: $gossamer;
   color: $gossamer;
-  p {
-    color: $black;
-  }
+  p { color: $black; }
+  .label--check { visibility: visible; }
 }
 
 .label--check {
   visibility: hidden;
-  float:left;
-  width: 10%;
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
-}
-
-.label--text {
-  float: left; width: 90%;
-}
-
-input:checked + label.assessments__checkbox-label .label--check {
-  visibility: visible;
+  i {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin: 0 5px;
+  }
 }
