@@ -1,0 +1,6 @@
+defaults:
+  tip: "TestATip"
+
+records:
+  - title: "TestA1"
+  - title: "TestA2"
