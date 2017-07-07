@@ -1,12 +1,11 @@
 source "https://rubygems.org"
 
-#ruby "2.3.1"
+ruby "2.3.4"
 
 gem "airbrake", "~> 6.1"
 gem "awesome_print"
 gem "coffee-rails", "~> 4.1.0"
 gem "fortitude"
-gem "foundation-rails"
 gem "jbuilder", "~> 2.0"
 gem "jquery-rails"
 gem "pg", "~> 0.18"

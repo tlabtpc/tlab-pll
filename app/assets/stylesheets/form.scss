@@ -1,12 +1,12 @@
-@import "_settings";
+@import "_colors";
 
 form {
   .field_with_errors input {
-    border: 1px solid $form-label-color-invalid;
+    border: 1px solid $alert;
   }
 
   .error-message {
     margin-left: 0.25rem;
-    color: $form-label-color-invalid;
+    color: $alert;
   }
 }

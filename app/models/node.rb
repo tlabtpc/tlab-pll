@@ -10,4 +10,8 @@ class Node < ApplicationRecord
   def self.root
     find_or_create_by(root: true)
   end
+
+  def to_param
+    [id,title].join("-")
+  end
 end
