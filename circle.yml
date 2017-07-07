@@ -1,5 +1,6 @@
 dependencies:
-  - gem install bundler && bundle
+  pre:
+    - gem install bundler && bundle
 
 test:
   override:
