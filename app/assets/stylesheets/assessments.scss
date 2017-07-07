@@ -74,6 +74,7 @@ input:checked + .assessments__checkbox-label {
 }
 
 .assessments__special-referrals {
+  display: none;
   background: linear-gradient($travertine, $lemon-chiffon);
   padding: 15px;
   margin-bottom: 15px;
