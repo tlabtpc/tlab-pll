@@ -20,7 +20,7 @@ class Views::Assessments::New < Views::Base
 
         div(class: "assessments__special-referrals") do
           p "Does your client fit into one of these groups? if so, they might be eligible for special assistance."
-          ul do
+          ul(class: "assessments__special-referral-list") do
             special_referrals.each { |referral| special_referral_check f, referral }
           end
         end
@@ -43,7 +43,7 @@ class Views::Assessments::New < Views::Base
 
   def assessment_check(title, subtitle, id)
     input(class: "checkbox assessments__checkbox confirm", id: "confirm_#{id}", type: "checkbox")
-    label(class: "assessments__checkbox-label", for: "confirm_#{id}") do
+    label(class: "assessments__checkbox-label confirm", for: "confirm_#{id}") do
       div(class: "label--check") { i(class: "fa fa-lg fa-check") }
       div(class: "label--text") do
         strong title
@@ -53,11 +53,11 @@ class Views::Assessments::New < Views::Base
   end
 
   def special_referral_check(form, referral)
-    li class: "assessments__special-referral" do
-      form.check_box(:referral_ids)
-      label(class: "assessments__special-referral-label", for: "referral_ids") do
+    li class: "assessments__special-referral-list-item" do
+      form.check_box(:referral_ids, {multiple: true, id: "referral_id_#{referral.id}"}, referral.id, nil)
+      label(class: "assessments__checkbox-label referral", for: "referral_id_#{referral.id}") do
         div(class: "label--check") { i(class: "fa fa-lg fa-check") }
-        div(class: "label--text")  { text referral.title }
+        div(class: "label--text")  { strong referral.title }
       end
     end
   end
