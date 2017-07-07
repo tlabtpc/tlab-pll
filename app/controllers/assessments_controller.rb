@@ -6,13 +6,20 @@ class AssessmentsController < ApplicationController
   end
 
   def new
+    @special_referrals = SpecialReferral.all
   end
 
   def create
-    if cookies[:assessment] = Assessment.create.token
+    if cookies[:assessment] = Assessment.create(assessment_params).token
       redirect_to Node.root
     else
       raise "Could not create assessment"
     end
+  end
+
+  private
+
+  def assessment_params
+    params.fetch(:assessment, {}).permit(referral_ids: [])
   end
 end

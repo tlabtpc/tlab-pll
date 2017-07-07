@@ -1,0 +1,7 @@
+defaults:
+  type: "SpecialReferral"
+  description: "defaultDescription"
+
+records:
+  - title: "Special1"
+  - title: "Special2"

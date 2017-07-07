@@ -26,9 +26,18 @@ class Mom
     Assessment.new(submitted_at: submitted_at)
   end
 
-  def primary_referral(terminal_node_id:, title: "PrimaryTitle", description: "PrimaryDescription", introduction: "PrimaryIntroduction", link: "referrals.biz")
+  def primary_referral(terminal_node_id:, title: "PrimaryTitle", description: "PrimaryDescription", introduction: "PrimaryIntroduction", link: "referrals.primary.biz")
     PrimaryReferral.new(
       terminal_node_id: terminal_node_id,
+      title: title,
+      description: description,
+      introduction: introduction,
+      link: link
+    )
+  end
+
+  def special_referral(title: "SpecialTitle", description: "SpecialDescription", introduction: "SpecialIntroduction", link: "referrals.special.biz")
+    SpecialReferral.new(
       title: title,
       description: description,
       introduction: introduction,

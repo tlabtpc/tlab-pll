@@ -12,20 +12,20 @@ NodePromulgator = Struct.new(:node_types, :parent) do
 
   private
 
+  def records_to_promulgate
+    @records ||= Array(data['records'])
+  end
+
   def create_node(record)
     Node.find_or_create_by(parent_node: parent, title: record['title'])
         .tap { |node| node.update(defaults.merge(record)) }
   end
 
-  def data
-    @data ||= YAML.load_file("#{Rails.root}/config/nodes/#{node_types.first}.yml")
-  end
-
-  def records_to_promulgate
-    @records ||= Array(data['records'])
-  end
-
   def defaults
     @defaults ||= Hash(data['defaults'])
+  end
+
+  def data
+    @data ||= YAML.load_file("#{Rails.root}/config/data/nodes/#{node_types.first}.yml")
   end
 end

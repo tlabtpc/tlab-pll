@@ -1,15 +1,16 @@
 @import 'colors';
-$footer-height: 54px;
 
 body {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .container {
-  height: calc(100% - #{$footer-height*2});
-  max-height: calc(100% - #{$footer-height*2});
-  overflow-y: scroll;
-  overflow-x: hidden;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-top: 16px;
+  flex-grow: 1;
 }
 
 h4 {
@@ -17,66 +18,69 @@ h4 {
 }
 
 .footer {
-  position: fixed;
-  height: $footer_height;
-  bottom: 0;
   width: 100%;
   margin: auto;
   left: 0;
   text-align: center;
   background: $alto;
-  padding: 15px;
+}
 
-  .button--next, .button--next:hover, .button--next:active {
-    background-color: $gossamer;
-    color: $travertine;
+.assessments__submit {
+  display: none;
+}
 
-    &:disabled {
-      opacity: .2;
+.assessments__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.assessments__checkbox-label {
+  display: flex !important; // because of foundation's label css :(
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  flex-direction: row;
+  &.confirm {
+    border:solid 2px $dust;
+    border-radius:10px;
+    .label--check { margin-top: 5px; }
+  }
+  &.referral {
+
+  }
+  .label--check {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 4px;
+    border: 2px solid $dust;
+    margin: 0 10px;
+    text-align: center;
+    i {
+      line-height: 20px;
+      visibility: hidden;
     }
   }
 }
 
-label {
-  width: 100%;
-  display:block;
-  border:solid 1px $dust;
-  border-radius:10px;
-  -webkit-font-smoothing: antialiased;
-  color:$dust;
-}
-
-input[type=checkbox] {
-  display: none;
-}
-
-input:checked + label {
-  border: solid 1px $gossamer;
+input:checked + .assessments__checkbox-label {
+  border-color: $gossamer;
   color: $gossamer;
-  p {
-    color: $black;
+  p { color: $black; }
+  .label--check {
+    border-color: $gossamer;
+    i { visibility: visible; }
   }
 }
 
-input:checked + label:before {
-  content: "✓ ";
+.assessments__special-referrals {
+  display: none;
+  background: linear-gradient($travertine, $lemon-chiffon);
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
-.label--check {
-  visibility: hidden;
-  float:left;
-  width: 10%;
-  padding-left: 1rem;
-}
-
-.label--text {
-  float: left; width: 90%;
-}
-
-input:checked + label .label--check {
-  visibility: visible;
-}
-
-input.checkbox:checked + label:before {
-  content: "";
+.assessments__special-referral-list {
+  margin: 0;
+  list-style-type: none;
 }

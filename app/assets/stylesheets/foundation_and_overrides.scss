@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+@import 'colors';
+@import 'settings';
+@import 'foundation';
+
+// If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
+//
+// @import 'motion-ui/motion-ui';
+
+// We include everything by default.  To slim your CSS, remove components you don't use.
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-top-bar;
+
+// If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
+//
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+.assessments-new [type='checkbox'] + label {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.button {
+  margin: 0;
+  i.fa-arrow-right { margin-left: 10px; }
+  i.fa-arrow-left  { margin-right: 10px; }
+}
+
+.button--green {
+  background: $gossamer;
+  &:hover { background: darken($gossamer, 5%); }
+}
+
+input[type=checkbox] { display: none; }
