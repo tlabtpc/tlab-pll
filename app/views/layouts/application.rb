@@ -12,7 +12,7 @@ class Views::Layouts::Application < Views::Base
         csrf_meta_tags
         stylesheet_link_tag 'application', media: 'all'
         javascript_include_tag 'application'
-        font = 'Open Sans'
+        font = 'Calibri'
         link rel: "stylesheet", type: "text/css", href: "//fonts.googleapis.com/css?family=#{font}"
         link rel: "stylesheet", type: "text/css", href: "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         style do
