@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :cross_checks, only: :new do
     CrossCheck::STEPS.each { |step| get step, on: :member }
 
-    put :next_step, on: :member
+    post :next_step, on: :member
     get :previous_step, on: :member
   end
 

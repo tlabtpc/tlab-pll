@@ -3,10 +3,6 @@ class CrossChecksController < ApplicationController
   # defines simple :edit methods for each cross check step
   CrossCheck::STEPS.each { |step| define_method step, -> { cross_check } }
 
-  def new
-    cross_check
-  end
-
   def next_step
     if cross_check.update(cross_check_params)
       redirect_to send :"#{next_step_name}_cross_check_path"
@@ -29,8 +25,7 @@ class CrossChecksController < ApplicationController
   end
 
   def cross_check_params
-    params.require(:cross_check).permit(
-      :current_step,
+    params.fetch(:cross_check, {}).permit(
       :details,
       :deadlines,
       :caseworker_name,
@@ -47,14 +42,14 @@ class CrossChecksController < ApplicationController
   end
 
   def next_step_name
-    CrossCheck::STEPS.fetch CrossCheck::STEPS.index(current_step_index+1), :complete
+    CrossCheck::STEPS[current_step_index+1] || :details
   end
 
-  def prev_step_name
-    CrossCheck::STEPS.fetch CrossCheck::STEPS.index(current_step_index-1), :new
+  def previous_step_name
+    CrossCheck::STEPS[current_step_index-1] || :complete
   end
 
   def current_step_index
-    CrossCheck::STEPS.index(cross_check_params[:current_step])
+    CrossCheck::STEPS.index(params[:current_step])
   end
 end
