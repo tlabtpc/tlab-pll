@@ -12,5 +12,6 @@ unless Rails.env.production?
   create_user("member@example.com", false)
 end
 
-NodePromulgator.new([:root, :counties, :categories]).promulgate!
-ReferralPromulgator.new([:special]).promulgate!
+Promulgators::Node.new([:root, :counties, :categories]).promulgate!
+Promulgators::Referral.new([:special]).promulgate!
+Promulgators::ActionItem.new([:all]).promulgate!
