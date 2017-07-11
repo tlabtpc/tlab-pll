@@ -3,13 +3,7 @@ class Views::Layouts::Nodes < Views::Layouts::Application
 
   def content
     content_for(:sidebar) do
-      if node.tip.present?
-        div(class: "columns small-12 medium-7") { yield }
-        div(class: "columns small-12 medium-4 large-3") { div(class: :tips) { render_tip } }
-        div(class: "columns small-0 medium-1 large-2")
-      else
-        yield
-      end
+      div(class: :tips) { render_tip } if node.tip.present?
     end
 
     content_for(:footer) do

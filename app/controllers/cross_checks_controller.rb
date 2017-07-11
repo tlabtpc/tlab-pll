@@ -1,8 +1,10 @@
 class CrossChecksController < ApplicationController
+  include HasAssessment
   # defines simple :edit methods for each cross check step
   CrossCheck::STEPS.each { |step| define_method step, -> { cross_check } }
 
   def new
+    cross_check
   end
 
   def next_step
@@ -23,7 +25,7 @@ class CrossChecksController < ApplicationController
   private
 
   def cross_check
-    @cross_check ||= CrossCheck.find(params[:id])
+    @cross_check ||= assessment.cross_check.presence || assessment.create_cross_check
   end
 
   def cross_check_params

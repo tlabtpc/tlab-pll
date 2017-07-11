@@ -36,4 +36,10 @@ class ApplicationController < ActionController::Base
       redirect_to new_sessions_path
     end
   end
+
+  private
+
+  def resource_class
+    controller_name.classify.constantize
+  end
 end

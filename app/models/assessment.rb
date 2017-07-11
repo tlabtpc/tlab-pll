@@ -9,6 +9,8 @@ class Assessment < ApplicationRecord
   has_one :category_node, -> { find_by(is_category: true) }
   has_one :county_node,   -> { find_by(is_county: true) }
 
+  has_one :cross_check
+
   # after terminal node is populated, create primary, secondary, special referral records
   has_many :assessment_referrals
   has_many :referrals, through: :assessment_referrals

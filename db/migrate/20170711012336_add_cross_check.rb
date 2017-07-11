@@ -1,6 +1,7 @@
 class AddCrossCheck < ActiveRecord::Migration[5.0]
   def change
     create_table :cross_checks do |t|
+      t.belongs_to :assessment
       t.text :details
       t.text :deadlines
       t.string :caseworker_name

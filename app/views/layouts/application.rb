@@ -29,9 +29,20 @@ class Views::Layouts::Application < Views::Base
           div msg, "aria-label" => name, "aria-role" => "dialog", class: ['callout', 'flash', name]
         end
 
-        div(class: :container) { content_for?(:sidebar) ? yield(:sidebar) : yield }
-        div(class: :footer)    { content_for?(:footer)  ? yield(:footer)  : nil }
+        div(class: container_class) do
+          div(class: :"card-wrapper") do
+            div(class: :card) { yield(:card) }
+            render partial: "copyright"
+          end if content_for?(:card)
+          div(class: "sidebar small-12 medium-5") { yield(:sidebar) } if content_for?(:sidebar)
+        end
+        div(class: :footer) { yield(:footer) } if content_for?(:footer)
+
       end
     end
+  end
+
+  def container_class
+    if content_for?(:sidebar) then "container container__two-column" else "container container__one-column" end
   end
 end
