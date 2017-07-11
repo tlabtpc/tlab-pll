@@ -29,7 +29,10 @@ class Views::Layouts::Application < Views::Base
           div msg, "aria-label" => name, "aria-role" => "dialog", class: ['callout', 'flash', name]
         end
 
-        div(class: :container) { content_for?(:sidebar) ? yield(:sidebar) : yield }
+        div(class: :container) do
+          content_for?(:sidebar) ? yield(:sidebar) : yield
+          render partial: "copyright"
+        end
         div(class: :footer)    { content_for?(:footer)  ? yield(:footer)  : nil }
       end
     end

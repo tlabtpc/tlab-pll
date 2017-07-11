@@ -1,4 +1,25 @@
+@import 'colors';
+
 .top-bar {
+  background: $seagull;
+  border-bottom: 2px solid $alto;
+  .top-bar-left {
+    img {
+      height: 40px;
+      margin-left: 15px;
+      vertical-align: baseline;
+    }
+    p {
+      display: inline-block;
+      width: 250px;
+      line-height: 18px;
+      margin-bottom: 0;
+      margin-left: 10px;
+      vertical-align: baseline;
+      color: $dust;
+    }
+  }
+
   .top-bar-right {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -7,4 +28,13 @@
       font-weight: normal;
     }
   }
+}
+
+.footer {
+  background: $seagull;
+  border-top: 2px solid $alto;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  text-align: center;
 }

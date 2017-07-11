@@ -3,7 +3,7 @@ class Views::Nodes::Show < Views::Base
   needs :assessment
 
   def content
-    row do
+    div(class: "row card") do
       columns do
         p(node.question, class: "nodes__question") if node.question
 

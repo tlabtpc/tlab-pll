@@ -3,7 +3,7 @@ class Views::Assessments::New < Views::Base
 
   def content
     form_for :assessment, url: assessments_path do |f|
-      columns("small-centered", medium: 8, large: 7) do
+      columns("card small-centered", medium: 8, large: 7) do
         h4 'Before we start, please confirm the following:'
 
         assessment_check 'My client and I have enough time to work on this now.',
@@ -23,6 +23,11 @@ class Views::Assessments::New < Views::Base
           ul(class: "assessments__special-referral-list") do
             special_referrals.each { |referral| special_referral_check f, referral }
           end
+        end
+
+        div class: "text-center card-footer" do
+          image_tag "bay_area_legal_aid.png"
+          p "Project Legal Link is a program of Bay Area Legal Aid"
         end
       end
 

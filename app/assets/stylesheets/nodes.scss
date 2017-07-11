@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
 }
@@ -35,6 +36,10 @@
 
 .nodes__next-form {
   padding: 15px;
+}
+
+.nodes__footer {
+  padding: 0.5rem;
 }
 
 .nodes__footer-flash {
