@@ -11,6 +11,13 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
+  resources :cross_checks, only: :new do
+    CrossCheck::STEPS.each { |step| get step, on: :member }
+
+    put :next_step, on: :member
+    get :previous_step, on: :member
+  end
+
   resources :nodes, only: [:show]
 
   namespace :dev do
