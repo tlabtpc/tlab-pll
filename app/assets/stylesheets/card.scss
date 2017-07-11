@@ -1,0 +1,19 @@
+@import 'colors';
+
+.card {
+  background: $seagull;
+  border: 1px solid $alto;
+  padding: 2rem 5rem !important;
+  box-shadow: 3px 2px 0px $alto;
+
+  &__footer {
+    color: $dust;
+    text-align: center;
+  }
+
+  &__image {
+    display: block;
+    margin: 15px auto;
+    max-width: 70%;
+  }
+}

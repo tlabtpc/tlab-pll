@@ -25,8 +25,9 @@ class Views::Assessments::New < Views::Base
           end
         end
 
-        div class: "text-center card-footer" do
-          image_tag "bay_area_legal_aid.png"
+        div class: "card__footer" do
+          image_tag "project_legal_link.png", class: "card__image"
+          image_tag "bay_area_legal_aid.png", class: "card__image"
           p "Project Legal Link is a program of Bay Area Legal Aid"
         end
       end
