@@ -19,11 +19,11 @@ $(function() {
 
     if (target.data('description')) {
       // display description if it exists
-      $('.nodes__footer-flash').html(target.data('description'))
-                               .addClass('nodes__footer-flash--visible')
+      $('.footer-flash').html(target.data('description'))
+                        .addClass('footer-flash--visible')
     } else {
       // otherwise, hide the flash element
-      $('.nodes__footer-flash').removeClass('nodes__footer-flash--visible')
+      $('.footer-flash').removeClass('footer-flash--visible')
     }
   })
 })

@@ -1,0 +1,53 @@
+@import 'colors';
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-top: 16px;
+  background-color: $bluehair;
+}
+
+.container__one-column {
+  justify-content: center;
+}
+
+.container__two-column {
+  justify-content: flex-start;
+}
+
+.copyright {
+  text-align: center;
+  margin: 10px 0;
+  color: $dust;
+  a {
+    color: $dust;
+    text-decoration: underline;
+    &:hover { color: lighten($dust, 5%); }
+  }
+}
+
+.card-wrapper { min-height: 100%; }
+
+.card {
+  background: $seagull;
+  border: 1px solid $alto;
+  padding: 2rem !important;
+  box-shadow: 3px 2px 0px $alto;
+  max-width: 750px;
+  margin: auto;
+}
+
+.card-footer {
+  color: $dust;
+  img {
+    margin: 15px 0;
+    max-width: 70%;
+  }
+}

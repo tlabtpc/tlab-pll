@@ -36,8 +36,15 @@ class Views::Layouts::Application < Views::Base
           end if content_for?(:card)
           div(class: "sidebar small-12 medium-5") { yield(:sidebar) } if content_for?(:sidebar)
         end
-        div(class: :footer) { yield(:footer) } if content_for?(:footer)
 
+        div(class: :footer) do
+          div(class: "footer-flash")
+          div(class: "footer__buttons") do
+            content_for?(:back) ? yield(:back) : div
+            content_for?(:next) ? yield(:next) : div
+            div # spacer for flexbox
+          end
+        end
       end
     end
   end

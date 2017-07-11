@@ -37,23 +37,3 @@
 .nodes__next-form {
   padding: 15px;
 }
-
-.nodes__footer {
-  padding: 0.5rem;
-}
-
-.nodes__footer-flash {
-  padding: 0;
-  transition: all 0.5s;
-}
-
-.nodes__footer-flash--visible {
-  padding: 15px;
-  background: linear-gradient($travertine, $lemon-chiffon);
-}
-
-.nodes__footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}

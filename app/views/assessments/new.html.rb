@@ -36,14 +36,10 @@ class Views::Assessments::New < Views::Base
       end
     end
 
-    content_for :footer do
-      div(class: "assessments__footer") do
-        div
-        label(class: "button button--green assessments__next-button disabled", for: :assessment_submit) do
-          span "Next"
-          i class: "fa fa-arrow-right"
-        end
-        div
+    content_for :next do
+      label(class: "button button--green assessments__next-button disabled", for: :assessment_submit) do
+        span "Next"
+        i class: "fa fa-arrow-right"
       end
     end
   end
