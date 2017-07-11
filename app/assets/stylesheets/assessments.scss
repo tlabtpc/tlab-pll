@@ -4,10 +4,6 @@
   padding: 0 3rem;
 }
 
-.assessments__submit {
-  display: none;
-}
-
 .assessments__checkbox-label {
   display: flex !important; // because of foundation's label css :(
   width: 100%;
@@ -17,9 +13,6 @@
     border:solid 2px $dust;
     border-radius:10px;
     .label--check { margin-top: 5px; }
-  }
-  &.referral {
-
   }
   .label--check {
     width: 25px;

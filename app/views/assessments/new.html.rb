@@ -31,7 +31,7 @@ class Views::Assessments::New < Views::Base
             p "Project Legal Link is a program of Bay Area Legal Aid"
           end
 
-          f.submit(class: "assessments__submit", id: :assessment_submit, disabled: true)
+          f.submit(class: :hide, id: :assessment_submit, disabled: true)
         end
       end
     end
