@@ -17,5 +17,6 @@ class Views::Nodes::Show < Views::Base
         end
       end
     end
+    render partial: "copyright"
   end
 end
