@@ -1,6 +1,6 @@
 $(function() {
-  $('.assessments-new').on('change', '.assessments__checkbox--agree', function() {
-    var allChecked = $('.assessments__checkbox--agree').toArray().every(function(c) { return c.checked })
+  $('.assessments-new').on('change', '.assessments__checkbox-input', function() {
+    var allChecked = $('.assessments__checkbox-input').toArray().every(function(c) { return c.checked })
 
     // enable the (hidden) submit button
     $('.assessments__submit').prop('disabled', !allChecked)

@@ -48,10 +48,10 @@ class Views::Assessments::New < Views::Base
   end
 
   def assessment_check(title, subtitle, id)
-    input(class: "assessments__checkbox--agree", id: "agree_#{id}", type: "checkbox")
-    label(class: "assessments__checkbox-label confirm", for: "agree_#{id}") do
-      div(class: "label--check") { i(class: "fa fa-lg fa-check") }
-      div(class: "label--text") do
+    input(class: "assessments__checkbox-input", id: "agree_#{id}", type: "checkbox")
+    label(class: "assessments__checkbox-label assessments__checkbox-label-agreements", for: "agree_#{id}") do
+      div(class: "assessments__checkbox-label-check") { i(class: "fa fa-lg fa-check") }
+      div(class: "assessments__checkbox-label-text") do
         strong title
         p subtitle
       end
@@ -59,33 +59,12 @@ class Views::Assessments::New < Views::Base
   end
 
   def special_referral_check(form, referral)
-    li class: "assessments__special-referral-list-item" do
+    li do
       form.check_box(:referral_ids, {multiple: true, id: "referral_id_#{referral.id}"}, referral.id, nil)
-      label(class: "assessments__checkbox-label referral", for: "referral_id_#{referral.id}") do
-        div(class: "label--check") { i(class: "fa fa-lg fa-check") }
-        div(class: "label--text")  { strong referral.title }
+      label(class: "assessments__checkbox-label", for: "referral_id_#{referral.id}") do
+        div(class: "assessments__checkbox-label-check") { i(class: "fa fa-lg fa-check") }
+        div(class: "assessments__checkbox-label-text")  { strong referral.title }
       end
     end
   end
-
-  # def assessment_check(title, subtitle, id)
-  #   input(class: "assessments__checkbox-input", id: "agree_#{id}", type: "checkbox", checked: true)
-  #   label(class: "assessments__checkbox-label-agreements", for: "agree_#{id}") do
-  #     div(class: "assessments__checkbox-label-check") { i(class: "fa fa-lg fa-check") }
-  #     div(class: "assessments__checkbox-label-text") do
-  #       strong title
-  #       p subtitle
-  #     end
-  #   end
-  # end
-  #
-  # def special_referral_check(form, referral)
-  #   li do
-  #     form.check_box(:referral_ids, {multiple: true, id: "referral_id_#{referral.id}"}, referral.id, nil)
-  #     label(class: "assessments__checkbox-label", for: "referral_id_#{referral.id}") do
-  #       div(class: "assessments__checkbox-label-check") { i(class: "fa fa-lg fa-check") }
-  #       div(class: "assessments__checkbox-label-text")  { strong referral.title }
-  #     end
-  #   end
-  # end
 end
