@@ -41,7 +41,11 @@
 
 .button--green {
   background: $gossamer;
-  &:hover { background: darken($gossamer, 5%); }
+  padding: 15px 50px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  &:hover { background: darken($gossamer, 5%) !important; }
 }
 
 input[type=checkbox] { display: none; }

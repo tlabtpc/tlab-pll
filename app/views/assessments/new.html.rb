@@ -4,7 +4,7 @@ class Views::Assessments::New < Views::Base
   def content
     form_for :assessment, url: assessments_path do |f|
       columns("card small-centered", medium: 8, large: 7) do
-        h4 'Before we start, please confirm the following:'
+        h4 'Before we start, please confirm the following:', class: 'assessments__title'
 
         assessment_check 'My client and I have enough time to work on this now.',
           'If not today, try to schedule a date and time to follow-up with your client.',
@@ -39,7 +39,7 @@ class Views::Assessments::New < Views::Base
       div(class: "assessments__footer") do
         div
         label(class: "button button--green assessments__next-button disabled", for: :assessment_submit) do
-          span "Next"
+          span "NEXT"
           i class: "fa fa-arrow-right"
         end
         div
