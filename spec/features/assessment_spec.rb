@@ -7,11 +7,11 @@ describe "assessment", js: true do
     visit root_path
 
     step "agree to initial requirements" do
-      click_for "confirm_schedule"
-      click_for "confirm_paperwork"
+      click_for "agree_schedule"
+      click_for "agree_paperwork"
 
       expect(page).to_not have_css ".assessments__special-referrals"
-      click_for "confirm_legal"
+      click_for "agree_legal"
 
       expect(page).to have_css ".assessments__special-referrals"
 
