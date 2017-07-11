@@ -35,13 +35,18 @@
 
 .button {
   margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
   i.fa-arrow-right { margin-left: 10px; }
   i.fa-arrow-left  { margin-right: 10px; }
 }
 
 .button--green {
   background: $gossamer;
-  &:hover { background: darken($gossamer, 5%); }
+  padding: 15px 50px;
+  border-radius: 5px;
+  &:hover { background: darken($gossamer, 5%) !important; }
 }
 
 input[type=checkbox] { display: none; }

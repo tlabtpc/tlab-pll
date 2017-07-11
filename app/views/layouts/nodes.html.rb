@@ -7,7 +7,7 @@ class Views::Layouts::Nodes < Views::Layouts::Application
     end
 
     content_for :back do
-      link_to assessment_nodes_path, class: "button secondary", method: :delete do
+      link_to assessment_nodes_path, class: "button button--back secondary", method: :delete do
         i class: "fa fa-arrow-left"
         span "Back"
       end

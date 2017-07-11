@@ -4,49 +4,71 @@
   padding: 0 3rem;
 }
 
-.assessments__checkbox-label {
-  display: flex !important; // because of foundation's label css :(
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  flex-direction: row;
-  &.confirm {
-    border:solid 2px $dust;
-    border-radius:10px;
-    .label--check { margin-top: 5px; }
+.assessments {
+  &__title {
+    font-size: 1.25rem;
+    margin: 15px 0 40px;
   }
-  .label--check {
-    width: 25px;
-    height: 25px;
+
+  &__checkbox-label {
+    display: flex !important; // because of foundation's label css :(
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    flex-direction: row;
+  }
+
+  &__checkbox-label-check {
+    $checkbox-size: 25px;
+    min-width: $checkbox-size;
+    max-width: $checkbox-size;
+    min-height: $checkbox-size;
+    max-height: $checkbox-size;
     background: white;
-    border-radius: 4px;
-    border: 2px solid $dust;
+    border: 1px solid $black;
+    box-shadow: inset 1px 2px 3px -1px rgba(0,0,0,0.3);
     margin: 0 10px;
+    position: relative;
     text-align: center;
     i {
       line-height: 20px;
       visibility: hidden;
     }
   }
+
+  &__checkbox-label-agreements {
+    border:solid 1px $dust;
+    border-radius:10px;
+  }
+
+  &__checkbox-label-text p {
+    color: $black;
+  }
+
+  &__special-referrals {
+    display: none;
+    background: linear-gradient($travertine, $lemon-chiffon);
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  &__special-referral-list {
+    margin: 0;
+    list-style-type: none;
+  }
 }
 
 input:checked + .assessments__checkbox-label {
   border-color: $gossamer;
   color: $gossamer;
-  p { color: $black; }
-  .label--check {
-    border-color: $gossamer;
-    i { visibility: visible; }
+
+  .assessments__checkbox-label-check {
+    i {
+      color: $gossamer;
+      visibility: visible;
+      position: absolute;
+      font-size: 2.15rem;
+      top: -1px;
+      left: 0;
+    }
   }
-}
-
-.assessments__special-referrals {
-  display: none;
-  background: linear-gradient($travertine, $lemon-chiffon);
-  padding: 15px;
-  margin-bottom: 15px;
-}
-
-.assessments__special-referral-list {
-  margin: 0;
-  list-style-type: none;
 }
