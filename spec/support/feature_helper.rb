@@ -17,6 +17,10 @@ module FeatureHelper
     save_and_open_preview
   end
 
+  def current_path
+    page.evaluate_script('window.location.pathname')
+  end
+
   def flash
     find(".flash").text
   end
