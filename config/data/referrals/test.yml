@@ -1,6 +1,6 @@
 defaults:
   type: "SpecialReferral"
-  description: "defaultDescription"
+  markdown_content: "content"
 
 records:
   - title: "Special1"

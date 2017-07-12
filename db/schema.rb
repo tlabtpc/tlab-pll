@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711024816) do
+ActiveRecord::Schema.define(version: 20170712154517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,12 +97,11 @@ ActiveRecord::Schema.define(version: 20170711024816) do
   create_table "referrals", force: :cascade do |t|
     t.integer  "terminal_node_id"
     t.string   "type"
-    t.string   "title"
-    t.text     "description"
-    t.string   "introduction"
-    t.string   "link"
+    t.text     "markdown_content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "link"
+    t.string   "title"
     t.index ["terminal_node_id"], name: "index_referrals_on_terminal_node_id", using: :btree
   end
 

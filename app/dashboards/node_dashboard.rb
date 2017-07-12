@@ -10,7 +10,7 @@ class NodeDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     parent_node: Field::BelongsTo.with_options(class_name: "Node"),
     children: Field::HasMany.with_options(class_name: "Node"),
-    referrals: Field::HasMany,
+    # referrals: Field::HasMany,
     id: Field::Number,
     parent_node_id: Field::Number,
     terminal: Field::Boolean,
@@ -30,7 +30,7 @@ class NodeDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :parent_node,
     :children,
-    :referrals,
+    # :referrals,
     :id,
   ].freeze
 
@@ -39,7 +39,7 @@ class NodeDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :parent_node,
     :children,
-    :referrals,
+    # :referrals,
     :id,
     :parent_node_id,
     :terminal,
@@ -57,7 +57,7 @@ class NodeDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :parent_node,
     :children,
-    :referrals,
+    # :referrals,
     :parent_node_id,
     :terminal,
     :node_type,

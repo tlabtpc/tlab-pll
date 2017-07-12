@@ -3,15 +3,19 @@ class Node < ApplicationRecord
   has_many :children, class_name: "Node", foreign_key: :parent_node_id
   has_many :referrals, foreign_key: :terminal_node_id
 
-  scope :terminal,   -> { where(terminal: true) }
-  scope :counties,   -> { where(is_county: true) }
+  scope :terminal, -> { where(terminal: true) }
+  scope :counties, -> { where(is_county: true) }
   scope :categories, -> { where(is_category: true) }
+
+  def primary_referrals=(referral_titles)
+    self.referrals << Referral.where(title: referral_titles)
+  end
 
   def self.root
     find_or_create_by(root: true)
   end
 
   def to_param
-    [id,title].join("-")
+    [id, title].join("-")
   end
 end

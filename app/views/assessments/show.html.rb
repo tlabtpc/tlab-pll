@@ -12,10 +12,19 @@ class Views::Assessments::Show < Views::Base
             assessment.nodes.each { |node| li node.title }
           end
 
+<<<<<<< HEAD
           h3 "Referrals:"
           ul do
             assessment.referrals.each { |referral| li referral.title }
           end
+=======
+        h3 "Referrals:"
+        ul do
+          assessment.referrals.primary.each do |referral|
+            li link_to referral.id, primary_referral_path(referral)
+          end
+        end
+>>>>>>> add benefits yml files
 
           h3 "Cross Check:"
           text "(cross check info goes here)"

@@ -19,7 +19,7 @@ describe Promulgators::Node do
     expect(a1_titles).to include "TestB1"
     expect(a1_titles).to include "TestB2"
 
-    a2_titles = Node.find_by(title: "TestA1").children.pluck(:title)
+    a2_titles = Node.find_by(title: "TestA2").children.pluck(:title)
     expect(a2_titles).to include "TestB1"
     expect(a2_titles).to include "TestB2"
   end

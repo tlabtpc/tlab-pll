@@ -1,0 +1,20 @@
+defaults:
+  question: "What type of benefit does your client's question relate to?"
+  terminal: true
+
+records:
+  - title: "Safety net benefits (CalFresh, CalWORKs, General Assistance)"
+    description: "Cash and food assistance for families and individuals."
+  - title: "Foster benefits"
+    description: "Cash and other assistance for foster care-involved youth."
+  - title: "Health care benefits"
+    description: "Health care under Medi-Cal, Medicare, Covered California, and private providers."
+  - title: "Non-citizen benefits"
+    description: "Some benefits are available to non-citizens, and others carry risks."
+  - title: "SSI/SSDI"
+    description: "Cash assistance for disabled or elderly individuals."
+  - title: "Other"
+  - title: "Veterans benefits"
+    description: "Assistance with accessing veterans benefits."
+  - title: "Work-related"
+    description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."

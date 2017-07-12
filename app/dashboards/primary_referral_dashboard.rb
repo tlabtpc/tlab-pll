@@ -10,10 +10,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     terminal_node: Field::BelongsTo.with_options(class_name: "Node"),
     id: Field::Number,
-    title: Field::String,
-    description: Field::Text,
-    introduction: Field::String,
-    link: Field::String,
+    markdown_content: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,9 +21,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
-    :title,
-    :link
+    :id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,10 +29,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :terminal_node,
     :id,
-    :title,
-    :description,
-    :introduction,
-    :link,
+    :markdown_content,
     :created_at,
     :updated_at,
   ].freeze
@@ -47,16 +39,13 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :terminal_node,
-    :title,
-    :description,
-    :introduction,
-    :link,
+    :markdown_content,
   ].freeze
 
   # Overwrite this method to customize how primary referrals are displayed
   # across all pages of the admin dashboard.
   #
   def display_resource(primary_referral)
-    "##{primary_referral.id} - #{primary_referral.title}"
+    "##{primary_referral.id} - #{primary_referral.markdown_content}"
   end
 end

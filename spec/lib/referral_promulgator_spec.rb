@@ -6,8 +6,8 @@ describe Promulgators::Referral do
   end
 
   it 'populates default values' do
-    Promulgators::Referral.new([:test]).promulgate!
-    expect(Referral.pluck(:description).uniq).to eq ["defaultDescription"]
+    ReferralPromulgator.new([:test]).promulgate!
+    expect(Referral.pluck(:markdown_content).uniq).to eq ["content"]
   end
 
   it 'does not overwrite existing referrals' do

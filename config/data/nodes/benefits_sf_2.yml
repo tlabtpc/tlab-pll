@@ -1,0 +1,29 @@
+defaults:
+  tip: "benefits_sf_2"
+  question: "What type of benefit does your client's question relate to?"
+  terminal: true
+
+records:
+  - title: "CAAP (GA, PAES etc.)"
+    description: "Cash assistance for adults with no dependents."
+    primary_referrals:
+      - "Bay Area Legal Aid (BayLegal)"
+      - "Human Services Agency of San Francisco: General Assistance"
+  - title: "CalWORKS"
+    description: "Cash assistance for families with children in the home."
+  - title: "CalFresh"
+    description: "Monthly food benefits"
+  - title: "Foster care"
+    description: "Cash and other assistance for foster care-involved youth."
+  - title: "Health care"
+    description: "Health care under Medi-Cal, Medicare, Covered California, and private providers."
+  - title: "SSI/SSDI"
+    description: "Cash assistance for disabled or elderly individuals."
+  - title: "Veteran's benefits"
+    description: "Assistance with accessing veterans benefits."
+  - title: "Non-citizen benefits"
+    description: "Some benefits are available to non-citizens, and others carry risks."
+  - title: "Work-related benefits"
+    description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."
+  - title: "Other"
+    description: ""
