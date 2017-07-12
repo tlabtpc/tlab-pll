@@ -1,20 +1,20 @@
 $(function() {
-  $('.nodes-show').on('click', '.nodes__child-list-item', function(e) {
+  $('body').on('click', '.square', function(e) {
     var target = $(e.target)
 
     // ensure this is the only selected node
-    $('.nodes__child-list-item').removeClass('nodes__child-list-item--selected')
-    target.addClass('nodes__child-list-item--selected')
+    $('.square').removeClass('square--selected')
+    target.addClass('square--selected')
 
-    // set the current node in the submit form to the selected id
-    $('#node_id').val(target.data('id'))
+    // set the current square value input
+    $('#square_value').val(target.data('value'))
 
-    if (target.data('id')) {
+    if (target.data('value')) {
       // enable the button if an id has been set
-      $('.nodes__submit-button').prop('disabled', false)
+      $('.button--submit').prop('disabled', false).removeClass('disabled')
     } else {
       // otherwise, disable the button
-      $('.nodes__submit-button').prop('disabled', true)
+      $('.button--submit').prop('disabled', true).addClass('disabled')
     }
 
     if (target.data('description')) {

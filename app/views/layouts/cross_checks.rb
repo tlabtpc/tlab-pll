@@ -10,7 +10,7 @@ class Views::Layouts::CrossChecks < Views::Layouts::Application
     end
 
     content_for(:next) do
-      label(class: "button button--green cross-checks__next-button", for: :cross_check_submit) do
+      label(class: "button button--submit disabled", for: :cross_check_submit) do
         span "Next"
         i class: "fa fa-arrow-right"
       end

@@ -1,0 +1,21 @@
+@import 'colors';
+
+.square {
+  min-width: 150px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid $dust;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &--selected {
+    border-color: $gossamer;
+    color: $gossamer;
+  }
+}

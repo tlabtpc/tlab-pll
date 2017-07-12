@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
-  resources :cross_checks, only: :new do
+  resources :cross_checks, only: [] do
     CrossCheck::STEPS.each { |step| get step, on: :collection }
 
     post :next_step, on: :collection

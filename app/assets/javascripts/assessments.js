@@ -6,7 +6,7 @@ $(function() {
     $('#assessment_submit').prop('disabled', !allChecked)
 
     // enable the next label
-    $('.assessments__next-button').toggleClass('disabled', !allChecked)
+    $('.button--submit').toggleClass('disabled', !allChecked)
 
     // show the special referrals panel
     $('.assessments__special-referrals').toggle(allChecked)
