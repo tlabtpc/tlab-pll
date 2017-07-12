@@ -11,14 +11,16 @@ class Mom
     user "member-#{sequence}"
   end
 
-  def node(parent_node_id: nil, terminal: false, is_category: false, is_county: false, root: false, title: "node-#{sequence}")
+  def node(parent_node_id: nil, terminal: false, is_category: false, is_county: false, root: false, question: nil, title: "node-#{sequence}", tip: nil)
     Node.new(
       parent_node_id: parent_node_id,
       terminal: terminal,
       is_category: is_category,
       is_county: is_county,
       root: root,
-      title: title
+      title: title,
+      question: question,
+      tip: tip
     )
   end
 
