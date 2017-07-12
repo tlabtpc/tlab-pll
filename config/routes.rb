@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :cross_checks, only: :new do
-    CrossCheck::STEPS.each { |step| get step, on: :member }
+    CrossCheck::STEPS.each { |step| get step, on: :collection }
 
-    post :next_step, on: :member
-    get :previous_step, on: :member
+    post :next_step, on: :collection
+    get :previous_step, on: :collection
   end
 
   resources :nodes, only: [:show]

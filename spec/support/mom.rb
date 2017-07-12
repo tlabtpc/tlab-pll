@@ -45,6 +45,10 @@ class Mom
     )
   end
 
+  def cross_check(**args)
+    CrossCheck.new(assessment: assessment, **args)
+  end
+
   private
 
   def sequence
