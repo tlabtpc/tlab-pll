@@ -1,4 +1,9 @@
 $(function() {
+
+  if ($('body').find('.square-collection')) {
+    $('.button--submit').addClass('disabled')
+  }
+
   $('body').on('click', '.square', function(e) {
     var target = $(e.target)
 
@@ -9,7 +14,7 @@ $(function() {
     // set the current square value input
     $('#square_value').val(target.data('value'))
 
-    if (target.data('value')) {
+    if (target.data('value') != undefined) {
       // enable the button if an id has been set
       $('.button--submit').prop('disabled', false).removeClass('disabled')
     } else {

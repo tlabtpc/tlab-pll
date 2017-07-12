@@ -16,6 +16,9 @@ class Views::Assessments::Show < Views::Base
           ul do
             assessment.referrals.each { |referral| li referral.title }
           end
+
+          h3 "Cross Check:"
+          text "(cross check info goes here)"
         end
       end
     end

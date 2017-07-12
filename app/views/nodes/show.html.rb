@@ -6,7 +6,7 @@ class Views::Nodes::Show < Views::Base
     content_for(:card) do
       p(node.question, class: "nodes__question") if node.question
 
-      ul(class: "nodes__child-list") do
+      ul(class: "square-collection") do
         node.children.each do |child|
           render partial: "square", locals: {
             value: child.id,
@@ -31,7 +31,7 @@ class Views::Nodes::Show < Views::Base
     content_for :next do
       form_for :assessment_node, url: assessment_nodes_path do |f|
         f.text_field :node_id, type: :hidden, id: :square_value
-        button_tag class: "button button--submit disabled", type: :submit, disabled: true do
+        button_tag class: "button button--submit", type: :submit, disabled: true do
           span "Next"
           i class: "fa fa-arrow-right"
         end

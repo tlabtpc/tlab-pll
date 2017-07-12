@@ -1,5 +1,14 @@
 @import 'colors';
 
+.square-collection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
 .square {
   min-width: 150px;
   width: 150px;

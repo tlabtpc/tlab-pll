@@ -5,10 +5,12 @@ class CrossChecksController < ApplicationController
   CrossCheck::STEPS.each { |step| define_method step, -> { cross_check } }
 
   skip_before_action :basic_auth, :verify_allowed_user
-  before_action :require_assessment, only: :show
+  before_action :require_assessment
 
   def next_step
-    if cross_check.update(cross_check_params)
+    if cross_check_skipped?
+      redirect_to assessment_path(assessment)
+    elsif cross_check.update(cross_check_params)
       redirect_to send("#{next_step_name}_cross_checks_path")
     else
       render params[:current_step]
@@ -45,15 +47,16 @@ class CrossChecksController < ApplicationController
     )
   end
 
+  def cross_check_skipped?
+    params[:current_step] == CrossCheck::STEPS.first &&
+    !params.require(:cross_check).delete(:perform_check).to_i
+  end
+
   def next_step_name
     CrossCheck.next_step_for(params[:current_step])
   end
 
   def previous_step_name
     CrossCheck.previous_step_for(params[:current_step])
-  end
-
-  def current_step_index
-    CrossCheck::STEPS.index(params[:current_step])
   end
 end

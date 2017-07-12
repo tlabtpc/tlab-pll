@@ -9,12 +9,28 @@ describe CrossChecksController do
       cross_check: { details: "Here are some details" }
     }
   end
+  let(:start_params) do
+    {
+      cross_check: { perform_check: "1" }
+    }
+  end
 
   before do
     cookies[:assessment] = assessment.token
   end
 
   describe 'next_step' do
+    it 'continues on if perform_check is true for start step' do
+      post :next_step, params: start_params.merge(current_step: :start)
+      expect(response).to redirect_to details_cross_checks_path
+    end
+
+    it 'redirects to the assessment show page if no cross check is wanted' do
+      start_params[:cross_check][:perform_check] = "0"
+      post :next_step, params: start_params.merge(current_step: :start)
+      expect(response).to redirect_to assessment_path(assessment)
+    end
+
     it 'saves data to the cross check' do
       post :next_step, params: cross_check_params.merge(current_step: :details)
 
