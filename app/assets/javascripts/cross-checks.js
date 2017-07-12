@@ -4,7 +4,7 @@ $(function() {
   }
 
   $('body').on('keyup', '.cross-checks__textarea--required', function(e) {
-    let target = $(e.target)
+    var target = $(e.target)
     if ($(e.target).val().length) {
       $('.button--submit').removeClass('button--disabled')
       if (target.data('description')) {
