@@ -346,6 +346,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pivotal_git_scripts
   poltergeist
+  pry
   pry-rescue
   pry-stack_explorer
   puma (~> 3.0)

@@ -34,6 +34,9 @@ group :development, :test do
   gem "climate_control"
   gem "launchy"
   gem "poltergeist"
+  gem 'pry'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
   gem "rspec-rails"
   gem "rspec_junit_formatter"
 end
@@ -44,8 +47,6 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "meta_request"
   gem "pivotal_git_scripts"
-  gem 'pry-rescue'
-  gem 'pry-stack_explorer'
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console"
