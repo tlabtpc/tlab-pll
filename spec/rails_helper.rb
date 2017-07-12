@@ -13,6 +13,7 @@ require_relative "support/feature_helper"
 headless_capybara = true
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
 require 'capybara/accessible'
 
 if headless_capybara
