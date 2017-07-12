@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
+  resources :assessment_referrals, only: :index
+
   resources :cross_checks, only: [] do
     CrossCheck::STEPS.each { |step| get step, on: :collection }
 

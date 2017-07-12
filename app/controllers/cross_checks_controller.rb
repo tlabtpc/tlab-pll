@@ -8,7 +8,7 @@ class CrossChecksController < ApplicationController
   before_action :require_assessment
 
   def next_step
-    if cross_check_skipped?
+    if cross_check_skipped? || cross_check_complete?
       redirect_to assessment_path(assessment)
     elsif cross_check.update(cross_check_params)
       redirect_to send("#{next_step_name}_cross_checks_path")
@@ -18,7 +18,11 @@ class CrossChecksController < ApplicationController
   end
 
   def previous_step
-    redirect_to send("#{previous_step_name}_cross_checks_path")
+    if cross_check_starting?
+      redirect_to assessment_referrals_path
+    else
+      redirect_to send("#{previous_step_name}_cross_checks_path")
+    end
   end
 
   private
@@ -45,8 +49,16 @@ class CrossChecksController < ApplicationController
   end
 
   def cross_check_skipped?
-    params[:current_step] == CrossCheck::STEPS.first &&
+    cross_check_starting? &&
     params.require(:cross_check).delete(:perform_check).to_i.zero?
+  end
+
+  def cross_check_starting?
+    previous_step_name.nil?
+  end
+
+  def cross_check_complete?
+    next_step_name.nil?
   end
 
   def next_step_name

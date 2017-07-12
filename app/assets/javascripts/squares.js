@@ -1,6 +1,6 @@
 $(function() {
 
-  if ($('body').find('.square-collection')) {
+  if ($('body').find('.square-collection').length) {
     $('.button--submit').addClass('disabled')
   }
 

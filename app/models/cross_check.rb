@@ -1,6 +1,9 @@
 class CrossCheck < ApplicationRecord
-  STEPS = %w(start details info deadlines residence consulted actions support complete).freeze
+  STEPS = %w(start details info deadlines residence consulted actions support).freeze
   belongs_to :assessment, required: true
+
+  enum yes_no_dunno: %w(yes no i_dont_know).freeze
+  enum support_level: %w(low medium high).freeze
 
   attr_accessor :perform_check
 

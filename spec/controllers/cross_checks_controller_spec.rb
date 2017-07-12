@@ -49,6 +49,11 @@ describe CrossChecksController do
       expect(response).to redirect_to details_cross_checks_path
       expect(cross_check.reload.details).to_not eq cross_check_params[:cross_check][:details]
     end
+
+    it 'goes back to the referrals page if on first step' do
+      post :previous_step, params: { current_step: :start }
+      expect(response).to redirect_to assessment_referrals_path
+    end
   end
 
   describe 'edit_actions' do
