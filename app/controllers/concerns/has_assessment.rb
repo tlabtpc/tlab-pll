@@ -2,7 +2,9 @@ module HasAssessment
   private
 
   def assessment
-    @assessment ||= Assessment.find_by(token: assessment_token) if assessment_token.present?
+    if assessment_token.present?
+      @assessment ||= Assessment.find_by(token: assessment_token)
+    end
   end
 
   def assessment_token

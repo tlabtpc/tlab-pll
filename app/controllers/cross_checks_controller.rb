@@ -3,19 +3,20 @@ class CrossChecksController < ApplicationController
 
   # defines simple :edit methods for each cross check step
   CrossCheck::STEPS.each { |step| define_method step, -> { cross_check } }
+
   skip_before_action :basic_auth, :verify_allowed_user
   before_action :require_assessment, only: :show
 
   def next_step
     if cross_check.update(cross_check_params)
-      redirect_to send :"#{next_step_name}_cross_checks_path"
+      redirect_to send("#{next_step_name}_cross_checks_path")
     else
       render params[:current_step]
     end
   end
 
   def previous_step
-    redirect_to send :"#{previous_step_name}_cross_checks_path"
+    redirect_to send("#{previous_step_name}_cross_checks_path")
   end
 
   def complete
