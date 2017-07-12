@@ -2,7 +2,7 @@ class CrossCheck < ApplicationRecord
   STEPS = %w(start details info deadlines residence consulted actions support complete).freeze
   belongs_to :assessment, required: true
 
-  attr_accessor :begun
+  attr_accessor :perform_check
 
   def self.next_step_for(action_name)
     STEPS[current_step_index(action_name) + 1]
