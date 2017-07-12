@@ -1,7 +1,7 @@
 $(function() {
   $('body').on('keyup', '.cross-checks__textarea--required', function(e) {
     let target = $(e.target)
-    if ($(e.target).val() != undefined) {
+    if ($(e.target).val().length) {
       $('.button--submit').removeClass('disabled')
       $('.footer-flash').html(target.data('description'))
                         .addClass('footer-flash--visible')
