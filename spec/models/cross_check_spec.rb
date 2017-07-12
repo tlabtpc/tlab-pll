@@ -11,7 +11,7 @@ describe CrossCheck do
     end
 
     it 'last step passed' do
-      expect(CrossCheck.next_step_for('support')).to eq nil
+      expect(CrossCheck.next_step_for('complete')).to eq nil
     end
   end
 
@@ -25,7 +25,7 @@ describe CrossCheck do
     end
 
     it 'last step passed' do
-      expect(CrossCheck.previous_step_for('new')).to eq nil
+      expect(CrossCheck.previous_step_for('start')).to eq nil
     end
   end
 end

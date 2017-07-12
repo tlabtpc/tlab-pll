@@ -13,9 +13,8 @@ class CrossCheck < ApplicationRecord
   end
 
   def self.current_step_index(action_name)
-    unless current_step_index = STEPS.index(action_name.to_s)
-      raise ArgumentError.new("Cannot find step named #{action_name}")
+    STEPS.index(action_name.to_s).tap do |index|
+      raise ArgumentError.new("Cannot find step named #{action_name}") if index.nil?
     end
-    current_step_index
   end
 end

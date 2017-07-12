@@ -21,9 +21,6 @@ class CrossChecksController < ApplicationController
     redirect_to send("#{previous_step_name}_cross_checks_path")
   end
 
-  def complete
-  end
-
   private
 
   def cross_check
