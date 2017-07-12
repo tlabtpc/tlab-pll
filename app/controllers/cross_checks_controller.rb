@@ -46,7 +46,7 @@ class CrossChecksController < ApplicationController
 
   def cross_check_skipped?
     params[:current_step] == CrossCheck::STEPS.first &&
-    !params.require(:cross_check).delete(:perform_check).to_i
+    params.require(:cross_check).delete(:perform_check).to_i.zero?
   end
 
   def next_step_name

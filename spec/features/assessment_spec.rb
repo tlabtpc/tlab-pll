@@ -29,7 +29,7 @@ describe "assessment", js: true do
       expect(page).to have_css ".button--submit[disabled]"
       expect(page).to have_css ".tips"
 
-      find(".nodes__child-list-item").click
+      find(".square").click
       find(".button--submit").click
 
       expect(current_path).to_not eq path
@@ -37,7 +37,7 @@ describe "assessment", js: true do
     end
 
     step "select category node" do
-      find(".nodes__child-list-item").click
+      find(".square").click
       find(".button--submit").click
       expect(page).to have_content category_node.question
     end
