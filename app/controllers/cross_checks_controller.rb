@@ -32,7 +32,9 @@ class CrossChecksController < ApplicationController
   end
 
   def cross_check_params
-    params.fetch(:cross_check, {}).permit(
+    params.fetch(:cross_check, {}).except(
+      :perform_check
+    ).permit(
       :details,
       :deadlines,
       :caseworker_name,
@@ -50,7 +52,7 @@ class CrossChecksController < ApplicationController
 
   def cross_check_skipped?
     cross_check_starting? &&
-    params.require(:cross_check).delete(:perform_check).to_i.zero?
+      params.require(:cross_check)[:perform_check].to_i.zero?
   end
 
   def cross_check_starting?

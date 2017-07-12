@@ -5,8 +5,6 @@ class CrossCheck < ApplicationRecord
   enum yes_no_dunno: %w(yes no i_dont_know).freeze
   enum support_level: %w(low medium high).freeze
 
-  attr_accessor :perform_check
-
   def self.next_step_for(action_name)
     STEPS[current_step_index(action_name) + 1]
   end

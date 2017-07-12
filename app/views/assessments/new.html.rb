@@ -38,7 +38,7 @@ class Views::Assessments::New < Views::Base
     end
 
     content_for :next do
-      label(class: "button button--submit disabled", for: :assessment_submit) do
+      label(class: "button button--submit button--disabled", for: :assessment_submit) do
         span "NEXT"
         i class: "fa fa-arrow-right"
       end

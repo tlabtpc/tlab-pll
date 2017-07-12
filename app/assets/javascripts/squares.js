@@ -1,7 +1,7 @@
 $(function() {
 
   if ($('body').find('.square-collection').length) {
-    $('.button--submit').addClass('disabled')
+    $('.button--submit').addClass('button--disabled')
   }
 
   $('body').on('click', '.square', function(e) {
@@ -14,12 +14,12 @@ $(function() {
     // set the current square value input
     $('#square_value').val(target.data('value'))
 
-    if (target.data('value') != undefined) {
+    if (!!target.data('value')) {
       // enable the button if an id has been set
-      $('.button--submit').prop('disabled', false).removeClass('disabled')
+      $('.button--submit').prop('disabled', false).removeClass('button--disabled')
     } else {
       // otherwise, disable the button
-      $('.button--submit').prop('disabled', true).addClass('disabled')
+      $('.button--submit').prop('disabled', true).addClass('button--disabled')
     }
 
     if (target.data('description')) {
