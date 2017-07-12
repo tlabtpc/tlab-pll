@@ -12,16 +12,16 @@ unless Rails.env.production?
   create_user("member@example.com", false)
 end
 
-NodePromulgator.new([:root, :counties, :categories]).promulgate!
-ReferralPromulgator.new([:special, :primary]).promulgate!
+Promulgators::Node.new([:root, :counties, :categories]).promulgate!
+Promulgators::Referral.new([:special, :primary]).promulgate!
 
 san_francisco = Node.counties.find_by(title: "San Francisco")
 other_locations = Node.counties.where.not(title: 'San Francisco')
 
 Node.categories.where(title: "Benefits", parent_node: san_francisco).each do |category|
-  NodePromulgator.new([:benefits_sf_1, :benefits_sf_2], category).promulgate!
+  Promulgators::Node.new([:benefits_sf_1, :benefits_sf_2], category).promulgate!
 end
 
 Node.categories.where(title: "Benefits", parent_node: other_locations).each do |category|
-  NodePromulgator.new([:benefits_suburbs_1], category).promulgate!
+  Promulgators::Node.new([:benefits_suburbs_1], category).promulgate!
 end
