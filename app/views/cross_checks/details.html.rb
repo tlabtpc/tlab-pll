@@ -12,5 +12,11 @@ class Views::CrossChecks::Details < Views::Base
           placeholder: "Please write a brief description without any client-identifying information (ex: no client names, dates of birth, SSNs, etc.)"
       end
     end
+
+    content_for :tip do
+      div(class: :tips) do
+        render 'tips/cross_check_details'
+      end
+    end
   end
 end

@@ -10,5 +10,11 @@ class Views::CrossChecks::Deadlines < Views::Base
         f.text_area :deadlines, class: "cross-checks__textarea cross-checks__textarea--required"
       end
     end
+
+    content_for :tip do
+      div(class: :tips) do
+        render 'tips/cross_check_deadlines'
+      end
+    end
   end
 end

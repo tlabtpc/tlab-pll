@@ -41,8 +41,8 @@ class Views::Layouts::Application < Views::Base
             yield
           end
 
-          if content_for?(:sidebar)
-            div(class: "sidebar small-12 medium-5") { yield(:sidebar) }
+          if content_for?(:tip)
+            div(class: "sidebar") { yield(:tip) }
           end
         end
 

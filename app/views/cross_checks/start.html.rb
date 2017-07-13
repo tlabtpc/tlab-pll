@@ -12,16 +12,28 @@ class Views::CrossChecks::Start < Views::Base
 
           render partial: "square", locals: {
             value: 1,
-            text: "Yes",
+            text: "Yes, I want PLL to review my client’s issue",
             description: "Great. To do this we'll need to gather a bit more information"
           }
 
           render partial: "square", locals: {
             value: 0,
-            text: "No",
-            description: "Okay, we'll take you straight to your assessment"
+            text: "No, just give me the summary",
+            description: "Okay, we’ll take you straight to your assessment"
            }
         end
+      end
+    end
+
+    content_for :tip do
+      div(class: :tips) do
+        render 'tips/caseworker_header'
+
+        p <<~TEXT
+          If you request a cross-check, PLL will review your client’s
+          situation and the referral you made and offer other
+          suggestions or options.
+        TEXT
       end
     end
   end

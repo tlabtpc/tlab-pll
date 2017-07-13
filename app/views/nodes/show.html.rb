@@ -17,7 +17,7 @@ class Views::Nodes::Show < Views::Base
       end
     end
 
-    content_for(:sidebar) do
+    content_for(:tip) do
       div(class: :tips) { render_tip } if node.tip.present?
     end
 
