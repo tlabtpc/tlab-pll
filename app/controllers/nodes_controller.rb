@@ -5,6 +5,6 @@ class NodesController < ApplicationController
 
   def show
     @node = Node.find(params[:id])
-    redirect_to assessment if assessment.terminate_with!(@node)
+    redirect_to primary_referrals_path if assessment.terminate_with!(@node)
   end
 end
