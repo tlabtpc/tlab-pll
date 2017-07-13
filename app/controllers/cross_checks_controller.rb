@@ -19,7 +19,7 @@ class CrossChecksController < ApplicationController
 
   def previous_step
     if cross_check_starting?
-      redirect_to primary_referrals_path
+      redirect_to assessment_referrals_path
     else
       redirect_to send("#{previous_step_name}_cross_checks_path")
     end

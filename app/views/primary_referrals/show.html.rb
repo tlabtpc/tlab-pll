@@ -11,7 +11,7 @@ class Views::PrimaryReferrals::Show < Views::Base
     end
 
     content_for :back do
-      link_to primary_referrals_path do
+      link_to assessment_referrals_path do
         fa_icon "arrow-left"
         text "BACK"
       end

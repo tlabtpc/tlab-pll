@@ -1,8 +1,8 @@
 NextLocation = Struct.new(:assessment, :node) do
   include Rails.application.routes.url_helpers
 
-  def self.resolve(*args)
-    new(*args).resolve
+  def self.resolve(assessment, node)
+    new(assessment, node).resolve
   end
 
   def resolve

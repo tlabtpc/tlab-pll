@@ -5,5 +5,6 @@ class NodesController < ApplicationController
   before_action :require_assessment, only: :show
 
   def show
+    @node = Node.find(params[:id])
   end
 end

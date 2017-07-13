@@ -52,7 +52,7 @@ describe CrossChecksController do
 
     it 'goes back to the referrals page if on first step' do
       post :previous_step, params: { current_step: :start }
-      expect(response).to redirect_to primary_referrals_path
+      expect(response).to redirect_to assessment_referrals_path
     end
   end
 

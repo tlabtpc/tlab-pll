@@ -1,4 +1,4 @@
-class Views::PrimaryReferrals::Index < Views::Base
+class Views::AssessmentReferrals::Index < Views::Base
   needs :assessment
 
   def content
