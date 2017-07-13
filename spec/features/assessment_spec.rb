@@ -9,6 +9,7 @@ describe "assessment", js: true do
   let(:cross_check_input) do
     {
       details: "Some details",
+      deadlines: 'deadlines',
       caseworker_name: "Angela Smith",
       caseworker_phone: "555-555-5555",
       caseworker_email: "angela@smith.com"
