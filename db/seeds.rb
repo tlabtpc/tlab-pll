@@ -13,7 +13,7 @@ unless Rails.env.production?
 end
 
 Promulgators::Node.new([:root, :counties, :categories]).promulgate!
-Promulgators::Referral.new([:special, :primary]).promulgate!
+Promulgators::Referral.new([:special, :primary, :secondary]).promulgate!
 
 san_francisco = Node.counties.find_by(title: "San Francisco")
 other_locations = Node.counties.where.not(title: 'San Francisco')
