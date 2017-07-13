@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712154517) do
+ActiveRecord::Schema.define(version: 20170713220200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20170712154517) do
     t.string   "caseworker_name"
     t.string   "caseworker_phone"
     t.string   "caseworker_email"
-    t.string   "caseworker_organisation"
-    t.boolean  "client_is_long_term"
+    t.string   "caseworker_organization"
+    t.integer  "client_is_long_term"
     t.boolean  "client_is_homeless"
     t.boolean  "client_is_in_sf"
     t.integer  "client_has_consulted_attorney"

@@ -14,10 +14,42 @@ class Views::CrossChecks::Info < Views::Base
 
         f.label :email, for: :cross_check_caseworker_email
         f.text_field :caseworker_email
-        # f.select for org
 
-        # etc...
+        f.label 'Your org', for: :caseworker_organization
+        f.select :caseworker_organization,
+          ['The Good Org', 'The Bad Org', 'The Ugly Org'],
+          include_blank: true
+
+        long_term_radios(f)
+        client_is_homeless(f)
       end
     end
+  end
+
+  private
+
+  def long_term_radios(f)
+    f.label 'Do you plan to work with this client consistently for 2 months or more?'
+
+    f.radio_button :client_is_long_term, 'yes', id: :client_is_long_term_yes
+    f.label 'Yes', for: :client_is_long_term_yes
+
+    f.radio_button :client_is_long_term, 'no', id: :client_is_long_term_no
+    f.label 'No', for: :client_is_long_term_yes
+
+    f.radio_button :client_is_long_term,
+      'i_dont_know',
+      id: :client_is_long_term_unknown
+    f.label "I don't know", for: :client_is_long_term_unknown
+  end
+
+  def client_is_homeless(f)
+    f.label 'Are you working with this client on getting housed?'
+
+    f.radio_button :client_is_homeless, true, id: :client_is_homeless_yes
+    f.label 'Yes', for: :client_is_homeless_yes
+
+    f.radio_button :client_is_homeless, false, id: :client_is_homeless_no
+    f.label 'No', for: :client_is_homeless_no
   end
 end

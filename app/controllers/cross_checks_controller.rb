@@ -39,7 +39,7 @@ class CrossChecksController < ApplicationController
       :caseworker_name,
       :caseworker_phone,
       :caseworker_email,
-      :caseworker_organisation,
+      :caseworker_organization,
       :client_is_long_term,
       :client_is_homeless,
       :client_is_in_sf,

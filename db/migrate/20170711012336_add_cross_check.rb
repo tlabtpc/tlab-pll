@@ -7,7 +7,7 @@ class AddCrossCheck < ActiveRecord::Migration[5.0]
       t.string :caseworker_name
       t.string :caseworker_phone
       t.string :caseworker_email
-      t.string :caseworker_organisation
+      t.string :caseworker_organization
       t.boolean :client_is_long_term
       t.boolean :client_is_homeless
       t.boolean :client_is_in_sf
