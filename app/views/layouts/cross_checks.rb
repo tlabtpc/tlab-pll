@@ -4,7 +4,7 @@ class Views::Layouts::CrossChecks < Views::Layouts::Application
   def content
     content_for(:back) do
       link_to previous_step_cross_checks_path(current_step: action_name), class: "button button--back secondary" do
-        i class: "fa fa-arrow-left"
+        fa_icon 'arrow-left'
         span "Back"
       end
     end
@@ -12,9 +12,10 @@ class Views::Layouts::CrossChecks < Views::Layouts::Application
     content_for(:next) do
       label(class: "button button--submit", for: :cross_check_submit) do
         span "Next"
-        i class: "fa fa-arrow-right"
+        fa_icon 'arrow-right'
       end
     end
+
     super
   end
 end
