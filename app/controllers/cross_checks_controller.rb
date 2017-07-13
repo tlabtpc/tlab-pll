@@ -19,7 +19,7 @@ class CrossChecksController < ApplicationController
 
   def previous_step
     if cross_check_starting?
-      redirect_to assessment_referrals_path
+      redirect_to primary_referrals_path
     else
       redirect_to send("#{previous_step_name}_cross_checks_path")
     end
@@ -32,9 +32,8 @@ class CrossChecksController < ApplicationController
   end
 
   def cross_check_params
-    params.fetch(:cross_check, {}).except(
-      :perform_check
-    ).permit(
+    params.fetch(:cross_check, {}).permit(
+      :perform_check,
       :details,
       :deadlines,
       :caseworker_name,
@@ -52,7 +51,7 @@ class CrossChecksController < ApplicationController
 
   def cross_check_skipped?
     cross_check_starting? &&
-      params.require(:cross_check)[:perform_check].to_i.zero?
+      cross_check_params[:perform_check].to_i.zero?
   end
 
   def cross_check_starting?

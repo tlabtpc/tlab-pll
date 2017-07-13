@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :nodes, only: [:show]
-  resources :primary_referrals, only: [:show]
+  resources :primary_referrals, only: [:index, :show]
 
   namespace :dev do
     get '/' => :index

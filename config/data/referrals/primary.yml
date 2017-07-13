@@ -12,6 +12,7 @@ records:
   - title: "Asian Pacific Islander Legal Outreach (APILO)"
   - title: "Bar Association of San Francisco, Legal Referral and Information Service (BASF)"
   - title: "Bay Area Legal Aid (BayLegal)"
+    description: "# Some markdown content"
   - title: "Bay Area Legal Aid, Health Consumer Center"
   - title: "Bay Area Legal Aid, Legal Barriers to Employment Project"
   - title: "Bay Area Legal Aid, SF Public Housing Line"
