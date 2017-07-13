@@ -14,7 +14,7 @@ class Views::PrimaryReferrals::Index < Views::Base
 
     content_for :back do
       link_to assessment_nodes_path, method: :delete, class: "button button--back secondary" do
-        fa_icon "long-arrow-left"
+        fa_icon "arrow-left"
         text "BACK"
       end
     end
@@ -22,7 +22,7 @@ class Views::PrimaryReferrals::Index < Views::Base
     content_for :next do
       link_to start_cross_checks_path, class: "button button--submit" do
         text "NEXT"
-        fa_icon 'long-arrow-right'
+        fa_icon 'arrow-right'
       end
     end
   end
