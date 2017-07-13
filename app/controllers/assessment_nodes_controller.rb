@@ -3,7 +3,7 @@ class AssessmentNodesController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
 
   def create
-    if AssessmentNode.create(assessment: assessment, node: node.parent_node)
+    if AssessmentNode.find_or_create_by(assessment: assessment, node: node.parent_node)
       redirect_to node
     else
       raise "Unable to create to assessment node"
