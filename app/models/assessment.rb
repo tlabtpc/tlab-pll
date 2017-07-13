@@ -28,10 +28,4 @@ class Assessment < ApplicationRecord
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
   end
-
-  def terminate_with!(node)
-    return unless node.terminal?
-    self.nodes.push(node)
-    node.referrals.each { |referral| self.assessment_referrals.create(referral: referral) }
-  end
 end

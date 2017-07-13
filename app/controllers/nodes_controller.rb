@@ -5,7 +5,5 @@ class NodesController < ApplicationController
   before_action :require_assessment, only: :show
 
   def show
-    @node = Node.find(params[:id])
-    redirect_to primary_referrals_path if assessment.terminate_with!(@node)
   end
 end

@@ -23,7 +23,7 @@ class Views::Nodes::Show < Views::Base
 
     content_for :back do
       link_to assessment_nodes_path, class: "button button--back secondary", method: :delete do
-        i class: "fa fa-arrow-left"
+        fa_icon 'arrow-left'
         span "Back"
       end
     end
@@ -33,7 +33,7 @@ class Views::Nodes::Show < Views::Base
         f.text_field :node_id, type: :hidden, id: :square_value
         button_tag class: "button button--submit", type: :submit, disabled: true do
           span "Next"
-          i class: "fa fa-arrow-right"
+          fa_icon 'arrow-right'
         end
       end
     end

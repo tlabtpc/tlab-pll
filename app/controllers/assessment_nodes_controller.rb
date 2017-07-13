@@ -3,11 +3,19 @@ class AssessmentNodesController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
 
   def create
-    if AssessmentNode.find_or_create_by(assessment: assessment, node: node.parent_node)
-      redirect_to node
-    else
+    unless assessment_node
       raise "Unable to create to assessment node"
     end
+
+    unless assessment.nodes.include?(node)
+      if node.terminal?
+        assessment.nodes << node
+      end
+
+      assessment.referrals << node.referrals
+    end
+
+    redirect_to NextLocation.resolve(assessment, node)
   end
 
   def destroy
@@ -20,6 +28,12 @@ class AssessmentNodesController < ApplicationController
   end
 
   private
+
+  def assessment_node
+    @assessment_node ||= AssessmentNode.find_or_create_by \
+      assessment: assessment,
+      node: node.parent_node
+  end
 
   def node
     @node ||= Node.find(assessment_node_params[:node_id])

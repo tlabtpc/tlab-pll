@@ -30,6 +30,37 @@ describe AssessmentNodesController do
         post :create, params: { assessment_node: { node_id: node.id} }
       end.to_not change { AssessmentNode.count }
     end
+
+    context 'node is terminal' do
+      let!(:referral) { create(:primary_referral) }
+      let!(:terminal_node) { create :node, terminal: true }
+
+      before do
+        terminal_node.referrals << referral
+      end
+
+      it "adds the node's referrals to the assessment" do
+        post :create, params: { assessment_node: { node_id: terminal_node.id} }
+
+        expect(assessment.referrals).to eq terminal_node.referrals
+      end
+
+      it "add's the node to the assessment" do
+        post :create, params: { assessment_node: { node_id: terminal_node.id} }
+
+        expect(assessment.nodes).to include terminal_node
+      end
+
+      context "node has already been added to assessment" do
+        it 'does not add its referrals again' do
+          post :create, params: { assessment_node: { node_id: terminal_node.id} }
+          post :create, params: { assessment_node: { node_id: terminal_node.id} }
+
+          expect(assessment.referrals.count).to eq 1
+          expect(assessment.referrals).to eq terminal_node.referrals
+        end
+      end
+    end
   end
 
   describe 'destroy' do

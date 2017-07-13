@@ -7,6 +7,5 @@ class PrimaryReferralsController < ApplicationController
   end
 
   def index
-    redirect_to start_cross_checks_path if assessment.primary_referrals.empty?
   end
 end
