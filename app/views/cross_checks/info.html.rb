@@ -17,7 +17,7 @@ class Views::CrossChecks::Info < Views::Base
 
         f.label 'Your org', for: :caseworker_organization
         f.select :caseworker_organization,
-          ['The Good Org', 'The Bad Org', 'The Ugly Org'],
+          ['Community Housing Partnership', 'Compass'],
           include_blank: true
 
         long_term_radios(f)
