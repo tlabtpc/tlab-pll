@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe PrimaryReferralsController do
   describe 'show' do
-    let!(:primary_referral) { create :primary_referral, markdown_content: "#Header", terminal_node_id: "1" }
+    let!(:primary_referral) do
+      create(:primary_referral, markdown_content: "# Header", terminal_node_id: 1)
+    end
 
     it 'shows a referral with markdown' do
       get :show, params: { id: primary_referral.id }

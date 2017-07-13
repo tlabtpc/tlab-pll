@@ -1,12 +1,17 @@
 module ApplicationHelper
   def markdown(text)
-    markdown_instance.render(text).html_safe
+    markdown_instance.render(text || '').html_safe
+  end
+
+  def controller_action_html_class
+    "#{controller_name.underscore.dasherize}-#{action_name.underscore.dasherize}"
   end
 
   private
 
   def markdown_instance
-    @markdown_instance ||= Redcarpet::Markdown.new(markdown_renderer, markdown_extension_options)
+    @markdown_instance ||= Redcarpet::Markdown
+      .new(markdown_renderer, markdown_extension_options)
   end
 
   def markdown_renderer

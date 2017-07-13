@@ -24,7 +24,7 @@ class Views::Layouts::Application < Views::Base
         end
       end
 
-      body class: "#{controller_name.underscore.dasherize}-#{action_name.underscore.dasherize}" do
+      body class: controller_action_html_class do
         top_bar title: Rails.application.config.site_name
 
         flash.each do |name, msg|
@@ -32,11 +32,16 @@ class Views::Layouts::Application < Views::Base
         end
 
         div(class: container_class) do
-          div(class: :"card-wrapper") do
-            div(class: :card) { yield(:card) }
-            render partial: "copyright"
-          end if content_for?(:card)
-          div(class: "sidebar small-12 medium-5") { yield(:sidebar) } if content_for?(:sidebar)
+          if content_for?(:card)
+            div(class: :"card-wrapper") do
+              div(class: :card) { yield(:card) }
+              render partial: "copyright"
+            end
+          end
+
+          if content_for?(:sidebar)
+            div(class: "sidebar small-12 medium-5") { yield(:sidebar) }
+          end
         end
 
         div(class: :footer) do
