@@ -15,7 +15,7 @@ class Views::CrossChecks::Info < Views::Base
         f.label :email, for: :cross_check_caseworker_email
         f.text_field :caseworker_email
 
-        f.label 'Your org', for: :caseworker_organization
+        f.label 'Your org', for: :cross_check_caseworker_organization
         f.select :caseworker_organization,
           ['Community Housing Partnership', 'Compass'],
           include_blank: true
@@ -35,7 +35,7 @@ class Views::CrossChecks::Info < Views::Base
     f.label 'Yes', for: :client_is_long_term_yes
 
     f.radio_button :client_is_long_term, 'no', id: :client_is_long_term_no
-    f.label 'No', for: :client_is_long_term_yes
+    f.label 'No', for: :client_is_long_term_no
 
     f.radio_button :client_is_long_term,
       'i_dont_know',
