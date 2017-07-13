@@ -12,9 +12,11 @@ class Views::Layouts::Application < Views::Base
         csrf_meta_tags
         stylesheet_link_tag 'application', media: 'all'
         javascript_include_tag 'application'
+
         font = 'Calibri'
         link rel: "stylesheet", type: "text/css", href: "//fonts.googleapis.com/css?family=#{font}"
         link rel: "stylesheet", type: "text/css", href: "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+
         style do
           text(<<~STYLE.html_safe)
                 body, h1, h2, h3, h4, p { font-family: '#{font}', serif; }
@@ -39,6 +41,7 @@ class Views::Layouts::Application < Views::Base
 
         div(class: :footer) do
           div(class: "footer-flash")
+
           div(class: "footer__buttons") do
             content_for?(:back) ? yield(:back) : div
             content_for?(:next) ? yield(:next) : div
@@ -50,6 +53,10 @@ class Views::Layouts::Application < Views::Base
   end
 
   def container_class
-    if content_for?(:sidebar) then "container container__two-column" else "container container__one-column" end
+    if content_for?(:sidebar)
+      "container container__two-column"
+    else
+      "container container__one-column"
+    end
   end
 end
