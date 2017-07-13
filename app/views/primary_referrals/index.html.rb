@@ -4,6 +4,7 @@ class Views::PrimaryReferrals::Index < Views::Base
   def content
     content_for :card do
       div class: "primary-referrals" do
+        h4 "Primary Referrals:"
         ul do
           assessment.primary_referrals.each do |referral|
             li { link_to(referral.title, primary_referral_path(referral)) }

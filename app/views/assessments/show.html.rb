@@ -19,7 +19,7 @@ class Views::Assessments::Show < Views::Base
             end
 
             assessment.non_primary_referrals.each do |referral|
-              li { referral.title }
+              li { text referral.title }
             end
           end
 
