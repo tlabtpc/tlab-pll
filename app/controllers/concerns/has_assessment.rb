@@ -13,6 +13,7 @@ module HasAssessment
 
   def require_assessment
     return if assessment.present?
+
     flash[:notice] = "Sorry, we couldn't find your current assessment. Please create a new one"
     redirect_to new_assessment_path
   end
