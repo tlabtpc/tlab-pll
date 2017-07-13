@@ -97,11 +97,11 @@ ActiveRecord::Schema.define(version: 20170712154517) do
   create_table "referrals", force: :cascade do |t|
     t.integer  "terminal_node_id"
     t.string   "type"
+    t.string   "title"
     t.text     "markdown_content"
+    t.string   "link"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "link"
-    t.string   "title"
     t.index ["terminal_node_id"], name: "index_referrals_on_terminal_node_id", using: :btree
   end
 

@@ -14,8 +14,12 @@ class Views::Assessments::Show < Views::Base
 
           h3 "Referrals:"
           ul do
-            assessment.referrals.primary.each do |referral|
-              li link_to referral.id, primary_referral_path(referral)
+            assessment.primary_referrals.each do |referral|
+              li link_to referral.title, primary_referral_path(referral)
+            end
+
+            assessment.non_primary_referrals.each do |referral|
+              li referral.title
             end
           end
 

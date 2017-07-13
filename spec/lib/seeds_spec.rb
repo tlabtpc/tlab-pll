@@ -23,4 +23,10 @@ describe 'rake db:seed' do
     expect(root.reload.id).to eq Node.root.id
     expect(category.reload.id).to eq Node.categories.first.id
   end
+
+  it 'should associate primary referrals with terminating nodes' do
+    subject
+
+    expect(Referral.where.not(terminal_node_id: nil).size).to_not eq 0
+  end
 end

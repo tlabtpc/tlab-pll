@@ -15,6 +15,16 @@ class Assessment < ApplicationRecord
   has_many :assessment_referrals
   has_many :referrals, through: :assessment_referrals
 
+  has_many :primary_referrals,
+    -> { where(type: 'PrimaryReferral') },
+    through: :assessment_referrals,
+    source: :referral
+
+  has_many :non_primary_referrals,
+    -> { where.not(type: 'PrimaryReferral') },
+    through: :assessment_referrals,
+    source: :referral
+
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
   end
