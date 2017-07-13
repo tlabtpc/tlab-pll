@@ -8,7 +8,6 @@ class SecondaryReferralDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    terminal_node: Field::BelongsTo.with_options(class_name: "Node"),
     id: Field::Number,
     type: Field::String,
     title: Field::String,
@@ -31,7 +30,6 @@ class SecondaryReferralDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :terminal_node,
     :id,
     :title,
     :link,
@@ -43,7 +41,6 @@ class SecondaryReferralDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :terminal_node,
     :title,
     :link,
   ].freeze
