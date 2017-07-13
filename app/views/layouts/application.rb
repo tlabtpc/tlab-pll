@@ -37,6 +37,8 @@ class Views::Layouts::Application < Views::Base
               div(class: :card) { yield(:card) }
               render partial: "copyright"
             end
+          else
+            yield
           end
 
           if content_for?(:sidebar)

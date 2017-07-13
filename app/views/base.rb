@@ -4,6 +4,10 @@ module Views
 
     doctype :html5
 
+    def fa_icon(fa_icon_name)
+      i(class: "fa fa-#{fa_icon_name}")
+    end
+
     private
 
     def row(classes=[], expanded: true, &block)
