@@ -4,10 +4,9 @@
 @include checkbox(action-items);
 
 .action-items__header {
+  @include headerText;
   text-align: center;
   margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
 }
 
 .action-items__checkbox-label {

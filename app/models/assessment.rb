@@ -20,8 +20,8 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
-  has_many :non_primary_referrals,
-    -> { where.not(type: 'PrimaryReferral') },
+  has_many :secondary_referrals,
+    -> { where(type: 'SecondaryReferral') },
     through: :assessment_referrals,
     source: :referral
 

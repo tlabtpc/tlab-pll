@@ -23,7 +23,7 @@ class Views::Tips::Referrals < Views::Base
     TEXT
     ul do
       special_referrals.each do |referral|
-        li { link_to referral.title, primary_referral_path(referral) }
+        li { link_to referral.title, primary_referral_path(referral), class: "tips__link" }
       end
     end
   end

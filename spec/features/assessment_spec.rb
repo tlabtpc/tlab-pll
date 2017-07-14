@@ -69,7 +69,7 @@ describe "assessment", js: true do
     step 'select terminal node and view primary referrals page' do
       click_square_and_next
 
-      expect(page).to have_content "Primary Referrals:"
+      expect(page).to have_content "Here are referrals that may help"
       expect(page).to have_content primary_referral.title
     end
 

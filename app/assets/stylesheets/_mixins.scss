@@ -1,5 +1,18 @@
 @import 'colors';
 
+@mixin headerText {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+@mixin link {
+  color: $black;
+  text-decoration: underline;
+  font-size: 14px;
+  &:hover { color: $gossamer; }
+}
+
 @mixin checkbox($namespace) {
   .#{$namespace}__checkbox-label {
     display: flex !important; // because of foundation's label css :(

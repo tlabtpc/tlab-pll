@@ -1,0 +1,21 @@
+@import 'mixins';
+
+.assessment-referrals {
+  text-align: center;
+
+  &__list-item {
+    text-align: left;
+    width: 200px;
+    margin: auto;
+    i { margin-right: 20px; }
+  }
+
+  &__title {
+    @include headerText;
+  }
+
+  &__link {
+    @include link;
+    font-size: 16px;
+  }
+}
