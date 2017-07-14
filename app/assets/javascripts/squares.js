@@ -22,13 +22,17 @@ $(function() {
       $('.button--submit').prop('disabled', true).addClass('button--disabled')
     }
 
+    $('.footer-flash').removeClass('footer-flash--visible')
+
     if (target.data('description')) {
-      // display description if it exists
-      $('.footer-flash').html(target.data('description'))
-                        .addClass('footer-flash--visible')
-    } else {
-      // otherwise, hide the flash element
-      $('.footer-flash').removeClass('footer-flash--visible')
+      function showFooterFlash(){
+        $('.footer-flash').html(target.data('description'))
+          .addClass('footer-flash--visible')
+      }
+
+      setTimeout(
+        showFooterFlash, 200
+      )
     }
   })
 })
