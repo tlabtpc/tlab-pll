@@ -63,10 +63,17 @@ describe CrossChecksController do
       expect(cross_check.reload.details).to_not eq cross_check_params[:cross_check][:details]
     end
 
-    it 'goes back to the referrals page if on first step' do
+    it 'goes back to the referrals page if on first step and referrals exist' do
+      assessment.assessment_referrals.create(referral: create(:primary_referral))
       post :previous_step, params: { current_step: :start }
 
       expect(response).to redirect_to assessment_referrals_path
+    end
+
+    it 'goes back to selecting a terminal node if on first step and no referrals exist' do
+      post :previous_step, params: { current_step: :start }
+
+      expect(response).to redirect_to assessment_nodes_path
     end
   end
 

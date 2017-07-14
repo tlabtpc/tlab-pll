@@ -18,7 +18,7 @@ class Views::Assessments::Show < Views::Base
               li { link_to referral.title, primary_referral_path(referral) }
             end
 
-            assessment.non_primary_referrals.each do |referral|
+            assessment.secondary_referrals.each do |referral|
               li { text referral.title }
             end
           end

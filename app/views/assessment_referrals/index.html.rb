@@ -9,6 +9,10 @@ class Views::AssessmentReferrals::Index < Views::Base
           assessment.primary_referrals.each do |referral|
             li { link_to(referral.title, primary_referral_path(referral)) }
           end
+
+          assessment.secondary_referrals.each do |referral|
+            li { link_to(referral.title, referral.link) }
+          end
         end
       end
     end
