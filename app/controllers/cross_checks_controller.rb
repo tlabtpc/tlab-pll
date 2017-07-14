@@ -45,7 +45,7 @@ class CrossChecksController < ApplicationController
       :client_is_in_sf,
       :client_has_consulted_attorney,
       :support_level,
-      :action_item_ids
+      action_items: []
     )
   end
 

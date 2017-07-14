@@ -1,0 +1,21 @@
+@import 'colors';
+@import 'mixins';
+
+@include checkbox(action-items);
+
+.action-items__header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.action-items__checkbox-label {
+  margin: 15px auto !important;
+  max-width: 600px;
+}
+
+.action-items__checkbox-label-text {
+  color: $black;
+  font-size: 18px;
+}

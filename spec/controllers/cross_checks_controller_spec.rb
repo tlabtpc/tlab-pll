@@ -14,6 +14,11 @@ describe CrossChecksController do
       cross_check: { perform_check: "1" }
     }
   end
+  let(:action_params) do
+    {
+      cross_check: { action_items: ['one','two']}
+    }
+  end
 
   before do
     cookies[:assessment] = assessment.token
@@ -36,6 +41,14 @@ describe CrossChecksController do
 
       expect(cross_check.reload.details).to eq cross_check_params[:cross_check][:details]
       expect(response).to redirect_to info_cross_checks_path
+    end
+
+    it 'does not duplicate action items' do
+      post :next_step, params: action_params.merge(current_step: :actions)
+      expect(cross_check.reload.action_items.length).to eq action_params[:cross_check][:action_items].length
+      expect(cross_check.action_items).to include action_params[:cross_check][:action_items].first
+      post :next_step, params: action_params.merge(current_step: :actions)
+      expect(cross_check.reload.action_items.length).to eq action_params[:cross_check][:action_items].length
     end
   end
 

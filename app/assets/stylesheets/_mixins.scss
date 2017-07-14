@@ -1,0 +1,44 @@
+@import 'colors';
+
+@mixin checkbox($namespace) {
+  .#{$namespace}__checkbox-label {
+    display: flex !important; // because of foundation's label css :(
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    flex-direction: row;
+  }
+
+  .#{$namespace}__checkbox-label-check {
+    $checkbox-size: 25px;
+    min-width: $checkbox-size;
+    max-width: $checkbox-size;
+    min-height: $checkbox-size;
+    max-height: $checkbox-size;
+    background: white;
+    border: 1px solid $black;
+    box-shadow: inset 1px 2px 3px -1px rgba(0,0,0,0.3);
+    margin: 0 10px;
+    position: relative;
+    text-align: center;
+    i {
+      line-height: 20px;
+      visibility: hidden;
+    }
+  }
+
+  input:checked + .#{$namespace}__checkbox-label {
+    border-color: $gossamer;
+    color: $gossamer;
+
+    .#{$namespace}__checkbox-label-check {
+      i {
+        color: $gossamer;
+        visibility: visible;
+        position: absolute;
+        font-size: 2.15rem;
+        top: -1px;
+        left: 0;
+      }
+    }
+  }
+}

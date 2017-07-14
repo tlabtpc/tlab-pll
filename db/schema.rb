@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713220200) do
+ActiveRecord::Schema.define(version: 20170713232153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "action_items", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "assessment_nodes", force: :cascade do |t|
     t.integer  "assessment_id"
@@ -52,15 +46,6 @@ ActiveRecord::Schema.define(version: 20170713220200) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cross_check_action_items", force: :cascade do |t|
-    t.integer  "cross_check_id"
-    t.integer  "action_item_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["action_item_id"], name: "index_cross_check_action_items_on_action_item_id", using: :btree
-    t.index ["cross_check_id"], name: "index_cross_check_action_items_on_cross_check_id", using: :btree
-  end
-
   create_table "cross_checks", force: :cascade do |t|
     t.text     "details"
     t.text     "deadlines"
@@ -73,9 +58,10 @@ ActiveRecord::Schema.define(version: 20170713220200) do
     t.boolean  "client_is_in_sf"
     t.integer  "client_has_consulted_attorney"
     t.integer  "support_level"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer  "assessment_id",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "assessment_id",                              null: false
+    t.jsonb    "action_items",                  default: [], null: false
   end
 
   create_table "nodes", force: :cascade do |t|

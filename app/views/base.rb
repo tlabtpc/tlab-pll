@@ -4,8 +4,8 @@ module Views
 
     doctype :html5
 
-    def fa_icon(fa_icon_name)
-      i(class: "fa fa-#{fa_icon_name}")
+    def fa_icon(fa_icon_name, *classes)
+      i(class: "fa fa-#{fa_icon_name} #{classes.join(' ')}")
     end
 
     private
