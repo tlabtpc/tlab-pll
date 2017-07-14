@@ -11,6 +11,7 @@ class Views::Layouts::Application < Views::Base
 
         csrf_meta_tags
         stylesheet_link_tag 'application', media: 'all'
+
         javascript_include_tag 'application'
 
         font = 'Calibri'

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :assessment_referrals, only: :index
+  resources :assessment_emails, only: :create
 
   resources :cross_checks, only: [] do
     CrossCheck::STEPS.each { |step| get step, on: :collection }
@@ -34,5 +35,4 @@ Rails.application.routes.draw do
     resources :secondary_referrals
     resources :nodes
   end
-
 end
