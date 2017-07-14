@@ -26,6 +26,10 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
+  def revert_last_node!
+    non_terminal_nodes.last.tap { nodes.last&.destroy }
+  end
+
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
   end
