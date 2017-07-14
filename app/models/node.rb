@@ -16,6 +16,6 @@ class Node < ApplicationRecord
   end
 
   def to_param
-    [id, title].join("-")
+    [id, title.parameterize].join("-")
   end
 end

@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe Node do
   describe "#to_param" do
-    it "should use the node title" do
-      node = build(:node)
-      expect(node.to_param).to eq [node.id, node.title].join("-")
+    it "should use the parameterized node title" do
+      node = build(:node, title: "San Francisco")
+      expect(node.to_param).to eq [node.id, node.title.parameterize].join("-")
     end
   end
 
