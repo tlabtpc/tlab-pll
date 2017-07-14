@@ -28,4 +28,11 @@ describe CrossCheck do
       expect(CrossCheck.previous_step_for('start')).to eq nil
     end
   end
+
+  describe 'caseworker_first_name' do
+    let(:cross_check) { build(:cross_check, caseworker_name: 'Hulk Hogan') }
+    it 'displays only the first name' do
+      expect(cross_check.caseworker_first_name).to eq 'Hulk'
+    end
+  end
 end

@@ -12,6 +12,11 @@ module Admin
       redirect_to new_sessions_path unless current_user&.admin
     end
 
+    def valid_action?(name, resource = resource_class)
+      return false if name.to_sym == :destroy
+      super
+    end
+
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page
