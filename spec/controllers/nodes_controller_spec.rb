@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe NodesController do
   describe 'show' do
-    let(:node) { create :node }
+    let(:node) { create :node, title: "Start" }
     let(:primary_referral) { create :primary_referral, terminal_node: terminal_node }
     let(:terminal_node) { create :node, terminal: true }
     let(:assessment) { create :assessment }

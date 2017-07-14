@@ -28,6 +28,22 @@ class Mom
     Assessment.new(submitted_at: submitted_at)
   end
 
+  def assessment_node(**args)
+    AssessmentNode.new(
+      assessment: assessment,
+      node: node,
+      **args
+    )
+  end
+
+  def assessment_referral(**args)
+    AssessmentReferral.new(
+      assessment: assessment,
+      referral: primary_referral,
+      **args
+    )
+  end
+
   def primary_referral(**args)
     PrimaryReferral.new(
       terminal_node: node(terminal: true),

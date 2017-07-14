@@ -19,8 +19,10 @@ class AssessmentNodesController < ApplicationController
   end
 
   def destroy
-    if last_node = assessment.revert_last_node!
-      redirect_to last_node
+    if last_assessment_node = assessment.last_assessment_node
+      node = last_assessment_node.node
+      last_assessment_node.destroy
+      redirect_to node
     else
       assessment.destroy
       redirect_to new_assessment_path

@@ -5,14 +5,8 @@ class Assessment < ApplicationRecord
   has_many :nodes, through: :assessment_nodes
   has_many :non_terminal_nodes, -> { where(terminal: false) }, through: :assessment_nodes, source: :node
 
-  has_one :terminal_node, -> { find_by(terminal: true) }
-
-  has_one :category_node, -> { find_by(is_category: true) }
-  has_one :county_node,   -> { find_by(is_county: true) }
-
   has_one :cross_check
 
-  # after terminal node is populated, create primary, secondary, special referral records
   has_many :assessment_referrals
   has_many :referrals, through: :assessment_referrals
 
@@ -26,8 +20,12 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
-  def revert_last_node!
-    non_terminal_nodes.last.tap { nodes.last&.destroy }
+  def terminal_assessment_node
+    assessment_nodes.joins(:node).where("terminal IS TRUE").first
+  end
+
+  def last_assessment_node
+    assessment_nodes.order(:created_at).last
   end
 
   def referral_ids=(ids)
