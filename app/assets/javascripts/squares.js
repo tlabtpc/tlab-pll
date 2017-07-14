@@ -14,7 +14,7 @@ $(function() {
     // set the current square value input
     $('#square_value').val(target.data('value'))
 
-    if (!!target.data('value')) {
+    if (target.data('value') != null) {
       // enable the button if an id has been set
       $('.button--submit').prop('disabled', false).removeClass('button--disabled')
     } else {

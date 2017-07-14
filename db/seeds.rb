@@ -7,7 +7,7 @@ def create_user(email, admin)
   end
 end
 
-unless Rails.env.production?
+unless ENV['AIRBRAKE_ENV'] == 'production'
   create_user("admin@example.com", true)
   create_user("member@example.com", false)
 end
