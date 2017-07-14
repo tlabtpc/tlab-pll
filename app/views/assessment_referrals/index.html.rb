@@ -6,9 +6,7 @@ class Views::AssessmentReferrals::Index < Views::Base
       div class: "assessment-referrals" do
         h4 "Here are referrals that may help your client with this issue:", class: "assessment-referrals__title"
         ul do
-          assessment.primary_referrals.each do |referral|
-            li { link_to(referral.title, primary_referral_path(referral)) }
-          end
+          assessment.primary_referrals.each { |referral| primary_referral(referral) }
         end
 
         if assessment.secondary_referrals.any?
@@ -42,5 +40,18 @@ class Views::AssessmentReferrals::Index < Views::Base
         fa_icon 'arrow-right'
       end
     end
+  end
+
+  def primary_referral(referral)
+    # TODO: primary identifier
+    li(class: "assessment-referrals__primary-referral") do
+      h4 class: "assessment-referrals__title" do
+        fa_icon "telegram"
+        text referral.title
+      end
+      # TODO: description, or preview of referral?
+      link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
+    end
+    # TODO: is this useful?
   end
 end

@@ -1,13 +1,21 @@
+@import 'colors';
 @import 'mixins';
 
 .assessment-referrals {
   text-align: center;
 
+  &__primary-referral {
+    border: 1px solid $dust;
+    border-radius: 4px;
+    padding: 0 15px 15px 15px;
+    i { margin-right: 15px; }
+  }
+
   &__list-item {
     text-align: left;
     width: 200px;
     margin: auto;
-    i { margin-right: 20px; }
+    i { margin-right: 15px; }
   }
 
   &__title {
@@ -17,5 +25,12 @@
   &__link {
     @include link;
     font-size: 16px;
+  }
+
+  &__button {
+    display: inline-block;
+    color: $seagull;
+    &:hover { color: $seagull; }
+    font-weight: bold;
   }
 }
