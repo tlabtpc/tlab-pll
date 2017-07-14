@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "assessment", js: true do
-  let!(:special_referral) { create(:special_referral) }
   let!(:root_node) { create(:node, root: true, tip: :county) }
   let!(:county_node) { create(:node, parent_node_id: root_node.id, tip: :category, question: "Hello?") }
   let!(:category_node) { create(:node, parent_node_id: county_node.id, question: "Goodbye?") }
@@ -33,7 +32,7 @@ describe "assessment", js: true do
   end
 
   let!(:secondary_referral) { create(:secondary_referral, terminal_node: terminal_node) }
-
+  let!(:special_referral) { create(:special_referral) }
 
   specify do
     visit root_path
@@ -78,7 +77,7 @@ describe "assessment", js: true do
     end
 
     step 'view primary resource' do
-      click_on primary_referral.title
+      first(:link, "GET REFERRAL INFO").click
       expect(page).to have_content primary_referral.markdown_content
 
       click_on "BACK"
