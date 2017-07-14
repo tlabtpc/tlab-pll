@@ -19,7 +19,7 @@ class CrossChecksController < ApplicationController
 
   def previous_step
     if cross_check_starting?
-      redirect_to assessment_referrals_path
+      redirect_to before_cross_check_path
     else
       redirect_to send("#{previous_step_name}_cross_checks_path")
     end
@@ -68,5 +68,15 @@ class CrossChecksController < ApplicationController
 
   def previous_step_name
     CrossCheck.previous_step_for(params[:current_step])
+  end
+
+  def before_cross_check_path
+    if assessment.primary_referrals.any?
+      assessment_referrals_path
+    else
+      # destroy the terminal node and allow user to re-select
+      # (this is the same as hitting 'back' on the assessment_referrals#index page)
+      { controller: :assessment_nodes, action: :destroy }
+    end
   end
 end
