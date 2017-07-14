@@ -8,11 +8,10 @@ class Promulgators::Base
   def promulgate!
     return unless files.present?
     records_to_promulgate.each { |record| create_model(record) }
-    self.class.new(files[1..-1]).promulgate!
+    self.class.new(files_tail).promulgate!
   end
 
   private
-
 
   def resource
     raise NotImplementedError.new
@@ -40,7 +39,16 @@ class Promulgators::Base
     @defaults ||= Hash(data['defaults'])
   end
 
+
   def data
-    @data ||= YAML.load_file("#{Rails.root}/config/data/#{resource.to_s.pluralize}/#{files.first}.yml")
+    @data ||= YAML.load_file("#{Rails.root}/config/data/#{resource.to_s.pluralize}/#{files_head}.yml")
+  end
+
+  def files_head
+    files[0]
+  end
+
+  def files_tail
+    files[1..-1]
   end
 end

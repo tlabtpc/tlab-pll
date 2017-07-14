@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713232153) do
+ActiveRecord::Schema.define(version: 20170714021923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170713232153) do
     t.string   "tip"
     t.string   "description"
     t.string   "question"
+    t.integer  "priority",       default: 0,     null: false
     t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
   end
 
@@ -86,8 +87,9 @@ ActiveRecord::Schema.define(version: 20170713232153) do
     t.string   "title"
     t.text     "markdown_content"
     t.string   "link"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "priority",         default: 1, null: false
     t.index ["terminal_node_id"], name: "index_referrals_on_terminal_node_id", using: :btree
   end
 

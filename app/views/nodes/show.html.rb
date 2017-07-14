@@ -7,7 +7,7 @@ class Views::Nodes::Show < Views::Base
       p(node.question, class: "nodes__question") if node.question
 
       ul(class: "square-collection") do
-        node.children.each do |child|
+        node.children.order(priority: :asc).each do |child|
           render partial: "square", locals: {
             value: child.id,
             text: child.title,
