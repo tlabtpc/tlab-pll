@@ -9,6 +9,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     terminal_node: Field::BelongsTo.with_options(class_name: "Node"),
+    title: Field::String,
     id: Field::Number,
     markdown_content: Field::Text,
     created_at: Field::DateTime,
@@ -21,13 +22,15 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id
+    :id,
+    :title
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
+    :title,
     :markdown_content,
     :created_at,
     :updated_at,
