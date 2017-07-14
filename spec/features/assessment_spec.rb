@@ -32,6 +32,9 @@ describe "assessment", js: true do
       terminal_node: terminal_node
   end
 
+  let!(:secondary_referral) { create(:secondary_referral, terminal_node: terminal_node) }
+
+
   specify do
     visit root_path
 
@@ -71,6 +74,7 @@ describe "assessment", js: true do
 
       expect(page).to have_content "Here are referrals that may help"
       expect(page).to have_content primary_referral.title
+      expect(page).to have_content secondary_referral.title
     end
 
     step 'view primary resource' do
@@ -78,7 +82,7 @@ describe "assessment", js: true do
       expect(page).to have_content primary_referral.markdown_content
 
       click_on "BACK"
-      expect(page).to have_content "Primary Referrals:"
+      expect(page).to have_content "Here are referrals that may help"
     end
 
     step 'begin cross check' do
@@ -133,9 +137,10 @@ describe "assessment", js: true do
         root_node,
         county_node,
         category_node,
-        primary_referral
-      ].each do |node|
-        expect(page).to have_content node.title
+        primary_referral,
+        secondary_referral
+      ].each do |content|
+        expect(page).to have_content content.title
       end
 
       # TODO: add cross check info to assessment page and ensure that it shows up correctly

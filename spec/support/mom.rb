@@ -33,7 +33,15 @@ class Mom
       terminal_node: node(terminal: true),
       title: "PrimaryTitle",
       markdown_content: "#Header",
-      link: "referrals.primary.biz",
+      **args
+    )
+  end
+
+  def secondary_referral(**args)
+    SecondaryReferral.new(
+      terminal_node: node(terminal: true),
+      title: "SecondaryTitle",
+      link: "referrals.secondary.biz",
       **args
     )
   end

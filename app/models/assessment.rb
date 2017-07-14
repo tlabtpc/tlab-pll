@@ -16,7 +16,7 @@ class Assessment < ApplicationRecord
   has_many :referrals, through: :assessment_referrals
 
   has_many :primary_referrals,
-    -> { where(type: 'PrimaryReferral') },
+    -> { where(type: ['PrimaryReferral', 'SpecialReferral']) },
     through: :assessment_referrals,
     source: :referral
 
