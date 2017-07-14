@@ -1,14 +1,19 @@
 @import 'colors';
+@import 'mixins';
 
 .tips {
   padding: 8px 20px;
   max-width: 300px;
-}
 
-.tips__header {
-  text-align: left;
-  i { padding-right: 8px; }
-  color: $gossamer;
-  font-weight: bold;
-  font-size: 18px;
+  &__header {
+    text-align: left;
+    i { padding-right: 8px; }
+    color: $gossamer;
+    @include headerText;
+  }
+
+  &__link {
+    @include link;
+  }
+
 }

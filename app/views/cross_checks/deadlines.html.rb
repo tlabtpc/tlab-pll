@@ -12,9 +12,7 @@ class Views::CrossChecks::Deadlines < Views::Base
     end
 
     content_for :tip do
-      div(class: :tips) do
-        render 'tips/cross_check_deadlines'
-      end
+      render 'tips/cross_check_deadlines'
     end
   end
 end

@@ -14,9 +14,7 @@ class Views::CrossChecks::Details < Views::Base
     end
 
     content_for :tip do
-      div(class: :tips) do
-        render 'tips/cross_check_details'
-      end
+      render 'tips/cross_check_details'
     end
   end
 end

@@ -3,11 +3,21 @@ class Views::AssessmentReferrals::Index < Views::Base
 
   def content
     content_for :card do
-      div class: "primary-referrals" do
-        h4 "Primary Referrals:"
+      div class: "assessment-referrals" do
+        h4 "Here are referrals that may help your client with this issue:", class: "assessment-referrals__title"
         ul do
-          assessment.primary_referrals.each do |referral|
-            li { link_to(referral.title, primary_referral_path(referral)) }
+          assessment.primary_referrals.each { |referral| primary_referral(referral) }
+        end
+
+        if assessment.secondary_referrals.any?
+          h4 "Other resources:", class: "assessment-referrals__title"
+          ul do
+            assessment.secondary_referrals.each do |referral|
+              li class: "assessment-referrals__list-item" do
+                fa_icon "external-link", "fa-lg"
+                link_to(referral.title, referral.link, class: "assessment-referrals__link")
+              end
+            end
           end
 
           assessment.secondary_referrals.each do |referral|
@@ -15,6 +25,10 @@ class Views::AssessmentReferrals::Index < Views::Base
           end
         end
       end
+    end
+
+    content_for :tip do
+      render 'tips/referrals'
     end
 
     content_for :back do
@@ -30,5 +44,18 @@ class Views::AssessmentReferrals::Index < Views::Base
         fa_icon 'arrow-right'
       end
     end
+  end
+
+  def primary_referral(referral)
+    # TODO: primary identifier
+    li(class: "assessment-referrals__primary-referral") do
+      h4 class: "assessment-referrals__title" do
+        fa_icon "telegram"
+        text referral.title
+      end
+      # TODO: description, or preview of referral?
+      link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
+    end
+    # TODO: is this useful?
   end
 end

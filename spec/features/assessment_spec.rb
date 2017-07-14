@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "assessment", js: true do
-  let!(:special_referral) { create(:special_referral) }
   let!(:root_node) { create(:node, root: true, tip: :county) }
   let!(:county_node) { create(:node, parent_node_id: root_node.id, tip: :category, question: "Hello?") }
   let!(:category_node) { create(:node, parent_node_id: county_node.id, question: "Goodbye?") }
@@ -31,6 +30,9 @@ describe "assessment", js: true do
       markdown_content: "primary markdown content",
       terminal_node: terminal_node
   end
+
+  let!(:secondary_referral) { create(:secondary_referral, terminal_node: terminal_node) }
+  let!(:special_referral) { create(:special_referral) }
 
   specify do
     visit root_path
@@ -69,16 +71,17 @@ describe "assessment", js: true do
     step 'select terminal node and view primary referrals page' do
       click_square_and_next
 
-      expect(page).to have_content "Primary Referrals:"
+      expect(page).to have_content "Here are referrals that may help"
       expect(page).to have_content primary_referral.title
+      expect(page).to have_content secondary_referral.title
     end
 
     step 'view primary resource' do
-      click_on primary_referral.title
+      first(:link, "GET REFERRAL INFO").click
       expect(page).to have_content primary_referral.markdown_content
 
       click_on "BACK"
-      expect(page).to have_content "Primary Referrals:"
+      expect(page).to have_content "Here are referrals that may help"
     end
 
     step 'begin cross check' do
@@ -133,9 +136,10 @@ describe "assessment", js: true do
         root_node,
         county_node,
         category_node,
-        primary_referral
-      ].each do |node|
-        expect(page).to have_content node.title
+        primary_referral,
+        secondary_referral
+      ].each do |content|
+        expect(page).to have_content content.title
       end
 
       # TODO: add cross check info to assessment page and ensure that it shows up correctly

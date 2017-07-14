@@ -31,7 +31,7 @@ class Views::Layouts::Application < Views::Base
           div msg, "aria-label" => name, "aria-role" => "dialog", class: ['callout', 'flash', name]
         end
 
-        div(class: container_class) do
+        div(class: :container) do
           if content_for?(:card)
             div(class: :"card-wrapper") do
               div(class: :card) { yield(:card) }
@@ -42,7 +42,7 @@ class Views::Layouts::Application < Views::Base
           end
 
           if content_for?(:tip)
-            div(class: "sidebar") { yield(:tip) }
+            div(class: :tips) { yield(:tip) }
           end
         end
 
@@ -56,14 +56,6 @@ class Views::Layouts::Application < Views::Base
           end
         end
       end
-    end
-  end
-
-  def container_class
-    if content_for?(:sidebar)
-      "container container__two-column"
-    else
-      "container container__one-column"
     end
   end
 end

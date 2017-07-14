@@ -1,0 +1,39 @@
+@import 'colors';
+@import 'mixins';
+
+.assessment-referrals {
+  text-align: center;
+
+  &__primary-referral {
+    border: 1px solid $dust;
+    border-radius: 4px;
+    padding: 0 15px 15px 15px;
+    box-shadow: 0 0 2px $black;
+    max-width: 450px;
+    margin: auto;
+    i { margin-right: 15px; }
+  }
+
+  &__list-item {
+    text-align: left;
+    width: 200px;
+    margin: auto;
+    i { margin-right: 15px; }
+  }
+
+  &__title {
+    @include headerText;
+  }
+
+  &__link {
+    @include link;
+    font-size: 16px;
+  }
+
+  &__button {
+    display: inline-block;
+    color: $seagull;
+    &:hover { color: $seagull; }
+    font-weight: bold;
+  }
+}

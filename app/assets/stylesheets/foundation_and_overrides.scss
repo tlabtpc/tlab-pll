@@ -2,6 +2,7 @@
 
 @import 'colors';
 @import 'settings';
+@import 'mixins';
 @import 'foundation';
 
 // If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
@@ -34,9 +35,8 @@
 }
 
 .button {
+  @include headerText;
   margin: 0;
-  font-size: 18px;
-  font-weight: bold;
   border-radius: 5px;
   i.fa-arrow-right { margin-left: 10px; }
   i.fa-arrow-left  { margin-right: 10px; }
@@ -52,6 +52,12 @@
     opacity: 0.25;
     cursor: not-allowed;
   }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 input[type=checkbox] { display: none; }

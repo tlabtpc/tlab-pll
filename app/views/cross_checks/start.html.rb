@@ -26,15 +26,13 @@ class Views::CrossChecks::Start < Views::Base
     end
 
     content_for :tip do
-      div(class: :tips) do
-        render 'tips/caseworker_header'
+      render 'tips/caseworker_header'
 
-        p <<~TEXT
-          If you request a cross-check, PLL will review your client’s
-          situation and the referral you made and offer other
-          suggestions or options.
-        TEXT
-      end
+      p <<~TEXT
+        If you request a cross-check, PLL will review your client’s
+        situation and the referral you made and offer other
+        suggestions or options.
+      TEXT
     end
   end
 end

@@ -15,6 +15,7 @@ body {
   padding-top: 16px;
   flex-grow: 1;
   background-color: $bluehair;
+  justify-content: center;
 }
 
 .copyright {
@@ -40,8 +41,7 @@ h4 {
   }
 
   &__title {
-    font-size: 1.25rem;
-    margin: 15px 0 40px;
+    @include headerText;
   }
 
   &__checkbox-label-agreements {
