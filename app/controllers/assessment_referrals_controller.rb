@@ -5,5 +5,6 @@ class AssessmentReferralsController < ApplicationController
   before_action :require_assessment, only: :index
 
   def index
+    @special_referrals = SpecialReferral.all
   end
 end

@@ -18,7 +18,7 @@ class Views::Nodes::Show < Views::Base
     end
 
     content_for(:tip) do
-      div(class: :tips) { render_tip } if node.tip.present?
+      render_tip if node.tip.present?
     end
 
     content_for :back do

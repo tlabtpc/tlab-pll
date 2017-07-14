@@ -13,6 +13,10 @@ class Views::AssessmentReferrals::Index < Views::Base
       end
     end
 
+    content_for :tip do
+      render 'tips/referrals'
+    end
+
     content_for :back do
       link_to assessment_nodes_path, method: :delete, class: "button button--back secondary" do
         fa_icon "arrow-left"
