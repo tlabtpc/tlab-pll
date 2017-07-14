@@ -13,6 +13,12 @@ describe Promulgators::Node do
     expect(Node.pluck(:tip).uniq).to eq ['TestATip']
   end
 
+  it 'populates priority based on yml file order' do
+    Promulgators::Node.new([:test_a]).promulgate!
+    expect(Node.first.priority).to eq 0
+    expect(Node.last.priority).to eq 1
+  end
+
   it 'propogates a tree of records recursively' do
     expect { Promulgators::Node.new([:test_a, :test_b]).promulgate! }.to change { Node.count }.by(6)
     a1_titles = Node.find_by(title: "TestA1").children.pluck(:title)
