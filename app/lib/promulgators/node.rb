@@ -8,7 +8,7 @@ class Promulgators::Node < Promulgators::Base
 
   def promulgate!
     records_to_promulgate.each_with_index do |record, index|
-      self.class.new(files[1..-1], create_model(record.merge(priority: index))).promulgate!
+      self.class.new(files_tail, create_model(record.merge(priority: index))).promulgate!
     end if files.present?
   end
 

@@ -10,6 +10,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     terminal_node: Field::BelongsTo.with_options(class_name: "Node"),
     id: Field::Number,
+    priority: Field::Number,
     markdown_content: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -29,6 +30,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :markdown_content,
+    :priority,
     :created_at,
     :updated_at,
   ].freeze
@@ -38,6 +40,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :markdown_content,
+    :priority
   ].freeze
 
   # Overwrite this method to customize how primary referrals are displayed
