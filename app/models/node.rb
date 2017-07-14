@@ -12,7 +12,7 @@ class Node < ApplicationRecord
   end
 
   def self.root
-    find_or_create_by(root: true)
+    find_by(root: true)
   end
 
   def to_param
