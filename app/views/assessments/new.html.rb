@@ -20,7 +20,7 @@ class Views::Assessments::New < Views::Base
             'legal'
 
           div(class: "assessments__special-referrals") do
-            p "Does your client fit into one of these groups? if so, they might be eligible for special assistance."
+            h4 "Does your client fit into one of these groups? if so, they might be eligible for special assistance.", class: "assessments__title"
             ul(class: "assessments__special-referral-list") do
               special_referrals.each { |referral| special_referral_check f, referral }
             end
