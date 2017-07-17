@@ -24,9 +24,16 @@ describe 'rake db:seed' do
     expect(category.reload.id).to eq Node.categories.first.id
   end
 
-  it 'should associate primary referrals with terminating nodes' do
+  it 'should associate primary referrals with all related nodes' do
     subject
 
-    expect(Referral.where.not(terminal_node_id: nil).size).to_not eq 0
+    expect(Node.root.referrals.count).to eq 0
+    asylum_nodes = Node.where(title: "Asylum")
+    asylum_nodes.each do |node|
+      expect(node.referrals.count).to eq 4
+    end
+
+    icwc = Referral.find_by title: "Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)"
+    expect(icwc.nodes.count).to eq asylum_nodes.count
   end
 end

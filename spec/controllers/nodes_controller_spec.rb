@@ -2,9 +2,10 @@ require 'rails_helper'
 
 describe NodesController do
   describe 'show' do
-    let(:node) { create :node, title: "Start" }
+    let(:node) { create :node, title: "County" }
     let(:primary_referral) { create :primary_referral, terminal_node: terminal_node }
     let(:terminal_node) { create :node, terminal: true }
+    let(:node_referral) { create :node_referral, node: terminal_node, referral: primary_referral}
     let(:assessment) { create :assessment }
 
     it 'shows a node' do

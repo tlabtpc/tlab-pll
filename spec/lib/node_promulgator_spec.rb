@@ -15,12 +15,17 @@ describe Promulgators::Node do
 
   it 'populates priority based on yml file order' do
     Promulgators::Node.new([:test_a]).promulgate!
-    expect(Node.first.priority).to eq 0
-    expect(Node.last.priority).to eq 1
+    expect(Node.first.position).to eq 0
+    expect(Node.last.position).to eq 1
   end
 
   it 'propogates a tree of records recursively' do
-    expect { Promulgators::Node.new([:test_a, :test_b]).promulgate! }.to change { Node.count }.by(6)
+    expect { Promulgators::Node.new([:root, :test_a, :test_b]).promulgate! }.to change { Node.count }.by(7)
+
+    root_titles = Node.find_by(title: "County").children.pluck(:title)
+    expect(root_titles).to include "TestA1"
+    expect(root_titles).to include "TestA2"
+
     a1_titles = Node.find_by(title: "TestA1").children.pluck(:title)
     expect(a1_titles).to include "TestB1"
     expect(a1_titles).to include "TestB2"
@@ -28,6 +33,15 @@ describe Promulgators::Node do
     a2_titles = Node.find_by(title: "TestA2").children.pluck(:title)
     expect(a2_titles).to include "TestB1"
     expect(a2_titles).to include "TestB2"
+  end
+
+  it "attaches referrals to all equivalent nodes" do
+    Promulgators::Referral.new([:test]).promulgate!
+    Promulgators::Node.new([:root, :test_a, :test_b]).promulgate!
+    b1nodes = Node.where(title: "TestB1")
+
+    expect(b1nodes.last.reload.referrals.count).to eq 1
+    expect(b1nodes.first.reload.referrals.count).to eq 1
   end
 
   it 'can populate records hanging off an existing node' do

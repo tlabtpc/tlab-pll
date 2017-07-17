@@ -10,6 +10,7 @@ describe Node do
 
   describe "#primary_referrals=" do
     let(:node) { create(:node, terminal: true) }
+    let(:other_node) { create(:node, terminal: true) }
 
     before do
       ["first", "second", "third"].each do |title|
@@ -21,6 +22,10 @@ describe Node do
       expect {
         node.primary_referrals = ["first", "second", "third"]
       }.to change { node.reload.referrals.count }.by(3)
+
+      expect {
+        other_node.primary_referrals = ["first", "second", "third"]
+      }.to_not change { node.reload.referrals.count }
     end
 
     it "deals with unknown referral titles" do

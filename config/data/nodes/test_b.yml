@@ -1,6 +1,9 @@
 defaults:
   tip: "test_b_tip"
+  terminal: true
 
 records:
   - title: "TestB1"
+    primary_referrals:
+      - "Special1"
   - title: "TestB2"

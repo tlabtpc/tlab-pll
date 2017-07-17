@@ -1,5 +1,7 @@
 class Referral < ApplicationRecord
-  belongs_to :terminal_node, required: false, class_name: "Node"
+  has_many :node_referrals
+  has_many :nodes, through: :node_referrals
 
+  scope :primary, -> { where(type: "PrimaryReferral") }
   scope :non_secondary, -> { where.not(type: "SecondaryReferral") }
 end

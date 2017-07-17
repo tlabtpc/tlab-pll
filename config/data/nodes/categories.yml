@@ -1,5 +1,6 @@
 defaults:
   is_category: true
+  question: "Can you tell which category of legal help your client needs?"
 
 records:
   - title: "Benefits"

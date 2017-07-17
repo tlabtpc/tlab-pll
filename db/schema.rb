@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714021923) do
+ActiveRecord::Schema.define(version: 20170717202605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,11 @@ ActiveRecord::Schema.define(version: 20170714021923) do
     t.jsonb    "action_items",                  default: [], null: false
   end
 
+  create_table "node_referrals", id: false, force: :cascade do |t|
+    t.integer "node_id"
+    t.integer "referral_id"
+  end
+
   create_table "nodes", force: :cascade do |t|
     t.integer  "parent_node_id"
     t.boolean  "terminal",       default: false, null: false
@@ -77,12 +82,11 @@ ActiveRecord::Schema.define(version: 20170714021923) do
     t.string   "tip"
     t.string   "description"
     t.string   "question"
-    t.integer  "priority",       default: 0,     null: false
+    t.integer  "position",       default: 0,     null: false
     t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
   end
 
   create_table "referrals", force: :cascade do |t|
-    t.integer  "terminal_node_id"
     t.string   "type"
     t.text     "markdown_content"
     t.datetime "created_at",                   null: false
@@ -90,7 +94,6 @@ ActiveRecord::Schema.define(version: 20170714021923) do
     t.string   "link"
     t.string   "title"
     t.integer  "priority",         default: 1, null: false
-    t.index ["terminal_node_id"], name: "index_referrals_on_terminal_node_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

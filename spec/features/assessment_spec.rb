@@ -27,11 +27,18 @@ describe "assessment", js: true do
     create \
       :primary_referral,
       title: "Primary referral title",
-      markdown_content: "primary markdown content",
-      terminal_node: terminal_node
+      markdown_content: "primary markdown content"
   end
 
-  let!(:secondary_referral) { create(:secondary_referral, terminal_node: terminal_node) }
+  let!(:node_referral) do
+    create \
+      :node_referral,
+      node: terminal_node,
+      referral: primary_referral
+  end
+
+  let!(:secondary_referral) { create(:secondary_referral) }
+  let!(:secondary_node_referral) { create(:node_referral, node: terminal_node, referral: secondary_referral) }
   let!(:special_referral) { create(:special_referral) }
 
   specify do
@@ -57,18 +64,22 @@ describe "assessment", js: true do
       expect(page).to have_css ".button--submit[disabled]"
       expect(page).to have_css ".tips"
 
+      expect(page).to have_content county_node.question
+
       click_square_and_next
 
       expect(current_path).to_not eq path
-      expect(page).to have_content county_node.question
     end
 
     step "select category node" do
-      click_square_and_next
       expect(page).to have_content category_node.question
+
+      click_square_and_next
     end
 
     step 'select terminal node and view primary referrals page' do
+      expect(page).to have_content terminal_node.question
+
       click_square_and_next
 
       expect(page).to have_content "Here are referrals that may help"

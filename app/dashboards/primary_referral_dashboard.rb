@@ -8,7 +8,6 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    terminal_node: Field::BelongsTo.with_options(class_name: "Node"),
     title: Field::String,
     id: Field::Number,
     priority: Field::Number,

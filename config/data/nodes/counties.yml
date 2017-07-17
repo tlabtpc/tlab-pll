@@ -1,7 +1,7 @@
 defaults:
   is_county: true
   tip: "category"
-  question: "Can you tell what category of legal help your client needs?"
+  question: "What county is the issue in?"
 
 records:
   - title: "Alameda"
