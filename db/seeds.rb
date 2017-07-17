@@ -30,5 +30,6 @@ all_non_sf_locations = Node.counties.where.not(title: 'San Francisco')
 populate_questions :san_francisco, "Benefits", [:benefits_sf_1, :benefits_sf_2]
 populate_questions :san_francisco, "Criminal & Tickets", [:criminal_sf_1]
 populate_questions :san_francisco, "Family & Relationships", [:family_sf_1, :family_sf_2]
+populate_questions :san_francisco, "Immigration", [:immigration_sf_1]
 
 populate_questions all_non_sf_locations, "Benefits", [:benefits_suburbs_1]
