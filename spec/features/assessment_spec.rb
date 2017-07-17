@@ -27,6 +27,7 @@ describe "assessment", js: true do
     create \
       :primary_referral,
       title: "Primary referral title",
+      unique_identifier: "If your client needs housing:",
       description: "Primary referral description",
       markdown_content: "primary markdown content"
   end
@@ -85,6 +86,7 @@ describe "assessment", js: true do
 
       expect(page).to have_content "Here are referrals that may help"
       expect(page).to have_content primary_referral.title
+      expect(page).to have_content primary_referral.unique_identifier
       expect(page).to have_content primary_referral.description
       expect(page).to have_content secondary_referral.title
     end

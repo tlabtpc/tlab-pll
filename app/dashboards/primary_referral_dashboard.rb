@@ -8,9 +8,9 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    title: Field::String,
     id: Field::Number,
-    priority: Field::Number,
+    unique_identifier: Field::Text,
+    title: Field::String,
     description: Field::Text,
     markdown_content: Field::Text,
     markdown_content_es: Field::Text,
@@ -33,10 +33,10 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :unique_identifier,
     :description,
     :markdown_content,
     :markdown_content_es,
-    :priority,
     :created_at,
     :updated_at,
   ].freeze
@@ -46,9 +46,9 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :description,
+    :unique_identifier,
     :markdown_content,
-    :markdown_content_es,
-    :priority
+    :markdown_content_es
   ].freeze
 
   # Overwrite this method to customize how primary referrals are displayed

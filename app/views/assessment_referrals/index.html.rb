@@ -47,7 +47,7 @@ class Views::AssessmentReferrals::Index < Views::Base
   end
 
   def primary_referral(referral)
-    # TODO: primary identifier
+    p referral.unique_identifier
     li(class: "assessment-referrals__primary-referral") do
       h4 class: "assessment-referrals__title" do
         fa_icon "telegram"
