@@ -12,6 +12,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     id: Field::Number,
     priority: Field::Number,
     markdown_content: Field::Text,
+    markdown_content_es: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -32,6 +33,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :markdown_content,
+    :markdown_content_es,
     :priority,
     :created_at,
     :updated_at,
@@ -42,6 +44,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :markdown_content,
+    :markdown_content_es,
     :priority
   ].freeze
 
