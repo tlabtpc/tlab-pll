@@ -1,0 +1,63 @@
+defaults:
+  question: "Here are some common issues in this category. Can you tell which one your client needs help with?"
+  terminal: true
+
+records:
+  - title: "Harassment or Landlord entry"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Landlords Can't..."
+  - title: "Notices (to pay or quit)"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Eviction Information"
+  - title: "Potential sale of building"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Foreclosure/Sale of Building Information"
+  - title: "Public housing issues"
+    description: "For example: Placement, emergency transfers, back rent, notices, etc."
+    primary_referrals:
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Housing Rights Committee (HRC)"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Public Housing, HUD, and Section 8 FAQ"
+      - "Eviction Information"
+  - title: "Subletting or roommate issues"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Roommates Information"
+  - title: "Security deposit"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Security Deposit Information"
+  - title: "Rent increases"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Rent Increase Information"
+  - title: "Repairs (habitability)"
+    primary_referrals:
+      - "Housing Rights Committee (HRC)"
+      - "Causa Justa"
+      - "Conflict Intervention Service at BASF (CIS)"
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Repair Information"
+  - title: "Other"

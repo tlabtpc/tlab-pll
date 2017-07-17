@@ -1,0 +1,8 @@
+defaults:
+  question: "Has your client already been evicted, and is that eviction causing a barrier to housing?"
+
+records:
+  - title: "Yes"
+    description: "There is limited legal help and sometimes a remedy for this."
+  - title: "No"
+  - title: "I don't know"

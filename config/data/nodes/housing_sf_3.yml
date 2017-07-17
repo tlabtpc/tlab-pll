@@ -1,0 +1,14 @@
+defaults:
+  question: "Do you know if your client is in private housing or public?"
+
+records:
+  - title: "Private"
+    description: "Private landlord paid for with private funds"
+  - title: "Public housing or subsidy"
+    description: "Public housing, Section 8, or other public subsidies"
+    terminal: true
+    primary_referrals:
+      - "Bay Area Legal Aid, SF Public Housing Line"
+      - "Housing Rights Committee (HRC)"
+      - "Public Housing, HUD, and Section 8 FAQ"
+  - title: "I don't know"

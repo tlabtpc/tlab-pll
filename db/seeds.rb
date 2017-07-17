@@ -32,5 +32,6 @@ populate_questions :san_francisco, "Criminal & Tickets", [:criminal_sf_1]
 populate_questions :san_francisco, "Family & Relationships", [:family_sf_1, :family_sf_2]
 populate_questions :san_francisco, "Immigration", [:immigration_sf_1]
 populate_questions :san_francisco, "Work, Credit & Consumer", [:work_sf_1]
+populate_questions :san_francisco, "Housing", [:housing_sf_1, :housing_sf_2, :housing_sf_3, :housing_sf_4]
 
 populate_questions all_non_sf_locations, "Benefits", [:benefits_suburbs_1]
