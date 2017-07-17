@@ -1,0 +1,8 @@
+defaults:
+  tip: "family_sf_1"
+  question: "Is your client experiencing or concerned about domestic violence?"
+
+records:
+  - title: "Yes"
+  - title: "No"
+  - title: "I don't know"

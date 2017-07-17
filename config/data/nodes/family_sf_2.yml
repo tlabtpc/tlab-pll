@@ -1,0 +1,42 @@
+defaults:
+  tip: "family_sf_2"
+  question: "Here are some of the most common issues in this category. Can you tell which one your client needs help with?"
+  terminal: true
+
+records:
+  - title: "Restraining order"
+    description: "Order to direct a person to stay away from a person or place."
+    primary_referrals:
+      - "Cooperative Restraining Order Clinic (CROC)"
+      - "Bay Area Legal Aid (BayLegal)"
+      - "Restraining Order Information"
+  - title: "Family law issues with domestic violence"
+    description: "Divorce, custody, child support, guardianship"
+    primary_referrals:
+      - "Bay Area Legal Aid (BayLegal)"
+      - "Asian Pacific Islander Legal Outreach (APILO)"
+      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
+      - "Domestic Violence Information"
+      - "Custody & Parenting Time (Visitation) FAQ"
+      - "Custody & Visitation FAQ"
+  - title: "Family law issues without domestic violence"
+    description: "Divorce, custody, child support, guardianship"
+    primary_referrals:
+      - "Access Center (Self-Help Center at the SF Superior Court)"
+      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
+      - "Divorce or Separation Information"
+      - "Custody & Parenting Time (Visitation) FAQ"
+      - "Custody & Visitation FAQ"
+  - title: "Wills and advance healthcare directives"
+    description: "Preparation of end-of-life documents."
+    primary_referrals:
+      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
+      - "Do I Need a Will?"
+      - "Sample Will"
+      - "\"Fill in the Blanks\" California Advance Healthcare Directive Form"
+  - title: "Work and family issues"
+    description: "Pregnancy leaves, Family medical leaves, pregnancy discrimination, etc."
+    primary_referrals:
+      - "Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program"
+      - "Work and Family Program at Legal Aid at Work"
+  - title: "Other"

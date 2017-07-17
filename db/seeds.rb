@@ -12,16 +12,23 @@ unless ENV['AIRBRAKE_ENV'] == 'production'
   create_user("member@example.com", false)
 end
 
-Promulgators::Node.new([:root, :counties, :categories]).promulgate!
+def populate_questions(county, category, questions)
+  Promulgators::Node.new(
+    questions,
+    Node.categories.where(
+      title: category,
+      parent_node: Node.counties.find_by(title: county.to_s.titleize)
+    ).first
+  ).promulgate!
+end
+
 Promulgators::Referral.new([:special, :primary, :secondary]).promulgate!
+Promulgators::Node.new([:root, :counties, :categories]).promulgate!
 
-san_francisco = Node.counties.find_by(title: "San Francisco")
-other_locations = Node.counties.where.not(title: 'San Francisco')
+all_non_sf_locations = Node.counties.where.not(title: 'San Francisco')
 
-Node.categories.where(title: "Benefits", parent_node: san_francisco).each do |category|
-  Promulgators::Node.new([:benefits_sf_1, :benefits_sf_2], category).promulgate!
-end
+populate_questions :san_francisco, "Benefits", [:benefits_sf_1, :benefits_sf_2]
+populate_questions :san_francisco, "Criminal & Tickets", [:criminal_sf_1]
+populate_questions :san_francisco, "Family & Relationships", [:family_sf_1, :family_sf_2]
 
-Node.categories.where(title: "Benefits", parent_node: other_locations).each do |category|
-  Promulgators::Node.new([:benefits_suburbs_1], category).promulgate!
-end
+populate_questions all_non_sf_locations, "Benefits", [:benefits_suburbs_1]
