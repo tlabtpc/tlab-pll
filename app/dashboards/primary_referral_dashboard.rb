@@ -11,6 +11,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     title: Field::String,
     id: Field::Number,
     priority: Field::Number,
+    description: Field::Text,
     markdown_content: Field::Text,
     markdown_content_es: Field::Text,
     created_at: Field::DateTime,
@@ -32,6 +33,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :description,
     :markdown_content,
     :markdown_content_es,
     :priority,
@@ -43,6 +45,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :description,
     :markdown_content,
     :markdown_content_es,
     :priority

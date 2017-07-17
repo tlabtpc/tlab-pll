@@ -53,7 +53,7 @@ class Views::AssessmentReferrals::Index < Views::Base
         fa_icon "telegram"
         text referral.title
       end
-      # TODO: description, or preview of referral?
+      p referral.description
       link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
     end
     # TODO: is this useful?
