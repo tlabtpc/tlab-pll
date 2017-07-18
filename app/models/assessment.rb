@@ -23,4 +23,8 @@ class Assessment < ApplicationRecord
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
   end
+
+  def to_param
+    [id, created_at.strftime("%Y%m%d")].join('-')
+  end
 end

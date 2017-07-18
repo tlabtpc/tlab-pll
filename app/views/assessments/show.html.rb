@@ -17,7 +17,10 @@ class Views::Assessments::Show < Views::Base
 
           p class: "assessments__reference" do
             text "Reference "
-            link_to assessment.token, assessment_path(assessment.token), class: "assessments__link"
+
+            link_to assessment.reference_id,
+              assessment_path(assessment),
+              class: "assessments__link"
           end
 
           div class: "assessments__summary" do

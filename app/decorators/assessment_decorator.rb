@@ -1,6 +1,10 @@
 class AssessmentDecorator < Draper::Decorator
   delegate_all
 
+  def reference_id
+    object.to_param
+  end
+
   def county_name
     nodes.counties.pluck(:title).first
   end
