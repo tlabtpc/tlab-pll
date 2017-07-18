@@ -72,7 +72,7 @@ class CrossChecksController < ApplicationController
   end
 
   def before_cross_check_path
-    if assessment.primary_referrals.any?
+    if assessment.featured_referrals.any?
       assessment_referrals_path
     else
       # destroy the terminal node and allow user to re-select

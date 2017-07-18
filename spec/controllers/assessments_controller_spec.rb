@@ -8,6 +8,12 @@ describe AssessmentsController do
       get :show, params: { id: assessment.id }
       expect(response).to render_template 'assessments/show'
       expect(assigns[:assessment]).to eq assessment
+      expect(assessment.reload.submitted_at).to be_present
+    end
+
+    it 'does not updated submitted_at if it is already set' do
+      assessment.update(submitted_at: 1.day.ago)
+      expect { get :show, params: { id: assessment.id } }.to_not change { assessment.submitted_at }
     end
   end
 

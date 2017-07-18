@@ -41,8 +41,12 @@ describe Assessment do
     expect(assessment.referrals).to include secondary_referral
   end
 
-  it "has primary referrals which include special referrals" do
-    expect(assessment.primary_referrals).to match_array [special_referral, primary_referral]
+  it "has featured referrals which include special referrals" do
+    expect(assessment.featured_referrals).to match_array [special_referral, primary_referral]
+  end
+
+  it 'has primary referrals' do
+    expect(assessment.primary_referrals).to match_array [primary_referral]
   end
 
   it "has secondary referrals" do
@@ -51,7 +55,7 @@ describe Assessment do
 
   describe '#to_param' do
     it 'should combine id + created_at' do
-      subject.created_at = Time.local(2017, 7, 8)
+      subject.created_at = Time.zone.local(2017, 7, 8)
       subject.id = 10
 
       expect(subject.to_param).to eq('10-20170708')
