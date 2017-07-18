@@ -1,24 +1,23 @@
 class Promulgators::Node < Promulgators::Base
   attr_reader :parent
 
-  def initialize(files:, path: [])
+  def initialize(files: [], path: [], parent: nil)
     super(files: files)
-    @path = path
-    raise "Could not navigate path" unless path.empty? || @parent = determine_parent(path)
+    @parent = parent || parent_from_path(path)
+    raise "Could not navigate path" if @parent.blank? && path.present?
   end
 
   def promulgate!
-    records_to_promulgate.each_with_index do |child_node, index|
-      created_node = create_model(child_node.merge(position: index))
-      self.class.new(files: files_tail, path: create_model(child_node.merge(position: index))).promulgate!
+    records_to_promulgate.each_with_index do |record, index|
+      self.class.new(files: files[1..-1], parent: create_model(record.merge(position: index))).promulgate!
     end if files.present?
   end
 
   private
 
-  def determine_parent(current, path)
+  def parent_from_path(path, current = nil)
     return current unless path.any?
-    determine_parent current.children.find_by(title: path[0]), path[1..-1]
+    parent_from_path path[1..-1], (current&.children || Node).find_by(title: path[0])
   end
 
   def resource
