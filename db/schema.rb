@@ -89,11 +89,11 @@ ActiveRecord::Schema.define(version: 20170718122208) do
 
   create_table "referrals", force: :cascade do |t|
     t.string   "type"
-    t.string   "title"
     t.text     "markdown_content"
-    t.string   "link"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "link"
+    t.string   "title"
     t.integer  "priority",            default: 1, null: false
     t.text     "markdown_content_es"
     t.text     "description"
