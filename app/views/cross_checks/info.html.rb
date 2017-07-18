@@ -6,10 +6,10 @@ class Views::CrossChecks::Info < Views::Base
     content_for :card do
       h4 "Please provide the following:"
       cross_check_form do |f|
-        f.label :name, for: :cross_check_first_name
+        f.label 'Your first name', for: :cross_check_first_name
         f.text_field :first_name
 
-        f.label :name, for: :cross_check_last_name
+        f.label 'Your last name', for: :cross_check_last_name
         f.text_field :last_name
 
         f.label :phone, for: :cross_check_caseworker_phone
