@@ -2,7 +2,7 @@ class AssessmentsController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
 
   def show
-    @assessment = Assessment.find(params[:id])
+    @assessment = assessment.decorate
   end
 
   def new
@@ -18,6 +18,11 @@ class AssessmentsController < ApplicationController
   end
 
   private
+
+  def assessment
+    Assessment.find_by(token: params[:id]) ||
+    Assessment.find_by(id: params[:id])
+  end
 
   def assessment_params
     params.fetch(:assessment, {}).permit(referral_ids: [])
