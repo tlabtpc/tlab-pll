@@ -2,6 +2,6 @@ class Views::PrimaryReferralsMailer::Show < Views::Base
   needs :referral
 
   def content
-    text "THIS IS EMAIL CONTENT"
+    rawtext markdown(referral.markdown_content)
   end
 end
