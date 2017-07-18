@@ -10,6 +10,11 @@ class Views::Assessments::Show < Views::Base
             h1 "Thank you!", class: "assessments__title"
           end
 
+          if assessment.details
+            p "Project Legal Link will provide a cross-check and will follow-up with you.", class: "assessments__reference"
+          end
+          # TODO: this issue has been sent to person@socialservice.org?
+
           p class: "assessments__reference" do
             text "Reference "
             link_to assessment.token, assessment_path(assessment.token), class: "assessments__link"
