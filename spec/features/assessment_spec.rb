@@ -144,13 +144,10 @@ describe "assessment", js: true do
     end
 
     step 'view assessment page' do
-      expect(page).to have_content "Yay, you're done!"
+      expect(page).to have_content "Thank you, Angela!"
 
       [
         special_referral,
-        root_node,
-        county_node,
-        category_node,
         primary_referral,
         secondary_referral
       ].each do |content|
