@@ -10,7 +10,10 @@ class Views::Assessments::Show < Views::Base
             h1 "Thank you!", class: "assessments__title"
           end
 
-          p "Reference #{assessment.token}", class: "assessments__reference"
+          p class: "assessments__reference" do
+            text "Reference "
+            link_to assessment.token, assessment_path(assessment.token), class: "assessments__link"
+          end
 
           div class: "assessments__summary" do
             h2 "Summary of Issue", class: "assessments__title"
