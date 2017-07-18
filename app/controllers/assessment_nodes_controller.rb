@@ -3,15 +3,10 @@ class AssessmentNodesController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
 
   def create
-    unless assessment_node
-      raise "Unable to create to assessment node"
-    end
+    raise "Unable to create to assessment node" unless assessment_node
 
-    unless assessment.nodes.include?(node)
-      if node.terminal?
-        assessment.nodes << node
-      end
-
+    if !assessment.nodes.include?(node)
+      assessment.nodes << node if node.terminal?
       assessment.referrals << node.referrals
     end
 
@@ -19,11 +14,9 @@ class AssessmentNodesController < ApplicationController
   end
 
   def destroy
-    if last_assessment_node = assessment.last_assessment_node
-      node = last_assessment_node.node
-      last_assessment_node.destroy
-      assessment.referrals.delete(node.referrals)
-      redirect_to node
+    last_nonterminal_node = assessment.non_terminal_nodes.last
+    if assessment.assessment_nodes.last&.destroy
+      redirect_to last_nonterminal_node
     else
       assessment.destroy
       redirect_to new_assessment_path

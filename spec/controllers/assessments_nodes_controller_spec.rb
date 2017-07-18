@@ -81,6 +81,15 @@ describe AssessmentNodesController do
         expect(response).to redirect_to page_two.node
       end
 
+      it 'redirects to the last non-terminal node for the assessment' do
+        node.update(terminal: true)
+        expect {
+          click_back_while_viewing_page_three
+        }.to change { assessment.assessment_nodes.count }.from(2).to(1)
+
+        expect(response).to redirect_to page_one.node
+      end
+
       it 'removes any referrals related to that node' do
         node.referrals << referral
         assessment.referrals << node.referrals

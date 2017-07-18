@@ -48,13 +48,4 @@ describe Assessment do
   it "has secondary referrals" do
     expect(assessment.secondary_referrals).to eq [secondary_referral]
   end
-
-
-  it "has a terminal assessment node" do
-    expect(assessment.terminal_assessment_node).to eq assessment_terminal_node
-  end
-
-  it "has a last_assessment_node" do
-    expect(assessment.last_assessment_node).to eq assessment_terminal_node
-  end
 end
