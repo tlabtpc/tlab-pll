@@ -35,13 +35,27 @@ h4 {
 }
 
 .assessments {
-
   &__form {
     padding: 0 3rem;
   }
 
   &__title {
     @include headerText;
+    text-align: center;
+  }
+
+  &__link {
+    @include link;
+    font-size: 16px;
+  }
+
+  &__action-item {
+    margin: 0;
+    i { margin-right: 10px; }
+  }
+
+  &__secondary-referral {
+    i { margin-right: 10px; }
   }
 
   &__checkbox-label-agreements {
@@ -60,8 +74,22 @@ h4 {
     margin-bottom: 15px;
   }
 
-  &__special-referral-list {
+ &__special-referral-list {
     margin: 0;
     list-style-type: none;
+  }
+
+  &__info {
+    line-height: 1.5rem;
+    margin: 0;
+  }
+
+  &__reference {
+    text-align: center;
+  }
+
+  &__summary {
+    border: 1px solid $dust;
+    padding: 0 20px 20px 20px;
   }
 }

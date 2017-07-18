@@ -29,11 +29,7 @@ class Views::Assessments::New < Views::Base
           f.submit(class: "assessments__submit hide", id: :assessment_submit, disabled: true)
         end
 
-        div class: "card__footer" do
-          image_tag "project_legal_link.png", class: "card__image"
-          image_tag "bay_area_legal_aid.png", class: "card__image"
-          p "Project Legal Link is a program of Bay Area Legal Aid"
-        end
+        render "logos"
       end
     end
 
@@ -48,7 +44,7 @@ class Views::Assessments::New < Views::Base
   def assessment_check(title, subtitle, id)
     input(class: "assessments__checkbox-input", id: "agree_#{id}", type: "checkbox")
     label(class: "assessments__checkbox-label assessments__checkbox-label-agreements", for: "agree_#{id}") do
-      div(class: "assessments__checkbox-label-check") { i(class: "fa fa-lg fa-check") }
+      div(class: "assessments__checkbox-label-check") { fa_icon('check', 'fa-lg') }
       div(class: "assessments__checkbox-label-text") do
         strong title
         p subtitle

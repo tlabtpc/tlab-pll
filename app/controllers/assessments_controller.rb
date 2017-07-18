@@ -2,7 +2,7 @@ class AssessmentsController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
 
   def show
-    @assessment = Assessment.find(params[:id])
+    @assessment = Assessment.find(params[:id]).decorate
   end
 
   def new

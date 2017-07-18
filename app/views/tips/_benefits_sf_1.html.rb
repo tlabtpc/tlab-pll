@@ -1,4 +1,4 @@
-class Views::Tips::Category < Views::Base
+class Views::Tips::BenefitsSf1 < Views::Base
   def content
     render "tips/caseworker_header"
     p "Most legal help is available for problems with benefits, such as terminations, denials, or overpayments."

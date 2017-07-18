@@ -49,12 +49,12 @@ describe Assessment do
     expect(assessment.secondary_referrals).to eq [secondary_referral]
   end
 
+  describe '#to_param' do
+    it 'should combine id + created_at' do
+      subject.created_at = Time.local(2017, 7, 8)
+      subject.id = 10
 
-  it "has a terminal assessment node" do
-    expect(assessment.terminal_assessment_node).to eq assessment_terminal_node
-  end
-
-  it "has a last_assessment_node" do
-    expect(assessment.last_assessment_node).to eq assessment_terminal_node
+      expect(subject.to_param).to eq('10-20170708')
+    end
   end
 end

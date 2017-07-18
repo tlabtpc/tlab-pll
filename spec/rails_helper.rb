@@ -5,11 +5,6 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-require_relative "support/mom"
-require_relative "support/match_html"
-require_relative "support/generic_helper"
-require_relative "support/feature_helper"
-
 headless_capybara = true
 require 'capybara/rails'
 require 'capybara/rspec'
@@ -40,7 +35,7 @@ end
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.

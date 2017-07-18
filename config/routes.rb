@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   end
 
   resources :nodes, only: [:show]
-  resources :primary_referrals, only: [:show]
+  resources :primary_referrals, only: [:show] do
+    post :send_email, on: :member
+  end
 
   namespace :dev do
     get '/' => :index
@@ -30,8 +32,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "primary_referrals#index"
-    resources :primary_referrals, except: :destroy
-    resources :secondary_referrals, except: :destroy
+    resources :primary_referrals, except: [:destroy, :new, :create]
+    resources :secondary_referrals, except: [:destroy, :new, :create]
   end
-
 end

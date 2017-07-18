@@ -20,15 +20,11 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
-  def terminal_assessment_node
-    assessment_nodes.joins(:node).where("terminal IS TRUE").first
-  end
-
-  def last_assessment_node
-    assessment_nodes.order(:created_at).last
-  end
-
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
+  end
+
+  def to_param
+    [id, created_at.strftime("%Y%m%d")].join('-')
   end
 end

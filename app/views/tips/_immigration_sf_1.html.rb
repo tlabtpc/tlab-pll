@@ -1,4 +1,4 @@
-class Views::Tips::Category < Views::Base
+class Views::Tips::ImmigrationSf1 < Views::Base
   def content
     render "tips/caseworker_header"
     p "If the client is not sure what type of relief she might be eligible for, she can use the screening tool at www.immi.org to find out."

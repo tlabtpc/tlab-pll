@@ -1,7 +1,21 @@
 @import 'colors';
+@import 'mixins';
+
+@include checkbox(primary-referral);
 
 .primary-referral {
-  max-width: 50%;
+  &__top-bar {
+    text-align: right;
+  }
+
+  &__open-email-modal {
+    color: $gossamer;
+    font-size: 24px;
+
+    i {
+      padding-right: 5px;
+    }
+  }
 
   &__markdown {
     a {
@@ -9,16 +23,38 @@
       color: black;
     }
   }
-}
 
-.primary-referrals-show .footer__buttons a {
-  color: $gossamer;
-  text-transform: uppercase;
-  margin-left: 60px;
-  font-weight: bold;
-  font-size: 1.5rem;
-
-  i {
-    padding-right: 10px;
+  &__email-modal-header {
+    text-align: center;
+    font-size: 20px;
   }
+
+  &__email-submit-container {
+    text-align: center;
+  }
+
+  &__email-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: $gossamer;
+    cursor: pointer;
+
+    i {
+      padding-right: 5px;
+    }
+  }
+
+  &__checkbox-label-text {
+    color: black;
+  }
+
+  &__checkbox-label--email {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  &__checkbox-label-check--email {
+    margin-left: 0 !important;
+ }
 }

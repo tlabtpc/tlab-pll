@@ -7,10 +7,6 @@ class CrossCheck < ApplicationRecord
 
   attr_accessor :perform_check
 
-  def caseworker_first_name
-    caseworker_name.to_s.split(' ').first
-  end
-
   def self.next_step_for(action_name)
     STEPS[current_step_index(action_name) + 1]
   end

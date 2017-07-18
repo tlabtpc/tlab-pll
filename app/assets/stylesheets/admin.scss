@@ -2,3 +2,11 @@
   align-items: flex-start;
   textarea { min-height: 350px; }
 }
+
+ol, ul {
+  list-style-type: disc;
+}
+
+ul > li {
+  margin-left: 10px;
+}

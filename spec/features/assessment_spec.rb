@@ -9,7 +9,8 @@ describe "assessment", js: true do
     {
       details: "Some details",
       deadlines: 'deadlines',
-      caseworker_name: "Angela Smith",
+      first_name: "Angela",
+      last_name: "Smith",
       caseworker_phone: "555-555-5555",
       caseworker_email: "angela@smith.com"
     }
@@ -64,7 +65,7 @@ describe "assessment", js: true do
     step "select county node" do
       path = current_path
       expect(page).to have_css ".button--submit[disabled]"
-      expect(page).to have_css ".tips"
+      expect_to_have_tips(text: "select the county that the case is in")
 
       expect(page).to have_content county_node.question
 
@@ -75,6 +76,7 @@ describe "assessment", js: true do
 
     step "select category node" do
       expect(page).to have_content category_node.question
+      expect_to_have_tips(text: " learn more about the following categories")
 
       click_square_and_next
     end
@@ -115,7 +117,8 @@ describe "assessment", js: true do
 
       # basic info step
       expect(page).to have_content "Please provide the following"
-      fill_in "cross_check_caseworker_name", with: cross_check_input[:caseworker_name]
+      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
+      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
       fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
       fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
       click_next
@@ -144,13 +147,10 @@ describe "assessment", js: true do
     end
 
     step 'view assessment page' do
-      expect(page).to have_content "Yay, you're done!"
+      expect(page).to have_content "Thank you, Angela!"
 
       [
         special_referral,
-        root_node,
-        county_node,
-        category_node,
         primary_referral,
         secondary_referral
       ].each do |content|
@@ -159,6 +159,10 @@ describe "assessment", js: true do
 
       # TODO: add cross check info to assessment page and ensure that it shows up correctly
     end
+  end
+
+  def expect_to_have_tips(**options)
+    expect(page).to have_css ".tips", options
   end
 
   def click_square_and_next

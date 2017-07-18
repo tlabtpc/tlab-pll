@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718065418) do
+ActiveRecord::Schema.define(version: 20170718122208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,9 +47,10 @@ ActiveRecord::Schema.define(version: 20170718065418) do
   end
 
   create_table "cross_checks", force: :cascade do |t|
+    t.integer  "assessment_id"
     t.text     "details"
     t.text     "deadlines"
-    t.string   "caseworker_name"
+    t.string   "first_name"
     t.string   "caseworker_phone"
     t.string   "caseworker_email"
     t.string   "caseworker_organization"
@@ -60,8 +61,9 @@ ActiveRecord::Schema.define(version: 20170718065418) do
     t.integer  "support_level"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.integer  "assessment_id",                              null: false
     t.jsonb    "action_items",                  default: [], null: false
+    t.string   "last_name"
+    t.index ["assessment_id"], name: "index_cross_checks_on_assessment_id", using: :btree
   end
 
   create_table "node_referrals", force: :cascade do |t|
