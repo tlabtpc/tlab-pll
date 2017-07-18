@@ -20,6 +20,7 @@ gem "sorcery"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "uglifier", ">= 1.3.0"
 gem "administrate", "~> 0.7"
+gem "draper"
 
 group :test do
   gem "database_cleaner"

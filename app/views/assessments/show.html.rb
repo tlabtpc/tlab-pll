@@ -3,30 +3,77 @@ class Views::Assessments::Show < Views::Base
 
   def content
     content_for :card do
-      row do
-        columns do
-          h1 "Yay, you're done!"
-
-          h3 "Nodes selected:"
-          ul do
-            assessment.nodes.each { |node| li node.title }
+        div(class: "assessments__show") do
+          if assessment.caseworker_first_name
+            h1 "Thank you, #{assessment.caseworker_first_name}!", class: "assessments__title"
+          else
+            h1 "Thank you!", class: "assessments__title"
           end
 
-          h3 "Referrals:"
-          ul do
-            assessment.primary_referrals.each do |referral|
-              li { link_to referral.title, primary_referral_path(referral) }
-            end
+          p "Reference #{assessment.token}", class: "assessments__reference"
 
-            assessment.secondary_referrals.each do |referral|
-              li { text referral.title }
+          div class: "assessments__summary" do
+            h2 "Summary of Issue", class: "assessments__title"
+            assessment_info "Location: ", assessment.county_name
+            assessment_info "Issue: ", assessment.category_name
+            assessment_info "Description: ", assessment.details
+            assessment_info "Deadlines: ", assessment.deadlines
+            assessment_info "Attorney: ", assessment.attorney_status
+          end
+
+          div class: "assessments__summary" do
+            h2 "Referrals", class: "assessments__title"
+            assessment.primary_referrals.each { |referral| primary_referral(referral) }
+          end
+
+          div class: "assessments__summary" do
+            h2 "Other Resources", class: "assessments__title"
+            assessment.secondary_referrals.each { |referral| secondary_referral(referral) }
+          end
+
+          if assessment.action_items.present?
+            div class: "assessments__summary" do
+              h2 "Follow-up Support Actions", class: "assessments__title"
+              assessment.action_items.each do |item|
+                p class: "assessments__action-item" do
+                  fa_icon "check"
+                  text item
+                end
+              end
             end
           end
 
-          h3 "Cross Check:"
-          text "(cross check info goes here)"
+          div class: "assessments__summary" do
+            h2 "Don't forget", class: "assessments__title"
+            render "tips/assessment"
+          end
+
         end
+
+        render "logos"
       end
+  end
+
+  def assessment_info(title, value)
+    p class: "assessments__info" do
+      strong title
+      text value
+    end if value.present?
+  end
+
+  def primary_referral(referral)
+    h4 class: "tips__header" do
+      i class: "fa fa-telegram"
+      span referral.title
+    end
+    p referral.description
+    p { link_to primary_referral_url(referral), primary_referral_path(referral), class: "assessments__link" }
+  end
+
+  def secondary_referral(referral)
+    p class: "assessments__secondary-referral" do
+      fa_icon "external-link", "fa-lg"
+      link_to(referral.title, referral.link, class: "assessments__link")
     end
   end
 end

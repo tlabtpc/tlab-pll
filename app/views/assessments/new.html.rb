@@ -29,11 +29,7 @@ class Views::Assessments::New < Views::Base
           f.submit(class: "assessments__submit hide", id: :assessment_submit, disabled: true)
         end
 
-        div class: "card__footer" do
-          image_tag "project_legal_link.png", class: "card__image"
-          image_tag "bay_area_legal_aid.png", class: "card__image"
-          p "Project Legal Link is a program of Bay Area Legal Aid"
-        end
+        render "logos"
       end
     end
 
