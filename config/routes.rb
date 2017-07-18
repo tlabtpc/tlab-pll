@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :assessment_referrals, only: :index
-  resources :assessment_emails, only: :create
 
   resources :cross_checks, only: [] do
     CrossCheck::STEPS.each { |step| get step, on: :collection }
@@ -22,7 +21,9 @@ Rails.application.routes.draw do
   end
 
   resources :nodes, only: [:show]
-  resources :primary_referrals, only: [:show]
+  resources :primary_referrals, only: [:show] do
+    post :send_email, on: :member
+  end
 
   namespace :dev do
     get '/' => :index
