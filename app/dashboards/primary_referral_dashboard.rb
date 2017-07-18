@@ -1,4 +1,5 @@
 require "administrate/base_dashboard"
+include ApplicationHelper
 
 class PrimaryReferralDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
