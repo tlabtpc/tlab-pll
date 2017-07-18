@@ -65,7 +65,7 @@ describe "assessment", js: true do
     step "select county node" do
       path = current_path
       expect(page).to have_css ".button--submit[disabled]"
-      expect(page).to have_css ".tips"
+      expect_to_have_tips(text: "select the county that the case is in")
 
       expect(page).to have_content county_node.question
 
@@ -76,6 +76,7 @@ describe "assessment", js: true do
 
     step "select category node" do
       expect(page).to have_content category_node.question
+      expect_to_have_tips(text: " learn more about the following categories")
 
       click_square_and_next
     end
@@ -158,6 +159,10 @@ describe "assessment", js: true do
 
       # TODO: add cross check info to assessment page and ensure that it shows up correctly
     end
+  end
+
+  def expect_to_have_tips(**options)
+    expect(page).to have_css ".tips", options
   end
 
   def click_square_and_next

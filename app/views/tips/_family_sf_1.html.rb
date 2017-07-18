@@ -1,4 +1,4 @@
-class Views::Tips::Category < Views::Base
+class Views::Tips::FamilySf1 < Views::Base
   def content
     render "tips/caseworker_header"
     p "Violence, threats of violence, harrassing, stalking etc. from a close family member or boyfriend, girlfriend, partner, ex partner etc."

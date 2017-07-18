@@ -1,4 +1,4 @@
-class Views::Tips::Category < Views::Base
+class Views::Tips::FamilySf2 < Views::Base
   def content
     render "tips/caseworker_header"
     p "Note that most of the free family law help is available for those experiencing domestic violence."
