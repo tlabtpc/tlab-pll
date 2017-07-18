@@ -9,7 +9,8 @@ describe "assessment", js: true do
     {
       details: "Some details",
       deadlines: 'deadlines',
-      caseworker_name: "Angela Smith",
+      first_name: "Angela",
+      last_name: "Smith",
       caseworker_phone: "555-555-5555",
       caseworker_email: "angela@smith.com"
     }
@@ -115,7 +116,8 @@ describe "assessment", js: true do
 
       # basic info step
       expect(page).to have_content "Please provide the following"
-      fill_in "cross_check_caseworker_name", with: cross_check_input[:caseworker_name]
+      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
+      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
       fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
       fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
       click_next
