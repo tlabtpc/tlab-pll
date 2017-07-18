@@ -42,15 +42,14 @@
   max-width: 940px;
   margin: 0 auto;
   padding: 0;
-  height: 0;
   transition: all 0.2s;
   visibility: hidden;
 }
 
 .footer-flash--visible {
   background: linear-gradient($travertine, $lemon-chiffon);
-  line-height: 0rem;
-  padding: 30px;
+  line-height: 1.2;
+  padding: 20px;
   visibility: visible;
 }
 
