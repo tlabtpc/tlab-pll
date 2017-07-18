@@ -20,7 +20,7 @@ class Views::Layouts::Application < Views::Base
 
         style do
           text(<<~STYLE.html_safe)
-                body, h1, h2, h3, h4, p { font-family: '#{font}', serif; }
+            body, h1, h2, h3, h4, p { font-family: '#{font}', serif; }
           STYLE
         end
       end
@@ -50,10 +50,12 @@ class Views::Layouts::Application < Views::Base
         div(class: :footer) do
           div(class: "footer-flash")
 
-          div(class: "footer__buttons") do
-            content_for?(:back) ? yield(:back) : div
-            content_for?(:next) ? yield(:next) : div
-            div # spacer for flexbox
+          div(class: "footer__buttons-container") do
+            div(class: "footer__buttons") do
+              content_for?(:back) ? yield(:back) : div
+              content_for?(:next) ? yield(:next) : div
+              div # spacer for flexbox
+            end
           end
         end
       end

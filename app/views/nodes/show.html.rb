@@ -24,7 +24,7 @@ class Views::Nodes::Show < Views::Base
     end
 
     content_for :back do
-      link_to assessment_nodes_path, class: "button button--back secondary", method: :delete do
+      link_to assessment_nodes_path, class: "button button--back", method: :delete do
         fa_icon 'arrow-left'
         span "Back"
       end

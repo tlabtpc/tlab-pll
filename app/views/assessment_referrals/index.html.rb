@@ -28,7 +28,7 @@ class Views::AssessmentReferrals::Index < Views::Base
     end
 
     content_for :back do
-      link_to assessment_nodes_path, method: :delete, class: "button button--back secondary" do
+      link_to assessment_nodes_path, method: :delete, class: "button button--back" do
         fa_icon "arrow-left"
         text "BACK"
       end

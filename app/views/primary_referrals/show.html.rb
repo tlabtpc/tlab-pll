@@ -23,7 +23,7 @@ class Views::PrimaryReferrals::Show < Views::Base
     end
 
     content_for :back do
-      link_to assessment_referrals_path, class: "button button--back secondary" do
+      link_to assessment_referrals_path, class: "button button--back" do
         fa_icon "arrow-left"
         text "BACK"
       end
