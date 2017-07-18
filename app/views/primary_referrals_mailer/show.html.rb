@@ -1,4 +1,5 @@
 class Views::PrimaryReferralsMailer::Show < Views::Base
+  include ApplicationHelper
   needs :referral
 
   def content
