@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "primary_referrals#index"
-    resources :primary_referrals, except: :destroy
-    resources :secondary_referrals, except: :destroy
+    resources :primary_referrals, except: [:destroy, :new, :create]
+    resources :secondary_referrals, except: [:destroy, :new, :create]
   end
 end
