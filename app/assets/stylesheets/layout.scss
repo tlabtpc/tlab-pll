@@ -6,6 +6,13 @@ body {
   height: 100%;
 }
 
+.flash {
+  text-align: center;
+  background: $gossamer;
+  padding: 10px;
+  color: $bluehair;
+}
+
 .container {
   display: flex;
   max-height: 100%;
