@@ -7,16 +7,16 @@ class Promulgators::Master < Promulgators::Base
       map_for(county).each { |category, files| promulgate_node_tree(county, category, files) }
     end
 
-    Promulgators::ReferralNode.new(files: []).promulgate!
+    Promulgators::NodeReferral.new(files: [:all]).promulgate!
   end
 
   private
 
   def map_for(county)
-    node_map[county] || node_map[:default]
+    node_map[county] || node_map['default']
   end
 
-  def promulgate_node_tree(count, category, files)
+  def promulgate_node_tree(county, category, files)
     Promulgators::Node.new(path: [Node.root.title, county, category], files: files).promulgate!
   end
 

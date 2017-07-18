@@ -9,7 +9,13 @@ class Node < ApplicationRecord
   scope :categories, -> { where(is_category: true) }
 
   def primary_referrals=(referral_titles)
-    self.referrals << Referral.where(title: referral_titles)
+    referral_titles.each_with_index do |referral_title, position|
+      self.node_referrals.find_or_create_by(
+        referral: PrimaryReferral.find_by(title: referral_title)
+      ).update(
+        position: position
+      )
+    end if terminal?
   end
 
   def self.root

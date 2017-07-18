@@ -11,12 +11,9 @@ describe Node do
   describe "#primary_referrals=" do
     let(:node) { create(:node, terminal: true) }
     let(:other_node) { create(:node, terminal: true) }
-
-    before do
-      ["first", "second", "third"].each do |title|
-        create(:primary_referral, title: title)
-      end
-    end
+    let!(:first) { create :primary_referral, title: "first" }
+    let!(:second) { create :primary_referral, title: "second" }
+    let!(:third) { create :primary_referral, title: "third" }
 
     it "sets primary referrals on a terminal node, with order" do
       expect {
@@ -26,6 +23,13 @@ describe Node do
       expect {
         other_node.primary_referrals = ["first", "second", "third"]
       }.to_not change { node.reload.referrals.count }
+    end
+
+    it "sets position on node_referrals" do
+      node.primary_referrals = ["first", "second", "third"]
+      expect(node.node_referrals.find_by(referral: first).position).to  eq 0
+      expect(node.node_referrals.find_by(referral: second).position).to eq 1
+      expect(node.node_referrals.find_by(referral: third).position).to  eq 2
     end
 
     it "deals with unknown referral titles" do
