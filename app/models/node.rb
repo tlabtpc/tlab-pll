@@ -9,7 +9,7 @@ class Node < ApplicationRecord
   scope :categories, -> { where(is_category: true) }
 
   def primary_referrals=(referral_titles)
-    self.referrals << Referral.where(title: referral_titles)
+    self.referrals = Referral.where(title: referral_titles)
   end
 
   def self.root

@@ -2,7 +2,9 @@ require "rails_helper"
 
 describe "assessment", js: true do
   before do
-    load Rails.root + "db/seeds.rb"
+    suppress_output {
+      load Rails.root + "db/seeds.rb"
+    }
   end
 
   specify do

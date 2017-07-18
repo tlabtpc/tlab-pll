@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170718122208) do
   end
 
   create_table "cross_checks", force: :cascade do |t|
+    t.integer  "assessment_id"
     t.text     "details"
     t.text     "deadlines"
     t.string   "first_name"
@@ -60,9 +61,9 @@ ActiveRecord::Schema.define(version: 20170718122208) do
     t.integer  "support_level"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.integer  "assessment_id",                              null: false
     t.jsonb    "action_items",                  default: [], null: false
     t.string   "last_name"
+    t.index ["assessment_id"], name: "index_cross_checks_on_assessment_id", using: :btree
   end
 
   create_table "node_referrals", id: false, force: :cascade do |t|
@@ -89,11 +90,11 @@ ActiveRecord::Schema.define(version: 20170718122208) do
 
   create_table "referrals", force: :cascade do |t|
     t.string   "type"
+    t.string   "title"
     t.text     "markdown_content"
+    t.string   "link"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "link"
-    t.string   "title"
     t.integer  "priority",            default: 1, null: false
     t.text     "markdown_content_es"
     t.text     "description"
