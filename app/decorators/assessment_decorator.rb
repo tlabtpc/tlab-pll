@@ -10,7 +10,7 @@ class AssessmentDecorator < Draper::Decorator
   end
 
   def caseworker_first_name
-    cross_check.caseworker_name.to_s.split(' ').first
+    cross_check.first_name
   end
 
   def details
