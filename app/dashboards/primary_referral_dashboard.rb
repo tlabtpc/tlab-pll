@@ -9,7 +9,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    unique_identifier: Field::Text,
+    unique_identifier: Field::String,
     title: Field::String,
     description: Field::Text,
     markdown_content: Field::Text,
@@ -45,8 +45,8 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :description,
     :unique_identifier,
+    :description,
     :markdown_content,
     :markdown_content_es
   ].freeze
@@ -55,6 +55,6 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(primary_referral)
-    "##{primary_referral.id} - #{primary_referral.markdown_content}"
+    primary_referral.title
   end
 end
