@@ -31,8 +31,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "primary_referrals#index"
-    resources :primary_referrals
-    resources :secondary_referrals
-    resources :nodes
+    resources :primary_referrals, except: :destroy
+    resources :secondary_referrals, except: :destroy
   end
 end

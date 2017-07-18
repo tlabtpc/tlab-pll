@@ -67,6 +67,7 @@ describe AssessmentNodesController do
     describe 'when there are assessment_nodes to destroy' do
       let!(:page_one) { create(:assessment_node, assessment: assessment, node: parent_node) }
       let!(:page_two) { create(:assessment_node, assessment: assessment, node: node) }
+      let!(:referral) { create(:primary_referral) }
 
       def click_back_while_viewing_page_three
         delete :destroy
@@ -78,6 +79,17 @@ describe AssessmentNodesController do
         }.to change { assessment.assessment_nodes.count }.from(2).to(1)
 
         expect(response).to redirect_to page_two.node
+      end
+
+      it 'removes any referrals related to that node' do
+        node.referrals << referral
+        assessment.referrals << node.referrals
+
+        expect(assessment.referrals.count).to eq 1
+
+        click_back_while_viewing_page_three
+
+        expect(assessment.reload.referrals.count).to eq 0
       end
     end
 

@@ -44,9 +44,16 @@ class Mom
     )
   end
 
+  def node_referral(**args)
+    NodeReferral.new(
+      node: node,
+      referral: primary_referral,
+      **args
+    )
+  end
+
   def primary_referral(**args)
     PrimaryReferral.new(
-      terminal_node: node(terminal: true),
       title: "PrimaryTitle",
       markdown_content: "#Header",
       **args
@@ -55,7 +62,6 @@ class Mom
 
   def secondary_referral(**args)
     SecondaryReferral.new(
-      terminal_node: node(terminal: true),
       title: "SecondaryTitle",
       link: "referrals.secondary.biz",
       **args

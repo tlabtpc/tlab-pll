@@ -47,13 +47,13 @@ class Views::AssessmentReferrals::Index < Views::Base
   end
 
   def primary_referral(referral)
-    # TODO: primary identifier
+    p referral.unique_identifier
     li(class: "assessment-referrals__primary-referral") do
       h4 class: "assessment-referrals__title" do
         fa_icon "telegram"
         text referral.title
       end
-      # TODO: description, or preview of referral?
+      p referral.description
       link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
     end
     # TODO: is this useful?

@@ -22,6 +22,7 @@ class AssessmentNodesController < ApplicationController
     if last_assessment_node = assessment.last_assessment_node
       node = last_assessment_node.node
       last_assessment_node.destroy
+      assessment.referrals.delete(node.referrals)
       redirect_to node
     else
       assessment.destroy

@@ -1,0 +1,13 @@
+defaults:
+  question: "Has your client received an unlawful detainer, summons and complaint, or a sheriff's notice to vacate?"
+  tip: "housing_sf_1"
+
+records:
+  - title: "Yes"
+    description: "Make an immediate referral! Press “next” to proceed to the Refer stage."
+    terminal: true
+    primary_referrals:
+      - "Eviction Defense Collaborative (EDC)"
+      - "Guide to the Unlawful Detainer Process"
+  - title: "No"
+  - title: "I don't know"

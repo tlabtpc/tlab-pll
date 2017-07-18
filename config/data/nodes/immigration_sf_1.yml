@@ -1,0 +1,61 @@
+defaults:
+  question: "Here are some of the most common issues in this category. Can you tell which one your client needs help with?"
+  tip: "immigration_sf_1"
+  terminal: true
+
+records:
+  - title: "Deportation defense"
+    description: "Clients in deportation proceedings may have been stopped at the border, have a bracelet, be in immigration supervision, have a court date, and/or have paperwork from a border location."
+    primary_referrals:
+      - "Dolores Street"
+      - "Pangea Legal Services"
+      - "Centro Legal de la Raza"
+      - "Immigration Court and Removal Proceedings Information"
+      - "Detention Information from the National Immigration Project"
+      - "Pathways to Status"
+  - title: "Naturalization"
+    description: "Client has a green card and needs help applying for citizenship or has other naturalization-related questions."
+    primary_referrals:
+      - "SF Pathways to Citizenship Initiative"
+      - "International Institute of the Bay Area"
+      - "Naturalization FAQ"
+      - "Citizenship Through Naturalization"
+      - "Pathways to Status"
+  - title: "Family or work petitions"
+    description: "Some people apply for status through close family members who are citizens, or through an employer. "
+    primary_referrals:
+      - "International Institute of the Bay Area"
+      - "Jubilee Immigration Advocates"
+      - "Family Petitions"
+      - "Pathways to Status"
+  - title: "DACA  (Deferred Action for Childhood Arrivals)"
+    description: "Relief for people who came to the United States when young and went or are going to school."
+    primary_referrals:
+      - "International Institute of the Bay Area"
+      - "Jubilee Immigration Advocates"
+      - "DACA FAQ"
+      - "Pathways to Status"
+  - title: "Asylum"
+    description: "Relief for people persecuted in their home countries."
+    primary_referrals:
+      - "Lawyers' Committee for Civil Rights, Asylum Program (LCCR)"
+      - "East Bay Sanctuary Covenant"
+      - "Asylum FAQ"
+      - "Pathways to Status"
+  - title: "U-Visa, T-Visa, VAWA"
+    description: "Relief for people who have been subjected to crimes or domestic violence while in the United States."
+    primary_referrals:
+      - "Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)"
+      - "Asian Pacific Islander Legal Outreach (APILO)"
+      - "U-Visa FAQ"
+      - "T-Visa FAQ"
+      - "VAWA FAQ"
+  - title: "Special Immigrant Juvenile Status"
+    description: "Relief for minors who came here unaccompanied or with only one parent."
+    primary_referrals:
+      - "Legal Services for Children (LSC)"
+      - "Central American Resource Center (Carecen)"
+      - "SIJS FAQ"
+      - "Pathways to Status"
+  - title: "Other"
+    description: "If the client is not sure what type of relief she might be eligible for, she can use the screening tool at www.immi.org to find out."

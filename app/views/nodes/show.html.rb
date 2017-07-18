@@ -3,11 +3,13 @@ class Views::Nodes::Show < Views::Base
   needs :assessment
 
   def content
+    children = node.children.order(position: :asc)
+    children_question = children.first&.question
     content_for(:card) do
-      p(node.question, class: "nodes__question") if node.question
+      p(children_question, class: "nodes__question") if children_question
 
       ul(class: "square-collection") do
-        node.children.order(priority: :asc).each do |child|
+        children.each do |child|
           render partial: "square", locals: {
             value: child.id,
             text: child.title,
