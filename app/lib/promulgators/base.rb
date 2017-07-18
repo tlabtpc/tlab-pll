@@ -1,14 +1,14 @@
 class Promulgators::Base
   attr_reader :files
 
-  def initialize(files)
+  def initialize(files:)
     @files = files
   end
 
   def promulgate!
     return unless files.present?
     records_to_promulgate.each { |record| create_model(record) }
-    self.class.new(files_tail).promulgate!
+    self.class.new(files: files_tail).promulgate!
   end
 
   private
