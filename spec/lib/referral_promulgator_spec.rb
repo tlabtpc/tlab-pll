@@ -14,12 +14,12 @@ describe 'Referral Promulgators' do
   end
 
   it 'populates default values' do
-    Promulgators::PrimaryReferral.new(files: [:test]).promulgate!
+    Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
     expect(Referral.pluck(:markdown_content).uniq).to eq ["content"]
   end
 
   it 'does not overwrite existing referrals' do
-    Promulgators::PrimaryReferral.new(files: [:test]).promulgate!
-    expect { Promulgators::PrimaryReferral.new(files: [:test]).promulgate! }.to_not change { SpecialReferral.count }
+    Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
+    expect { Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate! }.to_not change { SpecialReferral.count }
   end
 end

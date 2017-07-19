@@ -1,6 +1,6 @@
-class Promulgators::SecondaryReferral < Promulgators::Base
+class Promulgators::PrimaryReferral < Promulgators::Base
   private
-  
+
   def resource
     :referral
   end

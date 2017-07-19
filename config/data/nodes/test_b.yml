@@ -5,7 +5,7 @@ defaults:
 records:
   - title: "TestB1"
     primary_referrals:
-      - "Primary1"
+      - cccc
     secondary_referrals:
       - "Secondary1"
   - title: "TestB2"

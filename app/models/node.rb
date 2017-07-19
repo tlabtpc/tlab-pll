@@ -8,12 +8,12 @@ class Node < ApplicationRecord
   scope :counties, -> { where(is_county: true) }
   scope :categories, -> { where(is_category: true) }
 
-  def primary_referrals=(referral_titles)
-    set_referrals(referral_class: PrimaryReferral, titles: referral_titles)
+  def primary_referrals=(codes)
+    set_referrals(referral_class: PrimaryReferral, records: codes, find_by: :code)
   end
 
-  def secondary_referrals=(referral_titles)
-    set_referrals(referral_class: SecondaryReferral, titles: referral_titles)
+  def secondary_referrals=(titles)
+    set_referrals(referral_class: SecondaryReferral, records: titles, find_by: :title)
   end
 
   def self.root
@@ -26,9 +26,9 @@ class Node < ApplicationRecord
 
   private
 
-  def set_referrals(referral_class:, titles:)
-    titles.each_with_index do |title, position|
-      if referral = referral_class.find_by(title: title)
+  def set_referrals(referral_class:, records:, find_by:)
+    records.each_with_index do |record, position|
+      if referral = referral_class.find_by(find_by => record)
         self.node_referrals
             .find_or_create_by(referral: referral)
             .update(position: position)
