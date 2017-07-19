@@ -1,7 +1,12 @@
 defaults:
-  type: "SpecialReferral"
   markdown_content: "content"
 
 records:
-  - title: "Special1"
-  - title: "Special2"
+  - title: "Primary1"
+    type: "PrimaryReferral"
+  - title: "Primary2"
+    type: "PrimaryReferral"
+  - title: "Secondary1"
+    type: "SecondaryReferral"
+  - title: "Secondary2"
+    type: "SecondaryReferral"

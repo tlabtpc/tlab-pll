@@ -51,7 +51,7 @@ describe Assessment do
 
   describe '#to_param' do
     it 'should combine id + created_at' do
-      subject.created_at = Time.local(2017, 7, 8)
+      subject.created_at = Time.zone.local(2017, 7, 8)
       subject.id = 10
 
       expect(subject.to_param).to eq('10-20170708')

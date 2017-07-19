@@ -59,17 +59,17 @@ describe 'rake db:seed' do
     asylum_node = Node.find_by(title: "Asylum")
     expect(asylum_node.referrals.count).to eq 4
 
-    icwc = Referral.find_by title: "Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)"
-    expect(icwc.nodes).to match_array [asylum_node]
+    ebsc = Referral.find_by(title: "East Bay Sanctuary Covenant")
+    expect(ebsc.nodes).to include asylum_node
 
     # suburb-based immigration terminal node
-    crim_nodes = Node.where(title: "Criminal process + warrants")
-    crim_nodes.each do |node|
-      expect(node.referrals.count).to eq 2
-    end
+    crim_nodes = Node.where(title: "Driver's license")
+    def_offices = Referral.find_by(title: "Legal Services for Children (LSC)")
 
-    def_offices = Referral.find_by title: "List of CA Public Defender Offices"
-    expect(def_offices.nodes).to match_array crim_nodes
+    crim_nodes.each do |node|
+      expect(node.referrals.count).to eq 5
+      expect(def_offices.nodes).to include node
+    end
   end
 
 end

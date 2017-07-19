@@ -40,8 +40,10 @@ describe Promulgators::Node do
     Promulgators::Node.new(files: [:root, :test_a, :test_b]).promulgate!
     b1nodes = Node.where(title: "TestB1")
 
-    expect(b1nodes.last.reload.referrals.count).to eq 1
-    expect(b1nodes.first.reload.referrals.count).to eq 1
+    expect(b1nodes.last.reload.referrals.primary.count).to eq 1
+    expect(b1nodes.first.reload.referrals.primary.count).to eq 1
+    expect(b1nodes.last.reload.referrals.secondary.count).to eq 1
+    expect(b1nodes.first.reload.referrals.secondary.count).to eq 1
   end
 
   it 'can populate records via a path' do
