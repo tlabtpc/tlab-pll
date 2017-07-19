@@ -3,7 +3,7 @@ require "rails_helper"
 describe "assessment", js: true do
   let!(:root_node) { create(:node, root: true, tip: :county) }
   let!(:county_node) { create(:node, parent_node_id: root_node.id, tip: :category, question: "Hello?") }
-  let!(:category_node) { create(:node, parent_node_id: county_node.id, question: "Goodbye?") }
+  let!(:category_node) { create(:node, parent_node_id: county_node.id, question: "Goodbye?", is_county: true) }
 
   let(:cross_check_input) do
     {
@@ -133,6 +133,9 @@ describe "assessment", js: true do
 
       # SF residency step
       expect(page).to have_content "reside in San Francisco County"
+      click_square_and_next(index: 1)
+
+      expect(page).to have_content "What county does your client"
       click_square_and_next
 
       # consulted attorney step
@@ -168,8 +171,8 @@ describe "assessment", js: true do
     expect(page).to have_css ".tips", options
   end
 
-  def click_square_and_next
-    first(".square").click
+  def click_square_and_next(index: 0)
+    all(".square")[index].click
     click_next
   end
 

@@ -59,6 +59,7 @@ class CrossChecksController < ApplicationController
       :client_is_in_sf,
       :client_has_consulted_attorney,
       :support_level,
+      :county_node_id,
       action_items: []
     )
   end
@@ -77,11 +78,11 @@ class CrossChecksController < ApplicationController
   end
 
   def next_step_name
-    CrossCheck.next_step_for(params[:current_step])
+    cross_check.next_step_for(params[:current_step])
   end
 
   def previous_step_name
-    CrossCheck.previous_step_for(params[:current_step])
+    cross_check.previous_step_for(params[:current_step])
   end
 
   def before_cross_check_path
