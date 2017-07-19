@@ -10,9 +10,9 @@ class Views::Assessments::Content < Views::Base
     # TODO: this issue has been sent to person@socialservice.org?
 
     p class: "assessments__reference" do
-      text "Reference "
+      text "Reference # "
 
-      link_to assessment.reference_id,
+      link_to assessment.display_reference_id,
         assessment_url(assessment),
         class: "assessments__link"
     end

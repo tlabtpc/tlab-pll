@@ -1,6 +1,10 @@
 class AssessmentDecorator < Draper::Decorator
   delegate_all
 
+  def display_reference_id
+    object.reference_id.gsub('-','')
+  end
+
   def county_name
     nodes.counties.pluck(:title).first
   end
