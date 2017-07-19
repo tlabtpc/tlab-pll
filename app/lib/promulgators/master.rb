@@ -6,8 +6,6 @@ class Promulgators::Master < Promulgators::Base
     Node.counties.pluck(:title).each do |county|
       map_for(county).each { |category, files| promulgate_node_tree(county, category, files) }
     end
-
-    Promulgators::NodeReferral.new(files: [:all]).promulgate!
   end
 
   private
