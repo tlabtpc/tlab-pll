@@ -6,7 +6,7 @@ class Views::AssessmentReferrals::Index < Views::Base
       div class: "assessment-referrals" do
         h4 "Here are referrals that may help your client with this issue:", class: "assessment-referrals__title"
         ul do
-          assessment.primary_referrals.each { |referral| primary_referral(referral) }
+          assessment.featured_referrals.each { |referral| featured_referral(referral) }
         end
 
         if assessment.secondary_referrals.any?
@@ -42,7 +42,7 @@ class Views::AssessmentReferrals::Index < Views::Base
     end
   end
 
-  def primary_referral(referral)
+  def featured_referral(referral)
     p referral.unique_identifier
     li(class: "assessment-referrals__primary-referral") do
       h4 class: "assessment-referrals__title" do

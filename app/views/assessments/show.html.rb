@@ -34,7 +34,7 @@ class Views::Assessments::Show < Views::Base
 
           div class: "assessments__summary" do
             h2 "Referrals", class: "assessments__title"
-            assessment.primary_referrals.each { |referral| primary_referral(referral) }
+            assessment.featured_referrals.each { |referral| featured_referral(referral) }
           end
 
           div class: "assessments__summary" do
@@ -72,7 +72,7 @@ class Views::Assessments::Show < Views::Base
     end if value.present?
   end
 
-  def primary_referral(referral)
+  def featured_referral(referral)
     h4 class: "tips__header" do
       i class: "fa fa-telegram"
       span referral.title
