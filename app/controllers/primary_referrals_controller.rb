@@ -22,6 +22,6 @@ class PrimaryReferralsController < ApplicationController
   end
 
   def primary_referral
-    @primary_referral ||= Referral.non_secondary.find(params[:id])
+    @primary_referral ||= Referral.featured.find(params[:id])
   end
 end

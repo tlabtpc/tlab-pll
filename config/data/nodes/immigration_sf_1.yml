@@ -10,6 +10,7 @@ records:
       - "Dolores Street"
       - "Pangea Legal Services"
       - "Centro Legal de la Raza"
+    secondary_referrals:
       - "Immigration Court and Removal Proceedings Information"
       - "Detention Information from the National Immigration Project"
       - "Pathways to Status"
@@ -18,6 +19,7 @@ records:
     primary_referrals:
       - "SF Pathways to Citizenship Initiative"
       - "International Institute of the Bay Area"
+    secondary_referrals:
       - "Naturalization FAQ"
       - "Citizenship Through Naturalization"
       - "Pathways to Status"
@@ -26,6 +28,7 @@ records:
     primary_referrals:
       - "International Institute of the Bay Area"
       - "Jubilee Immigration Advocates"
+    secondary_referrals:
       - "Family Petitions"
       - "Pathways to Status"
   - title: "DACA  (Deferred Action for Childhood Arrivals)"
@@ -33,6 +36,7 @@ records:
     primary_referrals:
       - "International Institute of the Bay Area"
       - "Jubilee Immigration Advocates"
+    secondary_referrals:
       - "DACA FAQ"
       - "Pathways to Status"
   - title: "Asylum"
@@ -40,6 +44,7 @@ records:
     primary_referrals:
       - "Lawyers' Committee for Civil Rights, Asylum Program (LCCR)"
       - "East Bay Sanctuary Covenant"
+    secondary_referrals:
       - "Asylum FAQ"
       - "Pathways to Status"
   - title: "U-Visa, T-Visa, VAWA"
@@ -47,6 +52,7 @@ records:
     primary_referrals:
       - "Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)"
       - "Asian Pacific Islander Legal Outreach (APILO)"
+    secondary_referrals:
       - "U-Visa FAQ"
       - "T-Visa FAQ"
       - "VAWA FAQ"
@@ -55,6 +61,7 @@ records:
     primary_referrals:
       - "Legal Services for Children (LSC)"
       - "Central American Resource Center (Carecen)"
+    secondary_referrals:
       - "SIJS FAQ"
       - "Pathways to Status"
   - title: "Other"

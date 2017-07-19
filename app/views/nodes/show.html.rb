@@ -3,7 +3,7 @@ class Views::Nodes::Show < Views::Base
   needs :assessment
 
   def content
-    children = node.children.order(position: :asc)
+    children = node.children
     children_question = children.first&.question
     content_for(:card) do
       p(children_question, class: "nodes__question") if children_question

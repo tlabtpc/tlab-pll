@@ -9,6 +9,7 @@ records:
       - "San Francisco Public Defender (SFPD)"
       - "Warrants Clinic"
       - "Bar Association of San Francisco, Legal Referral and Information Service (BASF)"
+    secondary_referrals:
       - "Know Your Rights, Published by SF Public Defender"
       - "Your Legal Rights"
   - title: "Criminal Record Cleaning & Re-Entry"
@@ -16,6 +17,7 @@ records:
     primary_referrals:
       - "Clear My Record"
       - "Lawyers' Committee for Civil Rights, Second Chance Legal Clinic (LCCR)"
+    secondary_referrals:
       - "Know Your Legal Rights: Employment and Criminal Records"
       - "How does a Criminal Record Affect Your Section 8 and Public Housing Rights?"
       - "Clearing Your Record"
@@ -25,6 +27,7 @@ records:
       - "Lawyers' Committee for Civil Rights, Second Chance Legal Clinic (LCCR)"
       - "Bay Area Legal Aid, Legal Barriers to Employment Project"
       - "Legal Services for Children (LSC)"
+    secondary_referrals:
       - "General Information on Suspended Drivers Licenses"
       - "Drivers Licenses without Immigration Status: AB60 FAQ"
   - title: "Tickets and infractions"
@@ -33,6 +36,7 @@ records:
       - "Lawyers' Committee for Civil Rights, Second Chance Legal Clinic (LCCR)"
       - "Bay Area Legal Aid, Legal Barriers to Employment Project"
       - "Legal Services for Children (LSC)"
+    secondary_referrals:
       - "General Ticket Information"
       - "Map of Ticket Process in San Francisco"
   - title: "Other"

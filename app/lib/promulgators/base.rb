@@ -1,14 +1,14 @@
 class Promulgators::Base
   attr_reader :files
 
-  def initialize(files)
+  def initialize(files: [])
     @files = files
   end
 
   def promulgate!
     return unless files.present?
     records_to_promulgate.each { |record| create_model(record) }
-    self.class.new(files_tail).promulgate!
+    self.class.new(files: files[1..-1]).promulgate!
   end
 
   private
@@ -41,14 +41,6 @@ class Promulgators::Base
 
 
   def data
-    @data ||= YAML.load_file("#{Rails.root}/config/data/#{resource.to_s.pluralize}/#{files_head}.yml")
-  end
-
-  def files_head
-    files[0]
-  end
-
-  def files_tail
-    files[1..-1]
+    @data ||= YAML.load_file("#{Rails.root}/config/data/#{resource.to_s.pluralize}/#{files[0]}.yml")
   end
 end

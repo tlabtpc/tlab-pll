@@ -1,9 +1,0 @@
-defaults: {}
-
-records:
-  - name: "Make a plan for next steps + help client document the plan"
-  - name: "Help clarify his/her questions"
-  - name: "Obtain, locate, copy paperwork"
-  - name: "Make an appointment for the client"
-  - name: "Accompany your client to an appointment or encourage her to find someone else to go with her"
-  - name: "Follow-up with your client to make sure she follows the plan for next steps"

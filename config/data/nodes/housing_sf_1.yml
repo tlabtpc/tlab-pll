@@ -8,6 +8,7 @@ records:
     terminal: true
     primary_referrals:
       - "Eviction Defense Collaborative (EDC)"
+    secondary_referrals:
       - "Guide to the Unlawful Detainer Process"
   - title: "No"
   - title: "I don't know"

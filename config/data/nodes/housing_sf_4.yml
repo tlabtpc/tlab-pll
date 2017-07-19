@@ -9,6 +9,7 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Landlords Can't..."
   - title: "Notices (to pay or quit)"
     primary_referrals:
@@ -16,6 +17,7 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Eviction Information"
   - title: "Potential sale of building"
     primary_referrals:
@@ -23,6 +25,7 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Foreclosure/Sale of Building Information"
   - title: "Public housing issues"
     description: "For example: Placement, emergency transfers, back rent, notices, etc."
@@ -30,6 +33,7 @@ records:
       - "Bay Area Legal Aid, SF Public Housing Line"
       - "Housing Rights Committee (HRC)"
       - "Conflict Intervention Service at BASF (CIS)"
+    secondary_referrals:
       - "Public Housing, HUD, and Section 8 FAQ"
       - "Eviction Information"
   - title: "Subletting or roommate issues"
@@ -38,6 +42,7 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Roommates Information"
   - title: "Security deposit"
     primary_referrals:
@@ -45,6 +50,7 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Security Deposit Information"
   - title: "Rent increases"
     primary_referrals:
@@ -52,6 +58,7 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Rent Increase Information"
   - title: "Repairs (habitability)"
     primary_referrals:
@@ -59,5 +66,6 @@ records:
       - "Causa Justa"
       - "Conflict Intervention Service at BASF (CIS)"
       - "Bay Area Legal Aid, SF Public Housing Line"
+    secondary_referrals:
       - "Repair Information"
   - title: "Other"
