@@ -1,7 +1,11 @@
 class Views::AssessmentReferrals::Index < Views::Base
   needs :assessment
 
+  REFERRAL_INDEX = 7
+
   def content
+    set_progress_bar! index: REFERRAL_INDEX
+
     content_for :card do
       div class: "assessment-referrals" do
         h4 "Here are referrals that may help your client with this issue:", class: "assessment-referrals__title"

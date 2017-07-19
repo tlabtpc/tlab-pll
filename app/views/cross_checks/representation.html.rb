@@ -3,6 +3,8 @@ class Views::CrossChecks::Representation < Views::Base
   needs :cross_check
 
   def content
+    set_progress_bar! index: 13
+
     content_for :card do
       h4 "Does your client have an attorney representing him/her?"
 

@@ -1,3 +1,5 @@
+# fortitude_class: Views::Tips::HousingSf1
+
 class Views::Tips::HousingSf1 < Views::Base
   def content
     render "tips/caseworker_header"

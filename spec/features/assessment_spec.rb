@@ -52,12 +52,14 @@ describe "assessment", js: true do
 
     step 'perform cross check' do
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       # details step
       expect(page).to have_content "give us additional details"
       fill_in "cross_check_details", with: cross_check_input[:details]
       expect(page).to have_content "do not include any client-identifying information"
       click_next
+      expect_page_to_have_progress_bar
 
       # basic info step
       expect(page).to have_content "Please provide the following"
@@ -70,29 +72,36 @@ describe "assessment", js: true do
         click_next
       }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
+      expect_page_to_have_progress_bar
+
       # deadlines step
       expect(page).to have_content "any deadlines they need to meet"
       fill_in "cross_check_deadlines", with: cross_check_input[:deadlines]
       click_next
+      expect_page_to_have_progress_bar
 
       # SF residency step
       expect(page).to have_content "reside in San Francisco County"
       click_square_and_next(index: 1)
+      expect_page_to_have_progress_bar
 
       expect(page).to have_content "What county does your client"
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       # consulted attorney step
       expect(page).to have_content "consulted with an attorney"
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       expect(page).to have_content "have an attorney representing him/her"
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       # action items step
       expect(page).to have_content "actions that might help your client"
-      # TODO: do action items
       click_next
+      expect_page_to_have_progress_bar
 
       # support level step
       expect(page).to have_content "What level of support do you think you will need"
@@ -110,12 +119,14 @@ describe "assessment", js: true do
 
     step 'perform cross check' do
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       # details step
       expect(page).to have_content "give us additional details"
       fill_in "cross_check_details", with: cross_check_input[:details]
       expect(page).to have_content "do not include any client-identifying information"
       click_next
+      expect_page_to_have_progress_bar
 
       # basic info step
       expect(page).to have_content "Please provide the following"
@@ -128,23 +139,28 @@ describe "assessment", js: true do
         click_next
       }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
+      expect_page_to_have_progress_bar
+
       # deadlines step
       expect(page).to have_content "any deadlines they need to meet"
       fill_in "cross_check_deadlines", with: cross_check_input[:deadlines]
       click_next
+      expect_page_to_have_progress_bar
 
       # SF residency step
       expect(page).to have_content "reside in San Francisco County"
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       # consulted attorney step
       expect(page).to have_content "consulted with an attorney"
       click_square_and_next(index: 1)
+      expect_page_to_have_progress_bar
 
       # action items step
       expect(page).to have_content "actions that might help your client"
-      # TODO: do action items
       click_next
+      expect_page_to_have_progress_bar
 
       # support level step
       expect(page).to have_content "What level of support do you think you will need"
@@ -165,8 +181,6 @@ describe "assessment", js: true do
       ].each do |content|
         expect(page).to have_content content.title
       end
-
-      # TODO: add cross check info to assessment page and ensure that it shows up correctly
     end
   end
 
@@ -190,7 +204,9 @@ describe "assessment", js: true do
       click_for "referral_id_#{special_referral.id}"
 
       click_for "assessment_submit"
+
       expect(page).to have_css "body.nodes-show"
+      expect_page_to_have_progress_bar
     end
 
     step "select county node" do
@@ -201,6 +217,7 @@ describe "assessment", js: true do
       expect(page).to have_content county_node.question
 
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       expect(current_path).to_not eq path
     end
@@ -210,12 +227,14 @@ describe "assessment", js: true do
       expect_to_have_tips(text: " learn more about the following categories")
 
       click_square_and_next
+      expect_page_to_have_progress_bar
     end
 
     step 'select terminal node and view primary referrals page' do
       expect(page).to have_content terminal_node.question
 
       click_square_and_next
+      expect_page_to_have_progress_bar
 
       expect(page).to have_content "Here are referrals that may help"
       expect(page).to have_content primary_referral.title
@@ -244,6 +263,10 @@ describe "assessment", js: true do
 
   def click_next
     find(".button--submit").click
+  end
+
+  def expect_page_to_have_progress_bar
+    expect(page).to have_css(".progress-bar")
   end
 
   def click_for(for_value)

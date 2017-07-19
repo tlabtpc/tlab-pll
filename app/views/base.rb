@@ -10,6 +10,12 @@ module Views
 
     private
 
+    def set_progress_bar!(index:)
+      content_for :progress_bar do
+        div class: "progress-bar progress-bar--#{index}"
+      end
+    end
+
     def row(classes=[], expanded: true, &block)
       classes = CssClasses.new(classes, ("expanded" if expanded), "row")
       div class: classes.to_s, &block

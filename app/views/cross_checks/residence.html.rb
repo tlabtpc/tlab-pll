@@ -3,6 +3,8 @@ class Views::CrossChecks::Residence < Views::Base
   needs :cross_check
 
   def content
+    set_progress_bar! index: 12
+
     content_for :card do
       h4 "Does your client also reside in San Francisco County?"
       cross_check_form do |f|

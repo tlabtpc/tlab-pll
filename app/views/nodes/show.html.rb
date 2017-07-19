@@ -2,7 +2,15 @@ class Views::Nodes::Show < Views::Base
   needs :node
   needs :assessment
 
+  START_PAGE_OFFSET = 2
+  MAXIMUM_ASSESS_BAR_INDEX = 6
+
   def content
+    set_progress_bar! index: [
+      assessment.nodes.count + START_PAGE_OFFSET,
+      MAXIMUM_ASSESS_BAR_INDEX
+    ].min
+
     children = node.children
     children_question = children.first&.question
     content_for(:card) do

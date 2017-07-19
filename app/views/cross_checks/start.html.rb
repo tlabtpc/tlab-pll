@@ -3,6 +3,8 @@ class Views::CrossChecks::Start < Views::Base
   needs :cross_check
 
   def content
+    set_progress_bar! index: 9
+
     content_for :card do
       h4 "Would you like a PLL Cross-Check?"
 

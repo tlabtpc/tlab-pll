@@ -2,6 +2,8 @@ class Views::Assessments::New < Views::Base
   needs :special_referrals
 
   def content
+    set_progress_bar!(index: 1)
+
     content_for(:card) do
       div class: "assessments__form" do
         form_for :assessment, url: assessments_path do |f|

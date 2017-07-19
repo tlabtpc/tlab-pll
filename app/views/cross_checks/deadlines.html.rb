@@ -3,6 +3,8 @@ class Views::CrossChecks::Deadlines < Views::Base
   needs :cross_check
 
   def content
+    set_progress_bar! index: 11
+
     content_for :card do
       h4 "If your client has any deadlines they need to meet, please describe them below"
       cross_check_form do |f|

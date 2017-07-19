@@ -35,7 +35,11 @@ class Views::Layouts::Application < Views::Base
         div(class: :container) do
           if content_for?(:card)
             div(class: :"card-wrapper") do
-              div(class: :card) { yield(:card) }
+              div(class: :card) do
+                yield(:progress_bar) if content_for?(:progress_bar)
+                yield(:card)
+              end
+
               render partial: "copyright"
             end
           else

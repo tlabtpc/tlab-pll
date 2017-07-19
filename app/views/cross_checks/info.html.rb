@@ -3,6 +3,8 @@ class Views::CrossChecks::Info < Views::Base
   needs :cross_check
 
   def content
+    set_progress_bar! index: 10
+
     content_for :card do
       h4 "Please provide the following:"
       cross_check_form do |f|
