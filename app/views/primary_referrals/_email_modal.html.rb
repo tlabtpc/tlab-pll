@@ -3,10 +3,10 @@ class Views::PrimaryReferrals::EmailModal < Views::Base
 
   def content
     div(id: 'send-email-modal', class: 'reveal', 'data-reveal' => '') do
-      h2('Email Resource', class: 'primary-referral__email-modal-header')
+      h2('Email Resource', class: 'email-modal__header')
 
       close_attrs = {
-        class: 'close-button primary-referral__email-modal-close',
+        class: 'close-button email-modal__close',
         'data-close' => '',
         'aria-label' => 'Close modal',
         'type' => 'button'
@@ -30,19 +30,19 @@ class Views::PrimaryReferrals::EmailModal < Views::Base
           'true',
           false,
           id: 'primary_referral_email_client_confirmation',
-          class: 'primary-referral__checkbox-input'
+          class: 'email-modal__checkbox-input'
 
         label_tag(
           'primary_referral_client_confirmation',
-          class: 'primary-referral__checkbox-label primary-referral__checkbox-label--email',
+          class: 'email-modal__checkbox-label email-modal__checkbox-label--email',
           for: 'primary_referral_email_client_confirmation'
         ) do
-          div(class: "primary-referral__checkbox-label-check "\
-                     "primary-referral__checkbox-label-check--email") do
+          div(class: "email-modal__checkbox-label-check "\
+                     "email-modal__checkbox-label-check--email") do
             fa_icon("check", "fa-lg")
           end
 
-          div(class: "primary-referral__checkbox-label-text") do
+          div(class: "email-modal__checkbox-label-text") do
             p <<~LABEL
               I understand that if I am sending to a client, I need the
               client to confirm that this is a safe email address and
@@ -53,7 +53,7 @@ class Views::PrimaryReferrals::EmailModal < Views::Base
         end
 
         submit_tag '', class: 'hide', id: :primary_referral_email_submit
-        div(class: 'primary-referral__email-submit-container') do
+        div(class: 'email-modal__submit-container') do
           label \
             'SUBMIT',
             class: 'button button--submit button--disabled',
