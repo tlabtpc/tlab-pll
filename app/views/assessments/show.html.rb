@@ -3,66 +3,66 @@ class Views::Assessments::Show < Views::Base
 
   def content
     content_for :card do
-        div(class: "assessments__show") do
-          if assessment.caseworker_first_name
-            h1 "Thank you, #{assessment.caseworker_first_name}!", class: "assessments__title"
-          else
-            h1 "Thank you!", class: "assessments__title"
-          end
+      div(class: "assessments__show") do
+        if assessment.caseworker_first_name
+          h1 "Thank you, #{assessment.caseworker_first_name}!", class: "assessments__title"
+        else
+          h1 "Thank you!", class: "assessments__title"
+        end
 
-          if assessment.details
-            p "Project Legal Link will provide a cross-check and will follow-up with you.", class: "assessments__reference"
-          end
-          # TODO: this issue has been sent to person@socialservice.org?
+        if assessment.details
+          p "Project Legal Link will provide a cross-check and will follow-up with you.", class: "assessments__reference"
+        end
+        # TODO: this issue has been sent to person@socialservice.org?
 
-          p class: "assessments__reference" do
-            text "Reference "
+        p class: "assessments__reference" do
+          text "Reference "
 
-            link_to assessment.reference_id,
-              assessment_path(assessment),
-              class: "assessments__link"
-          end
+          link_to assessment.reference_id,
+            assessment_path(assessment),
+            class: "assessments__link"
+        end
 
+        div class: "assessments__summary" do
+          h2 "Summary of Issue", class: "assessments__title"
+          assessment_info "Location: ", assessment.county_name
+          assessment_info "Issue: ", assessment.category_name
+          assessment_info "Description: ", assessment.details
+          assessment_info "Deadlines: ", assessment.deadlines
+          assessment_info "Attorney: ", assessment.attorney_status
+        end
+
+        div class: "assessments__summary" do
+          h2 "Referrals", class: "assessments__title"
+          assessment.featured_referrals.each { |referral| featured_referral(referral) }
+        end
+
+        div class: "assessments__summary" do
+          h2 "Other Resources", class: "assessments__title"
+          assessment.secondary_referrals.each { |referral| secondary_referral(referral) }
+        end
+
+        if assessment.action_items.present?
           div class: "assessments__summary" do
-            h2 "Summary of Issue", class: "assessments__title"
-            assessment_info "Location: ", assessment.county_name
-            assessment_info "Issue: ", assessment.category_name
-            assessment_info "Description: ", assessment.details
-            assessment_info "Deadlines: ", assessment.deadlines
-            assessment_info "Attorney: ", assessment.attorney_status
-          end
-
-          div class: "assessments__summary" do
-            h2 "Referrals", class: "assessments__title"
-            assessment.featured_referrals.each { |referral| featured_referral(referral) }
-          end
-
-          div class: "assessments__summary" do
-            h2 "Other Resources", class: "assessments__title"
-            assessment.secondary_referrals.each { |referral| secondary_referral(referral) }
-          end
-
-          if assessment.action_items.present?
-            div class: "assessments__summary" do
-              h2 "Follow-up Support Actions", class: "assessments__title"
-              assessment.action_items.each do |item|
-                p class: "assessments__action-item" do
-                  fa_icon "check"
-                  text item
-                end
+            h2 "Follow-up Support Actions", class: "assessments__title"
+            assessment.action_items.each do |item|
+              p class: "assessments__action-item" do
+                fa_icon "check"
+                text item
               end
             end
           end
-
-          div class: "assessments__summary" do
-            h2 "Don't forget", class: "assessments__title"
-            render "tips/assessment"
-          end
-
         end
 
-        render "logos"
+        div class: "assessments__summary" do
+          h2 "Don't forget", class: "assessments__title"
+          render "tips/assessment"
+        end
+
       end
+
+      render "logos"
+    end
   end
 
   def assessment_info(title, value)
