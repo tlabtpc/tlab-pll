@@ -40,7 +40,8 @@ records:
       - "\"Fill in the Blanks\" California Advance Healthcare Directive Form"
   - title: "Work and family issues"
     description: "Pregnancy leaves, Family medical leaves, pregnancy discrimination, etc."
-    secondary_referrals:
+    primary_referrals:
       - "Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program"
+    secondary_referrals:
       - "Work and Family Program at Legal Aid at Work"
   - title: "Other"

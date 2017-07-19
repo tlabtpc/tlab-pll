@@ -31,8 +31,9 @@ records:
       - "General Information on Suspended Drivers Licenses"
   - title: "Work and family"
     description: "Pregnancy leaves, family medical leaves, pregnancy discrimination, etc."
-    secondary_referrals:
+    primary_referrals:
       - "Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program"
+    secondary_referrals:
       - "Taking Leave from Work: Pregnancy/Prenatal Care/Bonding with a New Child"
       - "More Information on Work-Related Issues"
   - title: "Worker's rights"
