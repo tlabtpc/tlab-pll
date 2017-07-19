@@ -9,13 +9,11 @@ class Node < ApplicationRecord
   scope :categories, -> { where(is_category: true) }
 
   def primary_referrals=(referral_titles)
-    referral_titles.each_with_index do |referral_title, position|
-      self.node_referrals.find_or_create_by(
-        referral: PrimaryReferral.find_by(title: referral_title)
-      ).update(
-        position: position
-      )
-    end if terminal?
+    set_referrals(referral_class: PrimaryReferral, titles: referral_titles)
+  end
+
+  def secondary_referrals=(referral_titles)
+    set_referrals(referral_class: SecondaryReferral, titles: referral_titles)
   end
 
   def self.root
@@ -24,5 +22,19 @@ class Node < ApplicationRecord
 
   def to_param
     [id, title.parameterize].join("-")
+  end
+
+  private
+
+  def set_referrals(referral_class:, titles:)
+    titles.each_with_index do |title, position|
+      if referral = referral_class.find_by(title: title)
+        self.node_referrals
+            .find_or_create_by(referral: referral)
+            .update(position: position)
+      else
+        warn "Could not find #{referral_class} with title '#{title}'. Check the seeds file to ensure the referral exists."
+      end
+    end
   end
 end

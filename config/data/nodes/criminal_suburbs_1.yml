@@ -7,11 +7,13 @@ records:
     description: "Active criminal cases or potential cases, including warrants."
     primary_referrals:
       - ""
+    secondary_referrals:
       - "List of CA Public Defender Offices"
   - title: "Criminal Record Cleaning & Re-Entry"
     description: "Help in this area typically consists of record cleaning for prior convictions or help navigating given one's prior convictions."
     primary_referrals:
       - ""
+    secondary_referrals:
       - "Clearing Your Record"
       - "Criminal Records and Employment"
   - title: "Other"

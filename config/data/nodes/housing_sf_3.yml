@@ -10,5 +10,6 @@ records:
     primary_referrals:
       - "Bay Area Legal Aid, SF Public Housing Line"
       - "Housing Rights Committee (HRC)"
+    secondary_referrals:
       - "Public Housing, HUD, and Section 8 FAQ"
   - title: "I don't know"
