@@ -25,6 +25,12 @@ class Views::Assessments::Show < Views::Base
       render "content"
       render "logos"
     end
+
+    content_for :next do
+      link_to new_assessment_path, class: "button button--submit" do
+        text "NEW ISSUE"
+      end
+    end
   end
 
   private
