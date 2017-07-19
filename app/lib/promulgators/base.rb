@@ -31,14 +31,13 @@ class Promulgators::Base
 
   def create_model(record)
     resource_class.find_or_create_by(find_by_hash(record)).tap do |model|
-      model.update(defaults.merge(record))
+      model.update(build_model_params(record))
     end
   end
 
-  def defaults
-    @defaults ||= Hash(data['defaults'])
+  def build_model_params(record)
+    Hash(data['defaults']).merge(record)
   end
-
 
   def data
     @data ||= YAML.load_file("#{Rails.root}/config/data/#{resource.to_s.pluralize}/#{files[0]}.yml")
