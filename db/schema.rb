@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719194504) do
+ActiveRecord::Schema.define(version: 20170719210252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,11 +59,12 @@ ActiveRecord::Schema.define(version: 20170719194504) do
     t.boolean  "client_is_in_sf"
     t.integer  "client_has_consulted_attorney"
     t.integer  "support_level"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.jsonb    "action_items",                  default: [], null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.jsonb    "action_items",                       default: [], null: false
     t.string   "last_name"
     t.integer  "county_node_id"
+    t.integer  "client_has_attorney_representation"
     t.index ["assessment_id"], name: "index_cross_checks_on_assessment_id", using: :btree
   end
 

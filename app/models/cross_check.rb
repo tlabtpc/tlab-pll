@@ -7,6 +7,7 @@ class CrossCheck < ApplicationRecord
     residence
     county_select
     consulted
+    representation
     actions
     support
   ).freeze
@@ -15,6 +16,19 @@ class CrossCheck < ApplicationRecord
   belongs_to :node_county
 
   enum client_is_long_term: %w(yes no i_dont_know).freeze
+
+  enum client_has_attorney_representation: %w(
+    representation_yes
+    representation_no
+    representation_i_dont_know
+  ).freeze
+
+  enum client_has_consulted_attorney: %w(
+    consulted_yes
+    consulted_no
+    consulted_i_dont_know
+  )
+
   enum support_level: %w(low medium high).freeze
 
   attr_accessor :perform_check
@@ -47,6 +61,8 @@ class CrossCheck < ApplicationRecord
     case action_name.to_s
     when 'county_select'
       !client_is_in_sf?
+    when 'representation'
+      consulted_yes?
     else
       true
     end

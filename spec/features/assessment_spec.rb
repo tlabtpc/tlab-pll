@@ -44,9 +44,140 @@ describe "assessment", js: true do
   let!(:secondary_node_referral) { create(:node_referral, node: terminal_node, referral: secondary_referral) }
   let!(:special_referral) { create(:special_referral) }
 
-  specify do
+  scenario "filling out all the optional screens" do
     visit root_path
 
+    fill_up_to_cross_check
+    start_cross_check
+
+    step 'perform cross check' do
+      click_square_and_next
+
+      # details step
+      expect(page).to have_content "give us additional details"
+      fill_in "cross_check_details", with: cross_check_input[:details]
+      expect(page).to have_content "do not include any client-identifying information"
+      click_next
+
+      # basic info step
+      expect(page).to have_content "Please provide the following"
+      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
+      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
+      fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
+      fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
+
+      expect {
+        click_next
+      }.to change { ActionMailer::Base.deliveries.count }.by(1)
+
+      # deadlines step
+      expect(page).to have_content "any deadlines they need to meet"
+      fill_in "cross_check_deadlines", with: cross_check_input[:deadlines]
+      click_next
+
+      # SF residency step
+      expect(page).to have_content "reside in San Francisco County"
+      click_square_and_next(index: 1)
+
+      expect(page).to have_content "What county does your client"
+      click_square_and_next
+
+      # consulted attorney step
+      expect(page).to have_content "consulted with an attorney"
+      click_square_and_next
+
+      expect(page).to have_content "have an attorney representing him/her"
+      click_square_and_next
+
+      # action items step
+      expect(page).to have_content "actions that might help your client"
+      # TODO: do action items
+      click_next
+
+      # support level step
+      expect(page).to have_content "What level of support do you think you will need"
+      click_square_and_next
+    end
+
+    view_assessment_page
+  end
+
+  scenario "filling out none of the optional screens" do
+    visit root_path
+
+    fill_up_to_cross_check
+    start_cross_check
+
+    step 'perform cross check' do
+      click_square_and_next
+
+      # details step
+      expect(page).to have_content "give us additional details"
+      fill_in "cross_check_details", with: cross_check_input[:details]
+      expect(page).to have_content "do not include any client-identifying information"
+      click_next
+
+      # basic info step
+      expect(page).to have_content "Please provide the following"
+      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
+      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
+      fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
+      fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
+
+      expect {
+        click_next
+      }.to change { ActionMailer::Base.deliveries.count }.by(1)
+
+      # deadlines step
+      expect(page).to have_content "any deadlines they need to meet"
+      fill_in "cross_check_deadlines", with: cross_check_input[:deadlines]
+      click_next
+
+      # SF residency step
+      expect(page).to have_content "reside in San Francisco County"
+      click_square_and_next
+
+      # consulted attorney step
+      expect(page).to have_content "consulted with an attorney"
+      click_square_and_next(index: 1)
+
+      # action items step
+      expect(page).to have_content "actions that might help your client"
+      # TODO: do action items
+      click_next
+
+      # support level step
+      expect(page).to have_content "What level of support do you think you will need"
+      click_square_and_next
+    end
+
+    view_assessment_page
+  end
+
+  def view_assessment_page
+    step 'view assessment page' do
+      expect(page).to have_content "Thank you, Angela!"
+
+      [
+        special_referral,
+        primary_referral,
+        secondary_referral
+      ].each do |content|
+        expect(page).to have_content content.title
+      end
+
+      # TODO: add cross check info to assessment page and ensure that it shows up correctly
+    end
+  end
+
+  def start_cross_check
+    step 'begin cross check' do
+      click_on "NEXT"
+      expect(page).to have_content "Would you like a PLL Cross-Check?"
+    end
+  end
+
+  def fill_up_to_cross_check
     step "agree to initial requirements" do
       click_for "agree_schedule"
       click_for "agree_paperwork"
@@ -99,71 +230,6 @@ describe "assessment", js: true do
 
       click_on "BACK"
       expect(page).to have_content "Here are referrals that may help"
-    end
-
-    step 'begin cross check' do
-      click_on "NEXT"
-      expect(page).to have_content "Would you like a PLL Cross-Check?"
-    end
-
-    step 'perform cross check' do
-      click_square_and_next
-
-      # details step
-      expect(page).to have_content "give us additional details"
-      fill_in "cross_check_details", with: cross_check_input[:details]
-      expect(page).to have_content "do not include any client-identifying information"
-      click_next
-
-      # basic info step
-      expect(page).to have_content "Please provide the following"
-      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
-      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
-      fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
-      fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
-
-      expect {
-        click_next
-      }.to change { ActionMailer::Base.deliveries.count }.by(1)
-
-      # deadlines step
-      expect(page).to have_content "any deadlines they need to meet"
-      fill_in "cross_check_deadlines", with: cross_check_input[:deadlines]
-      click_next
-
-      # SF residency step
-      expect(page).to have_content "reside in San Francisco County"
-      click_square_and_next(index: 1)
-
-      expect(page).to have_content "What county does your client"
-      click_square_and_next
-
-      # consulted attorney step
-      expect(page).to have_content "consulted with an attorney"
-      click_square_and_next
-
-      # action items step
-      expect(page).to have_content "actions that might help your client"
-      # TODO: do action items
-      click_next
-
-      # support level step
-      expect(page).to have_content "What level of support do you think you will need"
-      click_square_and_next
-    end
-
-    step 'view assessment page' do
-      expect(page).to have_content "Thank you, Angela!"
-
-      [
-        special_referral,
-        primary_referral,
-        secondary_referral
-      ].each do |content|
-        expect(page).to have_content content.title
-      end
-
-      # TODO: add cross check info to assessment page and ensure that it shows up correctly
     end
   end
 

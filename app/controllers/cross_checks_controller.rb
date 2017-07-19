@@ -58,6 +58,7 @@ class CrossChecksController < ApplicationController
       :client_is_homeless,
       :client_is_in_sf,
       :client_has_consulted_attorney,
+      :client_has_attorney_representation,
       :support_level,
       :county_node_id,
       action_items: []
