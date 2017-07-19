@@ -2,125 +2,228 @@ defaults:
   type: "PrimaryReferral"
 
 records:
-  - title: "Access Center (Self-Help Center at the SF Superior Court)"
-  - title: "ACLU of Northern California"
-  - title: "Aids Legal Referral Panel (ALRP)"
-  - title: "Alameda Public Defender"
-  - title: "Arab Resource and Organizing Center"
-  - title: "Asian Americans Advancing Justice – Asian Law Caucus (ALC)"
-  - title: "Asian Law Alliance"
-  - title: "Asian Pacific Islander Legal Outreach (APILO)"
-  - title: "Bar Association of San Francisco, Legal Referral and Information Service (BASF)"
-  - title: "Bay Area Legal Aid (BayLegal)"
-    markdown_content: "# Some markdown content"
-  - title: "Bay Area Legal Aid, Health Consumer Center"
-  - title: "Bay Area Legal Aid, Legal Barriers to Employment Project"
-  - title: "Bay Area Legal Aid, SF Public Housing Line"
-  - title: "Bayview Hunters Point Community Legal (BHPCL)"
-  - title: "California Advocates for Nursing Home Reform (CANHR)"
-  - title: "Canal Alliance"
-  - title: "Catholic Charities"
-  - title: "Catholic Charities of the East Bay"
-  - title: "Catholic Charities of Santa Clara County"
-  - title: "Causa Justa"
-  - title: "Central American Resource Center (Carecen)"
-  - title: "Centro Legal de la Raza"
-  - title: "Child Trauma Research Program (CTRP)"
-  - title: "Childcare Law Center"
-  - title: "Chinatown CDC"
-  - title: "Clean Slate intake: SF, Alameda, Contra Costa, Fresno, San Diego, Santa Clara, Santa Cruz, or Solano Counties"
-  - title: "Clear My Record"
-  - title: "Community Alliance for Special Education"
-  - title: "Community Boards"
-  - title: "Community Legal Services in East Palo Alto"
-  - title: "Conflict Intervention Service at BASF (CIS)"
-  - title: "Consumer Credit Counseling Service of San Francisco (CCCSSF)/Balance"
-  - title: "Contra Costa Public Defender"
-  - title: "Cooperative Restraining Order Clinic (CROC)"
-  - title: "County of Marin Probation Department"
-  - title: "DACA Resources"
-  - title: "Department of Building Inspection"
-  - title: "Disability Rights California"
-  - title: "Dolores Street"
-  - title: "East Bay Community Law Center"
-  - title: "East Bay Naturalization Collective"
-  - title: "East Bay Sanctuary Covenant"
-  - title: "ECHO Housing"
-  - title: "Equal Rights Advocates (ERA)"
-  - title: "Eviction Defense Center (Alameda County)"
-  - title: "Eviction Defense Collaborative (EDC)"
-  - title: "Family and Children's Law Center"
-  - title: "Family Law Facilitator (Alameda County)"
-  - title: "Family Law Facilitator (Contra Costa County)"
-  - title: "Family Law Facilitator (Marin County)"
-  - title: "Family Law Facilitator (San Mateo County)"
-  - title: "Family Law Facilitator (Santa Clara County)"
-  - title: "GetCalFresh.org"
-  - title: "GLIDE Memorial “Unconditional Legal Clinic”"
-  - title: "Homeless Advocacy Project of JDC (HAP)"
-  - title: "Housing & Economic Rights Advocates (HERA)"
-  - title: "Housing Rights Committee (HRC)"
-  - title: "Human Services Agency of San Francisco: General Assistance"
-  - title: "Human Services Agency of San Francisco: CalWorks"
-  - title: "IIBA Redwood City"
-  - title: "Immigration Center for Women and Children, Asylum (ICWC)"
-  - title: "Immigration Center for Women and Children, DACA Services (ICWC)"
-  - title: "Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)"
-  - title: "Independent Living Resource Center"
-  - title: "Instituto Laboral de la Raza"
-  - title: "International Institute of the Bay Area"
-  - title: "Jewish Family & Children’s Services"
-  - title: "Jubilee Immigration Advocates"
-  - title: "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
-  - title: "La Casa de las Madres"
-  - title: "La Raza Centro Legal (LRCL)"
-  - title: "Lawyers' Committee for Civil Rights, Asylum Program (LCCR)"
-  - title: "Lawyers' Committee for Civil Rights, Second Chance Legal Clinic (LCCR)"
-  - title: "Legal Advice and Referral Clinic of JDC (LARC)"
-  - title: "Legal Aid At Work (Formerly Employment Law Center) – Wage Claim Clinic"
-  - title: "Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program"
-  - title: "Legal Aid at Work (Formerly Employment Law Center) – Workers' Rights Clinic"
-  - title: "Legal Aid of Marin"
-  - title: "Legal Assistance to the Elderly (LAE)"
-  - title: "Legal Services for Children (LSC)"
-  - title: "Legal Services for Prisoners with Children"
-  - title: "Legal Aid Society of San Mateo County"
-  - title: "Marin County Public Defender"
-  - title: "Mission Economic Development Association (MEDA)"
-  - title: "National Center for Lesbian Rights"
-  - title: "Office of Civil Rights: U.S. Department of Education"
-  - title: "Pangea Legal Services"
-  - title: "Police Complaints (in SF)"
-  - title: "Positive Resource Center"
-  - title: "Post-Election Immigration Resources"
-  - title: "Prior Eviction Information"
-  - title: "Pro Bono Project"
-  - title: "Project Sentinel"
-  - title: "Project 20"
-  - title: "Public Defender Expungement Division (Marin County)"
-  - title: "Public Defender’s Expungement office (Santa Clara County)"
-  - title: "Red Light Legal"
-  - title: "Root + Rebound"
-  - title: "San Francisco Office of Citizen Complaints"
-  - title: "San Francisco Public Defender (SFPD)"
-  - title: "San Francisco Victim Services Office"
-  - title: "SF Marin Food Bank Food Stamp Outreach Program"
-  - title: "SF Pathways to Citizenship Initiative"
-  - title: "San Jose State Record Clearance Project"
-  - title: "San Mateo Private Defender Program"
-  - title: "Sant Clara County Public Defender"
-  - title: "SIREN"
-  - title: "Social Justice Collaborative (SJC)"
-  - title: "Sparkpoint"
-  - title: "SSA.gov"
-  - title: "Swords to Plowshares"
-  - title: "Tahirih Justice Center"
-  - title: "Tenants Union"
-  - title: "Tenderloin Housing Clinic"
-  - title: "The Women’s Building – Immigration Advice + Referrals"
-  - title: "Ticket Information: Quality of Life + Muni Tickets (FOR PROVIDERS ONLY)"
-  - title: "Transgender Law Center"
-  - title: "United Way Tax Prep Help"
-  - title: "Warrants Clinic"
-  - title: "Youth-Specific Legal Services in SF"
-  - title: "Appeals . . . Resolving Tax Disputes"
+  - code: waoe
+    title: Access Center (Self-Help Center at the SF Superior Court)
+    description: "The Access Center assists the public with understanding the process and completing the paperwork for many civil issues: divorce, custody, guardianship, parentage, spousal support, small claims, restraining orders, name and gender changes, evictions (and particularly motions to vacate), and conservatorship. They cannot represent clients and they cannot help anyone who already has an attorney. \n\nWhile the wait can be daunting, once your client gets through, the Center is well-equipped to help clients who are not able to otherwise access legal representation. They have a mix of attorneys, paralegals, and other staff and volunteers who triage clients and help them on the spot or during follow-up appointments or workshops."
+  - code: uqhn
+    title: Alameda Public Defender
+    description: 'For active criminal cases or warrants, your client was likely assigned a public defender or can get help from the public defender''s office in the county in which it occurred. While the PDs can sometimes be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel.'
+  - code: jzok
+    title: Asian Americans Advancing Justice – Asian Law Caucus (ALC)
+    description: ALC provides brief advice and counsel to anyone at their clinics (immigration, worker's rights, housing) and representation for some. In some areas, their work is more focused on Asian language speakers or the API community.
+  - code: avut
+    title: Asian Pacific Islander Legal Outreach (APILO)
+    description: "APILO provides an array of services and is more likely to help clients with multiple issues (such as family law, immigration, and benefits). APILO's services are not limited to the API community, although they are a good referral for the API community and Asian language speakers.\n"
+  - code: onax
+    title: Bar Association of San Francisco, Legal Referral and Information Service (BASF)
+    description: "This is a legal intake line that connects callers to private lawyers AND screens clients for help through the Bar Association's Justice and Diversity Center (pro bono services). \n\nPrivate attorney referrals are usually most applicable for low-income populations when there is no non-profit help available, or for cases where there might be funds recovered to pay an attorney (personal injury, a lawsuit against someone to recover funds for some kind of damage, SSI/SSDI, insurance cases, etc.). "
+  - code: aypz
+    title: Bay Area Legal Aid (BayLegal)
+    description: "Bay Area Legal Aid provides a number of legal services to low-income residents across the region, mostly in the areas of public benefits, domestic violence, public housing, consumer law, health care, and foster care. In general, BayLegal cannot serve undocumented clients unless he/she is a survivor of domestic violence or sexual assault. \n\nBayLegal's intake process is managed by its centralized Legal Advice Line, although certain programs have dedicated phone numbers."
+  - code: wzlj
+    title: Bay Area Legal Aid, Health Consumer Center
+    description: "Bay Area Legal Aid provides a number of legal services to low-income residents across the region, mostly in the areas of public benefits, domestic violence, public housing, consumer law, health care, and foster care. In general, BayLegal cannot serve undocumented clients unless he/she is a survivor of domestic violence or sexual assault. \n\nBayLegal's intake process is managed by its centralized Legal Advice Line, although certain programs, like the Health Consumer Center, have dedicated phone numbers. This line provides information and assistance on health access issues, including the ACA, access to medical services, Covered California, Denti-Cal, Medi-Cal, Medicare, medical debt, and private health insurance issues."
+  - code: pstv
+    title: Bay Area Legal Aid, Legal Barriers to Employment Project
+    description: "Bay Area Legal Aid provides a number of legal services to low-income residents across the region, mostly in the areas of public benefits, domestic violence, public housing, consumer law, health care, and foster care. In general, BayLegal cannot serve undocumented clients unless he/she is a survivor of domestic violence or sexual assault. \n\nBayLegal's intake process is managed by its centralized Legal Advice Line, although certain programs, like LBEP, have dedicated phone numbers. This program works with CalWORKS and PAES recipients on a variety of legal issues. Most commonly, these include tickets, suspended professional and driver's licenses, criminal records, child support obligations, unemployment insurance, and immigration.\n"
+  - code: xbvz
+    title: Bay Area Legal Aid, SF Public Housing Line
+    description: "Bay Area Legal Aid provides a number of legal services to low-income residents across the region, mostly in the areas of public benefits, domestic violence, public housing, consumer law, health care, and foster care. In general, BayLegal cannot serve undocumented clients unless he/she is a survivor of domestic violence or sexual assault. \n\nBayLegal's intake process is managed by its centralized Legal Advice Line, although certain programs, like the SF Public Housing Line, have dedicated phone numbers. This line, co-sponsored with the Housing Rights Committee, can provide information specific to San Francisco public housing issues."
+  - code: nkcg
+    title: California Advocates for Nursing Home Reform (CANHR)
+    description: "CANHR can help clients figure out if they need legal help in the following areas, and then refer them to a private attorney for help: estate planning/Medi-cal for long term care, special needs trusts, elder and dependent abuse, elder financial abuse, care home violations, and conservatorship. They run their own referral lists and sometimes have pro bono support available for very low-income clients."
+  - code: sezo
+    title: Canal Alliance
+    description: Canal Alliance is a non-profit that provides immigration consults on asylum, SIJS, naturalization, DACA, TPS, U-Visa, T-Visa, green card renewal, and VAWA. Call or drop-in for intake.
+  - code: ocbp
+    title: Catholic Charities of the East Bay
+    description: Provides critical family needs, as well as immigration legal services.
+  - code: jnqc
+    title: Catholic Charities of Santa Clara County
+    description: Provides critical family needs, as well as immigration legal services.
+  - code: dxau
+    title: Causa Justa
+    description: Causa Justa provides non-legal housing counseling on a variety of housing-related issues. Their services are focused on the Spanish speaking community.
+  - code: zrcx
+    title: Central American Resource Center (Carecen)
+    description: "Carecen provides a wide range of free or low cost immigration services. While their capacity to provide full representation can be limited, all clients who stop by during drop-in hours will be seen and, at a minimum, receive a consult and limited advice. Drop-in consults are $15.\nCarecen typically provides more in-depth assistance on green card renewals, family petitions, DACA, consular processing, obtaining Temporary Protected Status, and relief for undocumented youth. Carecen typically refers U-Visas and T-Visas, cases involving a detained individual, and cases requiring post-conviction relief.\n"
+  - code: lnft
+    title: Centro Legal de la Raza
+    description: "Centro Legal de la Raza is located in Oakland and provides low-income residents with immigration, workers' rights, and tenants' rights assistance."
+  - code: pwbf
+    title: Clear My Record
+    description: If clients have a conviction(s) in SF, Alameda, Contra Costa, Fresno, San Diego, Santa Clara, Santa Cruz, or Solano Counties, they can submit their information through this easy online interface created by   - code for America. Their application for record cleaning help will go directly to the Public Defender's office in the relevant county and/or a non-profit legal organization working on record cleaning. This is an easy application that caseworkers can do with clients to get the process started right away.
+  - code: ekyb
+    title: Community Legal Services in East Palo Alto
+    description: CSLEPA provides services to low-income residents of East Palo Alto and the surrounding community (San Mateo County), in the areas of immigration, housing, worker's rights, consumer, re-entry and small business.
+  - code: xjri
+    title: Conflict Intervention Service at BASF (CIS)
+    description: CIS is a project of the Bar Association of San Francsico. It helps low-income SF tenants who are living in supportive housing or are supported by other city services find resolutions with their landlords (often non-profits) before an eviction occurs. CIS can help the parties with issues such as late rent, neighbor conflicts, hoarding issues, and others.
+  - code: qzxg
+    title: Consumer Credit Counseling Service of San Francisco (CCCSSF)/Balance
+    description: "CCCSSF/Balance helps with credit and financial counseling in numerous areas including budgeting, debt management, reviewing and understanding credit reports, identity theft, bankruptcy, home ownership, and foreclosure prevention. Services are provided by phone or, if appropriate, in person.\nCCCSSF (now Balance) is a free service based in San Francisco, but available to people nationwide."
+  - code: imce
+    title: Contra Costa Public Defender
+    description: 'For active criminal cases or warrants, your client was likely assigned a public defender or can get help from the public defender''s office in the county in which it occurred. While the PDs can sometimes be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel.'
+  - code: rzag
+    title: Cooperative Restraining Order Clinic (CROC)
+    description: CROC is the primary referral for clients in need of domestic violence restraining orders in SF. They have frequent clinics and assist clients with their paperwork and representation in court. CROC encourages clients with questions about restraining orders (even those who are unsure if they need or want a restraining order) to call and meet with the staff to discuss options.
+  - code: bpri
+    title: Dolores Street
+    description: Dolores Street's legal services focus on deportation defense. Dolores Street provides free deportation defense to SF residents, but given the demand, they can only accept a portion of the deportation cases that come to them.
+  - code: myxi
+    title: East Bay Community Law Center
+    description: East Bay Community Law Center provides legal services to low-income residents of the East Bay, with some services limited to Alameda County residents. EBCLC's services include record cleaning, public benefits, housing, immigration, consumer, tickets and driver's license issues, business development, delinquency, school discipline, and special education.
+  - code: uhvg
+    title: East Bay Naturalization Collective
+    description: Free and low-cost naturalization and other immigration legal services to low-income residents of the east bay.
+  - code: fbgl
+    title: East Bay Sanctuary Covenant
+    description: East Bay Sanctuary Covenant provides immigration services to low-income Bay Area residents, especially in the areas of asylum, DACA, family-based petitions, naturalization, TPS, adjustment of status, SIJS, and TPS.
+  - code: czht
+    title: "ECHO Housing"
+    description: Provides counseling and investigation of discriminatory housing practices. Also provides counseling on evictions, repairs, and rent increases.
+  - code: tqyd
+    title: Eviction Defense Center (Alameda County)
+    description: If a client has been served with an "Unlawful Detainer" this organization can help write a response, and later amend that response, if needed. It is a first stop for new evictions in Alameda County.
+  - code: hyop
+    title: Eviction Defense Collaborative (EDC)
+    description: The EDC is the primary referral for people who have received a summons and/or complaint for unlawful detainer (eviction lawsuit) in SF. Anyone in this situation should be directed to the EDC's drop-in clinic immediately. Tenants only have 5 calendar days to respond to these documents – failure to do so could result in them losing the case without having an opportunity to contest or respond.
+  - code: ryuz
+    title: "Family and Children's Law Center"
+    description: "The Family and Children's Law Center provides sliding scale family law services to low-income Marin residents. Services provided include: domestic violence restraining orders, divorce, paternity, child custody and visitation, child support, adoption, and guardianship."
+  - code: hska
+    title: Family Law Facilitator (Alameda County)
+    description: Helps people who do not have lawyers with family law matters.
+  - code: iuxz
+    title: Family Law Facilitator (Contra Costa County)
+    description: Court-based help with completing paperwork and understanding the process for people who do not have lawyers in family law cases.
+  - code: dgrt
+    title: Family Law Facilitator (Marin County)
+    description: Court-based help with completing paperwork and understanding the process for people who do not have lawyers in family law cases.
+  - code: arwx
+    title: Family Law Facilitator (San Mateo County)
+    description: Court-based help with completing paperwork and understanding the process for people who do not have lawyers in family law cases.
+  - code: uojp
+    title: Family Law Facilitator (Santa Clara County)
+    description: Court-based help with completing paperwork and understanding the process for people who do not have lawyers in family law cases.
+  - code: qayf
+    title: GetCalFresh.org
+    description: "This easy online interface helps clients apply for CalFresh benefits easily. This service was created by   - code for America in partnership with many government agencies."
+  - code: rvjb
+    title: Homeless Advocacy Project of JDC (HAP)
+    description: HAP primarily assists with SSI, SSDI, and housing issues for clients who are homeless or at imminent risk of homelessness, with a focus on people with mental disabilities.
+  - code: yxpb
+    title: Housing & Economic Rights Advocates (HERA)
+    description: HERA assists with consumer issues, and is a good resource especially for clients without legal status, or with too high of an income for other legal non-profits. Although they are physically located in Oakland, they can help on issues across the Bay Area.
+  - code: dvca
+    title: Housing Rights Committee (HRC)
+    description: Housing Rights Committee provides non-legal housing counseling on a variety of housing-related issues.
+  - code: xlpe
+    title: "Human Services Agency of San Francisco: General Assistance"
+    description: You can apply for GA by visiting the CAAP Office on 1235 Mission Street.
+  - code: uqnj
+    title: "International Institute of the Bay Area, Redwood City"
+    description: Provides a wide range of immigration services. Legal consultations are $30, and workshops and citizenship classes are also available.
+  - code: ulbf
+    title: Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)
+    description: ICWC provides immigration services, with a focus on U-Visas and VAWA.  ICWC is a good first call for clients to make because the initial consultation is free, and should happen within a couple weeks. This consult should give your client a pretty good idea about whether she is eligible to apply and she can then determine if, or how, to pay the non-profit rate charged by ICWC (or try to find free services elsewhere).
+  - code: dwcn
+    title: Independent Living Resource Center
+    description: "ILRC provides informational Benefits Eligibility Workshops that cover SSI benefits and applications. Given that very few legal providers help with SSI applications (they usually help at the appeal stage), this can be a helpful resource.\n\nILRC also provides limited legal services for disabled San Franciscans, including administrative hearings (SSDI, SSI, CAPI), simple wills, advanced healthcare directives and other planning tools, consumer debt/medical issues, obtaining reasonable accommodations in employment, obtaining reasonable accommodations in housing, and filing ADA access complaints."
+  - code: fmjz
+    title: International Institute of the Bay Area
+    description: IIBA provides a broad range of immigration services and has offices in most Bay Area counties. Although it is a non-profit, it charges reduced costs on a sliding scale. The San Francisco office typically has capacity for new cases, while some of the other offices may have waitlists for certain services.
+  - code: lewp
+    title: Jubilee Immigration Advocates
+    description: 'Jubilee provides many immigration services: U-Visa, VAWA, Asylum, SIJS, deportation defense, family based immigration, citizenship and DACA. Jubilee also has expertise in non-citizens'' eligibility for public benefits.'
+  - code: gkde
+    title: Justice & Diversity Center of the Bar Association of San Francisco (JDC)
+    description: "This is a legal intake line that connects callers to private lawyers AND screens clients for help through the Justice and Diversity Center (pro bono services). \n\nThe JDC primarily provides pro bono assistance in the following areas: family law, consumer law, taxpayer disputes with the IRS, eviction defense, simple wills, and tort defense."
+  - code: yeoa
+    title: La Raza Centro Legal (LRCL)
+    description: "La Raza Centro Legal provides services to low-income SF residents, with a focus on Spanish-speakers, in the areas of immigration, worker's rights, housing, and senior law."
+  - code: eihr
+    title: Lawyers' Committee for Civil Rights, Asylum Program (LCCR)
+    description: "LCCR's asylum program provides free asylum legal assistance to qualifying low-income people. The organization screens callers with potential asylum claims and places meritorious cases with pro bono attorneys supervised by LCCR immigration attorneys."
+  - code: aytv
+    title: Lawyers' Committee for Civil Rights, Second Chance Legal Clinic (LCCR)
+    description: 'This clinic provides advice to about the effect of a prior conviction on employment, housing, and licensing prospects, as well as assistance with tickets and suspended driver''s licenses. Given the easy online application for record cleaning services in most counties (see resource HERE), this clinic is particularly helpful for clients with complicated records, out-of-county issues, or for clients with background check issues or who are applying for occupational licensing.'
+  - code: djsz
+    title: Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program
+    description: Legal Aid at Work's Work and Family Program can assist clients with pregnancy and family leave questions, pregnancy discrimination, and workplace accommodations. They also provide many resources on their website.
+  - code: ugci
+    title: Legal Aid at Work (Formerly Employment Law Center) – Workers' Rights Clinic
+    description: This clinic provides advice to low-income clients around the Bay Area on almost any workers' rights issue. Clients can sign up for an in-person clinic or a phone-in clinic.
+  - code: ohqz
+    title: Legal Aid of Marin
+    description: Legal Aid of Marin provides services to low-income Marin county residents in the areas of housing, consumer, employment, elder law, and for individuals in the Marin Community Court – a court that meets once a month to resolve lifestyle infractions (camping/sleeping in parks, jaywalking, open container, etc.). Legal Aid of Marin also does limited family law cases, but only when the Family and Children's Law Center cannot take a case because of a conflict. Family law inquiries should first be directed to the Family and Children's Law Center.
+  - code: fvag
+    title: Legal Services for Children (LSC)
+    description: "LSC primarily handles the following matters on behalf of young people: guardianship, foster care, emancipation, school cases, immigration, and tickets."
+  - code: rgws
+    title: Legal Aid Society of San Mateo County
+    description: The Legal Aid Society of San Mateo County provides assistance for low-income San Mateo residents in the areas of healthcare, public benefits, housing, domestic violence, and special education, and provides legal help specifically for seniors, adults with disabilities, and teen parents.
+  - code: bnvy
+    title: Marin County Public Defender
+    description: 'For active criminal cases or warrants, your client was likely assigned a public defender or can get help from the public defender''s office in the county in which it occurred. While the PDs can sometimes be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel.'
+  - code: rdpc
+    title: Mission Economic Development Association (MEDA)
+    description: MEDA offers a Financial Coaching + Education Program. While non-legal in nature, the SF Bar Association provides legal services at MEDA once a month, so if the counseling process brings up a legal question, the client may be directly scheduled to meet with the SF Bar Association at MEDA.
+  - code: duom
+    title: Pangea Legal Services
+    description: Pangea offers a wide range of immigration legal services on a sliding scale. A few cases are done for free (pro bono), but most carry low fees. The focus of Pangea's work is deportation defense.
+  - code: arwq
+    title: Police Complaints (in SF)
+    description: When a client has a bad encounter with a police officer, he/she can file a complaint with the Office of Citizen Complaints, which is investigated by the Office.
+  - code: slkt
+    title: Positive Resource Center
+    description: The Positive Resource Center primarily provides legal representation on benefits issues for people with HIV/AIDS or for those with mental health issues referred by specific Department of Public Health sites.
+  - code: irae
+    title: Pro Bono Project
+    description: A Family Law focused clinic. Holds pro per clinics, helps complete forms, and in some cases can provide limited representation in the areas of divorce, parentage, or domestic violence.
+  - code: kgxt
+    title: "Project Sentinel"
+    description: Provides counseling on fair housing issues, as well as other landlord/tenant issues.
+  - code: czdo
+    title: Marin County Public Defender Expungement Division
+    description: When calling, ask for the record expungement division. This is the record-cleaning division of the Marin County Public Defender. They should be able to give individualized information on whether aspects of a record are expungeable. 
+  - code: oekx
+    title: San Francisco Public Defender (SFPD)
+    description: "The San Francisco Public Defender represents clients with active state criminal cases or warrants in SF, assuming the client cannot afford a private attorney. While your client may not know the name of his/her public defender, and the public defenders can be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel. \n\nNote that if the client has questions related to criminal actions, or potential criminal actions, in another County, he/she must contact the public defenders office in that county and/or the federal public defenders for that region."
+  - code: gprm
+    title: SF Marin Food Bank Food Bank Outreach Program
+    description: This program helps clients apply for and obtain CalFresh benefits. They are not lawyers, but they can help clients through many steps of the process, and can triage to legal help if needed.
+  - code: hpum
+    title: SF Pathways to Citizenship Initiative
+    description: "This initiative is a project of a number of organizations. It aims to streamline the citizenship application process for individuals who already have a green card. Your client must have a green card to access services.\nAt the clinic, the staff will go over the naturalization process and assess individual eligibility. Eligible individuals will also receive help with application preparation, documentation packaging, and review by an attorney or qualified representative. This is a San Francisco event, but other similar events are held regularly in other counties."
+  - code: wpmi
+    title: "San Jose State Record Clearance Project"
+    description: This organization within San Jose State University will help review rap sheets, provide information about potential expungement, and, in some cases, provide representation for record clearing.
+  - code: ljmb
+    title: San Mateo County Private Defender Program
+    description: 'For active criminal cases or warrants, your client was likely assigned a public defender or can get help from the public defender''s office in the county in which it occurred. While the PDs can sometimes be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel.'
+  - code: pdrq
+    title: Santa Clara County Public Defender
+    description: 'For active criminal cases or warrants, your client was likely assigned a public defender or can get help from the public defender''s office in the county in which it occurred. While the PDs can sometimes be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel.'
+  - code: yrfz
+    title: SIREN
+    description: Provides legal services for naturalization, DACA, Green Card Renewals, Family Immigration, Work Permits, Citizenship Background checks, FBI background checks, and other areas.
+  - code: wkrt
+    title: Social Justice Collaborative (SJC)
+    description: "SJC is an immigration non-profit that focuses on removal/deportation defense, and especially on complicated cases (ex: those with criminal records or federal immigration litigation). They are located in Oakland, but serve clients in all counties."
+  - code: vrps
+    title: Sparkpoint
+    description: Free credit counseling/credit repair, benefit screenings, career development, tax preparation, and other services.
+  - code: vfen
+    title: SSA.gov
+    description: "Apply for SSI/SSDI using the link below:"
+  - code: akgb
+    title: Swords to Plowshares
+    description: "Swords to Plowshares provides attorney representation and consultation to veterans of any era and discharge status, and can help veterans with VA benefits and military discharge upgrades.\nSwords also helps veterans access the benefits they have earned, avoid or escape homelessness, increase financial stability, and focus on long-term health and well-being."
+  - code: tqvi
+    title: Transgender Law Center
+    description: Through its helpline, the Transgender Law Center provides information and advice about issues related to gender expression (gender and name change, employment discrimination, health care access, public accommodations discrimination, etc.). Full representation is typically reserved for cases with a potential far-reaching legal impact.
+  - code: mfnb
+    title: "Warrants Clinic"
+    description: "This is a good resource for clients with warrants outside of SF, or those who are curious if they have warrants. If a client has a warrant in SF, he/she should be directed to the SF Public Defender.\n\nThis is a clinic of UC Hastings students supervised by attorneys (from the Homeless Advocacy Project and a law firm, Orrick). The schedule is dictated in part by the academic calendar."

@@ -20,7 +20,8 @@ describe Promulgators::Node do
   end
 
   it 'propogates a tree of records recursively' do
-    Promulgators::Referral.new(files: [:test]).promulgate!
+    Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
+    Promulgators::SecondaryReferral.new(files: [:test_secondary]).promulgate!
     expect { Promulgators::Node.new(files: [:root, :test_a, :test_b]).promulgate! }.to change { Node.count }.by(7)
 
     root_titles = Node.find_by(title: "County").children.pluck(:title)
@@ -37,7 +38,8 @@ describe Promulgators::Node do
   end
 
   it "attaches referrals to all equivalent nodes" do
-    Promulgators::Referral.new(files: [:test]).promulgate!
+    Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
+    Promulgators::SecondaryReferral.new(files: [:test_secondary]).promulgate!
     Promulgators::Node.new(files: [:root, :test_a, :test_b]).promulgate!
     b1nodes = Node.where(title: "TestB1")
 

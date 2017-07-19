@@ -47,6 +47,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :unique_identifier,
+    :title,
     :description,
     :markdown_content,
     :markdown_content_es

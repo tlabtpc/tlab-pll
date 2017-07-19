@@ -7,9 +7,9 @@ records:
   - title: "Deportation defense"
     description: "Clients in deportation proceedings may have been stopped at the border, have a bracelet, be in immigration supervision, have a court date, and/or have paperwork from a border location."
     primary_referrals:
-      - "Dolores Street"
-      - "Pangea Legal Services"
-      - "Centro Legal de la Raza"
+      - bpri
+      - duom
+      - lnft
     secondary_referrals:
       - "Immigration Court and Removal Proceedings Information"
       - "Detention Information from the National Immigration Project"
@@ -17,8 +17,8 @@ records:
   - title: "Naturalization"
     description: "Client has a green card and needs help applying for citizenship or has other naturalization-related questions."
     primary_referrals:
-      - "SF Pathways to Citizenship Initiative"
-      - "International Institute of the Bay Area"
+      - hpum
+      - fmjz
     secondary_referrals:
       - "Naturalization FAQ"
       - "Citizenship Through Naturalization"
@@ -26,32 +26,32 @@ records:
   - title: "Family or work petitions"
     description: "Some people apply for status through close family members who are citizens, or through an employer. "
     primary_referrals:
-      - "International Institute of the Bay Area"
-      - "Jubilee Immigration Advocates"
+      - fmjz
+      - lewp
     secondary_referrals:
       - "Family Petitions"
       - "Pathways to Status"
   - title: "DACA  (Deferred Action for Childhood Arrivals)"
     description: "Relief for people who came to the United States when young and went or are going to school."
     primary_referrals:
-      - "International Institute of the Bay Area"
-      - "Jubilee Immigration Advocates"
+      - fmjz
+      - lewp
     secondary_referrals:
       - "DACA FAQ"
       - "Pathways to Status"
   - title: "Asylum"
     description: "Relief for people persecuted in their home countries."
     primary_referrals:
-      - "Lawyers' Committee for Civil Rights, Asylum Program (LCCR)"
-      - "East Bay Sanctuary Covenant"
+      - eihr
+      - fbgl
     secondary_referrals:
       - "Asylum FAQ"
       - "Pathways to Status"
   - title: "U-Visa, T-Visa, VAWA"
     description: "Relief for people who have been subjected to crimes or domestic violence while in the United States."
     primary_referrals:
-      - "Immigration Center for Women and Children, U-VISA and VAWA services (ICWC)"
-      - "Asian Pacific Islander Legal Outreach (APILO)"
+      - ulbf
+      - avut
     secondary_referrals:
       - "U-Visa FAQ"
       - "T-Visa FAQ"
@@ -59,8 +59,8 @@ records:
   - title: "Special Immigrant Juvenile Status"
     description: "Relief for minors who came here unaccompanied or with only one parent."
     primary_referrals:
-      - "Legal Services for Children (LSC)"
-      - "Central American Resource Center (Carecen)"
+      - fvag
+      - zrcx
     secondary_referrals:
       - "SIJS FAQ"
       - "Pathways to Status"

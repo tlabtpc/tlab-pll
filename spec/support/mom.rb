@@ -54,7 +54,9 @@ class Mom
 
   def primary_referral(**args)
     PrimaryReferral.new(
+      code: "prim",
       title: "PrimaryTitle",
+      description: "Description of primary referral",
       markdown_content: "#Header",
       **args
     )
@@ -71,6 +73,8 @@ class Mom
   def special_referral(title: "SpecialTitle", markdown_content: "SpecialDescription", link: "referrals.special.biz")
     SpecialReferral.new(
       title: title,
+      code: "spec",
+      description: "Special description",
       markdown_content: markdown_content,
       link: link
     )

@@ -1,0 +1,16 @@
+defaults:
+  markdown_content: "content"
+
+records:
+  - title: "Primary1"
+    code: cccc
+    type: "PrimaryReferral"
+  - title: "Primary2"
+    type: "PrimaryReferral"
+    code: dddd
+  - title: "Special1"
+    type: "SpecialReferral"
+    code: aaaa
+  - title: "Special2"
+    code: bbbb
+    type: "SpecialReferral"

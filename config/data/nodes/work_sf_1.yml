@@ -6,8 +6,8 @@ records:
   - title: "Consumer: non-legal help"
     description: "Obtaining credit reports, financial counseling or debt management"
     primary_referrals:
-      - "Consumer Credit Counseling Service of San Francisco (CCCSSF)/Balance"
-      - "Mission Economic Development Association (MEDA)"
+      - qzxg
+      - rdpc
     secondary_referrals:
       - "Understanding Credit Reports and Scores"
       - "How to Get Free Credit Reports"
@@ -15,33 +15,33 @@ records:
   - title: "Consumer: legal help"
     description: "Debt lawsuit, student loan debt, predatory loans, foreclosure, etc."
     primary_referrals:
-      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
-      - "Bay Area Legal Aid (BayLegal)"
+      - gkde
+      - aypz
     secondary_referrals:
       - "Debt Collection Lawsuit"
       - "Finding Legal Help For Debt Collection Lawsuits"
   - title: "Driver's license"
     description: "Legal help is sometimes available for getting a driver's license out of suspension."
     primary_referrals:
-      - "Lawyers' Committee for Civil Rights, Second Chance Legal Clinic (LCCR)"
-      - "Bay Area Legal Aid, Legal Barriers to Employment Project"
-      - "Legal Services for Children (LSC)"
+      - aytv
+      - pstv
+      - fvag
     secondary_referrals:
       - "California Suspended Drivers License Information"
       - "General Information on Suspended Drivers Licenses"
   - title: "Work and family"
     description: "Pregnancy leaves, family medical leaves, pregnancy discrimination, etc."
     primary_referrals:
-      - "Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program"
+      - djsz
     secondary_referrals:
       - "Taking Leave from Work: Pregnancy/Prenatal Care/Bonding with a New Child"
       - "More Information on Work-Related Issues"
   - title: "Worker's rights"
     description: "Unpaid wages or benefits, Unemployment Insurance, discrimination"
     primary_referrals:
-      - "Legal Aid at Work (Formerly Employment Law Center) – Workers' Rights Clinic"
-      - "Asian Americans Advancing Justice – Asian Law Caucus (ALC)"
-      - "La Raza Centro Legal (LRCL)"
+      - ugci
+      - jzok
+      - yeoa
     secondary_referrals:
       - "12 Facts About Employment Law"
       - "More Information on Work-Related Issues"

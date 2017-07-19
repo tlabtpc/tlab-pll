@@ -1,4 +1,4 @@
-class Promulgators::Referral < Promulgators::Base
+class Promulgators::SecondaryReferral < Promulgators::Base
   private
   
   def resource

@@ -1,0 +1,8 @@
+defaults:
+
+records:
+  - title: "Secondary1"
+    type: "SecondaryReferral"
+    link: "http://foo.org"
+  - title: "Secondary2"
+    type: "SecondaryReferral"

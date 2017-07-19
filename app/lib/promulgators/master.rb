@@ -1,6 +1,7 @@
 class Promulgators::Master < Promulgators::Base
   def promulgate!
-    Promulgators::Referral.new(files: [:special, :primary, :secondary]).promulgate!
+    Promulgators::SecondaryReferral.new(files: [:secondary]).promulgate!
+    Promulgators::PrimaryReferral.new(files: [:special, :primary]).promulgate!
     Promulgators::Node.new(files: [:root, :counties, :categories]).promulgate!
 
     Node.counties.pluck(:title).each do |county|

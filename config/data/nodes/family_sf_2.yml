@@ -7,16 +7,16 @@ records:
   - title: "Restraining order"
     description: "Order to direct a person to stay away from a person or place."
     primary_referrals:
-      - "Cooperative Restraining Order Clinic (CROC)"
-      - "Bay Area Legal Aid (BayLegal)"
+      - rzag
+      - aypz
     secondary_referrals:
       - "Restraining Order Information"
   - title: "Family law issues with domestic violence"
     description: "Divorce, custody, child support, guardianship"
     primary_referrals:
-      - "Bay Area Legal Aid (BayLegal)"
-      - "Asian Pacific Islander Legal Outreach (APILO)"
-      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
+      - aypz
+      - avut
+      - gkde
     secondary_referrals:
       - "Domestic Violence Information"
       - "Custody & Parenting Time (Visitation) FAQ"
@@ -24,8 +24,8 @@ records:
   - title: "Family law issues without domestic violence"
     description: "Divorce, custody, child support, guardianship"
     primary_referrals:
-      - "Access Center (Self-Help Center at the SF Superior Court)"
-      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
+      - waoe
+      - gkde
     secondary_referrals:
       - "Divorce or Separation Information"
       - "Custody & Parenting Time (Visitation) FAQ"
@@ -33,7 +33,7 @@ records:
   - title: "Wills and advance healthcare directives"
     description: "Preparation of end-of-life documents."
     primary_referrals:
-      - "Justice & Diversity Center of the Bar Association of San Francisco (JDC)"
+      - gkde
     secondary_referrals:
       - "Do I Need a Will?"
       - "Sample Will"
@@ -41,7 +41,5 @@ records:
   - title: "Work and family issues"
     description: "Pregnancy leaves, Family medical leaves, pregnancy discrimination, etc."
     primary_referrals:
-      - "Legal Aid at Work (Formerly Employment Law Center) – Work and Family Program"
-    secondary_referrals:
-      - "Work and Family Program at Legal Aid at Work"
+      - djsz
   - title: "Other"

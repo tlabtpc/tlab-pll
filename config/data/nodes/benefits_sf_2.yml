@@ -7,47 +7,47 @@ records:
   - title: "CAAP (GA, PAES etc.)"
     description: "Cash assistance for adults with no dependents."
     primary_referrals:
-      - "Bay Area Legal Aid (BayLegal)"
-      - "Human Services Agency of San Francisco: General Assistance"
+      - aypz
+      - xlpe
   - title: "CalWORKS"
     description: "Cash assistance for families with children in the home."
     primary_referrals:
-      - "Bay Area Legal Aid (BayLegal)"
-      - "Human Services Agency of San Francisco: General Assistance"
+      - aypz
+      - xlpe
   - title: "CalFresh"
     description: "Monthly food benefits"
     primary_referrals:
-      - "SF Marin Food Bank Food Stamp Outreach Program"
-      - "GetCalFresh.org"
+     - gprm
+     - qayf
   - title: "Foster care"
     description: "Cash and other assistance for foster care-involved youth."
     primary_referrals:
-      - "Bay Area Legal Aid (BayLegal)"
-      - "Legal Services for Children (LSC)"
+     - aypz
+     - fvag
   - title: "Health care"
     description: "Health care under Medi-Cal, Medicare, Covered California, and private providers."
     primary_referrals:
-      - "Bay Area Legal Aid, Health Consumer Center"
+     - wzlj
   - title: "SSI/SSDI"
     description: "Cash assistance for disabled or elderly individuals."
     primary_referrals:
-      - "Homeless Advocacy Project of JDC (HAP)"
-      - "Positive Resource Center"
-      - "Independent Living Resource Center"
-      - "SSA.gov"
+     - rvjb
+     - slkt
+     - dwcn
+     - vfen
   - title: "Veteran's benefits"
     description: "Assistance with accessing veterans benefits."
     primary_referrals:
-      - "Swords to Plowshares"
+     - akgb
   - title: "Non-citizen benefits"
     description: "Some benefits are available to non-citizens, and others carry risks."
     primary_referrals:
-      - "Jubilee Immigration Advocates"
-      - "Asian Pacific Islander Legal Outreach (APILO)"
+     - lewp
+     - avut
   - title: "Work-related benefits"
     description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."
     primary_referrals:
-      - "Legal Aid at Work (Formerly Employment Law Center) – Workers' Rights Clinic"
-      - "Asian Americans Advancing Justice – Asian Law Caucus (ALC)"
+     - ugci
+     - jzok
   - title: "Other"
     description: ""
