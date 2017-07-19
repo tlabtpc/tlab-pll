@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe CrossCheck do
-  describe '.next_step_for' do
+  describe '#next_step_for' do
     it 'returns the next step name' do
       expect(subject.next_step_for(:details)).to eq 'info'
     end
@@ -15,7 +15,7 @@ describe CrossCheck do
     end
   end
 
-  describe '.previous_step_for' do
+  describe '#previous_step_for' do
     it 'returns the previous step name' do
       expect(subject.previous_step_for(:info)).to eq 'details'
     end
