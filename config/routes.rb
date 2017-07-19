@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resource :sessions, only: %i[new create destroy]
   resources :users, only: %i[new create]
 
-  resources :assessments, only: [:new, :create, :show]
+  resources :assessments, only: [:new, :create, :show] do
+    post :send_email, on: :member
+  end
+
   resources :assessment_nodes, only: :create do
     delete :destroy, on: :collection
   end

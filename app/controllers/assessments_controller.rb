@@ -9,6 +9,15 @@ class AssessmentsController < ApplicationController
     @special_referrals = SpecialReferral.all
   end
 
+  def send_email
+    AssessmentsMailer.show(assessment, to: email_address).deliver_now
+    flash[:info] = "Summary successfully sent to #{email_address}"
+  rescue ActionController::ParameterMissing
+    flash[:error] = "No email address provided"
+  ensure
+    redirect_to assessment_path(assessment)
+  end
+
   def create
     if cookies[:assessment] = Assessment.create(assessment_params).token
       redirect_to Node.root
@@ -18,6 +27,10 @@ class AssessmentsController < ApplicationController
   end
 
   private
+
+  def email_address
+    @email_address ||= params.require(:assessment).require(:email_address)
+  end
 
   def assessment
     @assessment ||= Assessment.find(params[:id]).decorate

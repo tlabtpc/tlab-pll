@@ -1,12 +1,12 @@
-function validatePrimaryReferralEmailForm() {
-  var $form = $('#primary_referral_email_form');
+function validateEmailForm(prefix) {
+  var $form = $('#' + prefix + '_email_form');
 
   var $confirmationCheckbox = $form
-    .find('#primary_referral_email_client_confirmation');
+    .find('#' + prefix + '_email_client_confirmation');
 
-  var $addressField = $form.find('#primary_referral_email_address');
+  var $addressField = $form.find('#' + prefix + '_email_address');
 
-  function updatePrimaryReferralEmailButton() {
+  function updateEmailButton() {
     var confirmed = Boolean($confirmationCheckbox.is(':checked'));
     var emailPresent = Boolean($addressField.val())
       && $addressField[0].checkValidity();
@@ -17,11 +17,22 @@ function validatePrimaryReferralEmailForm() {
     $form.find('submit').attr('disabled', !canSubmit);
   }
 
-  $confirmationCheckbox.change(updatePrimaryReferralEmailButton);
-  $addressField[0].oninput = updatePrimaryReferralEmailButton;
+  $confirmationCheckbox.change(updateEmailButton);
+  $addressField[0].oninput = updateEmailButton;
 }
 
+function validatePrimaryReferralEmailForm() {
+  return validateEmailForm("primary_referral");
+}
+
+function validateAssessmentEmailForm() {
+  return validateEmailForm("assessment");
+}
 
 $(function() {
-  $('#send-email-modal').on('open.zf.reveal', validatePrimaryReferralEmailForm);
+  $('#send-email-modal')
+    .on('open.zf.reveal', validatePrimaryReferralEmailForm);
+
+  $('#send-assessment-email-modal')
+    .on('open.zf.reveal', validateAssessmentEmailForm);
 })

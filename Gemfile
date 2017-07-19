@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capybara-screenshot'
   gem "climate_control"
   gem "launchy"
+  gem "letter_opener"
   gem "poltergeist"
   gem 'pry'
   gem 'pry-rescue'
