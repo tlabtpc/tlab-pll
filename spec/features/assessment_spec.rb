@@ -121,7 +121,10 @@ describe "assessment", js: true do
       fill_in "cross_check_last_name", with: cross_check_input[:last_name]
       fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
       fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
-      click_next
+
+      expect {
+        click_next
+      }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
       # deadlines step
       expect(page).to have_content "any deadlines they need to meet"
