@@ -15,6 +15,8 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     description: Field::Text,
     markdown_content: Field::Text,
     markdown_content_es: Field::Text,
+    has_markdown?: Field::Boolean,
+    has_markdown_es?: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,7 +28,9 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :title
+    :title,
+    :has_markdown?,
+    :has_markdown_es?
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
