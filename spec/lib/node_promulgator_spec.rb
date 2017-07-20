@@ -22,7 +22,7 @@ describe Promulgators::Node do
   it 'propogates a tree of records recursively' do
     Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
     Promulgators::SecondaryReferral.new(files: [:test_secondary]).promulgate!
-    expect { Promulgators::Node.new(files: [:root, :test_a, :test_b]).promulgate! }.to change { Node.count }.by(7)
+    expect { Promulgators::Node.new(files: [:root, :test_a, :test_b]).promulgate! }.to change { Node.count }.by(5)
 
     root_titles = Node.find_by(title: "County").children.pluck(:title)
     expect(root_titles).to include "TestA1"
@@ -32,9 +32,8 @@ describe Promulgators::Node do
     expect(a1_titles).to include "TestB1"
     expect(a1_titles).to include "TestB2"
 
-    a2_titles = Node.find_by(title: "TestA2").children.pluck(:title)
-    expect(a2_titles).to include "TestB1"
-    expect(a2_titles).to include "TestB2"
+    # does not promulgate terminal nodes
+    expect(Node.find_by(title: "TestA2").children).to be_empty
   end
 
   it "attaches referrals to all equivalent nodes" do

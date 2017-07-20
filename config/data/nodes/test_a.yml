@@ -4,3 +4,4 @@ defaults:
 records:
   - title: "TestA1"
   - title: "TestA2"
+    terminal: true

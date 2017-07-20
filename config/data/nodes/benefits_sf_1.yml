@@ -7,3 +7,4 @@ records:
     description: "There is limited legal help available for applications for benefits. Applications can typically be submitted without legal help directly with the appropriate government agency."
   - title: "Has problems with her benefits"
   - title: "Other"
+    terminal: true

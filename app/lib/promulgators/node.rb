@@ -8,9 +8,10 @@ class Promulgators::Node < Promulgators::Base
   end
 
   def promulgate!
+    return if !files.present? || parent&.terminal?
     records_to_promulgate.each_with_index do |record, index|
       self.class.new(files: files[1..-1], parent: create_model(record, index)).promulgate!
-    end if files.present?
+    end
   end
 
   private
