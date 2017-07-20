@@ -104,6 +104,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    colorize (0.8.1)
     concurrent-ruby (1.0.5)
     database_cleaner (1.5.3)
     datetime_picker_rails (0.0.7)
@@ -352,6 +353,7 @@ DEPENDENCIES
   citizen-scripts!
   climate_control
   coffee-rails (~> 4.1.0)
+  colorize
   database_cleaner
   draper
   faker
