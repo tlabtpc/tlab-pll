@@ -1,4 +1,5 @@
 @import 'colors';
+$square-icon-size: 60px;
 
 .square-collection {
   display: flex;
@@ -17,7 +18,7 @@
   box-shadow: 0px 0px 4px 0px rgba(0,0,0,.5);
   display: flex;
   flex-basis: 25%;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -25,6 +26,21 @@
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+
+  &__icon {
+    width: $square-icon-size;
+    height: $square-icon-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    pointer-events: none;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
 
   &--selected {
     font-weight: bold;

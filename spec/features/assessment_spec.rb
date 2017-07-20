@@ -225,6 +225,7 @@ describe "assessment", js: true do
 
     step "select category node" do
       expect(page).to have_content category_node.question
+      expect(page).to have_css('.square__icon')
       expect_to_have_tips(text: " learn more about the following categories")
 
       click_square_and_next

@@ -20,8 +20,9 @@ class Views::Nodes::Show < Views::Base
         children.each do |child|
           render partial: "square", locals: {
             value: child.id,
-            text: child.title,
-            description: child.description
+            label: child.title,
+            description: child.description,
+            icon: child.icon
           }
         end
       end

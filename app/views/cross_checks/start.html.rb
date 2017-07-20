@@ -15,14 +15,16 @@ class Views::CrossChecks::Start < Views::Base
           render partial: "square", locals: {
             value: 1,
             text: "Yes, I want PLL to review my client’s issue",
-            description: "Great. To do this we'll need to gather a bit more information"
+            description: "Great. To do this we'll need to gather a bit more information",
+            icon: nil
           }
 
           render partial: "square", locals: {
             value: 0,
             text: "No, just give me the summary",
-            description: "Okay, we’ll take you straight to your assessment"
-           }
+            description: "Okay, we’ll take you straight to your assessment",
+            icon: nil
+          }
         end
       end
     end

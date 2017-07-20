@@ -1,9 +1,13 @@
 class Views::Application::Square < Views::Base
-  needs :text
+  needs :label
   needs :value
   needs :description
+  needs :icon
 
   def content
-    li text, class: :square, data: { value: value, description: description }
+    li class: :square, data: { value: value, description: description } do
+      div(class: "square__icon") { image_tag "icons/#{icon}" } if icon
+      text label
+    end
   end
 end
