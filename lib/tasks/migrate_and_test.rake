@@ -5,11 +5,11 @@ namespace :db do
 
       def self.record_count
         # TODO fill out smoke test
-        rand(1020301203122343)
+        10
       end
 
       def self.rollback!
-        # cmd "heroku rollback -a #{STAGING_APP}"
+        cmd "heroku rollback -a #{STAGING_APP}"
       end
 
       def self.suppress_output
