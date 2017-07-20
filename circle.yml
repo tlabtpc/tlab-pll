@@ -11,7 +11,7 @@ deployment:
     branch: master
     commands:
       - |
-        set -eo pipefail
+        set -eox pipefail
 
         [[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow
 
