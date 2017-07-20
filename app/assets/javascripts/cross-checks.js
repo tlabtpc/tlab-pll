@@ -22,7 +22,7 @@ $(function() {
       .toggleClass('footer-flash--visible', Boolean(description))
   }
 
-  $('body').on('keyup', 'input.cross-checks__input--required', verifyRequiredFields)
+  $('body').on('keyup', '.cross-checks__input--required', verifyRequiredFields)
   $('body').on('change', 'select.cross-checks__input--required', verifyRequiredFields)
   $('.cross-checks__input--required').trigger('keyup');
 })
