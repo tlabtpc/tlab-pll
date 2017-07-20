@@ -14,8 +14,10 @@ class AssessmentNodesController < ApplicationController
   end
 
   def destroy
-    last_nonterminal_node = assessment.non_terminal_nodes.last
-    if assessment.assessment_nodes.last&.destroy
+    if assessment.non_terminal_assessment_nodes.any?
+      last_nonterminal_node = assessment.non_terminal_nodes.last
+      assessment.terminal_assessment_nodes.last&.destroy
+      assessment.non_terminal_assessment_nodes.last.destroy
       redirect_to last_nonterminal_node
     else
       assessment.destroy
