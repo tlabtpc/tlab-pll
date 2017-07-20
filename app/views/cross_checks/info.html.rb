@@ -22,7 +22,7 @@ class Views::CrossChecks::Info < Views::Base
 
         f.label 'Your org *', for: :cross_check_caseworker_organization
         f.select :caseworker_organization,
-          ['Community Housing Partnership', 'Compass'],
+          ['Community Housing Partnership', 'Compass Family Services'],
           { include_blank: true },
           class: "cross-checks__input--required"
 

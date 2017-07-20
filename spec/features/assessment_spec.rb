@@ -261,7 +261,7 @@ describe "assessment", js: true do
     fill_in "cross_check_last_name", with: cross_check_input[:last_name]
     fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
     fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
-    select "Compass", from: "cross_check_caseworker_organization"
+    select "Compass Family Services", from: "cross_check_caseworker_organization"
   end
 
   def expect_to_have_tips(**options)
