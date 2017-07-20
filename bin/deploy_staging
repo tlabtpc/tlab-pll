@@ -7,3 +7,9 @@ set -eox pipefail
 git push git@heroku.com:tlab-pll-staging.git $CIRCLE_SHA1:refs/heads/master && \
   ./bin/import_production_db_to_staging && \
   heroku run rake db:deploy:migrate_and_test --app tlab-pll-staging
+
+if [ $? -ne 0 ]; then
+  echo -e "\e[31mDeployment failed!\e[0m"
+  echo
+  exit 1
+fi
