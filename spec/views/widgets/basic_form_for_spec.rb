@@ -20,7 +20,7 @@ describe "widgets/basic_form_for.html.rb" do
 
     expect(rendered).to match_html <<-HTML
       <div class="expanded row">
-        <div class="columns small-12 medium-6">
+        <div class="small-centered columns small-12 medium-6">
           <h2>User Details</h2>
 
           <form class="new_user" id="new_user" action="/user/new" accept-charset="UTF-8" method="post">

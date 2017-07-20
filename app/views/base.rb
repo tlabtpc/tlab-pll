@@ -19,7 +19,7 @@ module Views
     def back_button(url, options = {})
       link_to url, options.merge(class: "button button--back") do
         fa_icon 'arrow-left'
-        span 'Back'
+        span 'BACK'
       end
     end
 
