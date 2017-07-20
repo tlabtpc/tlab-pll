@@ -1,9 +1,16 @@
 @import 'colors';
 
+$container-width: 940px;
+
 .top-bar {
   background: $seagull;
   border-bottom: 2px solid $alto;
-  .top-bar-left {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    max-width: $container-width;
+    margin: auto;
+
     img {
       height: 40px;
       margin-left: 15px;
@@ -39,7 +46,7 @@
 }
 
 .footer-flash {
-  max-width: 940px;
+  max-width: $container-width;
   margin: 0 auto 5px auto;
   padding: 0;
   transition: all 0.2s;
@@ -56,7 +63,7 @@
 .footer__buttons {
   margin: 0 auto;
   display: flex;
-  max-width: 940px;
+  max-width: $container-width;
   padding: 0.5rem;
   flex-direction: row;
   justify-content: space-between;
