@@ -59,7 +59,7 @@ namespace :db do
 
         puts "  - Rolling back staging to a good-enough state...".colorize(:red)
 
-        abort
+        exit! 1
       else
         puts "==> Everything looks good, allowing deploy!".colorize(:green)
       end

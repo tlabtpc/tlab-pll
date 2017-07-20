@@ -10,7 +10,7 @@ deployment:
   staging:
     branch: master
     commands:
-      - exit 1
+      - ./bin/deploy_staging
 
 general:
   branches:
