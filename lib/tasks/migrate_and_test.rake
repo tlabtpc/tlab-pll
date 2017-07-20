@@ -3,9 +3,12 @@ namespace :db do
     class DeployTest
       STAGING_APP="tlab-pll-staging"
 
-      def self.record_count
-        # TODO fill out smoke test
-        10
+      def self.hand_edited_count
+        Referral.hand_edited.count
+      end
+
+      def self.missing_referrals_count
+        AssessmentReferral.with_missing_referrals.count
       end
 
       def self.rollback!
@@ -41,10 +44,8 @@ namespace :db do
     task :migrate_and_test => ["db:migrate", :environment] do
       puts "==> Starting data integrity smoke test".colorize(:green)
 
-      previous_record_count = DeployTest.record_count
-
-      puts "  - Got #{previous_record_count} records "\
-        "before seeding...".colorize(:yellow)
+      previous_hand_edited_count = DeployTest.hand_edited_count
+      previous_missing_referrals_count = DeployTest.missing_referrals_count
 
       puts "  - Seeding the db...".colorize(:yellow)
 
@@ -52,17 +53,39 @@ namespace :db do
         Rake::Task['db:seed'].invoke
       end
 
-      current_record_count = DeployTest.record_count
-      if previous_record_count != current_record_count
-        puts "==> Got #{current_record_count} records, expecting to get "\
-          "#{previous_record_count} records".colorize(:red)
+      needs_rollback = false
 
-        puts "  - Rolling back staging to a good-enough state...".colorize(:red)
+      current_hand_edited_count = DeployTest.hand_edited_count
+      current_missing_referrals_count = DeployTest.missing_referrals_count
 
-        exit! 1
-      else
-        puts "==> Everything looks good, allowing deploy!".colorize(:green)
+      if previous_hand_edited_count != current_hand_edited_count
+        needs_rollback = true
+
+        puts "==> Got #{current_hand_edited_count} hand edited referrals, "\
+          "expecting to get #{previous_hand_edited_count} "\
+          "records".colorize(:red)
       end
+
+      if previous_missing_referrals_count != current_missing_referrals_count
+        needs_rollback = true
+
+        puts "==> Got #{current_missing_referrals_count} missing referrals, "\
+          "expecting to get #{previous_missing_referrals_count} "\
+          "records".colorize(:red)
+      end
+
+      if needs_rollback
+        puts "  - Rolling back staging to a good-enough state...".colorize(:red)
+        DeployTest.rollback!
+        exit! 1
+      end
+
+      puts "==> Everything looks good, allowing deploy!".colorize(:green)
+      puts "  - #{current_hand_edited_count} hand edited referrals"
+        .colorize(:blue)
+
+      puts "  - #{current_missing_referrals_count} dangling referrals"
+        .colorize(:blue)
     end
   end
 end

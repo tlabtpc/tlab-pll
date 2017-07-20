@@ -5,6 +5,6 @@ class Referral < ApplicationRecord
   scope :primary,   -> { where(type: "PrimaryReferral") }
   scope :secondary, -> { where(type: "SecondaryReferral") }
   scope :special,   -> { where(type: "SpecialReferral") }
-
   scope :featured, -> { where.not(type: "SecondaryReferral") }
+  scope :hand_edited, -> { where.not(markdown_content: nil) }
 end
