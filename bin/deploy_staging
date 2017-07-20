@@ -1,0 +1,7 @@
+#!/usr/bin/env bash -eox pipefail
+
+[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow
+
+git push git@heroku.com:tlab-pll-staging.git $CIRCLE_SHA1:refs/heads/master && \
+  ./bin/import_production_db_to_staging && \
+  heroku run rake db:deploy:migrate_and_test --app tlab-pll-staging

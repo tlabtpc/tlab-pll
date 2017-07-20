@@ -1,10 +1,6 @@
-require_relative '../../spec/support/output_support'
-
 namespace :db do
   namespace :deploy do
     class DeployTest
-      extend OutputSupport
-
       STAGING_APP="tlab-pll-staging"
 
       def self.record_count
@@ -14,6 +10,24 @@ namespace :db do
 
       def self.rollback!
         # cmd "heroku rollback -a #{STAGING_APP}"
+      end
+
+      def self.suppress_output
+        begin
+          original_stderr = $stderr.clone
+          original_stdout = $stdout.clone
+          $stderr.reopen(File.new('/dev/null', 'w'))
+          $stdout.reopen(File.new('/dev/null', 'w'))
+          retval = yield
+        rescue Exception => e
+          $stdout.reopen(original_stdout)
+          $stderr.reopen(original_stderr)
+          raise e
+        ensure
+          $stdout.reopen(original_stdout)
+          $stderr.reopen(original_stderr)
+        end
+        retval
       end
 
       private
