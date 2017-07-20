@@ -11,18 +11,19 @@ class Assessment < ApplicationRecord
   has_many :referrals, through: :assessment_referrals
 
   has_many :primary_referrals,
-    -> { where(type: 'PrimaryReferral').order(type: :asc) },
+    -> { where(type: 'PrimaryReferral').order(priority: :asc) },
     through: :assessment_referrals,
     source: :referral
 
   has_many :secondary_referrals,
-    -> { where(type: 'SecondaryReferral') },
+    -> { where(type: 'SecondaryReferral').order(priority: :asc) },
     through: :assessment_referrals,
     source: :referral
 
-  def featured_referrals
-    referrals.where(type: ['PrimaryReferral', 'SpecialReferral']).order(type: :asc)
-  end
+  has_many :featured_referrals,
+    -> { where(type: ['PrimaryReferral', 'SpecialReferral']).order(priority: :asc) },
+    through: :assessment_referrals,
+    source: :referral
 
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }

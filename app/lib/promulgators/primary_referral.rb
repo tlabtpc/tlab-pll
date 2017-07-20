@@ -1,7 +1,7 @@
 class Promulgators::PrimaryReferral < Promulgators::Base
   private
 
-  def build_model_params(record)
+  def build_model_params(record, index)
     super.except(:markdown_content, :markdown_content_es)
   end
 

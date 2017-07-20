@@ -7,7 +7,7 @@ class Promulgators::Base
 
   def promulgate!
     return unless files.present?
-    records_to_promulgate.each { |record| create_model(record) }
+    records_to_promulgate.each_with_index { |record, index| create_model(record, index) }
     self.class.new(files: files[1..-1]).promulgate!
   end
 
@@ -29,14 +29,14 @@ class Promulgators::Base
     @records ||= Array(data['records'])
   end
 
-  def create_model(record)
+  def create_model(record, index)
     resource_class.find_or_create_by(find_by_hash(record)).tap do |model|
-      model.update(build_model_params(record))
+      model.update(build_model_params(record, index))
     end
   end
 
-  def build_model_params(record)
-    Hash(data['defaults']).merge(record)
+  def build_model_params(record, index)
+    Hash(data['defaults']).merge(priority: index).merge(record)
   end
 
   def data

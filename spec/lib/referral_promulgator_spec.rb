@@ -26,6 +26,12 @@ describe 'Referral Promulgators' do
     expect(Referral.pluck(:description).uniq).to eq ["a description"]
   end
 
+  it 'populates priority' do
+    Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
+    expect(PrimaryReferral.find_by(title: "Primary1").priority).to eq 0
+    expect(PrimaryReferral.find_by(title: "Primary2").priority).to eq 1
+  end
+
   it 'does not overwrite existing referrals' do
     Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
     expect { Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate! }.to_not change { SpecialReferral.count }
