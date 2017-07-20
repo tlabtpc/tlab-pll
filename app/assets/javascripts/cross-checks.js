@@ -1,26 +1,28 @@
 $(function() {
-  var $cross_check_submit = $('#cross_check_submit');
+  var $crossCheckSubmit = $('#cross_check_submit');
 
-  $('body').on('keyup', '.cross-checks__textarea--required', function(e) {
-    var target = $(e.target);
-    var val = target.val();
+  var verifyRequiredFields = function(e) {
+    var description
+    var elementsNeedInput = Boolean($('.cross-checks__input--required').filter(function() {
+      return $(this).val().length <= 0
+    }).length)
 
-    if (val.length) {
-      var description = target.data('description');
+    if (!elementsNeedInput) {
+      description = $(e.target).data('description')
     }
 
-    var disabled = !val.length;
-
     $('.button--submit')
-      .toggleClass('button--disabled', disabled)
-      .prop('disabled', disabled);
+      .toggleClass('button--disabled', elementsNeedInput)
+      .prop('disabled', elementsNeedInput)
 
-    $cross_check_submit.prop('disabled', disabled);
+    $crossCheckSubmit.prop('disabled', elementsNeedInput)
 
     $('.footer-flash')
       .html(description || "")
-      .toggleClass('footer-flash--visible', Boolean(description));
-  })
+      .toggleClass('footer-flash--visible', Boolean(description))
+  }
 
-  $('.cross-checks__textarea--required').trigger('keyup');
+  $('body').on('keyup', 'input.cross-checks__input--required', verifyRequiredFields)
+  $('body').on('change', 'select.cross-checks__input--required', verifyRequiredFields)
+  $('.cross-checks__input--required').trigger('keyup');
 })

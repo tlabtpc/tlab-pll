@@ -8,22 +8,23 @@ class Views::CrossChecks::Info < Views::Base
     content_for :card do
       h4 "Please provide the following:"
       cross_check_form do |f|
-        f.label 'Your first name', for: :cross_check_first_name
-        f.text_field :first_name
+        f.label 'Your first name *', for: :cross_check_first_name
+        f.text_field :first_name, required: true, class: "cross-checks__input--required"
 
-        f.label 'Your last name', for: :cross_check_last_name
-        f.text_field :last_name
+        f.label 'Your last name *', for: :cross_check_last_name
+        f.text_field :last_name, required: true, class: "cross-checks__input--required"
 
-        f.label :phone, for: :cross_check_caseworker_phone
-        f.text_field :caseworker_phone
+        f.label "Phone *", for: :cross_check_caseworker_phone
+        f.text_field :caseworker_phone, type: :tel, required: true, class: "cross-checks__input--required"
 
-        f.label :email, for: :cross_check_caseworker_email
-        f.text_field :caseworker_email
+        f.label "Email *", for: :cross_check_caseworker_email
+        f.text_field :caseworker_email, type: :email, required: true, class: "cross-checks__input--required"
 
-        f.label 'Your org', for: :cross_check_caseworker_organization
+        f.label 'Your org *', for: :cross_check_caseworker_organization
         f.select :caseworker_organization,
           ['Community Housing Partnership', 'Compass'],
-          include_blank: true
+          { include_blank: true },
+          class: "cross-checks__input--required"
 
         long_term_radios(f)
         client_is_homeless(f)

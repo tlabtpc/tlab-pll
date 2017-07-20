@@ -64,6 +64,7 @@ describe "assessment", js: true do
 
       # basic info step
       expect(page).to have_content "Please provide the following"
+      expect_disabled_button
       fill_in "cross_check_first_name", with: cross_check_input[:first_name]
       fill_in "cross_check_last_name", with: cross_check_input[:last_name]
       fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
@@ -214,7 +215,7 @@ describe "assessment", js: true do
 
     step "select county node" do
       path = current_path
-      expect(page).to have_css ".button--submit[disabled]"
+      expect_disabled_button
       expect_to_have_tips(text: "select the county that the case is in")
 
       expect(page).to have_content county_node.question
@@ -262,6 +263,10 @@ describe "assessment", js: true do
 
   def expect_to_have_tips(**options)
     expect(page).to have_css ".tips", options
+  end
+
+  def expect_disabled_button
+    expect(page).to have_css ".button--submit[disabled]"
   end
 
   def click_square_and_next(index: 0)
