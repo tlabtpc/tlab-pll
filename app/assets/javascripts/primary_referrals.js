@@ -3,6 +3,6 @@ $(function() {
     var locale = $(e.target).val();
 
     $('.primary-referrals__markdown').addClass('hide')
-    $(`.primary-referrals__markdown[data-locale=${locale}]`).removeClass('hide')
+    $('.primary-referrals__markdown[data-locale=' + locale + ']').removeClass('hide')
   })
 })
