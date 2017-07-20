@@ -6,18 +6,31 @@ class Views::PrimaryReferrals::Show < Views::Base
       email_modal
 
       div(class: 'primary-referral') do
-        div(class: 'card-header') do
-          link_to '#', class: 'card-header__open-email-modal', 'data-open' => 'send-email-modal' do
-            fa_icon "envelope"
-            text 'Email'
+        div(class: 'card-header primary-referral__card-header') do
+          locale_select
+
+          div do
+            link_to '#', class: 'card-header__open-email-modal', 'data-open' => 'send-email-modal' do
+              fa_icon "envelope"
+              text 'Email'
+            end
           end
         end
 
         hr
 
-        div(class: 'primary-referral__markdown') do
+        h1 primary_referral.title, class: "primary-referral__title"
+
+        p primary_referral.description
+
+        div(data: { locale: "English" }, class: 'primary-referrals__markdown') do
           rawtext markdown(primary_referral.markdown_content)
         end
+
+        div(data: { locale: "Spanish" }, class: 'primary-referrals__markdown hide') do
+          rawtext markdown(primary_referral.markdown_content_es)
+        end
+
       end
     end
 
@@ -26,6 +39,14 @@ class Views::PrimaryReferrals::Show < Views::Base
         fa_icon "arrow-left"
         text "BACK"
       end
+    end
+  end
+
+  # I couldn't get select_tag to work.... :(
+  def locale_select
+    form_for :primary_referral do |f|
+      f.label 'locale', for: :primary_referral_code, class: :hide
+      f.select :code, ['English', 'Spanish'], {}, class: "primary-referrals__locale"
     end
   end
 

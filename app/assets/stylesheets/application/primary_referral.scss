@@ -1,6 +1,15 @@
 @import 'colors';
 
 .primary-referral {
+  &__card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 18px;
+  }
+
   &__markdown {
     a {
       text-decoration: underline;

@@ -30,7 +30,8 @@ describe "assessment", js: true do
       title: "Primary referral title",
       unique_identifier: "If your client needs housing:",
       description: "Primary referral description",
-      markdown_content: "primary markdown content"
+      markdown_content: "primary markdown content",
+      markdown_content_es: "La contenta markdown primera"
   end
 
   let!(:node_referral) do
@@ -246,6 +247,9 @@ describe "assessment", js: true do
     step 'view primary resource' do
       first(:link, "GET REFERRAL INFO").click
       expect(page).to have_content primary_referral.markdown_content
+
+      select "Spanish", from: "primary_referral_code" # :-(
+      expect(page).to have_content primary_referral.markdown_content_es
 
       click_on "BACK"
       expect(page).to have_content "Here are referrals that may help"
