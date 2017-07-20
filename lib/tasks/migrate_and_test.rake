@@ -1,6 +1,10 @@
+require_relative '../../spec/support/output_support'
+
 namespace :db do
   namespace :deploy do
-    module DeployTest
+    class DeployTest
+      extend OutputSupport
+
       STAGING_APP="tlab-pll-staging"
 
       def self.record_count
@@ -30,7 +34,9 @@ namespace :db do
 
       puts "  - Seeding the db...".colorize(:yellow)
 
-      Rake::Task['db:seed'].invoke
+      DeployTest.suppress_output do
+        Rake::Task['db:seed'].invoke
+      end
 
       current_record_count = DeployTest.record_count
       if previous_record_count != current_record_count
