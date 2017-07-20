@@ -1,4 +1,6 @@
-#!/usr/bin/env bash -eox pipefail
+#!/usr/bin/env bash
+
+set -eox pipefail
 
 [[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow
 
