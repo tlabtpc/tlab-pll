@@ -3,7 +3,7 @@ require "rails_helper"
 describe "assessment", js: true do
   let!(:root_node) { create(:node, root: true, tip: :county) }
   let!(:county_node) { create(:node, parent_node_id: root_node.id, tip: :category, question: "Hello?") }
-  let!(:category_node) { create(:node, parent_node_id: county_node.id, question: "Goodbye?", is_county: true) }
+  let!(:category_node) { create(:node, parent_node_id: county_node.id, icon: :housing, question: "Goodbye?", is_county: true) }
 
   let(:cross_check_input) do
     {

@@ -16,21 +16,21 @@ class Views::CrossChecks::Representation < Views::Base
         div class: "square-collection" do
           render partial: "square", locals: {
             value: "representation_yes",
-            text: "Yes",
+            label: "Yes",
             description: nil,
             icon: nil
           }
 
           render partial: "square", locals: {
             value: "representation_no",
-            text: "No, they have only spoken to an attorney",
+            label: "No, they have only spoken to an attorney",
             description: nil,
             icon: nil
           }
 
           render partial: "square", locals: {
             value: "representation_i_dont_know",
-            text: "I don't know",
+            label: "I don't know",
             description: nil,
             icon: nil
           }

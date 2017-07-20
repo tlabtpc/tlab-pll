@@ -12,14 +12,14 @@ class Views::CrossChecks::Residence < Views::Base
         div class: "square-collection" do
           render partial: "square", locals: {
             value: 1,
-            text: "Yes",
+            label: "Yes",
             description: nil,
             icon: nil
           }
 
           render partial: "square", locals: {
             value: 0,
-            text: "No",
+            label: "No",
             description: nil,
             icon: nil
           }

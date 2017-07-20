@@ -12,19 +12,19 @@ class Views::CrossChecks::Support < Views::Base
         div class: "square-collection" do
           render partial: "square", locals: {
             value: "low",
-            text: "Low",
+            label: "Low",
             description: nil,
             icon: nil
           }
           render partial: "square", locals: {
             value: "medium",
-            text: "Medium",
+            label: "Medium",
             description: nil,
             icon: nil
           }
           render partial: "square", locals: {
             value: "high",
-            text: "High",
+            label: "High",
             description: nil,
             icon: nil
           }
