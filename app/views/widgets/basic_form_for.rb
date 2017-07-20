@@ -3,7 +3,7 @@ class Views::Widgets::BasicFormFor < Views::Base
 
   def content
     row do
-      column medium: 6 do
+      column medium: 6, class: "small-centered" do
         h2 title
 
         form_for(*form_for_params) do |f|

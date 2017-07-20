@@ -32,10 +32,7 @@ class Views::AssessmentReferrals::Index < Views::Base
     end
 
     content_for :back do
-      link_to assessment_nodes_path, method: :delete, class: "button button--back" do
-        fa_icon "arrow-left"
-        text "BACK"
-      end
+      back_button assessment_nodes_path, method: :delete, class: "button button--back"
     end
 
     content_for :next do
