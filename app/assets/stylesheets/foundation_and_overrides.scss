@@ -54,11 +54,20 @@ $reveal-overlay-background: rgba($black, 0.45);
   i.fa-arrow-right { margin-left: 10px; }
   i.fa-arrow-left  { margin-right: 10px; }
 
+  &:hover {
+    background: $amazon;
+    color: $seagull;
+  }
+
+  &--back {
+    background-color: transparent;
+    color: $gossamer;
+  }
+
   &--submit {
     background: $gossamer;
     padding: 15px 50px;
     border-radius: 5px;
-    &:hover { background: darken($gossamer, 5%) !important; }
   }
 
   &--disabled {
