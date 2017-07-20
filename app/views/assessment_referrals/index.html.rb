@@ -19,7 +19,7 @@ class Views::AssessmentReferrals::Index < Views::Base
             assessment.secondary_referrals.each do |referral|
               li class: "assessment-referrals__list-item" do
                 fa_icon "external-link", "fa-lg"
-                link_to(referral.title, referral.link, class: "assessment-referrals__link")
+                link_to(referral.title, referral.link, class: "assessment-referrals__link", target: "_blank")
               end
             end
           end
