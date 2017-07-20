@@ -9,7 +9,7 @@ class Promulgators::Node < Promulgators::Base
 
   def promulgate!
     records_to_promulgate.each_with_index do |record, index|
-      self.class.new(files: files[1..-1], parent: create_model(record.merge(position: index))).promulgate!
+      self.class.new(files: files[1..-1], parent: create_model(record, index)).promulgate!
     end if files.present?
   end
 
@@ -22,6 +22,10 @@ class Promulgators::Node < Promulgators::Base
 
   def resource
     :node
+  end
+
+  def order_column
+    :position
   end
 
   def find_by_hash(record)

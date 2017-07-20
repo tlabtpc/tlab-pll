@@ -21,6 +21,10 @@ class Promulgators::Base
     raise NotImplementedError.new
   end
 
+  def order_column
+    :priority
+  end
+
   def resource_class
     resource.to_s.classify.constantize
   end
@@ -36,7 +40,7 @@ class Promulgators::Base
   end
 
   def build_model_params(record, index)
-    Hash(data['defaults']).merge(priority: index).merge(record)
+    Hash(data['defaults']).merge(order_column => index).merge(record)
   end
 
   def data

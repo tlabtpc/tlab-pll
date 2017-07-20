@@ -70,13 +70,13 @@ class Mom
     )
   end
 
-  def special_referral(title: "SpecialTitle", markdown_content: "SpecialDescription", link: "referrals.special.biz")
+  def special_referral(**args)
     SpecialReferral.new(
-      title: title,
+      title: "SpecialTitle",
       code: "spec",
-      description: "Special description",
-      markdown_content: markdown_content,
-      link: link
+      description: "SpecialDescription",
+      markdown_content: "SpecialContent",
+      **args
     )
   end
 

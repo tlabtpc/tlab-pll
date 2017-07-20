@@ -1,5 +1,6 @@
 defaults:
   type: "SpecialReferral"
+  priority: 9
 
 records:
   - code: uizq
