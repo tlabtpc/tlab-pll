@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 
-set -eox pipefail
+set -e
 
 [[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow
 
-git push git@heroku.com:tlab-pll-staging.git $CIRCLE_SHA1:refs/heads/master && \
-  ./bin/import_production_db_to_staging && \
-  heroku run rake db:deploy:migrate_and_test --app tlab-pll-staging
+git push git@heroku.com:tlab-pll-staging.git $CIRCLE_SHA1:refs/heads/master
 
-if [ $? -ne 0 ]; then
-  echo -e "\e[31mDeployment failed!\e[0m"
-  echo
-  exit 1
-fi
+./bin/import_production_db_to_staging
+
+heroku run --exit-code rake db:deploy:migrate_and_test --app tlab-pll-staging
