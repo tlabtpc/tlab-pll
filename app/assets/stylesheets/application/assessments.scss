@@ -35,15 +35,6 @@ h4 {
 }
 
 .assessments {
-  &-show {
-    .container {
-      background: $seagull;
-    }
-    .card {
-      border: 0;
-      box-shadow: none;
-    }
-  }
 
   &__form {
     padding: 0 3rem;

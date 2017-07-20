@@ -83,4 +83,16 @@ ul {
   padding: 0;
 }
 
+// TODO: better approach for applying this css
+.assessments-show,
+.primary-referrals-show {
+  .container {
+    background: $seagull;
+  }
+  .card {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
 input[type=checkbox] { display: none; }
