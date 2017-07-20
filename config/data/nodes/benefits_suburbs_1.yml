@@ -13,8 +13,9 @@ records:
     description: "Some benefits are available to non-citizens, and others carry risks."
   - title: "SSI/SSDI"
     description: "Cash assistance for disabled or elderly individuals."
-  - title: "Other"
   - title: "Veterans benefits"
     description: "Assistance with accessing veterans benefits."
   - title: "Work-related"
     description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."
+  - title: "Other"
+    terminal: true

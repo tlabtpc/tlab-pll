@@ -65,10 +65,7 @@ describe "assessment", js: true do
       # basic info step
       expect(page).to have_content "Please provide the following"
       expect_disabled_button
-      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
-      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
-      fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
-      fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
+      fill_in_cross_check_info
 
       expect {
         click_next
@@ -132,10 +129,8 @@ describe "assessment", js: true do
 
       # basic info step
       expect(page).to have_content "Please provide the following"
-      fill_in "cross_check_first_name", with: cross_check_input[:first_name]
-      fill_in "cross_check_last_name", with: cross_check_input[:last_name]
-      fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
-      fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
+      expect_disabled_button
+      fill_in_cross_check_info
 
       expect {
         click_next
@@ -261,12 +256,20 @@ describe "assessment", js: true do
     end
   end
 
+  def fill_in_cross_check_info
+    fill_in "cross_check_first_name", with: cross_check_input[:first_name]
+    fill_in "cross_check_last_name", with: cross_check_input[:last_name]
+    fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
+    fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
+    select "Compass", from: "cross_check_caseworker_organization"
+  end
+
   def expect_to_have_tips(**options)
     expect(page).to have_css ".tips", options
   end
 
   def expect_disabled_button
-    expect(page).to have_css ".button--submit[disabled]"
+    expect(page).to have_css ".button--disabled"
   end
 
   def click_square_and_next(index: 0)
