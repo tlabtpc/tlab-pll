@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+production_app="tlab-pll-prod"
+staging_app="tlab-pll-staging"
+
+staging_db=$(heroku config:get DATABASE_URL -a $staging_app)
+
+heroku pg:backups:capture -a $production_app
+
+dump_file_url=$(heroku pg:backups:url -a $production_app)
+
+echo
+echo "---------------------"
+echo
+
+heroku pg:backups:restore "$dump_file_url" DATABASE_URL \
+  -a $staging_app \
+  --confirm $staging_app
