@@ -52,6 +52,16 @@ class Views::Assessments::Content < Views::Base
       h2 "Don't forget", class: "assessments__title"
       render "tips/assessment"
     end
+
+    div class: "assessments__summary" do
+      h2 "Project Legal Link Cross-Check", class: "assessments__title"
+      assessment_info "Reference Number: ", assessment.display_reference_id
+      assessment_info "Today's date: ", assessment.display_submitted_at
+      assessment_info "Caseworker Name: ", assessment.caseworker_name
+      assessment_info "Caseworker Phone: ", assessment.caseworker_phone
+      assessment_info "Caseworker Email: ", assessment.caseworker_email
+      assessment_info "Social Service Name: ", assessment.caseworker_organization
+    end
   end
 
   private

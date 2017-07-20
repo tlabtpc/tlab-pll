@@ -176,12 +176,14 @@ describe "assessment", js: true do
       expect(page).to have_content "Thank you, Angela!"
 
       [
-        special_referral,
-        primary_referral,
-        secondary_referral
-      ].each do |content|
-        expect(page).to have_content content.title
-      end
+        special_referral.title,
+        primary_referral.title,
+        secondary_referral.title,
+        cross_check_input[:first_name],
+        cross_check_input[:last_name],
+        cross_check_input[:caseworker_phone],
+        cross_check_input[:caseworker_email]
+      ].each { |content| expect(page).to have_content content }
     end
   end
 

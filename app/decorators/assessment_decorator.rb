@@ -5,6 +5,10 @@ class AssessmentDecorator < Draper::Decorator
     object.reference_id.gsub('-','')
   end
 
+  def display_submitted_at
+    object.submitted_at&.strftime('%m/%d/%y')
+  end
+
   def county_name
     nodes.counties.pluck(:title).first
   end
@@ -15,6 +19,26 @@ class AssessmentDecorator < Draper::Decorator
 
   def caseworker_first_name
     cross_check.first_name
+  end
+
+  def caseworker_last_name
+    cross_check.last_name
+  end
+
+  def caseworker_name
+    [caseworker_first_name, caseworker_last_name].join ' '
+  end
+
+  def caseworker_phone
+    cross_check.caseworker_phone
+  end
+
+  def caseworker_email
+    cross_check.caseworker_email
+  end
+
+  def caseworker_organization
+    cross_check.caseworker_organization
   end
 
   def details
