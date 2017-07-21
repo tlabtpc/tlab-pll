@@ -19,3 +19,4 @@ records:
     description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."
   - title: "Other"
     terminal: true
+    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."

@@ -43,3 +43,4 @@ records:
     primary_referrals:
       - djsz
   - title: "Other"
+    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."

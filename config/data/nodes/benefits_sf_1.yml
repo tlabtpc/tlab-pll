@@ -7,4 +7,5 @@ records:
     description: "There is limited legal help available for applications for benefits. Applications can typically be submitted without legal help directly with the appropriate government agency."
   - title: "Has problems with her benefits"
   - title: "Other"
+    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
     terminal: true
