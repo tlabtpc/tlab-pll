@@ -52,7 +52,7 @@ class Views::Layouts::Application < Views::Base
           end
         end
 
-        div(class: :footer) do
+        div(class: "footer no-print") do
           div(class: "footer-flash")
 
           div(class: "footer__buttons-container") do

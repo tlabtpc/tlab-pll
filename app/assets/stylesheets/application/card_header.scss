@@ -3,12 +3,11 @@
 .card-header {
   text-align: right;
 
-  &__open-email-modal {
+  &__actions-link {
     color: $gossamer;
     font-size: 24px;
+    &:hover { color: $amazon; }
 
-    i {
-      padding-right: 5px;
-    }
+    i { padding-right: 15px; }
   }
 }

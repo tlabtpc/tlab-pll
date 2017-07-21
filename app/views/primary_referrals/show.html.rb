@@ -3,21 +3,14 @@ class Views::PrimaryReferrals::Show < Views::Base
 
   def content
     content_for :card do
-      email_modal
+      render "primary_referrals/email_modal"
 
       div(class: 'primary-referral') do
-        div(class: 'card-header primary-referral__card-header') do
+        div(class: 'card-header no-print primary-referral__card-header') do
           locale_select
-
-          div do
-            link_to '#', class: 'card-header__open-email-modal', 'data-open' => 'send-email-modal' do
-              fa_icon "envelope"
-              text 'Email'
-            end
-          end
+          card_header_actions(model: :referral)
         end
-
-        hr
+        hr class: "no-print"
 
         h1 primary_referral.title, class: "primary-referral__title"
 
@@ -45,9 +38,5 @@ class Views::PrimaryReferrals::Show < Views::Base
       f.label 'locale', for: :primary_referral_code, class: :hide
       f.select :code, ['English', 'Spanish'], {}, class: "primary-referrals__locale"
     end
-  end
-
-  def email_modal
-    render "email_modal"
   end
 end

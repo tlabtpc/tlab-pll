@@ -2,7 +2,7 @@ class Views::PrimaryReferrals::EmailModal < Views::Base
   needs :primary_referral
 
   def content
-    div(id: 'send-email-modal', class: 'reveal', 'data-reveal' => '') do
+    div(id: 'send-referral-email-modal', class: 'reveal', 'data-reveal' => '') do
       h2('Email Resource', class: 'email-modal__header')
 
       close_attrs = {

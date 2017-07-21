@@ -30,9 +30,11 @@ function validateAssessmentEmailForm() {
 }
 
 $(function() {
-  $('#send-email-modal')
-    .on('open.zf.reveal', validatePrimaryReferralEmailForm);
+  $('#send-referral-email-modal')
+    .on('open.zf.reveal', validatePrimaryReferralEmailForm)
 
   $('#send-assessment-email-modal')
-    .on('open.zf.reveal', validateAssessmentEmailForm);
+    .on('open.zf.reveal', validateAssessmentEmailForm)
+
+  $('#print').on('click', () => { window.print() })
 })
