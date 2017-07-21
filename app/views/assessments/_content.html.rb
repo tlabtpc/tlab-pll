@@ -85,7 +85,7 @@ class Views::Assessments::Content < Views::Base
   def secondary_referral(referral)
     p class: "assessments__secondary-referral" do
       fa_icon "external-link", "fa-lg"
-      link_to(referral.title, referral.link, class: "assessments__link")
+      link_to(referral.title, referral.link, class: "assessments__link", target: "_blank")
     end
   end
 end

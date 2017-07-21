@@ -3,7 +3,6 @@
 $container-width: 940px;
 
 .top-bar {
-  background: $seagull;
   border-bottom: 2px solid $alto;
   &__content {
     display: flex;
@@ -71,10 +70,5 @@ $container-width: 940px;
   &-container {
     background: $seagull;
     border-top: 1px solid $alto;
-  }
-
-  .button--back {
-    background-color: transparent;
-    color: $gossamer;
   }
 }

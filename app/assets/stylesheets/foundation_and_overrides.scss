@@ -22,6 +22,7 @@ $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
 $reveal-zindex: 1005;
 $reveal-overlay-background: rgba($black, 0.45);
+$topbar-background: $seagull;
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -54,11 +55,20 @@ $reveal-overlay-background: rgba($black, 0.45);
   i.fa-arrow-right { margin-left: 10px; }
   i.fa-arrow-left  { margin-right: 10px; }
 
+  &:hover {
+    background: $amazon;
+    color: $seagull;
+  }
+
+  &--back {
+    background-color: transparent;
+    color: $gossamer;
+  }
+
   &--submit {
     background: $gossamer;
     padding: 15px 50px;
     border-radius: 5px;
-    &:hover { background: darken($gossamer, 5%) !important; }
   }
 
   &--disabled {
@@ -71,6 +81,18 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+// TODO: better approach for applying this css
+.assessments-show,
+.primary-referrals-show {
+  .container {
+    background: $seagull;
+  }
+  .card {
+    border: 0;
+    box-shadow: none;
+  }
 }
 
 input[type=checkbox] { display: none; }
