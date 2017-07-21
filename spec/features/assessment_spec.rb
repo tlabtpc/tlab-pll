@@ -2,9 +2,24 @@ require "rails_helper"
 require "feature_helper"
 
 describe "assessment", js: true do
-  let!(:root_node) { create(:node, root: true, tip: :county) }
-  let!(:county_node) { create(:node, parent_node_id: root_node.id, tip: :category, question: "Hello?") }
-  let!(:category_node) { create(:node, parent_node_id: county_node.id, icon: :housing, question: "Goodbye?", is_county: true) }
+  let!(:root_node) do
+    create(:node, root: true, tip: :county)
+  end
+
+  let!(:county_node) do
+    create :node,
+      parent_node_id: root_node.id,
+      tip: :category,
+      question: "Hello?"
+  end
+
+  let!(:category_node) do
+    create :node,
+      parent_node_id: county_node.id,
+      icon: :housing,
+      question: "Goodbye?",
+      is_county: true
+  end
 
   let(:cross_check_input) do
     {
@@ -18,6 +33,14 @@ describe "assessment", js: true do
   end
 
   let!(:terminal_node) do
+    create \
+      :node,
+      terminal: true,
+      parent_node_id: category_node.id,
+      question: 'terminating?'
+  end
+
+  let!(:terminal_node_2) do
     create \
       :node,
       terminal: true,
@@ -42,8 +65,19 @@ describe "assessment", js: true do
       referral: primary_referral
   end
 
+  let!(:node_referral_2) do
+    create \
+      :node_referral,
+      node: terminal_node_2,
+      referral: primary_referral
+  end
+
   let!(:secondary_referral) { create(:secondary_referral) }
-  let!(:secondary_node_referral) { create(:node_referral, node: terminal_node, referral: secondary_referral) }
+
+  let!(:secondary_node_referral) do
+    create(:node_referral, node: terminal_node, referral: secondary_referral)
+  end
+
   let!(:special_referral) { create(:special_referral, priority: 9) }
 
   scenario "filling out all the optional screens" do
@@ -109,6 +143,18 @@ describe "assessment", js: true do
     end
 
     view_assessment_page
+  end
+
+  scenario "hitting back on referral page should not duplicate the referrals" do
+    visit root_path
+
+    fill_in_assessment
+    expect_to_have_referral_links(count: 2)
+
+    page.driver.go_back
+
+    click_square_and_next(index: 0)
+    expect_to_have_referral_links(count: 2)
   end
 
   scenario "filling out none of the optional screens" do
@@ -192,6 +238,37 @@ describe "assessment", js: true do
   end
 
   def fill_up_to_cross_check
+    fill_in_assessment
+    view_primary_resource
+  end
+
+  def fill_in_cross_check_info
+    fill_in "cross_check_first_name", with: cross_check_input[:first_name]
+    fill_in "cross_check_last_name", with: cross_check_input[:last_name]
+    fill_in "cross_check_caseworker_phone", with: cross_check_input[:caseworker_phone]
+    fill_in "cross_check_caseworker_email", with: cross_check_input[:caseworker_email]
+    select "Compass", from: "cross_check_caseworker_organization"
+  end
+
+  def view_primary_resource
+    step 'view primary resource' do
+      first(:link, "GET REFERRAL INFO").click
+      expect(page).to have_content primary_referral.markdown_content
+
+      # TODO: make this pass (it works in-app)
+      # select "Spanish", from: "primary_referral_code" # :-(
+      # expect(page).to have_content primary_referral.markdown_content_es
+
+      click_on "BACK"
+      expect(page).to have_content "Here are referrals that may help"
+    end
+  end
+
+  def expect_to_have_referral_links(count:)
+    expect(all(:link, "GET REFERRAL INFO").size).to eq(count)
+  end
+
+  def fill_in_assessment
     step "agree to initial requirements" do
       create_initial_assessment
     end
@@ -221,7 +298,7 @@ describe "assessment", js: true do
     step 'select terminal node and view primary referrals page' do
       expect(page).to have_content terminal_node.question
 
-      click_square_and_next
+      click_square_and_next(index: 1)
       expect_page_to_have_progress_bar
 
       expect(page).to have_content "Here are referrals that may help"
@@ -230,17 +307,30 @@ describe "assessment", js: true do
       expect(page).to have_content primary_referral.description
       expect(page).to have_content secondary_referral.title
     end
+  end
 
-    step 'view primary resource' do
-      first(:link, "GET REFERRAL INFO").click
-      expect(page).to have_content primary_referral.markdown_content
+  def expect_to_have_tips(**options)
+    expect(page).to have_css ".tips", options
+  end
 
-      # TODO: make this pass (it works in-app)
-      # select "Spanish", from: "primary_referral_code" # :-(
-      # expect(page).to have_content primary_referral.markdown_content_es
+  def expect_disabled_button
+    expect(page).to have_css ".button--disabled"
+  end
 
-      click_on "BACK"
-      expect(page).to have_content "Here are referrals that may help"
-    end
+  def click_square_and_next(index: 0)
+    all(".square")[index].click
+    click_next
+  end
+
+  def click_next
+    find(".button--submit").click
+  end
+
+  def expect_page_to_have_progress_bar
+    expect(page).to have_css(".progress-bar")
+  end
+
+  def click_for(for_value)
+    find("label[for=#{for_value}]").click
   end
 end

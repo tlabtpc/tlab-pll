@@ -5,9 +5,15 @@ class AssessmentNodesController < ApplicationController
   def create
     raise "Unable to create to assessment node" unless assessment_node
 
-    if !assessment.nodes.include?(node)
-      assessment.nodes << node if node.terminal?
-      assessment.referrals << node.referrals
+    assessment.transaction do
+      if terminal_node_has_previously_been_submitted?
+        assessment.nodes.destroy(assessment.nodes.last)
+      end
+
+      if !assessment.nodes.include?(node)
+        assessment.nodes << node if node.terminal?
+        assessment.referrals << node.referrals
+      end
     end
 
     redirect_to NextLocation.resolve(assessment, node)
@@ -26,6 +32,10 @@ class AssessmentNodesController < ApplicationController
   end
 
   private
+
+  def terminal_node_has_previously_been_submitted?
+    assessment.nodes.last&.terminal?
+  end
 
   def assessment_node
     @assessment_node ||= AssessmentNode.find_or_create_by \
