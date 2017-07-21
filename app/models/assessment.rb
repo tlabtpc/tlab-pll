@@ -2,8 +2,22 @@ class Assessment < ApplicationRecord
   has_secure_token
 
   has_many :assessment_nodes
+
+  has_many :terminal_assessment_nodes,
+    -> { joins(:node).where("nodes.terminal": true) },
+    source: :assessment_node,
+    class_name: "AssessmentNode"
+
+  has_many :non_terminal_assessment_nodes,
+    -> { joins(:node).where("nodes.terminal": false) },
+    source: :assessment_node,
+    class_name: "AssessmentNode"
+
   has_many :nodes, through: :assessment_nodes
-  has_many :non_terminal_nodes, -> { where(terminal: false) }, through: :assessment_nodes, source: :node
+
+  has_many :non_terminal_nodes,
+    -> { where(terminal: false) },
+    through: :assessment_nodes, source: :node
 
   has_one :cross_check
 

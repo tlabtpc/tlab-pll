@@ -3,10 +3,8 @@ class Views::Layouts::CrossChecks < Views::Layouts::Application
 
   def content
     content_for(:back) do
-      link_to previous_step_cross_checks_path(current_step: action_name), class: "button button--back" do
-        fa_icon 'arrow-left'
-        span "Back"
-      end
+      break if content_for?(:back)
+      back_button previous_step_cross_checks_path(current_step: action_name)
     end
 
     content_for(:next) do

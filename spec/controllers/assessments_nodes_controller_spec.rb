@@ -82,10 +82,12 @@ describe AssessmentNodesController do
       end
 
       it 'redirects to the last non-terminal node for the assessment' do
-        node.update(terminal: true)
+        page_two.node.update(terminal: true)
         expect {
           click_back_while_viewing_page_three
-        }.to change { assessment.assessment_nodes.count }.from(2).to(1)
+        }.to change { assessment.assessment_nodes.count }.from(2).to(0)
+
+        expect(assessment.nodes).to_not include page_one.node
 
         expect(response).to redirect_to page_one.node
       end

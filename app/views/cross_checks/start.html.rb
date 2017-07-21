@@ -38,5 +38,13 @@ class Views::CrossChecks::Start < Views::Base
         suggestions or options.
       TEXT
     end
+
+    content_for :back do
+      if cross_check.assessment.featured_referrals.any?
+        back_button assessment_referrals_path
+      else
+        back_button assessment_nodes_path, method: :delete
+      end
+    end
   end
 end

@@ -16,6 +16,13 @@ module Views
       end
     end
 
+    def back_button(url, options = {})
+      link_to url, options.merge(class: "button button--back") do
+        fa_icon 'arrow-left'
+        span 'BACK'
+      end
+    end
+
     def row(classes=[], expanded: true, &block)
       classes = CssClasses.new(classes, ("expanded" if expanded), "row")
       div class: classes.to_s, &block
