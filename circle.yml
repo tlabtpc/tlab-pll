@@ -5,6 +5,7 @@ dependencies:
 test:
   override:
     - RAILS_ENV=test bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
+    - ./bin/ensure_production_db_backup_schedule
 
 deployment:
   staging:

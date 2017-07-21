@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+(heroku pg:backups:schedules -a tlab-pll-prod | grep DATABASE_URL | grep daily) ||
+  (echo "Error: There are no backups configured for production!" && exit 1)

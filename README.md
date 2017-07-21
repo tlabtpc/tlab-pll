@@ -5,6 +5,16 @@ This project is built on top of [Citizen Rails](https://github.com/citizencode/c
 **See [README-citizen-rails-template.md](README-citizen-rails-template.md) for instructions on
 using the Citizen Rails template project as a base for your own project.**
 
+## Nightly db backups
+
+The database is currently being backed up in production every day at 2:00am
+PST. To generate a URL to grab the latest backup, you can run:
+
+`heroku pg:backups:url -a tlab-pll-prod`
+
+For more info, read the [Heroku backups documentation](
+https://devcenter.heroku.com/articles/heroku-postgres-backups).
+
 
 ## Developing
 
