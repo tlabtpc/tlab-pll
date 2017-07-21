@@ -1,6 +1,4 @@
 .progress-bar {
-  background-position: 0% 0;
-  background-size: cover;
   width: 457px;
   height: 25px;
   margin: 0 auto 1rem auto;
@@ -9,6 +7,8 @@
 @for $index from 1 through 15 {
   .progress-bar--#{$index} {
     background: transparent image-url("progress/#{$index}.png") no-repeat;
+    background-position: 0% 0;
+    background-size: cover;
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       background-image: image-url("progress/#{$index}@2x.png");
