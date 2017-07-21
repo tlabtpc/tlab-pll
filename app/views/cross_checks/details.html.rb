@@ -9,7 +9,7 @@ class Views::CrossChecks::Details < Views::Base
       h4 "Please use the text box to give us additional details about your client's issue:"
       cross_check_form do |f|
         f.text_area :details,
-          class: "cross-checks__textarea cross-checks__input--required",
+          class: "cross-checks__textarea",
           data: { description: "Please do not include any client-identifying information (ex: client names, dates of birth, SSNs)" },
           placeholder: "Please write a brief description without any client-identifying information (ex: no client names, dates of birth, SSNs, etc.)"
       end
