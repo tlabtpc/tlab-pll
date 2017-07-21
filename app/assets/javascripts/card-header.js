@@ -36,5 +36,5 @@ $(function() {
   $('#send-assessment-email-modal')
     .on('open.zf.reveal', validateAssessmentEmailForm)
 
-  $('#print').on('click', () => { window.print() })
+  $('#print').on('click', function() { window.print() })
 })
