@@ -11,7 +11,6 @@ class Views::Layouts::Application < Views::Base
 
         csrf_meta_tags
         stylesheet_link_tag 'application', media: 'all'
-        stylesheet_link_tag 'print', media: 'print'
 
         javascript_include_tag 'application'
 
