@@ -16,21 +16,21 @@
     - housing_sf_2
     - housing_sf_3
     - housing_sf_4
-#"Alameda":
-#  Benefits:
-#    - benefits_alameda_1
-#"Contra Costa":
-#  Benefits:
-#    - benefits_contra_costa_1
-#"Marin":
-#  Benefits:
-#    - benefits_marin_1
+"Alameda":
+  Benefits:
+    - benefits_alameda_1
+"Contra Costa":
+  Benefits:
+    - benefits_contra_costa_1
+"Marin":
+  Benefits:
+    - benefits_marin_1
 "San Mateo":
   Benefits:
     - benefits_san_mateo_1
-#"Santa Clara":
-#  Benefits:
-#    - benefits_santa_clara_1
+"Santa Clara":
+  Benefits:
+    - benefits_santa_clara_1
 default:
   Benefits:
     - benefits_suburbs_1
