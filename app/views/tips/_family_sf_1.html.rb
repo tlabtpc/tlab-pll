@@ -1,8 +1,23 @@
 class Views::Tips::FamilySf1 < Views::Base
   def content
     render "tips/caseworker_header"
-    p "Violence, threats of violence, harrassing, stalking etc. from a close family member or boyfriend, girlfriend, partner, ex partner etc."
-    p "Whether or not there is domestic violence impacts the urgency of the issue and the kind of services available."
-    p "Learn More: California Courts Self Help website"
+
+    p <<~TEXT
+      Domestic violence in a family law situation impacts the urgency of the
+      issue and the kind of services available.
+    TEXT
+
+    p <<~TEXT
+      Domestic violence is generally defined as: violence, threaths of
+      violence, harassing, stalking, etc. from a close family member or
+      boyfriend, girlfriend, partner, ex-partner, etc.
+    TEXT
+
+    p do
+      text "Learn more "
+      link_to "HERE",
+        "http://www.courts.ca.gov/selfhelp-domesticviolence.htm",
+        target: "_blank"
+    end
   end
 end
