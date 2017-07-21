@@ -11,9 +11,9 @@ records:
       - "California CalWorks (TANF)"
   - title: "Foster benefits"
     description: "Cash and other assistance for foster care-involved youth."
-    primary_resources:
+    primary_referrals:
       - aypz
-    secondary_resources:
+    secondary_referrals:
       - "10 Facts Every Foster Youth Should Know"
   - title: "Health care benefits"
     description: "Health care under Medi-Cal, Medicare, Covered California, and private providers."
