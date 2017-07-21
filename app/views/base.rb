@@ -44,9 +44,12 @@ module Views
       div class: "card-header__actions" do
         link_to '#', class: 'card-header__actions-link', data: { open: "send-#{model}-email-modal" } do
           fa_icon "envelope"
+          text "Email"
         end
+
         link_to '#', id: "print", class: 'card-header__actions-link' do
           fa_icon 'print'
+          text "Print"
         end
       end
     end
