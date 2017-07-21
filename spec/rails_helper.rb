@@ -22,7 +22,7 @@ else
 end
 
 Capybara.save_path = ENV['CIRCLE_ARTIFACTS'] ||
-  File.expand_path(File.dirname(__FILE__) + "/../../tmp/capybara")
+  File.expand_path(File.dirname(__FILE__) + "/../tmp/capybara")
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
