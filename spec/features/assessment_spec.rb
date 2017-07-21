@@ -153,7 +153,7 @@ describe "assessment", js: true do
 
     page.driver.go_back
 
-    click_square_and_next(index: 0)
+    click_square_and_next(node: terminal_node_2)
     expect_to_have_referral_links(count: 2)
   end
 
@@ -298,7 +298,7 @@ describe "assessment", js: true do
     step 'select terminal node and view primary referrals page' do
       expect(page).to have_content terminal_node.question
 
-      click_square_and_next(index: 1)
+      click_square_and_next(node: terminal_node)
       expect_page_to_have_progress_bar
 
       expect(page).to have_content "Here are referrals that may help"
@@ -317,8 +317,15 @@ describe "assessment", js: true do
     expect(page).to have_css ".button--disabled"
   end
 
-  def click_square_and_next(index: 0)
-    all(".square")[index].click
+  def click_square_and_next(index: 0, node: nil)
+    element =
+      if node
+        find(".square", text: node.title)
+      else
+        all(".square")[index]
+      end
+
+    element.click
     click_next
   end
 
