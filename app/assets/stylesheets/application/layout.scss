@@ -3,7 +3,7 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  @media screen { height: 100%; }
 }
 
 .flash {
@@ -15,10 +15,12 @@ body {
 
 .container {
   display: flex;
-  max-height: 100%;
   overflow-y: auto;
+  flex-grow: 1;
   padding-top: 16px;
+  justify-content: center;
   background-color: $bluehair;
+  @media screen { max-height: 100%; }
 }
 
 .copyright {

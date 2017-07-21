@@ -3,21 +3,6 @@
 
 @include checkbox(assessments);
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.container {
-  max-height: 100%;
-  overflow-y: auto;
-  padding-top: 16px;
-  flex-grow: 1;
-  background-color: $bluehair;
-  justify-content: center;
-}
-
 .copyright {
   text-align: center;
   margin: 10px 0;
