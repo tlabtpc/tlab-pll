@@ -23,6 +23,8 @@
     - criminal_alameda_1
   Housing:
     - housing_alameda_1
+  Immigration:
+    - immigration_alameda_1
 "Contra Costa":
   Benefits:
     - benefits_contra_costa_1
@@ -30,6 +32,8 @@
     - criminal_contra_costa_1
   Housing:
     - housing_contra_costa_1
+  Immigration:
+    - immigration_contra_costa_1
 "Marin":
   Benefits:
     - benefits_marin_1
@@ -37,6 +41,8 @@
     - criminal_marin_1
   Housing:
     - housing_marin_1
+  Immigration:
+    - immigration_marin_1
 "San Mateo":
   Benefits:
     - benefits_san_mateo_1
@@ -44,6 +50,8 @@
     - criminal_san_mateo_1
   Housing:
     - housing_san_mateo_1
+  Immigration:
+    - immigration_san_mateo_1
 "Santa Clara":
   Benefits:
     - benefits_santa_clara_1
@@ -51,6 +59,8 @@
     - criminal_santa_clara_1
   Housing:
     - housing_santa_clara_1
+  Immigration:
+    - immigration_santa_clara_1
 default:
   Benefits:
     - benefits_suburbs_1

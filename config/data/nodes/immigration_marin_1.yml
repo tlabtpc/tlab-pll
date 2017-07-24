@@ -1,0 +1,23 @@
+defaults:
+  question: "What does your client need help with?"
+  tip: "immigration_other_1"
+  terminal: true
+
+records:
+  - title: "Deportation"
+    description: "Clients in deportation proceedings may have been stopped at the border, have a bracelet, be in immigration supervision, have a court date, and/or have paperwork from a border location."
+    primary_referrals:
+      - sezo
+    secondary_referrals:
+      - "Immigration Court and Removal Proceedings Information"
+  - title: "Naturalization"
+    description: "Client has a green card and needs help applying for citizenship or has other naturalization-related questions."
+    primary_referrals:
+      - sezo
+    secondary_referrals:
+      - "Naturalization FAQ"
+  - title: "Other"
+    primary_referrals:
+      - sezo
+    secondary_referrals:
+      - "Pathways to Status"
