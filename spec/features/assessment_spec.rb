@@ -18,7 +18,8 @@ describe "assessment", js: true do
       parent_node_id: county_node.id,
       icon: :housing,
       question: "Goodbye?",
-      is_county: true
+      is_county: true,
+      title: "FooBar"
   end
 
   let(:cross_check_input) do
@@ -115,7 +116,7 @@ describe "assessment", js: true do
       expect_page_to_have_progress_bar
 
       # SF residency step
-      expect(page).to have_content "reside in San Francisco County"
+      expect(page).to have_content "reside in FooBar County"
       click_square_and_next(index: 1)
       expect_page_to_have_progress_bar
 
@@ -191,8 +192,8 @@ describe "assessment", js: true do
       click_next
       expect_page_to_have_progress_bar
 
-      # SF residency step
-      expect(page).to have_content "reside in San Francisco County"
+      # County residency step
+      expect(page).to have_content "reside in FooBar County"
       click_square_and_next
       expect_page_to_have_progress_bar
 

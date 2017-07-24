@@ -37,5 +37,9 @@ class Views::CrossChecks::Representation < Views::Base
         end
       end
     end
+
+    content_for :tip do
+      render 'tips/cross_check_representation'
+    end
   end
 end
