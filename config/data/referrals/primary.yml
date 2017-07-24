@@ -233,3 +233,6 @@ records:
   - code: jsue
     title: "Santa Clara County Public Defender Expungement Office"
     description: "This office is a part of the Santa Clara County Public Defender's office, and can help people clear certain convictions from their record. Call the office for individualized information on whether aspects of a criminal record can be expunged and the best way to go about having a record expunged."
+  - code: bshu
+    title: "Asian Law Alliance"
+    description: "Provides legal assistance to low income people."
