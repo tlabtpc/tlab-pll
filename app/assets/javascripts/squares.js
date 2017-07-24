@@ -9,7 +9,12 @@ $(function() {
 
     // ensure this is the only selected node
     $('.square').removeClass('square--selected')
+    $('.square__icon').removeClass('hide')
+    $('.square__icon--selected').addClass('hide')
     target.addClass('square--selected')
+    target.find('.square__icon--selected').removeClass('hide')
+    target.find('.square__icon').addClass('hide')
+
 
     // set the current square value input
     $('#square_value').val(target.data('value'))

@@ -27,7 +27,7 @@ $square-icon-size: 60px;
   border-radius: 10px;
   cursor: pointer;
 
-  &__icon {
+  &__icon, &__icon--selected {
     width: $square-icon-size;
     height: $square-icon-size;
     display: flex;
