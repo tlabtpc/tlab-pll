@@ -21,12 +21,12 @@ class Promulgators::Node < Promulgators::Base
     parent_from_path path[1..-1], (current&.children || Node).find_by(title: path[0])
   end
 
-  def resource
-    :node
+  def build_model_params(attrs, record, index)
+    super.merge(position: index)
   end
 
-  def order_column
-    :position
+  def resource
+    :node
   end
 
   def find_by_hash(record)
