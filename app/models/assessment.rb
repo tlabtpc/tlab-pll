@@ -29,17 +29,17 @@ class Assessment < ApplicationRecord
   has_many :referrals, through: :assessment_referrals
 
   has_many :primary_referrals,
-    -> { where(type: 'PrimaryReferral').order(priority: :asc) },
+    -> { where(type: 'PrimaryReferral') },
     through: :assessment_referrals,
     source: :referral
 
   has_many :secondary_referrals,
-    -> { where(type: 'SecondaryReferral').order(priority: :asc) },
+    -> { where(type: 'SecondaryReferral') },
     through: :assessment_referrals,
     source: :referral
 
   has_many :special_referrals,
-    -> { where(type: 'SpecialReferral').order(priority: :asc) },
+    -> { where(type: 'SpecialReferral') },
     through: :assessment_referrals,
     source: :referral
 
@@ -48,9 +48,8 @@ class Assessment < ApplicationRecord
   end
 
   def ordered_primary_referrals
-    Referral.joins(:node_referrals)
-      .where(type: ['PrimaryReferral'])
-      .where("node_referrals.node_id = ?", terminal_nodes.pluck(:id))
+    PrimaryReferral.joins(:node_referrals)
+      .where("node_referrals.node_id": terminal_nodes.pluck(:id))
       .order("node_referrals.position")
   end
 

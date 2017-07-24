@@ -79,7 +79,7 @@ describe "assessment", js: true do
     create(:node_referral, node: terminal_node, referral: secondary_referral)
   end
 
-  let!(:special_referral) { create(:special_referral, priority: 9) }
+  let!(:special_referral) { create(:special_referral) }
 
   scenario "filling out all the optional screens" do
     visit root_path

@@ -7,8 +7,8 @@ describe "assessment", js: true do
       load Rails.root + "db/seeds.rb"
     }
   end
-  
-  let!(:special_referral) { create(:special_referral, priority: 9) }
+
+  let!(:special_referral) { create(:special_referral) }
 
   specify do
     visit root_path

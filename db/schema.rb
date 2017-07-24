@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720035237) do
+ActiveRecord::Schema.define(version: 20170724211442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,11 +39,6 @@ ActiveRecord::Schema.define(version: 20170720035237) do
     t.datetime "submitted_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "counties", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "cross_checks", force: :cascade do |t|
@@ -99,7 +94,6 @@ ActiveRecord::Schema.define(version: 20170720035237) do
     t.string   "link"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "priority",            default: 1, null: false
     t.text     "markdown_content_es"
     t.text     "description"
     t.string   "unique_identifier"
