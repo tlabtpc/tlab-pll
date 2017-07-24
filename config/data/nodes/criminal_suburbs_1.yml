@@ -1,16 +1,22 @@
+---
 defaults:
-  question: "What does your client need help with?"
+  question: What does your client need help with?
   terminal: true
-
 records:
-  - title: "Criminal process + warrants"
-    description: "Active criminal cases or potential cases, including warrants."
-    secondary_referrals:
-      - "List of CA Public Defender Offices"
-  - title: "Criminal Record Cleaning & Re-Entry"
-    description: "Help in this area typically consists of record cleaning for prior convictions or help navigating given one's prior convictions."
-    secondary_referrals:
-      - "Clearing Your Record"
-      - "Criminal Records and Employment"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: Criminal process + warrants
+  description: Active criminal cases or potential cases, including warrants.
+  secondary_referrals:
+  - List of CA Public Defender Offices
+  code: 8f194c83b9199331
+- title: Criminal Record Cleaning & Re-Entry
+  description: Help in this area typically consists of record cleaning for prior convictions
+    or help navigating given one's prior convictions.
+  secondary_referrals:
+  - Clearing Your Record
+  - Criminal Records and Employment
+  code: d80dbbbebcc56441
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: 1a90b836f2e336e7

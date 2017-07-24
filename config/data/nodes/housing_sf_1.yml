@@ -1,14 +1,18 @@
+---
 defaults:
-  question: "Has your client received an unlawful detainer, summons and complaint, or a sheriff's notice to vacate?"
-  tip: "housing_sf_1"
-
+  question: Has your client received an unlawful detainer, summons and complaint,
+    or a sheriff's notice to vacate?
+  tip: housing_sf_1
 records:
-  - title: "Yes"
-    description: "Make an immediate referral! Press “next” to proceed to the Refer stage."
-    terminal: true
-    primary_referrals:
-      - hyop
-    secondary_referrals:
-      - "Guide to the Unlawful Detainer Process"
-  - title: "No"
-  - title: "I don't know"
+- title: 'Yes'
+  description: Make an immediate referral! Press “next” to proceed to the Refer stage.
+  terminal: true
+  primary_referrals:
+  - hyop
+  secondary_referrals:
+  - Guide to the Unlawful Detainer Process
+  code: 252951f51f8fbed9
+- title: 'No'
+  code: e533c1e70dfd9bbd
+- title: I don't know
+  code: c710db574c68eb6a

@@ -1,11 +1,18 @@
+---
 defaults:
-  tip: "benefits_sf_1"
-  question: "What kind of help does your client need?"
-
+  tip: benefits_sf_1
+  question: What kind of help does your client need?
 records:
-  - title: "Applying for benefits"
-    description: "There is limited legal help available for applications for benefits. Applications can typically be submitted without legal help directly with the appropriate government agency."
-  - title: "Has problems with her benefits"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
-    terminal: true
+- title: Applying for benefits
+  description: There is limited legal help available for applications for benefits.
+    Applications can typically be submitted without legal help directly with the appropriate
+    government agency.
+  code: 34b3cfed4e7caf12
+- title: Has problems with her benefits
+  code: e50b030184a9d71e
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  terminal: true
+  code: 219ccb58011a6b76

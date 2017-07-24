@@ -1,96 +1,97 @@
-"San Francisco":
+---
+San Francisco:
   Benefits:
-    - benefits_sf_1
-    - benefits_sf_2
-  "Criminal & Tickets":
-    - criminal_sf_1
-  "Family & Relationships":
-    - family_sf_1
-    - family_sf_2
+  - benefits_sf_1
+  - benefits_sf_2
+  Criminal & Tickets:
+  - criminal_sf_1
+  Family & Relationships:
+  - family_sf_1
+  - family_sf_2
   Immigration:
-    - immigration_sf_1
-  "Work, Credit & Consumer":
-    - work_sf_1
+  - immigration_sf_1
+  Work, Credit & Consumer:
+  - work_sf_1
   Housing:
-    - housing_sf_1
-    - housing_sf_2
-    - housing_sf_3
-    - housing_sf_4
-"Alameda":
+  - housing_sf_1
+  - housing_sf_2
+  - housing_sf_3
+  - housing_sf_4
+Alameda:
   Benefits:
-    - benefits_alameda_1
-  "Criminal & Tickets":
-    - criminal_alameda_1
+  - benefits_alameda_1
+  Criminal & Tickets:
+  - criminal_alameda_1
   Housing:
-    - housing_alameda_1
+  - housing_alameda_1
   Immigration:
-    - immigration_alameda_1
-  "Family & Relationships":
-    - family_alameda_1
-  "Work, Credit & Consumer":
-    - work_alameda_1
-"Contra Costa":
+  - immigration_alameda_1
+  Family & Relationships:
+  - family_alameda_1
+  Work, Credit & Consumer:
+  - work_alameda_1
+Contra Costa:
   Benefits:
-    - benefits_contra_costa_1
-  "Criminal & Tickets":
-    - criminal_contra_costa_1
+  - benefits_contra_costa_1
+  Criminal & Tickets:
+  - criminal_contra_costa_1
   Housing:
-    - housing_contra_costa_1
+  - housing_contra_costa_1
   Immigration:
-    - immigration_contra_costa_1
-  "Family & Relationships":
-    - family_contra_costa_1
-  "Work, Credit & Consumer":
-    - work_contra_costa_1
-"Marin":
+  - immigration_contra_costa_1
+  Family & Relationships:
+  - family_contra_costa_1
+  Work, Credit & Consumer:
+  - work_contra_costa_1
+Marin:
   Benefits:
-    - benefits_marin_1
-  "Criminal & Tickets":
-    - criminal_marin_1
+  - benefits_marin_1
+  Criminal & Tickets:
+  - criminal_marin_1
   Housing:
-    - housing_marin_1
+  - housing_marin_1
   Immigration:
-    - immigration_marin_1
-  "Family & Relationships":
-    - family_marin_1
-  "Work, Credit & Consumer":
-    - work_marin_1
-"San Mateo":
+  - immigration_marin_1
+  Family & Relationships:
+  - family_marin_1
+  Work, Credit & Consumer:
+  - work_marin_1
+San Mateo:
   Benefits:
-    - benefits_san_mateo_1
-  "Criminal & Tickets":
-    - criminal_san_mateo_1
+  - benefits_san_mateo_1
+  Criminal & Tickets:
+  - criminal_san_mateo_1
   Housing:
-    - housing_san_mateo_1
+  - housing_san_mateo_1
   Immigration:
-    - immigration_san_mateo_1
-  "Family & Relationships":
-    - family_san_mateo_1
-  "Work, Credit & Consumer":
-    - work_san_mateo_1
-"Santa Clara":
+  - immigration_san_mateo_1
+  Family & Relationships:
+  - family_san_mateo_1
+  Work, Credit & Consumer:
+  - work_san_mateo_1
+Santa Clara:
   Benefits:
-    - benefits_santa_clara_1
-  "Criminal & Tickets":
-    - criminal_santa_clara_1
+  - benefits_santa_clara_1
+  Criminal & Tickets:
+  - criminal_santa_clara_1
   Housing:
-    - housing_santa_clara_1
+  - housing_santa_clara_1
   Immigration:
-    - immigration_santa_clara_1
-  "Family & Relationships":
-    - family_santa_clara_1
-  "Work, Credit & Consumer":
-    - work_santa_clara_1
+  - immigration_santa_clara_1
+  Family & Relationships:
+  - family_santa_clara_1
+  Work, Credit & Consumer:
+  - work_santa_clara_1
 default:
   Benefits:
-    - benefits_suburbs_1
-  "Criminal & Tickets":
-    - criminal_suburbs_1
-  "Family & Relationships":
-    - family_suburbs_1
+  - benefits_suburbs_1
+  Criminal & Tickets:
+  - criminal_suburbs_1
+  Family & Relationships:
+  - family_suburbs_1
   Immigration:
-    - immigration_suburbs_1
-  "Work, Credit & Consumer":
-    - work_suburbs_1
+  - immigration_suburbs_1
+  Work, Credit & Consumer:
+  - work_suburbs_1
   Housing:
-    - housing_suburbs_1
+  - housing_suburbs_1

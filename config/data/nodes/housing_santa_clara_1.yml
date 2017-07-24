@@ -1,25 +1,30 @@
+---
 defaults:
-  question: "Is your client being evicted?"
+  question: Is your client being evicted?
   terminal: true
-
 records:
-  - title: "No, this is not related to eviction"
-    primary_referrals:
-      - aypz
-      - kgxt
-    secondary_referrals:
-      - "Dealing With Rental Problems"
-  - title: "Yes, my client is being evicted"
-    primary_referrals:
-      - aypz
-      - bshu
-    secondary_referrals:
-      - "Eviction in California"
-  - title: "My client has already been evicted"
-    primary_referrals:
-      - yxpb
-      - aypz
-    secondary_referrals:
-      - "How to Rent After an Eviction"
-  - title: "I don't know"
-    description: "That's OK.  Select 'Next' to describe your client's situation and request a cross-check from Project Legal Link."
+- title: No, this is not related to eviction
+  primary_referrals:
+  - aypz
+  - kgxt
+  secondary_referrals:
+  - Dealing With Rental Problems
+  code: 273f81d11d1e4a54
+- title: Yes, my client is being evicted
+  primary_referrals:
+  - aypz
+  - bshu
+  secondary_referrals:
+  - Eviction in California
+  code: cd197f5f65a08972
+- title: My client has already been evicted
+  primary_referrals:
+  - yxpb
+  - aypz
+  secondary_referrals:
+  - How to Rent After an Eviction
+  code: 323e68ddea0151e0
+- title: I don't know
+  description: 'That''s OK.     Select ''Next'' to describe your client''s situation and request a cross-check
+    from Project Legal Link.'
+  code: 8c9989886f0e2d2e

@@ -1,16 +1,18 @@
+---
 defaults:
-  tip: "family_sf_1"
-  question: "Is your client experiencing or concerned about domestic violence?"
-
+  tip: family_sf_1
+  question: Is your client experiencing or concerned about domestic violence?
 records:
-  - title: "Yes"
-    primary_referrals:
-      - aypz
-      - avut
-    secondary_referrals:
-      - "Domestic Violence Information"
-  - title: "No"
-    primary_referrals:
-      - hska
-    secondary_referrals:
-      - "Custody and Parenting Time Information from California Courts"
+- title: 'Yes'
+  primary_referrals:
+  - aypz
+  - avut
+  secondary_referrals:
+  - Domestic Violence Information
+  code: df7a83a701693900
+- title: 'No'
+  primary_referrals:
+  - hska
+  secondary_referrals:
+  - Custody and Parenting Time Information from California Courts
+  code: d7d3c541d0514ecb

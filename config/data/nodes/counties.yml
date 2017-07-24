@@ -1,13 +1,20 @@
+---
 defaults:
   is_county: true
-  tip: "category"
-  question: "Let's work one issue at a time. What county is the issue in?"
-
+  tip: category
+  question: Let's work one issue at a time. What county is the issue in?
 records:
-  - title: "Alameda"
-  - title: "Contra Costa"
-  - title: "Marin"
-  - title: "San Francisco"
-  - title: "San Mateo"
-  - title: "Santa Clara"
-  - title: "Other County"
+- title: Alameda
+  code: e0875cffab846793
+- title: Contra Costa
+  code: 17581f035ad8c2e2
+- title: Marin
+  code: 00dfc22a70e0b170
+- title: San Francisco
+  code: a1180fafde511548
+- title: San Mateo
+  code: e9b98d514b558b0b
+- title: Santa Clara
+  code: 31fa044e1e34da5d
+- title: Other County
+  code: aaf2e385d710aedd

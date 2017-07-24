@@ -1,74 +1,88 @@
+---
 defaults:
-  tip: "benefits_sf_2"
-  question: "What type of benefit does your client's question relate to?"
+  tip: benefits_sf_2
+  question: What type of benefit does your client's question relate to?
   terminal: true
-
 records:
-  - title: "CAAP (GA, PAES etc.)"
-    description: "Cash assistance for adults with no dependents."
-    primary_referrals:
-      - aypz
-      - xlpe
-    secondary_referrals:
-      - "Applying for CAAP Benefits FAQ"
-  - title: "CalWORKS"
-    description: "Cash assistance for families with children in the home."
-    primary_referrals:
-      - aypz
-      - xlpe
-    secondary_referrals:
-      - "CalWorks FAQ"
-  - title: "CalFresh"
-    description: "Monthly food benefits"
-    primary_referrals:
-      - gprm
-      - qayf
-    secondary_referrals:
-      - "Common CalFresh Verification Problems"
-  - title: "Foster care"
-    description: "Cash and other assistance for foster care-involved youth."
-    primary_referrals:
-      - aypz
-      - fvag
-    secondary_referrals:
-      - "10 Facts Every Foster Youth Should Know"
-  - title: "Health care"
-    description: "Health care under Medi-Cal, Medicare, Covered California, and private providers."
-    primary_referrals:
-      - wzlj
-    secondary_referrals:
-      - "Health Care Eligibility Guide"
-      - "How to Apply and Enroll in Health Care"
-  - title: "SSI/SSDI"
-    description: "Cash assistance for disabled or elderly individuals."
-    primary_referrals:
-      - rvjb
-      - slkt
-      - dwcn
-      - vfen
-    secondary_referrals:
-      - "Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI"
-  - title: "Veteran's benefits"
-    description: "Assistance with accessing veterans benefits."
-    primary_referrals:
-      - akgb
-    secondary_referrals:
-      - "Veterans Benefits Information"
-  - title: "Non-citizen benefits"
-    description: "Some benefits are available to non-citizens, and others carry risks."
-    primary_referrals:
-      - lewp
-      - avut
-    secondary_referrals:
-      - "Immigration and Benefits: Federal Guidance on Public Charge"
-      - "Information for Non-Citizens Applying for a Public Benefit"
-  - title: "Work-related benefits"
-    description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."
-    primary_referrals:
-      - ugci
-      - jzok
-    secondary_referrals:
-      - "Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI"
-      - "More Information on Work-Related Issues"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: CAAP (GA, PAES etc.)
+  description: Cash assistance for adults with no dependents.
+  primary_referrals:
+  - aypz
+  - xlpe
+  secondary_referrals:
+  - Applying for CAAP Benefits FAQ
+  code: 97e8a749598981ff
+- title: CalWORKS
+  description: Cash assistance for families with children in the home.
+  primary_referrals:
+  - aypz
+  - xlpe
+  secondary_referrals:
+  - CalWorks FAQ
+  code: fd02fb09d5c7ea2b
+- title: CalFresh
+  description: Monthly food benefits
+  primary_referrals:
+  - gprm
+  - qayf
+  secondary_referrals:
+  - Common CalFresh Verification Problems
+  code: 2e0117a8bbff985c
+- title: Foster care
+  description: Cash and other assistance for foster care-involved youth.
+  primary_referrals:
+  - aypz
+  - fvag
+  secondary_referrals:
+  - 10 Facts Every Foster Youth Should Know
+  code: b1bd787317bbb5e6
+- title: Health care
+  description: Health care under Medi-Cal, Medicare, Covered California, and private
+    providers.
+  primary_referrals:
+  - wzlj
+  secondary_referrals:
+  - Health Care Eligibility Guide
+  - How to Apply and Enroll in Health Care
+  code: d72cd2b293abafe8
+- title: SSI/SSDI
+  description: Cash assistance for disabled or elderly individuals.
+  primary_referrals:
+  - rvjb
+  - slkt
+  - dwcn
+  - vfen
+  secondary_referrals:
+  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  code: 0f58b33e20407e21
+- title: Veteran's benefits
+  description: Assistance with accessing veterans benefits.
+  primary_referrals:
+  - akgb
+  secondary_referrals:
+  - Veterans Benefits Information
+  code: d3f0c00073980d2c
+- title: Non-citizen benefits
+  description: Some benefits are available to non-citizens, and others carry risks.
+  primary_referrals:
+  - lewp
+  - avut
+  secondary_referrals:
+  - 'Immigration and Benefits: Federal Guidance on Public Charge'
+  - Information for Non-Citizens Applying for a Public Benefit
+  code: 3477f2b395ccc4ff
+- title: Work-related benefits
+  description: Benefits related to a job such as worker's compensation, SDI, or benefits
+    provided by an employer.
+  primary_referrals:
+  - ugci
+  - jzok
+  secondary_referrals:
+  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  - More Information on Work-Related Issues
+  code: c8925389790b3dab
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: c4d889fca8dda5f8

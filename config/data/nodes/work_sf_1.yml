@@ -1,49 +1,60 @@
+---
 defaults:
-  question: "Here are some of the most common issues in this category. Can you tell which one your client needs help with?"
+  question: Here are some of the most common issues in this category. Can you tell
+    which one your client needs help with?
   terminal: true
-
 records:
-  - title: "Consumer: non-legal help"
-    description: "Obtaining credit reports, financial counseling or debt management"
-    primary_referrals:
-      - qzxg
-      - rdpc
-    secondary_referrals:
-      - "Understanding Credit Reports and Scores"
-      - "How to Get Free Credit Reports"
-      - "Debt Collection Information"
-  - title: "Consumer: legal help"
-    description: "Debt lawsuit, student loan debt, predatory loans, foreclosure, etc."
-    primary_referrals:
-      - gkde
-      - aypz
-    secondary_referrals:
-      - "Debt Collection Lawsuit"
-      - "Finding Legal Help For Debt Collection Lawsuits"
-  - title: "Driver's license"
-    description: "Legal help is sometimes available for getting a driver's license out of suspension."
-    primary_referrals:
-      - aytv
-      - pstv
-      - fvag
-    secondary_referrals:
-      - "California Suspended Drivers License Information"
-      - "General Information on Suspended Drivers Licenses"
-  - title: "Work and family"
-    description: "Pregnancy leaves, family medical leaves, pregnancy discrimination, etc."
-    primary_referrals:
-      - djsz
-    secondary_referrals:
-      - "Taking Leave from Work: Pregnancy/Prenatal Care/Bonding with a New Child"
-      - "More Information on Work-Related Issues"
-  - title: "Worker's rights"
-    description: "Unpaid wages or benefits, Unemployment Insurance, discrimination"
-    primary_referrals:
-      - ugci
-      - jzok
-      - yeoa
-    secondary_referrals:
-      - "12 Facts About Employment Law"
-      - "More Information on Work-Related Issues"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: 'Consumer: non-legal help'
+  description: Obtaining credit reports, financial counseling or debt management
+  primary_referrals:
+  - qzxg
+  - rdpc
+  secondary_referrals:
+  - Understanding Credit Reports and Scores
+  - How to Get Free Credit Reports
+  - Debt Collection Information
+  code: 9c939cc93e201bcf
+- title: 'Consumer: legal help'
+  description: Debt lawsuit, student loan debt, predatory loans, foreclosure, etc.
+  primary_referrals:
+  - gkde
+  - aypz
+  secondary_referrals:
+  - Debt Collection Lawsuit
+  - Finding Legal Help For Debt Collection Lawsuits
+  code: c32018324cbd855d
+- title: Driver's license
+  description: Legal help is sometimes available for getting a driver's license out
+    of suspension.
+  primary_referrals:
+  - aytv
+  - pstv
+  - fvag
+  secondary_referrals:
+  - California Suspended Drivers License Information
+  - General Information on Suspended Drivers Licenses
+  code: 2ea3a465aba86e29
+- title: Work and family
+  description: Pregnancy leaves, family medical leaves, pregnancy discrimination,
+    etc.
+  primary_referrals:
+  - djsz
+  secondary_referrals:
+  - 'Taking Leave from Work: Pregnancy/Prenatal Care/Bonding with a New Child'
+  - More Information on Work-Related Issues
+  code: 28962867aafd8410
+- title: Worker's rights
+  description: Unpaid wages or benefits, Unemployment Insurance, discrimination
+  primary_referrals:
+  - ugci
+  - jzok
+  - yeoa
+  secondary_referrals:
+  - 12 Facts About Employment Law
+  - More Information on Work-Related Issues
+  code: 145eb870749cdb44
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: '097f603f09793e66'

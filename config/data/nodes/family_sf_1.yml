@@ -1,8 +1,11 @@
+---
 defaults:
-  tip: "family_sf_1"
-  question: "Is your client experiencing or concerned about domestic violence?"
-
+  tip: family_sf_1
+  question: Is your client experiencing or concerned about domestic violence?
 records:
-  - title: "Yes"
-  - title: "No"
-  - title: "I don't know"
+- title: 'Yes'
+  code: a1651ed3445cb259
+- title: 'No'
+  code: 71793b02157919ff
+- title: I don't know
+  code: e97157a9e2a63f88

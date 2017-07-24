@@ -1,43 +1,54 @@
+---
 defaults:
-  question: "Here are some of the most common issues in this category. Can you tell which one your client needs help with?"
+  question: Here are some of the most common issues in this category. Can you tell
+    which one your client needs help with?
   terminal: true
-
 records:
-  - title: "Criminal process + warrants"
-    description: "Active criminal cases or potential cases, including warrants."
-    primary_referrals:
-      - oekx
-      - mfnb
-      - onax
-    secondary_referrals:
-      - "Know Your Rights, Published by SF Public Defender"
-      - "Your Legal Rights"
-  - title: "Criminal Record Cleaning & Re-Entry"
-    description: "Help in this area typically consists of record cleaning for prior convictions or help navigating given one's prior convictions."
-    primary_referrals:
-      - pwbf
-      - aytv
-    secondary_referrals:
-      - "Know Your Legal Rights: Employment and Criminal Records"
-      - "How does a Criminal Record Affect Your Section 8 and Public Housing Rights?"
-      - "Clearing Your Record"
-  - title: "Driver's license"
-    description: "Legal help is sometimes available for getting a driver's license out of suspension."
-    primary_referrals:
-      - aytv
-      - pstv
-      - fvag
-    secondary_referrals:
-      - "General Information on Suspended Drivers Licenses"
-      - "Drivers Licenses without Immigration Status: AB60 FAQ"
-  - title: "Tickets and infractions"
-    description: "There are some County programs that help low-income people pay fines and fees, reduce them, or do community service in lieu of them."
-    primary_referrals:
-      - aytv
-      - pstv
-      - fvag
-    secondary_referrals:
-      - "General Ticket Information"
-      - "Map of Ticket Process in San Francisco"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: Criminal process + warrants
+  description: Active criminal cases or potential cases, including warrants.
+  primary_referrals:
+  - oekx
+  - mfnb
+  - onax
+  secondary_referrals:
+  - Know Your Rights, Published by SF Public Defender
+  - Your Legal Rights
+  code: bdcdacc9ab72b1a7
+- title: Criminal Record Cleaning & Re-Entry
+  description: Help in this area typically consists of record cleaning for prior convictions
+    or help navigating given one's prior convictions.
+  primary_referrals:
+  - pwbf
+  - aytv
+  secondary_referrals:
+  - 'Know Your Legal Rights: Employment and Criminal Records'
+  - How does a Criminal Record Affect Your Section 8 and Public Housing Rights?
+  - Clearing Your Record
+  code: '0761529b9359f815'
+- title: Driver's license
+  description: Legal help is sometimes available for getting a driver's license out
+    of suspension.
+  primary_referrals:
+  - aytv
+  - pstv
+  - fvag
+  secondary_referrals:
+  - General Information on Suspended Drivers Licenses
+  - 'Drivers Licenses without Immigration Status: AB60 FAQ'
+  code: a532fcdaf9fd4ba7
+- title: Tickets and infractions
+  description: There are some County programs that help low-income people pay fines
+    and fees, reduce them, or do community service in lieu of them.
+  primary_referrals:
+  - aytv
+  - pstv
+  - fvag
+  secondary_referrals:
+  - General Ticket Information
+  - Map of Ticket Process in San Francisco
+  code: e8e09854531c211a
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: c6376a92055bf0e1

@@ -1,11 +1,13 @@
+---
 defaults:
-  tip: "test_b_tip"
+  tip: test_b_tip
   terminal: true
-
 records:
-  - title: "TestB1"
-    primary_referrals:
-      - cccc
-    secondary_referrals:
-      - "Secondary1"
-  - title: "TestB2"
+- title: TestB1
+  primary_referrals:
+  - cccc
+  secondary_referrals:
+  - Secondary1
+  code: 189c16fa3510e2fc
+- title: TestB2
+  code: 3c2880e58f7387fd

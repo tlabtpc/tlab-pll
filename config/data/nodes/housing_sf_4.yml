@@ -1,72 +1,84 @@
+---
 defaults:
-  question: "Here are some common issues in this category. Can you tell which one your client needs help with?"
+  question: Here are some common issues in this category. Can you tell which one your
+    client needs help with?
   terminal: true
-
 records:
-  - title: "Harassment or Landlord entry"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Landlords Can't..."
-  - title: "Notices (to pay or quit)"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Eviction Information"
-  - title: "Potential sale of building"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Foreclosure/Sale of Building Information"
-  - title: "Public housing issues"
-    description: "For example: Placement, emergency transfers, back rent, notices, etc."
-    primary_referrals:
-      - xbvz
-      - dvca
-      - xjri
-    secondary_referrals:
-      - "Public Housing, HUD, and Section 8 FAQ"
-      - "Eviction Information"
-  - title: "Subletting or roommate issues"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Roommates Information"
-  - title: "Security deposit"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Security Deposit Information"
-  - title: "Rent increases"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Rent Increase Information"
-  - title: "Repairs (habitability)"
-    primary_referrals:
-      - dvca
-      - dxau
-      - xjri
-      - xbvz
-    secondary_referrals:
-      - "Repair Information"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: Harassment or Landlord entry
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Landlords Can't...
+  code: 6a82e455f0ed020a
+- title: Notices (to pay or quit)
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Eviction Information
+  code: f42b3448302df706
+- title: Potential sale of building
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Foreclosure/Sale of Building Information
+  code: d62bf084bf6276f7
+- title: Public housing issues
+  description: 'For example: Placement, emergency transfers, back rent, notices, etc.'
+  primary_referrals:
+  - xbvz
+  - dvca
+  - xjri
+  secondary_referrals:
+  - Public Housing, HUD, and Section 8 FAQ
+  - Eviction Information
+  code: 5427a6560f82f27a
+- title: Subletting or roommate issues
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Roommates Information
+  code: a0c64eec375b8af9
+- title: Security deposit
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Security Deposit Information
+  code: 5c49a530185bbf44
+- title: Rent increases
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Rent Increase Information
+  code: 506e745b3f1ebcbc
+- title: Repairs (habitability)
+  primary_referrals:
+  - dvca
+  - dxau
+  - xjri
+  - xbvz
+  secondary_referrals:
+  - Repair Information
+  code: '09c400fdd8e1f3cc'
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: 3cb01e10d74edf41
