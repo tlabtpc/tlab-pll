@@ -7,6 +7,8 @@ records:
     type: "PrimaryReferral"
     markdown_content: "new markdown"
     markdown_content_es: "new markdown es"
+    description: "template desc"
+    unique_identifier: "template uid"
   - title: "Primary2"
     type: "PrimaryReferral"
     code: dddd

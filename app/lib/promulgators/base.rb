@@ -35,11 +35,12 @@ class Promulgators::Base
 
   def create_model(record, index)
     resource_class.find_or_create_by(find_by_hash(record)).tap do |model|
-      model.update(build_model_params(record, index))
+      attrs = model.attributes
+      model.update!(build_model_params(attrs, record, index))
     end
   end
 
-  def build_model_params(record, index)
+  def build_model_params(attrs, record, index)
     Hash(data['defaults']).merge(order_column => index).merge(record)
   end
 
