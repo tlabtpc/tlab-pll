@@ -11,18 +11,23 @@ describe Node do
   describe "#primary_referrals=" do
     let(:node) { create(:node, terminal: true) }
     let(:other_node) { create(:node, terminal: true) }
-    let!(:aaaa) { create :primary_referral, code: "aaaa" }
     let!(:bbbb) { create :primary_referral, code: "bbbb" }
+    let!(:aaaa) { create :primary_referral, code: "aaaa" }
     let!(:cccc) { create :primary_referral, code: "cccc" }
 
     it "sets primary referrals on a terminal node, with order" do
-      expect {
-        node.primary_referrals = ["aaaa", "bbbb", "cccc"]
-      }.to change { node.reload.referrals.count }.by(3)
+      other_node.primary_referrals = ["aaaa", "bbbb", "cccc"]
 
       expect {
-        other_node.primary_referrals = ["aaaa", "bbbb", "cccc"]
+        node.primary_referrals = ["aaaa", "cccc", "bbbb"]
+      }.to change { node.reload.referrals.count }.from(0).to(3)
+
+      expect {
+        node.primary_referrals = ["bbbb", "aaaa", "cccc"]
       }.to_not change { node.reload.referrals.count }
+
+      expect(node.node_referrals.order(:position).first.referral.code).to eq "bbbb"
+      expect(node.node_referrals.order(:position).last.referral.code).to eq "cccc"
     end
 
     it "deals with unknown referral codes" do

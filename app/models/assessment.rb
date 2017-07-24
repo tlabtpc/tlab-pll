@@ -38,10 +38,21 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
-  has_many :featured_referrals,
-    -> { where(type: ['PrimaryReferral', 'SpecialReferral']).order(priority: :asc) },
+  has_many :special_referrals,
+    -> { where(type: 'SpecialReferral').order(priority: :asc) },
     through: :assessment_referrals,
     source: :referral
+
+  def featured_referrals
+    ordered_primary_referrals + special_referrals
+  end
+
+  def ordered_primary_referrals
+    Referral.joins(:node_referrals)
+      .where(type: ['PrimaryReferral'])
+      .where("node_referrals.node_id = ?", terminal_nodes.pluck(:id))
+      .order("node_referrals.position")
+  end
 
   def referral_ids=(ids)
     Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
