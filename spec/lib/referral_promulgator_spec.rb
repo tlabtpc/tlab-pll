@@ -7,12 +7,32 @@ describe 'Referral Promulgators' do
     }.to change { Referral.count }.by(4)
   end
 
-  it 'does not populate markdown' do
+  it 'does not populate markdown ever' do
     existing = PrimaryReferral.create(code: "cccc", markdown_content: "some markdown", markdown_content_es: "el márkdown")
     expect {
       Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
     }.to_not change { existing.markdown_content + existing.markdown_content_es }
     expect(existing.reload.title).to eq "Primary1"
+  end
+
+  it 'does not overwrite descriptions, titles or unique ids from prod' do
+    Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
+
+    referral = PrimaryReferral.where(code: "cccc").first
+
+    referral.update(
+      description: "admin description",
+      title: "admin given title",
+      unique_identifier: "admin unique id"
+    )
+
+    expect(referral.reload.title).to eq "admin given title"
+
+    expect {
+      Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
+    }.to_not change { referral.title + referral.description + referral.unique_identifier}
+
+    expect(referral.reload.title).to eq "admin given title"
   end
 
   it 'populates secondary referrals' do
@@ -23,7 +43,7 @@ describe 'Referral Promulgators' do
 
   it 'populates default values' do
     Promulgators::PrimaryReferral.new(files: [:test_primary]).promulgate!
-    expect(Referral.pluck(:description).uniq).to eq ["a description"]
+    expect(Referral.pluck(:description).uniq).to match_array ["a description", "template desc"]
   end
 
   it 'populates priority' do
