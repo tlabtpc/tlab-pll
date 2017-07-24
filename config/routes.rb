@@ -38,6 +38,6 @@ Rails.application.routes.draw do
     resources :primary_referrals, except: [:destroy, :new, :create]
     resources :special_referrals, except: [:destroy, :new, :create]
     resources :secondary_referrals, except: [:destroy, :new, :create]
-    resources :assessments, except: [:destroy, :new, :create]
+    resources :assessments, only: [:show, :index]
   end
 end
