@@ -1,0 +1,40 @@
+defaults:
+  question: "Here are some of the most common issues in this category. Can you tell which one your client needs help with?"
+  terminal: true
+
+records:
+  - title: "Consumer: non-legal help"
+    description: "Obtaining credit reports, financial counseling or debt management"
+    primary_referrals:
+      - qzxg
+      - vrps
+    secondary_referrals:
+      - "Understanding Credit Reports and Scores"
+  - title: "Consumer: legal help"
+    description: "Debt lawsuit, student loan debt, predatory loans, foreclosure, etc."
+    primary_referrals:
+      - aypz
+      - yxpb
+    secondary_referrals:
+      - "Understanding Credit Reports and Scores"
+  - title: "Driver's license"
+    description: "Legal help is sometimes available for getting a driver's license out of suspension."
+    primary_referrals:
+      - aytv
+    secondary_referrals:
+      - "California Suspended Drivers License Information"
+  - title: "Work and family"
+    description: "Pregnancy leaves, family medical leaves, pregnancy discrimination, etc."
+    primary_referrals:
+      - djsz
+    secondary_referrals:
+      - "State of CA Pregnancy Leave"
+  - title: "Worker's rights"
+    description: "Unpaid wages or benefits, Unemployment Insurance, discrimination"
+    primary_referrals:
+      - ohqz
+      - ugci
+    secondary_referrals:
+      - "Credit Reports and Employment"
+  - title: "Other"
+    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."

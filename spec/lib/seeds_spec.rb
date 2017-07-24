@@ -62,13 +62,14 @@ describe 'rake db:seed' do
     ebsc = Referral.find_by(title: "East Bay Sanctuary Covenant")
     expect(ebsc.nodes).to include asylum_node
 
-    # suburb-based immigration terminal node
-    crim_nodes = Node.where(title: "Driver's license")
-    def_offices = Referral.find_by(title: "Legal Services for Children (LSC)")
+    # other counties common terminal node + referral
+    county_nodes = Node.where(title: "Consumer: non-legal help")
+    sparkpoint = Referral.find_by(title: "Sparkpoint")
 
-    crim_nodes.each do |node|
-      expect(node.referrals.count).to eq 5
-      expect(def_offices.nodes).to include node
+    expect(sparkpoint.nodes.count).to eq 5
+
+    sparkpoint.nodes.each do |node|
+      expect(county_nodes).to include node
     end
   end
 

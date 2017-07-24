@@ -27,6 +27,8 @@
     - immigration_alameda_1
   "Family & Relationships":
     - family_alameda_1
+  "Work, Credit & Consumer":
+    - work_alameda_1
 "Contra Costa":
   Benefits:
     - benefits_contra_costa_1
@@ -38,6 +40,8 @@
     - immigration_contra_costa_1
   "Family & Relationships":
     - family_contra_costa_1
+  "Work, Credit & Consumer":
+    - work_contra_costa_1
 "Marin":
   Benefits:
     - benefits_marin_1
@@ -49,6 +53,8 @@
     - immigration_marin_1
   "Family & Relationships":
     - family_marin_1
+  "Work, Credit & Consumer":
+    - work_marin_1
 "San Mateo":
   Benefits:
     - benefits_san_mateo_1
@@ -60,6 +66,8 @@
     - immigration_san_mateo_1
   "Family & Relationships":
     - family_san_mateo_1
+  "Work, Credit & Consumer":
+    - work_san_mateo_1
 "Santa Clara":
   Benefits:
     - benefits_santa_clara_1
@@ -71,6 +79,8 @@
     - immigration_santa_clara_1
   "Family & Relationships":
     - family_santa_clara_1
+  "Work, Credit & Consumer":
+    - work_santa_clara_1
 default:
   Benefits:
     - benefits_suburbs_1
