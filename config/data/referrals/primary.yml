@@ -187,7 +187,7 @@ records:
     description: Provides counseling on fair housing issues, as well as other landlord/tenant issues.
   - code: czdo
     title: Marin County Public Defender Expungement Division
-    description: When calling, ask for the record expungement division. This is the record-cleaning division of the Marin County Public Defender. They should be able to give individualized information on whether aspects of a record are expungeable. 
+    description: When calling, ask for the record expungement division. This is the record-cleaning division of the Marin County Public Defender. They should be able to give individualized information on whether aspects of a record are expungeable.
   - code: oekx
     title: San Francisco Public Defender (SFPD)
     description: "The San Francisco Public Defender represents clients with active state criminal cases or warrants in SF, assuming the client cannot afford a private attorney. While your client may not know the name of his/her public defender, and the public defenders can be hard to reach, they are the best suited to assist the client unless the client wants to pay for private counsel. \n\nNote that if the client has questions related to criminal actions, or potential criminal actions, in another County, he/she must contact the public defenders office in that county and/or the federal public defenders for that region."
@@ -227,3 +227,9 @@ records:
   - code: mfnb
     title: "Warrants Clinic"
     description: "This is a good resource for clients with warrants outside of SF, or those who are curious if they have warrants. If a client has a warrant in SF, he/she should be directed to the SF Public Defender.\n\nThis is a clinic of UC Hastings students supervised by attorneys (from the Homeless Advocacy Project and a law firm, Orrick). The schedule is dictated in part by the academic calendar."
+  - code: kjuh
+    title: "Marin County Probation Department"
+    description: "If you were on probation, then the Probation Department is available to help with record expungement. Usually a fee of $55 is charged."
+  - code: jsue
+    title: "Santa Clara County Public Defender Expungement Office"
+    description: "This office is a part of the Santa Clara County Public Defender's office, and can help people clear certain convictions from their record. Call the office for individualized information on whether aspects of a criminal record can be expunged and the best way to go about having a record expunged."
