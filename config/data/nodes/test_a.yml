@@ -1,7 +1,9 @@
+---
 defaults:
-  tip: "TestATip"
-
+  tip: TestATip
 records:
-  - title: "TestA1"
-  - title: "TestA2"
-    terminal: true
+- title: TestA1
+  code: 144a9bf8aeeb7800
+- title: TestA2
+  terminal: true
+  code: 10fd848202e01a14

@@ -1,46 +1,56 @@
+---
 defaults:
-  question: "What type of benefit does your client's question relate to?"
+  question: What type of benefit does your client's question relate to?
   terminal: true
-
 records:
-  - title: "Safety net benefits (CalFresh, CalWORKs, General Assistance)"
-    description: "Cash and food assistance for families and individuals."
-    primary_referrals:
-      - aypz
-    secondary_referrals:
-      - "California CalWorks (TANF)"
-  - title: "Foster benefits"
-    description: "Cash and other assistance for foster care-involved youth."
-    primary_referrals:
-      - aypz
-    secondary_referrals:
-      - "10 Facts Every Foster Youth Should Know"
-  - title: "Health care benefits"
-    description: "Health care under Medi-Cal, Medicare, Covered California, and private providers."
-    primary_referrals:
-      - wzlj
-    secondary_referrals:
-      - "Health Care Eligibility Guide"
-  - title: "Non-citizen benefits"
-    description: "Some benefits are available to non-citizens, and others carry risks."
-    primary_referrals:
-      - lewp
-  - title: "SSI/SSDI"
-    description: "Cash assistance for disabled or elderly individuals."
-    primary_referrals:
-      - aypz
-    secondary_referrals:
-      - "Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI"
-  - title: "Veterans benefits"
-    description: "Assistance with accessing veterans benefits."
-    primary_referrals:
-      - akgb
-    secondary_referrals:
-      - "Veterans Benefits Information"
-  - title: "Work-related"
-    description: "Benefits related to a job such as worker's compensation, SDI, or benefits provided by an employer."
-    primary_referrals:
-      - ugci
-    secondary_referrals:
-      - "Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI"
-  - title: "Other"
+- title: Safety net benefits (CalFresh, CalWORKs, General Assistance)
+  description: Cash and food assistance for families and individuals.
+  primary_referrals:
+  - aypz
+  secondary_referrals:
+  - California CalWorks (TANF)
+  code: ec6326664e31f8ba
+- title: Foster benefits
+  description: Cash and other assistance for foster care-involved youth.
+  primary_referrals:
+  - aypz
+  secondary_referrals:
+  - 10 Facts Every Foster Youth Should Know
+  code: 819946664efdf430
+- title: Health care benefits
+  description: Health care under Medi-Cal, Medicare, Covered California, and private
+    providers.
+  primary_referrals:
+  - wzlj
+  secondary_referrals:
+  - Health Care Eligibility Guide
+  code: 8db7ad9a38a86608
+- title: Non-citizen benefits
+  description: Some benefits are available to non-citizens, and others carry risks.
+  primary_referrals:
+  - lewp
+  code: 60e60948e242b34b
+- title: SSI/SSDI
+  description: Cash assistance for disabled or elderly individuals.
+  primary_referrals:
+  - aypz
+  secondary_referrals:
+  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  code: 757bb3f406f5f6d9
+- title: Veterans benefits
+  description: Assistance with accessing veterans benefits.
+  primary_referrals:
+  - akgb
+  secondary_referrals:
+  - Veterans Benefits Information
+  code: 99e61d54de4bbf85
+- title: Work-related
+  description: Benefits related to a job such as worker's compensation, SDI, or benefits
+    provided by an employer.
+  primary_referrals:
+  - ugci
+  secondary_referrals:
+  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  code: be22d69512dd58f1
+- title: Other
+  code: 9107ace0b71b4842

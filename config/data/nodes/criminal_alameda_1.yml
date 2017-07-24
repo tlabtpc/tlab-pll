@@ -1,19 +1,25 @@
+---
 defaults:
-  question: "What does your client need help with?"
+  question: What does your client need help with?
   terminal: true
-
 records:
-  - title: "Criminal process + warrants"
-    description: "Active criminal cases or potential cases, including warrants."
-    primary_referrals:
-      - uqhn
-    secondary_referrals:
-      - "Overview of Services"
-  - title: "Criminal Record Cleaning & Re-Entry"
-    description: "Help in this area typically consists of record cleaning for prior convictions or help navigating given one's prior convictions."
-    primary_referrals:
-      - pwbf
-    secondary_referrals:
-      - "Clearing Your Record"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: Criminal process + warrants
+  description: Active criminal cases or potential cases, including warrants.
+  primary_referrals:
+  - uqhn
+  secondary_referrals:
+  - Overview of Services
+  code: b875b31aa2558cb8
+- title: Criminal Record Cleaning & Re-Entry
+  description: Help in this area typically consists of record cleaning for prior convictions
+    or help navigating given one's prior convictions.
+  primary_referrals:
+  - pwbf
+  secondary_referrals:
+  - Clearing Your Record
+  code: de1bf22f607ecb74
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: 503560b2ad9e48c4

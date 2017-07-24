@@ -1,8 +1,12 @@
+---
 defaults:
-  question: "Has your client already been evicted, and is that eviction causing a barrier to housing?"
-
+  question: Has your client already been evicted, and is that eviction causing a barrier
+    to housing?
 records:
-  - title: "Yes"
-    description: "There is limited legal help and sometimes a remedy for this."
-  - title: "No"
-  - title: "I don't know"
+- title: 'Yes'
+  description: There is limited legal help and sometimes a remedy for this.
+  code: ec81fbeee11e1271
+- title: 'No'
+  code: aa8e7d8d4239cd08
+- title: I don't know
+  code: 6d649dfa7aeaee40

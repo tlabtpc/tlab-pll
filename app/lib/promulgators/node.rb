@@ -30,6 +30,6 @@ class Promulgators::Node < Promulgators::Base
   end
 
   def find_by_hash(record)
-    { parent_node: parent, title: record['title'] }
+    { parent_node: parent, code: record['code'] }
   end
 end

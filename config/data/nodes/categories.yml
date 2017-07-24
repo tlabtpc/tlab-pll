@@ -1,29 +1,44 @@
+---
 defaults:
   is_category: true
-  question: "Can you tell which category of legal help your client needs?"
-
+  question: Can you tell which category of legal help your client needs?
 records:
-  - title: "Benefits"
-    description: "For example: CalFresh, CalWORKS, CAAP, Foster care, Health care, SSI/SSDI, Veteran's, Work-related"
-    icon: benefits
-  - title: "Criminal & Tickets"
-    description: "For example: criminal cases, criminal record cleaning, warrants, tickets, and infractions"
-    icon: criminal
-  - title: "Family & Relationships"
-    description: "For example: divorce, custody, guardianship, restraining orders"
-    icon: family
-  - title: "Housing"
-    description: "For example: evictions, problems with housing (repairs, harassment, rent increases), discrimination"
-    icon: housing
-  - title: "Immigration"
-    description: "For example: deportation, naturalization, family petitions, humanitarian relief (asylum, U-Visa, Vawa, etc.)"
-    icon: immigration
-  - title: "Work, Credit & Consumer"
-    description: "For example: Issues related to credit/consumer, worker's rights, work and family."
-    icon: work
-  - title: "Other issues"
-    description: "For example: Gender or name change, personal injury, police misconduct, taxes, end of life support"
-    icon: other
-  - title: "I don't know"
-    description: "That's OK. For the next step we will ask you to describe your client's situation and PLL will provide a cross-check."
-    icon: i_dont_know
+- title: Benefits
+  description: 'For example: CalFresh, CalWORKS, CAAP, Foster care, Health care, SSI/SSDI,
+    Veteran''s, Work-related'
+  icon: benefits
+  code: 7ca46412c79f8741
+- title: Criminal & Tickets
+  description: 'For example: criminal cases, criminal record cleaning, warrants, tickets,
+    and infractions'
+  icon: criminal
+  code: '08a2c4691b3e9292'
+- title: Family & Relationships
+  description: 'For example: divorce, custody, guardianship, restraining orders'
+  icon: family
+  code: 0c269b3e9f082107
+- title: Housing
+  description: 'For example: evictions, problems with housing (repairs, harassment,
+    rent increases), discrimination'
+  icon: housing
+  code: 143875449ed9c9ba
+- title: Immigration
+  description: 'For example: deportation, naturalization, family petitions, humanitarian
+    relief (asylum, U-Visa, Vawa, etc.)'
+  icon: immigration
+  code: d41f343ca29f9fd5
+- title: Work, Credit & Consumer
+  description: 'For example: Issues related to credit/consumer, worker''s rights,
+    work and family.'
+  icon: work
+  code: a627c4f2f0b398e0
+- title: Other issues
+  description: 'For example: Gender or name change, personal injury, police misconduct,
+    taxes, end of life support'
+  icon: other
+  code: 61633b7b7b45dbc2
+- title: I don't know
+  description: That's OK. For the next step we will ask you to describe your client's
+    situation and PLL will provide a cross-check.
+  icon: i_dont_know
+  code: 6a43bc0c3f41cbd9

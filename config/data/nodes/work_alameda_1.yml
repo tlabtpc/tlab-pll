@@ -1,39 +1,50 @@
+---
 defaults:
-  question: "Here are some of the most common issues in this category. Can you tell which one your client needs help with?"
+  question: Here are some of the most common issues in this category. Can you tell
+    which one your client needs help with?
   terminal: true
-
 records:
-  - title: "Consumer: non-legal help"
-    description: "Obtaining credit reports, financial counseling or debt management"
-    primary_referrals:
-      - qzxg
-      - vrps
-    secondary_referrals:
-      - "Understanding Credit Reports and Scores"
-  - title: "Consumer: legal help"
-    description: "Debt lawsuit, student loan debt, predatory loans, foreclosure, etc."
-    primary_referrals:
-      - aypz
-      - yxpb
-    secondary_referrals:
-      - "Understanding Credit Reports and Scores"
-  - title: "Driver's license"
-    description: "Legal help is sometimes available for getting a driver's license out of suspension."
-    primary_referrals:
-      - myxi
-    secondary_referrals:
-      - "California Suspended Drivers License Information"
-  - title: "Work and family"
-    description: "Pregnancy leaves, family medical leaves, pregnancy discrimination, etc."
-    primary_referrals:
-      - djsz
-    secondary_referrals:
-      - "State of CA Pregnancy Leave"
-  - title: "Worker's rights"
-    description: "Unpaid wages or benefits, Unemployment Insurance, discrimination"
-    primary_referrals:
-      - ugci
-    secondary_referrals:
-      - "Credit Reports and Employment"
-  - title: "Other"
-    description: "We are unable to offer referrals without this information. Please skip to PLL Cross-Check where you can describe your client’s issue and request support from PLL."
+- title: 'Consumer: non-legal help'
+  description: Obtaining credit reports, financial counseling or debt management
+  primary_referrals:
+  - qzxg
+  - vrps
+  secondary_referrals:
+  - Understanding Credit Reports and Scores
+  code: 00a274e3f701bc1a
+- title: 'Consumer: legal help'
+  description: Debt lawsuit, student loan debt, predatory loans, foreclosure, etc.
+  primary_referrals:
+  - aypz
+  - yxpb
+  secondary_referrals:
+  - Understanding Credit Reports and Scores
+  code: 175ba584969f7f5e
+- title: Driver's license
+  description: Legal help is sometimes available for getting a driver's license out
+    of suspension.
+  primary_referrals:
+  - myxi
+  secondary_referrals:
+  - California Suspended Drivers License Information
+  code: 6b87ca50996b2efd
+- title: Work and family
+  description: Pregnancy leaves, family medical leaves, pregnancy discrimination,
+    etc.
+  primary_referrals:
+  - djsz
+  secondary_referrals:
+  - State of CA Pregnancy Leave
+  code: 8c83c85162eb120f
+- title: Worker's rights
+  description: Unpaid wages or benefits, Unemployment Insurance, discrimination
+  primary_referrals:
+  - ugci
+  secondary_referrals:
+  - Credit Reports and Employment
+  code: 011c68046fc6037d
+- title: Other
+  description: We are unable to offer referrals without this information. Please skip
+    to PLL Cross-Check where you can describe your client’s issue and request support
+    from PLL.
+  code: df287ef09f9eb94c
