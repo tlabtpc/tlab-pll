@@ -2,7 +2,7 @@ class Promulgators::PrimaryReferral < Promulgators::Base
   private
 
   def build_model_params(attrs, record, index)
-    attrs.reverse_merge(super)
+    super.merge(attrs.compact.except('id', 'created_at'))
   end
 
   def resource
