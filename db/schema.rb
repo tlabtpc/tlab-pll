@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724211442) do
+ActiveRecord::Schema.define(version: 20170724212716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20170724211442) do
   end
 
   create_table "cross_checks", force: :cascade do |t|
-    t.integer  "assessment_id"
     t.text     "details"
     t.text     "deadlines"
     t.string   "first_name"
@@ -56,17 +55,18 @@ ActiveRecord::Schema.define(version: 20170724211442) do
     t.integer  "support_level"
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.integer  "assessment_id",                                   null: false
     t.jsonb    "action_items",                       default: [], null: false
     t.string   "last_name"
     t.integer  "county_node_id"
+    t.integer  "client_is_represented"
     t.integer  "client_has_attorney_representation"
-    t.index ["assessment_id"], name: "index_cross_checks_on_assessment_id", using: :btree
   end
 
   create_table "node_referrals", force: :cascade do |t|
     t.integer "node_id"
     t.integer "referral_id"
-    t.integer "position",    default: 0, null: false
+    t.integer "position"
   end
 
   create_table "nodes", force: :cascade do |t|
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170724211442) do
     t.string   "question"
     t.integer  "position",       default: 0,     null: false
     t.string   "icon"
+    t.string   "code"
     t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
   end
 
@@ -92,8 +93,8 @@ ActiveRecord::Schema.define(version: 20170724211442) do
     t.string   "title"
     t.text     "markdown_content"
     t.string   "link"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.text     "markdown_content_es"
     t.text     "description"
     t.string   "unique_identifier"
