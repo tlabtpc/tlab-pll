@@ -31,6 +31,10 @@ describe Assessment do
     expect(assessment.non_terminal_nodes).to eq [intro_node]
   end
 
+  it "has terminal nodes" do
+    expect(assessment.terminal_nodes).to eq [final_node]
+  end
+
   it "has a cross check" do
     expect(assessment.cross_check).to eq cross_check
   end

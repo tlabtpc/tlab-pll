@@ -15,6 +15,10 @@ class Assessment < ApplicationRecord
 
   has_many :nodes, through: :assessment_nodes
 
+  has_many :terminal_nodes,
+    -> { where(terminal: true) },
+    through: :assessment_nodes, source: :node
+
   has_many :non_terminal_nodes,
     -> { where(terminal: false) },
     through: :assessment_nodes, source: :node

@@ -20,7 +20,7 @@ class Views::Assessments::Content < Views::Base
     div class: "assessments__summary" do
       h2 "Summary of Issue", class: "assessments__title"
       assessment_info "Location: ", assessment.county_name
-      assessment_info "Issue: ", assessment.category_name
+      assessment_info "Issue: ", "#{assessment.category_name}, #{assessment.sub_category_name}"
       assessment_info "Description: ", assessment.details
       assessment_info "Deadlines: ", assessment.deadlines
       assessment_info "Attorney: ", assessment.attorney_status

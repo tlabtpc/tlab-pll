@@ -17,6 +17,10 @@ class AssessmentDecorator < Draper::Decorator
     nodes.categories.pluck(:title).first
   end
 
+  def sub_category_name
+    terminal_nodes.pluck(:title).first
+  end
+
   def caseworker_first_name
     cross_check.first_name
   end
