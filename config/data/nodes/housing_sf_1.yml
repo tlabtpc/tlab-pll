@@ -2,7 +2,6 @@
 defaults:
   question: Has your client received an unlawful detainer, summons and complaint,
     or a sheriff's notice to vacate?
-  tip: housing_sf_1
 records:
 - title: 'Yes'
   description: Make an immediate referral! Press “next” to proceed to the Refer stage.
@@ -11,6 +10,7 @@ records:
   - hyop
   secondary_referrals:
   - Guide to the Unlawful Detainer Process
+  tip: housing_sf_1
   code: 252951f51f8fbed9
 - title: 'No'
   code: e533c1e70dfd9bbd
