@@ -1,6 +1,5 @@
 ---
 defaults:
-  tip: family_sf_2
   question: Here are some of the most common issues in this category. Can you tell
     which one your client needs help with?
   terminal: true

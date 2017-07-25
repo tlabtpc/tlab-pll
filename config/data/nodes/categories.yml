@@ -8,6 +8,7 @@ records:
     Veteran''s, Work-related'
   icon: benefits
   code: 7ca46412c79f8741
+  tip: benefits_sf_2
 - title: Criminal & Tickets
   description: 'For example: criminal cases, criminal record cleaning, warrants, tickets,
     and infractions'
@@ -16,6 +17,7 @@ records:
 - title: Family & Relationships
   description: 'For example: divorce, custody, guardianship, restraining orders'
   icon: family
+  tip: family_sf_2
   code: 0c269b3e9f082107
 - title: Housing
   description: 'For example: evictions, problems with housing (repairs, harassment,
@@ -26,6 +28,7 @@ records:
   description: 'For example: deportation, naturalization, family petitions, humanitarian
     relief (asylum, U-Visa, Vawa, etc.)'
   icon: immigration
+  tip: immigration_sf_1
   code: d41f343ca29f9fd5
 - title: Work, Credit & Consumer
   question: Here are some of the most common issues in this category. Can you tell

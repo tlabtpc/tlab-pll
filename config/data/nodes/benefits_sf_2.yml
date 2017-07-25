@@ -1,6 +1,5 @@
 ---
 defaults:
-  tip: benefits_sf_2
   question: What type of benefit does your client's question relate to?
   terminal: true
 records:

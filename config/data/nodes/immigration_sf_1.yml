@@ -2,7 +2,6 @@
 defaults:
   question: Here are some of the most common issues in this category. Can you tell
     which one your client needs help with?
-  tip: immigration_sf_1
   terminal: true
 records:
 - title: Deportation defense
