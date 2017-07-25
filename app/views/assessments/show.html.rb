@@ -18,7 +18,7 @@ class Views::Assessments::Show < Views::Base
         end
       end
 
-      render "content"
+      render "content", context: :app
       render "logos"
     end
 

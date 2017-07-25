@@ -2,6 +2,7 @@ class Views::Assessments::Content < Views::Base
   include Rails.application.routes.url_helpers
 
   needs :assessment
+  needs :context
 
   def content
     if assessment.caseworker_email
@@ -79,13 +80,21 @@ class Views::Assessments::Content < Views::Base
       span referral.title
     end
     p referral.description
-    p { link_to primary_referral_url(referral), primary_referral_url(referral), class: "assessments__link" }
+    p { link_to link_for(referral), link_for(referral), class: "assessments__link" }
   end
 
   def secondary_referral(referral)
     p class: "assessments__secondary-referral" do
       fa_icon "external-link", "fa-lg"
       link_to(referral.title, referral.link, class: "assessments__link", target: "_blank")
+    end
+  end
+
+  def link_for(referral)
+    if context == :email && referral.link.present?
+      referral.link
+    else
+      primary_referral_url(referral)
     end
   end
 end

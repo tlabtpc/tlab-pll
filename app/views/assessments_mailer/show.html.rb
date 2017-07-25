@@ -7,7 +7,7 @@ class Views::AssessmentsMailer::Show < Views::Shared::Mailer
 
     hr
 
-    render "assessments/content"
+    render "assessments/content", context: :email
   end
 
   private

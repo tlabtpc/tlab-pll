@@ -12,6 +12,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     id: Field::Number,
     unique_identifier: Field::String,
     title: Field::String,
+    link: Field::String,
     description: Field::Text,
     markdown_content: Field::Text,
     markdown_content_es: Field::Text,
@@ -40,6 +41,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     :title,
     :unique_identifier,
     :description,
+    :link,
     :markdown_content,
     :markdown_content_es,
     :created_at,
@@ -53,6 +55,7 @@ class PrimaryReferralDashboard < Administrate::BaseDashboard
     :unique_identifier,
     :title,
     :description,
+    :link,
     :markdown_content,
     :markdown_content_es
   ].freeze
