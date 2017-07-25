@@ -13,19 +13,19 @@ class Views::CrossChecks::Support < Views::Base
           render partial: "square", locals: {
             value: "low",
             label: "Low",
-            description: nil,
+            description: "I think we found the right referral but any additinonal resources from Project Legal Link would be helpful",
             icon: nil
           }
           render partial: "square", locals: {
             value: "medium",
             label: "Medium",
-            description: nil,
+            description: "I am not sure we found the right referral, and would appreciate a cross-check from Project Legal Link",
             icon: nil
           }
           render partial: "square", locals: {
             value: "high",
             label: "High",
-            description: nil,
+            description: "I am not sure we have identified the right legal issue, and me or the client need additional support from Project Legal Link",
             icon: nil
           }
         end
