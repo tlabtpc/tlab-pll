@@ -49,6 +49,7 @@ $container-width: 940px;
   margin: 0 auto 5px auto;
   padding: 0;
   transition: all 0.2s;
+  height: 0;
   visibility: hidden;
 }
 
@@ -56,6 +57,7 @@ $container-width: 940px;
   background: linear-gradient($travertine, $lemon-chiffon);
   line-height: 1.2;
   padding: 20px;
+  height: auto;
   visibility: visible;
 }
 
