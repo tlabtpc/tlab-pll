@@ -17,7 +17,8 @@ class Views::Tips::FamilySf1 < Views::Base
       text "Learn more "
       link_to "HERE",
         "http://www.courts.ca.gov/selfhelp-domesticviolence.htm",
-        target: "_blank"
+        target: "_blank",
+        class: "tips__link"
     end
   end
 end
