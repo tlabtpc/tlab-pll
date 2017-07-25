@@ -22,7 +22,7 @@ describe "straight to cross check", js: true do
       expect(page).to have_content "We are unable to offer referrals without this information"
       click_next
 
-      expect(page).to have_content "Would you like a PLL Cross-Check?"
+      expect(page).to have_content "give us additional details"
     end
   end
 end

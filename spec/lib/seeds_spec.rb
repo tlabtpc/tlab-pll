@@ -12,7 +12,7 @@ describe 'rake db:seed' do
     load_seeds
 
     expect(Node.where(root: true).count).to eq 1
-    expect(Node.counties.count).to eq 7
+    expect(Node.counties.count).to eq 8
     expect(Node.categories.count).to eq(Node.counties.count * 8)
   end
 
