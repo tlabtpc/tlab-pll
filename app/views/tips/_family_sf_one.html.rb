@@ -1,4 +1,4 @@
-class Views::Tips::FamilySf1 < Views::Base
+class Views::Tips::FamilySfOne < Views::Base
   def content
     render "tips/caseworker_header"
 

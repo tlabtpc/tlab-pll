@@ -1,6 +1,6 @@
 ---
 defaults:
-  tip: family_sf_2
+  tip: family_sf_two
   question: Is your client experiencing or concerned about domestic violence?
 records:
 - title: 'Yes'
