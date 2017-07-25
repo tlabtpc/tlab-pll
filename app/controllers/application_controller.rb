@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   respond_to :html
 
+  rescue_from(StandardError) { |e| apologize_and_go_home(e) }
+
   def basic_auth
     basic_auth_name, basic_auth_password = ENV.fetch("BASIC_AUTH", "").split(":")
 
@@ -38,6 +40,15 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def apologize_and_go_home(e)
+    if Rails.env.development?
+      raise e
+    else
+      flash[:info] = "We're sorry, something went wrong. We're looking at it now! In the meantime, please try again."
+      redirect_to root_path
+    end
+  end
 
   def resource_class
     controller_name.classify.constantize
