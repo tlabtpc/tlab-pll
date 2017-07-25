@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception # Prevent CSRF attacks by raising an exception. For APIs, you may want to use :null_session instead.
   force_ssl if: -> { Feature.ssl? }
   before_action :basic_auth, :verify_allowed_user
+  before_action :set_layout_modifiers
 
   respond_to :html
 
@@ -40,6 +41,22 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_layout_modifiers
+    @layout_modifiers = { container: [] }
+  end
+
+  def set_white_background
+    @layout_modifiers[:container] << :white
+  end
+
+  def set_wide_card
+    @layout_modifiers[:container] << :wide
+  end
+
+  def set_unpadded_card
+    @layout_modifiers[:container] << :unpadded
+  end
 
   def apologize_and_go_home(e)
     if Rails.env.development?

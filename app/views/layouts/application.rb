@@ -1,4 +1,6 @@
 class Views::Layouts::Application < Views::Base
+  needs :layout_modifiers
+
   def content
     html lang: "en" do
       head do
@@ -24,7 +26,7 @@ class Views::Layouts::Application < Views::Base
           div msg, "aria-label" => name, "aria-role" => "dialog", class: ['callout', 'flash', name]
         end
 
-        div(class: :container) do
+        div(class: container_class) do
           if content_for?(:card)
             div(class: :"card-wrapper") do
               div(class: :card) do
@@ -61,6 +63,12 @@ class Views::Layouts::Application < Views::Base
   end
 
   private
+
+  def container_class
+    (['container'] + Array(layout_modifiers[:container]).map do |mod|
+      "container--#{mod}"
+    end).compact.join(' ')
+  end
 
   def google_analytics_id
     ENV['GOOGLE_ANALYTICS_ID']

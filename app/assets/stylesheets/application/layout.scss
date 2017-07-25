@@ -21,6 +21,22 @@ body {
   justify-content: center;
   background-color: $bluehair;
   @media screen { max-height: 100%; }
+
+  &--white {
+    background: $seagull;
+    .card {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
+  &--wide {
+    .card { max-width: 780px; }
+  }
+
+  &--unpadded {
+    .card { padding: 0 !important; }
+  }
 }
 
 .copyright {
