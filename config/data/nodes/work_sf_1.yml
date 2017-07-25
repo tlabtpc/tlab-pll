@@ -54,7 +54,5 @@ records:
   - More Information on Work-Related Issues
   code: 145eb870749cdb44
 - title: Other
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: '097f603f09793e66'

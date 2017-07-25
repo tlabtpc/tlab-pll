@@ -44,7 +44,5 @@ records:
   - Credit Reports and Employment
   code: cbe273fc3b89fe70
 - title: Other
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: aeed94728a1ae033

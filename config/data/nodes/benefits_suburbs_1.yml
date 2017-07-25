@@ -28,7 +28,5 @@ records:
   code: 46a00b75b8452537
 - title: Other
   terminal: true
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: 32e068d60afac0a1

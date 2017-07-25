@@ -78,7 +78,5 @@ records:
   - Repair Information
   code: '09c400fdd8e1f3cc'
 - title: Other
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: 3cb01e10d74edf41

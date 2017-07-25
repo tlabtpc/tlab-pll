@@ -17,7 +17,5 @@ records:
   - Clearing Your Record
   code: bac91f6f9839879a
 - title: Other
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: 43f3d39832a439bf
