@@ -18,3 +18,7 @@ records:
   code: 31fa044e1e34da5d
 - title: Other County
   code: aaf2e385d710aedd
+- title: I don't know
+  description: "That's OK.  Select \"Next\" to describe your client's situation and request a cross-check from Project Legal Link"
+  code: 55e4fc7107115758
+  terminal: true
