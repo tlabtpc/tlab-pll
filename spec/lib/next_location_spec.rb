@@ -38,7 +38,7 @@ describe NextLocation do
 
       context 'assessment has no referrals' do
         it 'returns the cross check path' do
-          expect(resolved_path(terminal_node)).to eq start_cross_checks_path
+          expect(resolved_path(terminal_node)).to eq details_cross_checks_path
         end
       end
     end

@@ -17,7 +17,7 @@ NextLocation = Struct.new(:assessment, :node) do
     if assessment.referrals.any?
       assessment_referrals_path
     else
-      start_cross_checks_path
+      details_cross_checks_path
     end
   end
 end
