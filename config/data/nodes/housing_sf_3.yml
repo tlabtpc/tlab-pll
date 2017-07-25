@@ -1,6 +1,7 @@
 ---
 defaults:
   question: Do you know if your client is in private housing or public?
+  include_in_summary: true
 records:
 - title: Private
   description: Private landlord paid for with private funds
@@ -15,5 +16,4 @@ records:
   - Public Housing, HUD, and Section 8 FAQ
   code: 73ff470885490547
 - title: I don't know
-  terminal: true
   code: d297f019601b234b

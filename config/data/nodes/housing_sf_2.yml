@@ -2,6 +2,7 @@
 defaults:
   question: Has your client already been evicted, and is that eviction causing a barrier
     to housing?
+  include_in_summary: true
 records:
 - title: 'Yes'
   description: There is limited legal help and sometimes a remedy for this.

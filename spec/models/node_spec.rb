@@ -75,5 +75,12 @@ describe Node do
         node.secondary_referrals = ["first", "whomp"]
       }.to_not raise_error
     end
+
+    it "can be included in the summary pages explicitly" do
+      node.include_in_summary = true
+      node.save!
+
+      expect(node.include_in_summary).to be_true
+    end
   end
 end

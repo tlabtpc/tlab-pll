@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724212716) do
+ActiveRecord::Schema.define(version: 20170725230922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,20 +71,21 @@ ActiveRecord::Schema.define(version: 20170724212716) do
 
   create_table "nodes", force: :cascade do |t|
     t.integer  "parent_node_id"
-    t.boolean  "terminal",       default: false, null: false
+    t.boolean  "terminal",           default: false, null: false
     t.string   "node_type"
-    t.boolean  "is_category",    default: false, null: false
-    t.boolean  "is_county",      default: false, null: false
+    t.boolean  "is_category",        default: false, null: false
+    t.boolean  "is_county",          default: false, null: false
     t.string   "title"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.boolean  "root",           default: false, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.boolean  "root",               default: false, null: false
     t.string   "tip"
     t.string   "description"
     t.string   "question"
-    t.integer  "position",       default: 0,     null: false
+    t.integer  "position",           default: 0,     null: false
     t.string   "icon"
     t.string   "code"
+    t.boolean  "include_in_summary"
     t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
   end
 
@@ -99,6 +100,7 @@ ActiveRecord::Schema.define(version: 20170724212716) do
     t.text     "description"
     t.string   "unique_identifier"
     t.string   "code"
+    t.string   "intro"
   end
 
   create_table "users", force: :cascade do |t|

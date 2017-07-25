@@ -2,6 +2,7 @@
 defaults:
   tip: benefits_sf_two
   question: What kind of help does your client need?
+  include_in_summary: true
 records:
 - title: Applying for benefits
   description: There is limited legal help available for applications for benefits.
