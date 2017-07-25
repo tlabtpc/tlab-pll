@@ -52,7 +52,7 @@ records:
     description: "Centro Legal de la Raza is located in Oakland and provides low-income residents with immigration, workers' rights, and tenants' rights assistance."
   - code: pwbf
     title: Clear My Record
-    description: If clients have a conviction(s) in SF, Alameda, Contra Costa, Fresno, San Diego, Santa Clara, Santa Cruz, or Solano Counties, they can submit their information through this easy online interface created by   - code for America. Their application for record cleaning help will go directly to the Public Defender's office in the relevant county and/or a non-profit legal organization working on record cleaning. This is an easy application that caseworkers can do with clients to get the process started right away.
+    description: If clients have a conviction(s) in SF, Alameda, Contra Costa, Fresno, San Diego, Santa Clara, Santa Cruz, or Solano Counties, they can submit their information through this easy online interface created by Code for America. Their application for record cleaning help will go directly to the Public Defender's office in the relevant county and/or a non-profit legal organization working on record cleaning. This is an easy application that caseworkers can do with clients to get the process started right away.
   - code: ekyb
     title: Community Legal Services in East Palo Alto
     description: CSLEPA provides services to low-income residents of East Palo Alto and the surrounding community (San Mateo County), in the areas of immigration, housing, worker's rights, consumer, re-entry and small business.
@@ -236,3 +236,6 @@ records:
   - code: bshu
     title: "Asian Law Alliance"
     description: "Provides legal assistance to low income people."
+  - code: qwer
+    title: "Root + Rebound"
+    description: "Root + Rebound provides information and advice to the re-entry community on a large range of topics and has a self-help manual for re-entering individuals and their advocates to use."
