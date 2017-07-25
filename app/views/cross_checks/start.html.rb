@@ -22,7 +22,7 @@ class Views::CrossChecks::Start < Views::Base
           render partial: "square", locals: {
             value: 0,
             label: "No, just give me the summary",
-            description: "Okay, we’ll take you straight to your assessment",
+            description: nil,
             icon: nil
           }
         end
