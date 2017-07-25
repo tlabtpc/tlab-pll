@@ -78,5 +78,6 @@ records:
   - Repair Information
   code: '09c400fdd8e1f3cc'
 - title: Other
-  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
+  description: Please hit 'Next' and then describe your client's issue and request
+    support from PLL.
   code: 3cb01e10d74edf41

@@ -10,7 +10,8 @@ records:
   - Dealing With Rental Problems
   code: d8d984fa866a3127
 - title: Yes, my client is being evicted
-  description: "If your client has received an unlawful detainer (eviction proceeding in court), make sure to act immediately or your client could risk losing housing."
+  description: If your client has received an unlawful detainer (eviction proceeding
+    in court), make sure to act immediately or your client could risk losing housing.
   primary_referrals:
   - ohqz
   secondary_referrals:

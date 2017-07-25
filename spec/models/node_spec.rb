@@ -80,7 +80,7 @@ describe Node do
       node.include_in_summary = true
       node.save!
 
-      expect(node.include_in_summary).to be_true
+      expect(node.include_in_summary).to be true
     end
   end
 end
