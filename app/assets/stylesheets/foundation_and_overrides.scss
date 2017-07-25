@@ -55,7 +55,7 @@ $topbar-background: $seagull;
   i.fa-arrow-right { margin-left: 10px; }
   i.fa-arrow-left  { margin-right: 10px; }
 
-  &:hover {
+  &:hover, &:focus {
     background: $amazon;
     color: $seagull;
   }
@@ -72,6 +72,7 @@ $topbar-background: $seagull;
   }
 
   &--disabled {
+    &:hover { background: $gossamer !important; } // foundation :(
     opacity: 0.25;
     cursor: not-allowed;
   }
