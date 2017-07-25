@@ -1,12 +1,18 @@
+---
 defaults:
-  type: "SpecialReferral"
-
+  type: SpecialReferral
 records:
-  - code: uizq
-    title: AIDS Legal Referral Panel (ALRP)
-    intro: HIV+ or living with AIDS
-    description: The ALRP works with clients who have HIV/AIDS. ALRP is able to serve some clients with its own in-house lawyers, and for issues it cannot help with, it will help clients find a private attorney from its panels of attorneys. If your client is eligible for their services, it is a good place to try. If your client tries here and is unable to find help that she can afford, submit an inquiry to Project Legal Link as there may be another referral available.
-  - code: yqsz
-    intro: Resident of Bayview or Hunters Point
-    title: Bayview/Hunters Point Community Legal (BHPCL)
-    description: BHPCL is unique in that it helps clients with all varieties of legal issues. If your client lives in 94124, 94134, or 94107, this is a great resource.
+- code: uizq
+  title: AIDS Legal Referral Panel (ALRP)
+  intro: HIV+ or living with AIDS
+  description: The ALRP works with clients who have HIV/AIDS. ALRP is able to serve
+    some clients with its own in-house lawyers, and for issues it cannot help with,
+    it will help clients find a private attorney from its panels of attorneys. If
+    your client is eligible for their services, it is a good place to try. If your
+    client tries here and is unable to find help that she can afford, submit an inquiry
+    to Project Legal Link as there may be another referral available.
+- code: yqsz
+  intro: Resident of Bayview or Hunters Point
+  title: Bayview/Hunters Point Community Legal (BHPCL)
+  description: BHPCL is unique in that it helps clients with all varieties of legal
+    issues. If your client lives in 94124, 94134, or 94107, this is a great resource.

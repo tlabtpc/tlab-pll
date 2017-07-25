@@ -1,20 +1,20 @@
+---
 defaults:
-  description: "a description"
-
+  description: a description
 records:
-  - title: "Primary1"
-    code: cccc
-    type: "PrimaryReferral"
-    markdown_content: "new markdown"
-    markdown_content_es: "new markdown es"
-    description: "template desc"
-    unique_identifier: "template uid"
-  - title: "Primary2"
-    type: "PrimaryReferral"
-    code: dddd
-  - title: "Special1"
-    type: "SpecialReferral"
-    code: aaaa
-  - title: "Special2"
-    code: bbbb
-    type: "SpecialReferral"
+- title: Primary1
+  code: cccc
+  type: PrimaryReferral
+  markdown_content: new markdown
+  markdown_content_es: new markdown es
+  description: template desc
+  unique_identifier: template uid
+- title: Primary2
+  type: PrimaryReferral
+  code: dddd
+- title: Special1
+  type: SpecialReferral
+  code: aaaa
+- title: Special2
+  code: bbbb
+  type: SpecialReferral

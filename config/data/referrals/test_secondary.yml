@@ -1,8 +1,10 @@
-defaults:
-
+---
+defaults: 
 records:
-  - title: "Secondary1"
-    type: "SecondaryReferral"
-    link: "http://foo.org"
-  - title: "Secondary2"
-    type: "SecondaryReferral"
+- title: Secondary1
+  type: SecondaryReferral
+  link: http://foo.org
+  code: 2616cd0efc2afbf3
+- title: Secondary2
+  type: SecondaryReferral
+  code: 2e5649eec0330b39
