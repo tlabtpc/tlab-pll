@@ -76,6 +76,27 @@ describe Assessment do
     end
   end
 
+  describe 'referral_ids=' do
+    it 'builds a referral' do
+      assessment.referral_ids = special_referral.id
+      assessment.referral_ids = primary_referral.id
+      assessment.referral_ids = secondary_referral.id
+      assessment.save
+
+      expect(assessment.referrals).to include special_referral
+      expect(assessment.referrals).to include primary_referral
+      expect(assessment.referrals).to include secondary_referral
+    end
+
+    it 'does not duplicate a referral' do
+      expect(assessment.referrals).to include primary_referral
+      expect {
+        assessment.referral_ids = primary_referral.id
+        assessment.save
+      }.to_not change { assessment.referrals.count }
+    end
+  end
+
   describe '#to_param' do
     it 'should combine id + created_at' do
       subject.created_at = Time.zone.local(2017, 7, 8)

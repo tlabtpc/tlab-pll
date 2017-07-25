@@ -54,7 +54,9 @@ class Assessment < ApplicationRecord
   end
 
   def referral_ids=(ids)
-    Array(ids).each { |id| self.assessment_referrals.build(referral_id: id) }
+    (Array(ids) - self.referral_ids).each do |id|
+      self.assessment_referrals.build(referral_id: id)
+    end
   end
 
   def to_param
