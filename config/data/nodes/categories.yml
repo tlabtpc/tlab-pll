@@ -34,11 +34,13 @@ records:
   icon: work
   code: a627c4f2f0b398e0
 - title: Other issues
+  terminal: true
   description: 'For example: Gender or name change, personal injury, police misconduct,
     taxes, end of life support'
   icon: other
   code: 61633b7b7b45dbc2
 - title: I don't know
+  terminal: true
   description: That's OK. For the next step we will ask you to describe your client's
     situation and PLL will provide a cross-check.
   icon: i_dont_know

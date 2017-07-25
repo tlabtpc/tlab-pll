@@ -25,6 +25,7 @@ records:
   - How to Rent After an Eviction
   code: 323e68ddea0151e0
 - title: I don't know
+  terminal: true
   description: 'That''s OK.     Select ''Next'' to describe your client''s situation and request a cross-check
     from Project Legal Link.'
   code: 8c9989886f0e2d2e
