@@ -1,7 +1,7 @@
 class PrimaryReferralsController < ApplicationController
   skip_before_action :basic_auth, :verify_allowed_user
   before_action :set_white_background, only: :show
-  before_action :set_wide_card, only: :show
+  before_action :set_unpadded_card, only: :show
 
   def show
     primary_referral
