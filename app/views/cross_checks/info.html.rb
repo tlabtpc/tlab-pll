@@ -30,6 +30,10 @@ class Views::CrossChecks::Info < Views::Base
         client_is_homeless(f)
       end
     end
+
+    content_for :tip do
+      render 'tips/cross_check_info'
+    end
   end
 
   private
