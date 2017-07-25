@@ -3,6 +3,6 @@ class PrimaryReferralsMailer < ApplicationMailer
 
   def show(referral, to:)
     @referral = referral
-    mail(to: to, subject: @referral.title)
+    mail(to: to, subject: "Project Legal Link Referral: #{@referral.title}")
   end
 end
