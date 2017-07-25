@@ -1,10 +1,10 @@
 ---
 defaults:
   question: What type of benefit does your client's question relate to?
-  terminal: true
 records:
 - title: CAAP (GA, PAES etc.)
   description: Cash assistance for adults with no dependents.
+  terminal: true
   primary_referrals:
   - aypz
   - xlpe
@@ -13,6 +13,7 @@ records:
   code: 97e8a749598981ff
 - title: CalWORKS
   description: Cash assistance for families with children in the home.
+  terminal: true
   primary_referrals:
   - aypz
   - xlpe
@@ -21,6 +22,7 @@ records:
   code: fd02fb09d5c7ea2b
 - title: CalFresh
   description: Monthly food benefits
+  terminal: true
   primary_referrals:
   - gprm
   - qayf
@@ -29,6 +31,7 @@ records:
   code: 2e0117a8bbff985c
 - title: Foster care
   description: Cash and other assistance for foster care-involved youth.
+  terminal: true
   primary_referrals:
   - aypz
   - fvag
@@ -38,6 +41,7 @@ records:
 - title: Health care
   description: Health care under Medi-Cal, Medicare, Covered California, and private
     providers.
+  terminal: true
   primary_referrals:
   - wzlj
   secondary_referrals:
@@ -46,6 +50,7 @@ records:
   code: d72cd2b293abafe8
 - title: SSI/SSDI
   description: Cash assistance for disabled or elderly individuals.
+  terminal: true
   primary_referrals:
   - rvjb
   - slkt
@@ -56,6 +61,7 @@ records:
   code: 0f58b33e20407e21
 - title: Veteran's benefits
   description: Assistance with accessing veterans benefits.
+  terminal: true
   primary_referrals:
   - akgb
   secondary_referrals:
@@ -63,6 +69,7 @@ records:
   code: d3f0c00073980d2c
 - title: Non-citizen benefits
   description: Some benefits are available to non-citizens, and others carry risks.
+  terminal: true
   primary_referrals:
   - lewp
   - avut
@@ -73,6 +80,7 @@ records:
 - title: Work-related benefits
   description: Benefits related to a job such as worker's compensation, SDI, or benefits
     provided by an employer.
+  terminal: true
   primary_referrals:
   - ugci
   - jzok
@@ -81,7 +89,4 @@ records:
   - More Information on Work-Related Issues
   code: c8925389790b3dab
 - title: Other
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
   code: c4d889fca8dda5f8

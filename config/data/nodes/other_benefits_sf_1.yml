@@ -1,0 +1,50 @@
+---
+defaults:
+  terminal: true
+records:
+- title: Gender and name changes
+  primary_referrals:
+  - uqhn
+  - tqvi
+  secondary_referrals:
+  - How to Change Your Name in California
+  - Quick Guide to Changing Federal ID Documents
+  code: 13d1b913a2939af6
+- title: Personal injury
+  description: Injury to a person, usually with interest in recovering money from
+    another party for the damage.
+  primary_referrals:
+  - onax
+  secondary_referrals:
+  - 'Personal Injury Claims: When You Need a Lawyer'
+  code: 9ef4495b6b71f232
+- title: Police misconduct
+  description: Excessive force, discrimination.
+  primary_referrals:
+  - arwq
+  - onax
+  secondary_referrals:
+  - Police Complaint Process
+  code: fb02e4f6e26f85c6
+- title: Taxes
+  description: Controversies with the IRS
+  primary_referrals:
+  - gkde
+  secondary_referrals:
+  - Taxpayer Rights
+  code: ffc777d813d867f1
+- title: Wills and advanced healthcare directives
+  description: Preparation of end-of-life documents.
+  primary_referrals:
+  - gkde
+  - nkcg
+  secondary_referrals:
+  - End of Life Care
+  - '"Fill in the Blanks" California Will Form'
+  - '"Fill in the Blanks" California Advance Healthcare Directive Form'
+  code: c6ac4e85b30651c5
+- title: Other issue
+  terminal: true
+  description: 'We are unable to suggest a referral.     Select "Next" to describe your client''s situation and request a cross-check from
+    Project Legal Link.'
+  code: 0e326af301e3a8f1

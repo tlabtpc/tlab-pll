@@ -7,6 +7,7 @@ class Promulgators::Master < Promulgators::Base
     Node.counties.where.not(title: "I don't know").pluck(:title).each do |county|
       map_for(county).each { |category, files| promulgate_node_tree(county, category, files) }
     end
+    Promulgators::Node.new(files: [:other_benefits_sf_1], path: [Node.root.title, "San Francisco", "Benefits", "Other", "Other"])
   end
 
   private

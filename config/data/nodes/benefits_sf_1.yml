@@ -11,8 +11,4 @@ records:
 - title: Has problems with benefits
   code: e50b030184a9d71e
 - title: Other
-  description: We are unable to offer referrals without this information. Please skip
-    to PLL Cross-Check where you can describe your client’s issue and request support
-    from PLL.
-  terminal: true
   code: 219ccb58011a6b76
