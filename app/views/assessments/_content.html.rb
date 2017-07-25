@@ -60,7 +60,7 @@ class Views::Assessments::Content < Views::Base
       assessment_info "Caseworker Name: ", assessment.caseworker_name
       assessment_info "Caseworker Phone: ", assessment.caseworker_phone
       assessment_info "Caseworker Email: ", assessment.caseworker_email
-      assessment_info "Social Service Name: ", assessment.caseworker_organization
+      assessment_info "Organization Name: ", assessment.caseworker_organization
     end if assessment.caseworker_name.present?
   end
 
