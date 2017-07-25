@@ -28,6 +28,7 @@ records:
   icon: immigration
   code: d41f343ca29f9fd5
 - title: Work, Credit & Consumer
+  question: Here are some of the most common issues in this category. Can you tell which one your client needs help with?
   description: 'For example: Issues related to credit/consumer, worker''s rights,
     work and family.'
   icon: work
