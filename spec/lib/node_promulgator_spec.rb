@@ -48,12 +48,6 @@ describe Promulgators::Node do
     expect(b1nodes.first.reload.referrals.secondary.count).to eq 1
   end
 
-  it 'can populate records via a path' do
-    node1 = Node.create(title: "Node One")
-    node2 = Node.create(title: "Node Two", parent_node: node1)
-    expect { Promulgators::Node.new(files: [:test_a], path: ["Node One", "Node Two"]).promulgate! }.to change { node2.reload.children.count }.by(2)
-  end
-
   it 'can populate records hanging off an existing node' do
     node = Node.create(title: "existing!")
     expect { Promulgators::Node.new(files: [:test_a], parent: node).promulgate! }.to change { node.reload.children.count }.by(2)

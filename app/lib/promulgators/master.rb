@@ -1,23 +1,28 @@
 class Promulgators::Master < Promulgators::Base
+  OTHER_BENEFITS_CODE = "c4d889fca8dda5f8".freeze
+
   def promulgate!
     Promulgators::SecondaryReferral.new(files: [:secondary]).promulgate!
     Promulgators::PrimaryReferral.new(files: [:special, :primary]).promulgate!
     Promulgators::Node.new(files: [:root, :counties, :categories]).promulgate!
 
-    Node.counties.where.not(title: "I don't know").pluck(:title).each do |county|
-      map_for(county).each { |category, files| promulgate_node_tree(county, category, files) }
+    Node.categories.each do |category|
+      Promulgators::Node.new(files: files_for(category), parent: category).promulgate!
     end
-    Promulgators::Node.new(files: [:other_benefits_sf_1], path: [Node.root.title, "San Francisco", "Benefits", "Other", "Other"])
+
+    Promulgators::Node.new(
+      files: [:other_benefits_sf_1],
+      parent: Node.find_by(code: OTHER_BENEFITS_CODE)
+    )
   end
 
   private
 
-  def map_for(county)
-    node_map[county] || node_map['default']
-  end
-
-  def promulgate_node_tree(county, category, files)
-    Promulgators::Node.new(path: [Node.root.title, county, category], files: files).promulgate!
+  def files_for(category)
+    Array(
+      node_map.dig(category.parent_node.title, category.title) ||
+      node_map.dig('default', category.title)
+    )
   end
 
   def node_map
