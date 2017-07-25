@@ -45,6 +45,10 @@ def click_next
   find(".button--submit").click
 end
 
+def click_back
+  find(".button--back").click
+end
+
 def expect_page_to_have_progress_bar
   expect(page).to have_css(".progress-bar")
 end

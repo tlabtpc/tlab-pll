@@ -19,8 +19,10 @@ describe "straight to cross check", js: true do
       click_square_and_next(index: 0)
       click_square_and_next(index: 0)
       click_square_and_next(index: 7)
-
       expect(page).to have_content "give us additional details"
+
+      click_back
+      expect(page).to have_content "What type of benefit does your client's question relate to?"
     end
   end
 end

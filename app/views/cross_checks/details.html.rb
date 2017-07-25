@@ -18,5 +18,13 @@ class Views::CrossChecks::Details < Views::Base
     content_for :tip do
       render 'tips/cross_check_details'
     end
+
+    content_for :back do
+      if cross_check.assessment.featured_referrals.any?
+        back_button start_cross_checks_path
+      else
+        back_button assessment_nodes_path, method: :delete
+      end
+    end
   end
 end
