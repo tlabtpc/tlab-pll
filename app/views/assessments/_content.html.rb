@@ -4,10 +4,10 @@ class Views::Assessments::Content < Views::Base
   needs :assessment
 
   def content
-    if assessment.details
+    if assessment.caseworker_email
       p "Project Legal Link will provide a cross-check and will follow-up with you.", class: "assessments__reference"
+      p "A summary of this issue has been sent to #{assessment.caseworker_email}", class: "assessments__reference"
     end
-    # TODO: this issue has been sent to person@socialservice.org?
 
     p class: "assessments__reference" do
       text "Reference # "
