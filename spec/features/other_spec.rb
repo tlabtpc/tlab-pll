@@ -16,7 +16,7 @@ describe "straight to cross check", js: true do
     end
 
     step "select other benefits node" do
-      click_square_and_next(index: 3)
+      click_square_and_next(index: 0)
       click_square_and_next(index: 0)
       click_square(index: 2)
       expect(page).to have_content "We are unable to offer referrals without this information"
