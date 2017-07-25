@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170724212716) do
   end
 
   create_table "cross_checks", force: :cascade do |t|
+    t.integer  "assessment_id"
     t.text     "details"
     t.text     "deadlines"
     t.string   "first_name"
@@ -55,18 +56,17 @@ ActiveRecord::Schema.define(version: 20170724212716) do
     t.integer  "support_level"
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.integer  "assessment_id",                                   null: false
     t.jsonb    "action_items",                       default: [], null: false
     t.string   "last_name"
     t.integer  "county_node_id"
-    t.integer  "client_is_represented"
     t.integer  "client_has_attorney_representation"
+    t.index ["assessment_id"], name: "index_cross_checks_on_assessment_id", using: :btree
   end
 
   create_table "node_referrals", force: :cascade do |t|
     t.integer "node_id"
     t.integer "referral_id"
-    t.integer "position"
+    t.integer "position",    default: 0, null: false
   end
 
   create_table "nodes", force: :cascade do |t|

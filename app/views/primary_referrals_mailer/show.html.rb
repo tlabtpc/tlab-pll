@@ -5,6 +5,8 @@ class Views::PrimaryReferralsMailer::Show < Views::Shared::Mailer
   def content
     legal_signature
 
+    h4 referral.title
+
     rawtext markdown(referral.markdown_content)
   end
 end
