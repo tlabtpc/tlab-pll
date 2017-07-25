@@ -8,7 +8,7 @@ class Views::Tips::FamilySfOne < Views::Base
     TEXT
 
     p <<~TEXT
-      Domestic violence is generally defined as: violence, threaths of
+      Domestic violence is generally defined as: violence, threats of
       violence, harassing, stalking, etc. from a close family member or
       boyfriend, girlfriend, partner, ex-partner, etc.
     TEXT
