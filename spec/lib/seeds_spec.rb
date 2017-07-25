@@ -13,7 +13,7 @@ describe 'rake db:seed' do
 
     expect(Node.where(root: true).count).to eq 1
     expect(Node.counties.count).to eq 8
-    expect(Node.categories.count).to eq(Node.counties.count * 8)
+    expect(Node.categories.count).to eq(Node.counties.count * 7)
   end
 
   it 'should populate the root node' do
