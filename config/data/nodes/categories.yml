@@ -26,7 +26,7 @@ records:
   code: 143875449ed9c9ba
 - title: Immigration
   description: 'For example: deportation, naturalization, family petitions, humanitarian
-    relief (asylum, U-Visa, Vawa, etc.)'
+    relief (asylum, U-Visa, VAWA, etc.)'
   icon: immigration
   tip: immigration_sf_one
   code: d41f343ca29f9fd5
