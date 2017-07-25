@@ -1,7 +1,6 @@
 ---
 defaults:
   question: What does your client need help with?
-  tip: immigration_other_1
   terminal: true
 records:
 - title: Deportation
