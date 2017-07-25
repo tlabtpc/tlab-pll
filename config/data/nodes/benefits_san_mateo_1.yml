@@ -3,7 +3,7 @@ defaults:
   question: What type of benefit does your client's question relate to?
   terminal: true
 records:
-- title: Safety net benefits (CalFresh, CalWORKs, General Assistance)
+- title: Safety net benefits (CalFresh, CalWORKs, GA)
   description: Cash and food assistance for families and individuals.
   primary_referrals:
   - rgws
