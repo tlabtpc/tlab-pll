@@ -11,7 +11,7 @@ records:
   - jnqc
   - wkrt
   secondary_referrals:
-  - Immigration Court and Removal Proceedings Information
+  - 04abc6c237234767
   code: 38c9da6b17c19213
 - title: Naturalization
   description: Client has a green card and needs help applying for citizenship or
@@ -19,12 +19,12 @@ records:
   primary_referrals:
   - jnqc
   secondary_referrals:
-  - Naturalization FAQ
+  - 8cbd6b3cf352573d
   code: eccb334389acd266
 - title: Other
   primary_referrals:
   - yrfz
   - jnqc
   secondary_referrals:
-  - Pathways to Status
+  - 130e999b4a4c9e06
   code: 684e7ecc2a9422c9

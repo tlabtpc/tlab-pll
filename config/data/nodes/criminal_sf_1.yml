@@ -11,8 +11,8 @@ records:
   - mfnb
   - onax
   secondary_referrals:
-  - Know Your Rights, Published by SF Public Defender
-  - Your Legal Rights
+  - d66ee072aa4c70a4
+  - 48fd77f43e7d1017
   code: bdcdacc9ab72b1a7
 - title: Criminal Record Cleaning & Re-Entry
   description: Help in this area typically consists of record cleaning for prior convictions
@@ -22,9 +22,9 @@ records:
   - aytv
   - qwer
   secondary_referrals:
-  - 'Know Your Legal Rights: Employment and Criminal Records'
-  - How does a Criminal Record Affect Your Section 8 and Public Housing Rights?
-  - Clearing Your Record
+  - 238c87f281f937f9
+  - 6eaa46ced7b6bc30
+  - b26bf2ede0dfaec1
   code: '0761529b9359f815'
 - title: Driver's license
   description: Legal help is sometimes available for getting a driver's license out
@@ -34,8 +34,8 @@ records:
   - pstv
   - fvag
   secondary_referrals:
-  - General Information on Suspended Drivers Licenses
-  - 'Drivers Licenses without Immigration Status: AB60 FAQ'
+  - ed9023a3575a0e22
+  - 435fe3105351cd44
   code: a532fcdaf9fd4ba7
 - title: Tickets and infractions
   description: There are some County programs that help low-income people pay fines
@@ -45,8 +45,8 @@ records:
   - pstv
   - fvag
   secondary_referrals:
-  - General Ticket Information
-  - Map of Ticket Process in San Francisco
+  - 8768fe95730757d1
+  - 5a95c10144d3c6ae
   code: e8e09854531c211a
 - title: Other
   description: Please hit 'Next' and then describe your client's issue and request

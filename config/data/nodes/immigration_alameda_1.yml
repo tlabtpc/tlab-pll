@@ -11,7 +11,7 @@ records:
   - lnft
   - wkrt
   secondary_referrals:
-  - Immigration Court and Removal Proceedings Information
+  - 04abc6c237234767
   code: 612cb03e1e9e74ba
 - title: Naturalization
   description: Client has a green card and needs help applying for citizenship or
@@ -20,12 +20,12 @@ records:
   - uhvg
   - lnft
   secondary_referrals:
-  - Naturalization FAQ
+  - 8cbd6b3cf352573d
   code: 53b30bf677204614
 - title: Other
   primary_referrals:
   - lnft
   - fbgl
   secondary_referrals:
-  - Pathways to Status
+  - 130e999b4a4c9e06
   code: 705ee48d6b5fb106

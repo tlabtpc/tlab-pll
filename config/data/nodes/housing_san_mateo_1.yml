@@ -8,7 +8,7 @@ records:
   - ekyb
   - rgws
   secondary_referrals:
-  - Dealing With Rental Problems
+  - 5a0d5a2e83f81e6a
   code: a890519a1d4b8954
 - title: Yes, my client is being evicted
   description: If your client has received an unlawful detainer (eviction proceeding
@@ -17,14 +17,14 @@ records:
   - ekyb
   - rgws
   secondary_referrals:
-  - Eviction in California
+  - 3db089efff041a51
   code: 72819c7a784652b9
 - title: My client has already been evicted
   primary_referrals:
   - ekyb
   - aypz
   secondary_referrals:
-  - How to Rent After an Eviction
+  - 6ad4008f53eaafa5
   code: '0487f1e2041e0d4d'
 - title: I don't know
   terminal: true

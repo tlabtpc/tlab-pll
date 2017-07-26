@@ -7,7 +7,7 @@ records:
   primary_referrals:
   - ohqz
   secondary_referrals:
-  - Dealing With Rental Problems
+  - 5a0d5a2e83f81e6a
   code: d8d984fa866a3127
 - title: Yes, my client is being evicted
   description: If your client has received an unlawful detainer (eviction proceeding
@@ -15,14 +15,14 @@ records:
   primary_referrals:
   - ohqz
   secondary_referrals:
-  - Eviction in California
+  - 3db089efff041a51
   code: 3ec00dd85d0fd83c
 - title: My client has already been evicted
   primary_referrals:
   - yxpb
   - aypz
   secondary_referrals:
-  - How to Rent After an Eviction
+  - 6ad4008f53eaafa5
   code: acc278c47bcb3404
 - title: I don't know
   terminal: true

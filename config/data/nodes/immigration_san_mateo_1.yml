@@ -11,7 +11,7 @@ records:
   - ekyb
   - wkrt
   secondary_referrals:
-  - Immigration Court and Removal Proceedings Information
+  - 04abc6c237234767
   code: 29be335ccb1c1439
 - title: Naturalization
   description: Client has a green card and needs help applying for citizenship or
@@ -19,12 +19,12 @@ records:
   primary_referrals:
   - uqnj
   secondary_referrals:
-  - Naturalization FAQ
+  - 8cbd6b3cf352573d
   code: f93bcec708782d99
 - title: Other
   primary_referrals:
   - ekyb
   - uqnj
   secondary_referrals:
-  - Pathways to Status
+  - 130e999b4a4c9e06
   code: 654eeaa279e7925b

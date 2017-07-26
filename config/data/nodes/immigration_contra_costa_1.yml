@@ -11,7 +11,7 @@ records:
   - ocbp
   - wkrt
   secondary_referrals:
-  - Immigration Court and Removal Proceedings Information
+  - 04abc6c237234767
   code: 841e300389a916e8
 - title: Naturalization
   description: Client has a green card and needs help applying for citizenship or
@@ -19,12 +19,12 @@ records:
   primary_referrals:
   - uhvg
   secondary_referrals:
-  - Naturalization FAQ
+  - 8cbd6b3cf352573d
   code: df16d55d957dac69
 - title: Other
   primary_referrals:
   - ocbp
   - fbgl
   secondary_referrals:
-  - Pathways to Status
+  - 130e999b4a4c9e06
   code: 6f3f20310dfa3190

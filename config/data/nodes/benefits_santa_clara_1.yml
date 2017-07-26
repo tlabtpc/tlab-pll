@@ -8,15 +8,15 @@ records:
   primary_referrals:
   - aypz
   secondary_referrals:
-  - California CalWorks (TANF)
-  - California Benefits Information
+  - c7af7b2b10358be3
+  - e6f99afd836e7cdc
   code: ec6326664e31f8ba
 - title: Foster benefits
   description: Cash and other assistance for foster care-involved youth.
   primary_referrals:
   - aypz
   secondary_referrals:
-  - 10 Facts Every Foster Youth Should Know
+  - 9fc41570866b8ea0
   code: 819946664efdf430
 - title: Health care benefits
   description: Health care under Medi-Cal, Medicare, Covered California, and private
@@ -24,7 +24,7 @@ records:
   primary_referrals:
   - wzlj
   secondary_referrals:
-  - Health Care Eligibility Guide
+  - 74831fe8652f6097
   code: 8db7ad9a38a86608
 - title: Non-citizen benefits
   description: Some benefits are available to non-citizens, and others carry risks.
@@ -37,14 +37,14 @@ records:
   primary_referrals:
   - aypz
   secondary_referrals:
-  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  - 45bed95f361c8f83
   code: 757bb3f406f5f6d9
 - title: VA benefits
   description: Assistance with accessing veterans benefits.
   primary_referrals:
   - akgb
   secondary_referrals:
-  - VA Benefits Information
+  - f4cddbb8a4ae43b7
   code: 99e61d54de4bbf85
 - title: Work-related
   description: Benefits related to a job such as worker's compensation, SDI, or benefits
@@ -52,7 +52,7 @@ records:
   primary_referrals:
   - ugci
   secondary_referrals:
-  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  - 45bed95f361c8f83
   code: be22d69512dd58f1
 - title: Other
   code: 9107ace0b71b4842

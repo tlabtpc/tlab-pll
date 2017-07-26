@@ -9,7 +9,7 @@ records:
   - aypz
   - xlpe
   secondary_referrals:
-  - Applying for CAAP Benefits FAQ
+  - 4494bd980061a4d9
   code: 97e8a749598981ff
 - title: CalWORKS
   description: Cash assistance for families with children in the home.
@@ -18,7 +18,7 @@ records:
   - aypz
   - xlpe
   secondary_referrals:
-  - CalWorks FAQ
+  - 13e6afa0ec96e939
   code: fd02fb09d5c7ea2b
 - title: CalFresh
   description: Monthly food benefits
@@ -27,7 +27,7 @@ records:
   - gprm
   - qayf
   secondary_referrals:
-  - Common CalFresh Verification Problems
+  - 3604b03c6c87f6e7
   code: 2e0117a8bbff985c
 - title: Foster care
   description: Cash and other assistance for foster care-involved youth.
@@ -36,7 +36,7 @@ records:
   - aypz
   - fvag
   secondary_referrals:
-  - 10 Facts Every Foster Youth Should Know
+  - 9fc41570866b8ea0
   code: b1bd787317bbb5e6
 - title: Health care
   description: Health care under Medi-Cal, Medicare, Covered California, and private
@@ -45,8 +45,8 @@ records:
   primary_referrals:
   - wzlj
   secondary_referrals:
-  - Health Care Eligibility Guide
-  - How to Apply and Enroll in Health Care
+  - 74831fe8652f6097
+  - 2df12b6f6e0dbbd7
   code: d72cd2b293abafe8
 - title: SSI/SSDI
   description: Cash assistance for disabled or elderly individuals.
@@ -57,7 +57,7 @@ records:
   - dwcn
   - vfen
   secondary_referrals:
-  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
+  - 45bed95f361c8f83
   code: 0f58b33e20407e21
 - title: VA benefits
   description: Assistance with accessing veterans benefits.
@@ -65,7 +65,7 @@ records:
   primary_referrals:
   - akgb
   secondary_referrals:
-  - VA Benefits Information
+  - f4cddbb8a4ae43b7
   code: d3f0c00073980d2c
 - title: Non-citizen benefits
   description: Some benefits are available to non-citizens, and others carry risks.
@@ -74,8 +74,8 @@ records:
   - lewp
   - avut
   secondary_referrals:
-  - 'Immigration and Benefits: Federal Guidance on Public Charge'
-  - Information for Non-Citizens Applying for a Public Benefit
+  - bcf2deea144dcd9c
+  - 83d560b5aee5982f
   code: 3477f2b395ccc4ff
 - title: Work-related benefits
   description: Benefits related to a job such as worker's compensation, SDI, or benefits
@@ -85,8 +85,8 @@ records:
   - ugci
   - jzok
   secondary_referrals:
-  - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
-  - More Information on Work-Related Issues
+  - 45bed95f361c8f83
+  - e62ffb4276e90b72
   code: c8925389790b3dab
 - title: Other
   code: c4d889fca8dda5f8

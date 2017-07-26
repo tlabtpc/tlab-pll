@@ -10,7 +10,7 @@ records:
   primary_referrals:
   - sezo
   secondary_referrals:
-  - Immigration Court and Removal Proceedings Information
+  - 04abc6c237234767
   code: 914f8fc3de169f8b
 - title: Naturalization
   description: Client has a green card and needs help applying for citizenship or
@@ -18,11 +18,11 @@ records:
   primary_referrals:
   - sezo
   secondary_referrals:
-  - Naturalization FAQ
+  - 8cbd6b3cf352573d
   code: 5e588b4fc3e85f47
 - title: Other
   primary_referrals:
   - sezo
   secondary_referrals:
-  - Pathways to Status
+  - 130e999b4a4c9e06
   code: f2f7404645f54c76

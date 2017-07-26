@@ -10,9 +10,9 @@ records:
   - qzxg
   - vrps
   secondary_referrals:
-  - Understanding Credit Reports and Scores
-  - How to Get Free Credit Reports
-  - Credit Reports and Employment
+  - 503f993bdebd2d85
+  - 7511e514a3368163
+  - 766c5231de840bcc
   code: 44de6e11950b5e07
 - title: 'Consumer: legal help'
   description: Debt lawsuit, student loan debt, predatory loans, foreclosure, etc.
@@ -20,9 +20,9 @@ records:
   - aypz
   - yxpb
   secondary_referrals:
-  - Understanding Credit Reports and Scores
-  - How to Get Free Credit Reports
-  - Credit Reports and Employment
+  - 503f993bdebd2d85
+  - 7511e514a3368163
+  - 766c5231de840bcc
   code: 671d69a8eb78af3c
 - title: Driver's license
   description: Legal help is sometimes available for getting a driver's license out
@@ -30,8 +30,8 @@ records:
   primary_referrals:
   - aytv
   secondary_referrals:
-  - California Suspended Drivers License Information
-  - General Information on Suspended Drivers Licenses
+  - 82adc670a7be02d0
+  - ed9023a3575a0e22
   code: 98868a0bba4f944b
 - title: Work and family
   description: Pregnancy leaves, family medical leaves, pregnancy discrimination,
@@ -39,7 +39,7 @@ records:
   primary_referrals:
   - djsz
   secondary_referrals:
-  - State of CA Pregnancy Leave
+  - d9c71adb2f633d7a
   code: 5291193a0ee02b76
 - title: Worker's rights
   description: Unpaid wages or benefits, Unemployment Insurance, discrimination
@@ -47,8 +47,8 @@ records:
   - ohqz
   - ugci
   secondary_referrals:
-  - Credit Reports and Employment
-  - CA Rights as a Worker
+  - 766c5231de840bcc
+  - c63ad4b8d28f1e10
   code: c203701e6c3461f6
 - title: Other
   description: Please hit 'Next' and then describe your client's issue and request

@@ -13,9 +13,9 @@ records:
   - duom
   - lnft
   secondary_referrals:
-  - Immigration Court and Removal Proceedings Information
-  - Detention Information from the National Immigration Project
-  - Pathways to Status
+  - 04abc6c237234767
+  - 6ff929ce247308bb
+  - 130e999b4a4c9e06
   code: 738ff5670914d7c6
 - title: Naturalization
   description: Client has a green card and needs help applying for citizenship or
@@ -24,9 +24,9 @@ records:
   - hpum
   - fmjz
   secondary_referrals:
-  - Naturalization FAQ
-  - Citizenship Through Naturalization
-  - Pathways to Status
+  - 8cbd6b3cf352573d
+  - 12da9730c410ea8f
+  - 130e999b4a4c9e06
   code: a88937f4cceab9b3
 - title: Family or work petitions
   description: 'Some people apply for status through close family members who are
@@ -35,8 +35,8 @@ records:
   - fmjz
   - lewp
   secondary_referrals:
-  - Family Petitions
-  - Pathways to Status
+  - 012f4b93f22b9b62
+  - 130e999b4a4c9e06
   code: 50585c72bbb3393a
 - title: 'DACA     (Deferred Action for Childhood Arrivals)'
   description: Relief for people who came to the United States when young and went
@@ -45,8 +45,8 @@ records:
   - fmjz
   - lewp
   secondary_referrals:
-  - DACA FAQ
-  - Pathways to Status
+  - 0ea9539e8599d120
+  - 130e999b4a4c9e06
   code: 84e602310a9d9598
 - title: Asylum
   description: Relief for people persecuted in their home countries.
@@ -54,8 +54,8 @@ records:
   - eihr
   - fbgl
   secondary_referrals:
-  - Asylum FAQ
-  - Pathways to Status
+  - 6d7a36a857108474
+  - 130e999b4a4c9e06
   code: e7705e168c3001a7
 - title: U-Visa, T-Visa, VAWA
   description: Relief for people who have been subjected to crimes or domestic violence
@@ -64,9 +64,9 @@ records:
   - ulbf
   - avut
   secondary_referrals:
-  - U-Visa FAQ
-  - T-Visa FAQ
-  - VAWA FAQ
+  - e48e3e92f143fd75
+  - e54e548e48d124b0
+  - 8a28ebfdcf4b0c8f
   code: ecf56df48c3dcb72
 - title: Special Immigrant Juvenile Status
   description: Relief for minors who came here unaccompanied or with only one parent.
@@ -74,8 +74,8 @@ records:
   - fvag
   - zrcx
   secondary_referrals:
-  - SIJS FAQ
-  - Pathways to Status
+  - 67c817f93cb8b3d1
+  - 130e999b4a4c9e06
   code: 869a986426531b5d
 - title: Other
   description: If the client is not sure what type of relief she might be eligible
