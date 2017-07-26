@@ -1,5 +1,11 @@
 /*
+ *= require ./application/card
  *= require ./application/assessments
  *= require ./application/primary_referral
  *= require_self
  */
+
+body {
+  width: 620px;
+  margin: auto;
+}
