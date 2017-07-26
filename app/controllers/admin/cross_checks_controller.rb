@@ -21,7 +21,7 @@ module Admin
     # for more information
 
     def export
-      send_data export_csv, filename: "cross-check-#{cross_check.id}.csv"
+      send_data export_csv, filename: "cross-checks.csv"
     end
 
     private
@@ -29,12 +29,14 @@ module Admin
     def export_csv
       CSV.generate(headers: true) do |csv|
         csv << export_attrs.map(&:to_s).map(&:titleize)
-        csv << export_attrs.map { |attr| cross_check.send(attr) }
+        CrossCheck.find_each do |cross_check|
+          csv << export_attrs.map { |attr| cross_check.send(attr) }
+        end
       end
     end
 
-    def cross_check
-      @cross_check ||= requested_resource.decorate
+    def cross_checks
+      @cross_checks ||= resources.decorate
     end
 
     def export_attrs

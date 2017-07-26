@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     resources :special_referrals, except: [:destroy, :new, :create]
     resources :secondary_referrals, except: [:destroy, :new, :create]
     resources :cross_checks, only: [:show, :index] do
-      get :export, on: :member
+      get :export, on: :collection
     end
   end
 end

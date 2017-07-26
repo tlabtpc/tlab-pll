@@ -23,7 +23,7 @@ en:
   hello: "Hello world"
   administrate:
     actions:
-      export: Export %{title} as CSV
+      export: Export as CSV
   helpers:
     label:
       primary_referral:
