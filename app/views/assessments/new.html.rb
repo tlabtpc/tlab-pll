@@ -59,7 +59,7 @@ class Views::Assessments::New < Views::Base
       form.check_box(:referral_ids, {multiple: true, id: "referral_id_#{referral.id}"}, referral.id, nil)
       label(class: "assessments__checkbox-label", for: "referral_id_#{referral.id}") do
         div(class: "assessments__checkbox-label-check") { i(class: "fa fa-lg fa-check") }
-        div(class: "assessments__checkbox-label-text")  { strong referral.title }
+        div(class: "assessments__checkbox-label-text")  { strong referral.intro }
       end
     end
   end

@@ -12,6 +12,7 @@ class SpecialReferralDashboard < Administrate::BaseDashboard
     id: Field::Number,
     unique_identifier: Field::String,
     title: Field::String,
+    intro: Field::String,
     description: Field::Text,
     markdown_content: Field::Text,
     markdown_content_es: Field::Text,
@@ -38,6 +39,7 @@ class SpecialReferralDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :intro,
     :unique_identifier,
     :description,
     :markdown_content,
@@ -52,6 +54,7 @@ class SpecialReferralDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :unique_identifier,
     :title,
+    :intro,
     :description,
     :markdown_content,
     :markdown_content_es
