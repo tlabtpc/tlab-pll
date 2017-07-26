@@ -3,7 +3,8 @@ class Promulgators::Master < Promulgators::Base
 
   def promulgate!
     Promulgators::Referral.new(files: [:special, :primary, :secondary]).promulgate!
-    Promulgators::Node.new(files: [:root, :counties, :categories]).promulgate!
+    Promulgators::Node.new(files: [:root, :counties_suburbs, :categories_suburbs]).promulgate!
+    Promulgators::Node.new(files: [:root, :counties_sf, :categories_sf]).promulgate!
 
     Node.categories.each do |category|
       Promulgators::Node.new(files: files_for(category), parent: category).promulgate!

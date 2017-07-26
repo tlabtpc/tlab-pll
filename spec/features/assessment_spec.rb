@@ -10,6 +10,7 @@ describe "assessment", js: true do
     create :node,
       parent_node_id: root_node.id,
       tip: :category,
+      title: 'County',
       question: "Hello?"
   end
 
@@ -281,7 +282,7 @@ describe "assessment", js: true do
 
       expect(page).to have_content county_node.question
 
-      click_square_and_next
+      click_square_title_and_next('County')
       expect_page_to_have_progress_bar
 
       expect(current_path).to_not eq path
@@ -292,7 +293,7 @@ describe "assessment", js: true do
       expect(page).to have_css('.square__icon')
       expect_to_have_tips(text: " learn more about the following categories")
 
-      click_square_and_next
+      click_square_title_and_next('FooBar')
       expect_page_to_have_progress_bar
     end
 

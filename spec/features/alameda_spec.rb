@@ -23,14 +23,14 @@ describe "assessment", js: true do
 
       expect(page).to have_content "What county is the issue in?"
 
-      click_square_and_next(index: 0)
+      click_square_title_and_next('Alameda')
       click_next
 
       expect(page).to have_content "Can you tell which category of legal help your client needs?"
     end
 
     step "select benefits node" do
-      click_square_and_next(index: 0)
+      click_square_title_and_next('Benefits')
       click_next
 
       expect(page).to have_content "What type of benefit does your client's question relate to?"

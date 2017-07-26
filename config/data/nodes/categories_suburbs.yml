@@ -1,0 +1,44 @@
+---
+defaults:
+  is_category: true
+  question: Can you tell which category of legal help your client needs?
+records:
+- title: Benefits
+  description: 'For example: CalFresh, CalWORKS, CAAP, Foster care, Health care, SSI/SSDI,
+    VA, Work-related'
+  icon: benefits
+  code: 7ca46412c79f8741
+  tip: benefits_sf_one
+- title: Criminal & Tickets
+  description: 'For example: criminal cases, criminal record cleaning, warrants, tickets,
+    and infractions'
+  icon: criminal
+  code: '08a2c4691b3e9292'
+- title: Family & Relationships
+  description: 'For example: divorce, custody, guardianship, restraining orders'
+  icon: family
+  tip: family_sf_one
+  code: 0c269b3e9f082107
+- title: Housing
+  description: 'For example: evictions, problems with housing (repairs, harassment,
+    rent increases), discrimination'
+  icon: housing
+  code: 143875449ed9c9ba
+- title: Immigration
+  description: 'For example: deportation, naturalization, family petitions, humanitarian
+    relief (asylum, U-Visa, VAWA, etc.)'
+  icon: immigration
+  tip: immigration_sf_one
+  code: d41f343ca29f9fd5
+- title: Work, Credit & Consumer
+  question: Here are some of the most common issues in this category. Can you tell
+    which one your client needs help with?
+  description: 'For example: Issues related to credit/consumer, worker''s rights,
+    work and family.'
+  icon: work
+  code: a627c4f2f0b398e0
+- title: Other / I don't know
+  terminal: true
+  description: Please hit 'Next' and then describe your clients issue and request support from PLL.
+  icon: i_dont_know
+  code: 6a43bc0c3f41cbd0

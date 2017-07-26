@@ -32,9 +32,18 @@ def expect_disabled_button
   expect(page).to have_css ".button--disabled"
 end
 
+def click_square_title_and_next(title)
+  click_square_title(title)
+  click_next
+end
+
 def click_square_and_next(index: 0)
   click_square(index: index)
   click_next
+end
+
+def click_square_title(title)
+  find(".square[data-title='#{title}']").click
 end
 
 def click_square(index: 0)

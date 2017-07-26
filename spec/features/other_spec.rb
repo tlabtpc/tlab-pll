@@ -16,9 +16,9 @@ describe "straight to cross check", js: true do
     end
 
     step "select other benefits node" do
-      click_square_and_next(index: 0)
-      click_square_and_next(index: 0)
-      click_square_and_next(index: 7)
+      click_square_title_and_next('San Mateo')
+      click_square_title_and_next('Benefits')
+      click_square_title_and_next('Other')
       expect(page).to have_content "give us additional details"
 
       click_back
