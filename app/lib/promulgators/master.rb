@@ -2,7 +2,6 @@ class Promulgators::Master < Promulgators::Base
   OTHER_BENEFITS_CODE = "c4d889fca8dda5f8".freeze
 
   def promulgate!
-    # Promulgators::SecondaryReferral.new(files: [:secondary]).promulgate!
     Promulgators::Referral.new(files: [:special, :primary, :secondary]).promulgate!
     Promulgators::Node.new(files: [:root, :counties, :categories]).promulgate!
 

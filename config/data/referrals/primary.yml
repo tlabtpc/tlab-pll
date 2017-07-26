@@ -21,7 +21,7 @@ records:
     best suited to assist the client unless the client wants to pay for private counsel.
 - code: jzok
   title: Asian Americans Advancing Justice – Asian Law Caucus (ALC)
-  unique_identifier: "API community-focused:"
+  unique_identifier: 'API community-focused:'
   description: ALC provides brief advice and counsel to anyone at their clinics (immigration,
     worker's rights, housing) and representation for some. In some areas, their work
     is more focused on Asian language speakers or the API community.
@@ -36,7 +36,7 @@ records:
 - code: onax
   title: Bar Association of San Francisco, Legal Referral and Information Service
     (BASF)
-  unique_identifier: "For a private attorney referral:"
+  unique_identifier: 'For a private attorney referral:'
   description: "This is a legal intake line that connects callers to private lawyers
     AND screens clients for help through the Bar Association's Justice and Diversity
     Center (pro bono services). \n\nPrivate attorney referrals are usually most applicable
@@ -46,7 +46,7 @@ records:
     insurance cases, etc.). "
 - code: aypz
   title: Bay Area Legal Aid (BayLegal)
-  unique_identifier: "If client is having problems with benefit:"
+  unique_identifier: 'If client is having problems with benefit:'
   description: "Bay Area Legal Aid provides a number of legal services to low-income
     residents across the region, mostly in the areas of public benefits, domestic
     violence, public housing, consumer law, health care, and foster care. In general,
@@ -66,7 +66,7 @@ records:
     Denti-Cal, Medi-Cal, Medicare, medical debt, and private health insurance issues."
 - code: pstv
   title: Bay Area Legal Aid, Legal Barriers to Employment Project
-  unique_identifier: "If receiving CalWorks or PAES:"
+  unique_identifier: 'If receiving CalWorks or PAES:'
   description: "Bay Area Legal Aid provides a number of legal services to low-income
     residents across the region, mostly in the areas of public benefits, domestic
     violence, public housing, consumer law, health care, and foster care. In general,
@@ -79,7 +79,8 @@ records:
     and immigration.\n"
 - code: xbvz
   title: Bay Area Legal Aid, SF Public Housing Line
-  unique_identifier: "If your client is in public housing (Section 8 or other public subsidies):"
+  unique_identifier: 'If your client is in public housing (Section 8 or other public
+    subsidies):'
   description: "Bay Area Legal Aid provides a number of legal services to low-income
     residents across the region, mostly in the areas of public benefits, domestic
     violence, public housing, consumer law, health care, and foster care. In general,
@@ -108,7 +109,7 @@ records:
   description: Provides critical family needs, as well as immigration legal services.
 - code: dxau
   title: Causa Justa
-  unique_identifier: "Advocacy focused on Spanish speakers:"
+  unique_identifier: 'Advocacy focused on Spanish speakers:'
   description: Causa Justa provides non-legal housing counseling on a variety of housing-related
     issues. Their services are focused on the Spanish speaking community.
 - code: zrcx
@@ -118,7 +119,7 @@ records:
     Carecen typically provides more in-depth assistance on green card renewals, family petitions, DACA, consular processing, obtaining Temporary Protected Status, and relief for undocumented youth. Carecen typically refers U-Visas and T-Visas, cases involving a detained individual, and cases requiring post-conviction relief.
 - code: lnft
   title: Centro Legal de la Raza
-  unique_identifier: "Typically free services but located in Oakland:"
+  unique_identifier: 'Typically free services but located in Oakland:'
   description: Centro Legal de la Raza is located in Oakland and provides low-income
     residents with immigration, workers' rights, and tenants' rights assistance.
 - code: pwbf
@@ -137,7 +138,7 @@ records:
     housing, worker's rights, consumer, re-entry and small business.
 - code: xjri
   title: Conflict Intervention Service at BASF (CIS)
-  unique_identifier: "If your client is interested in mediation:"
+  unique_identifier: 'If your client is interested in mediation:'
   description: CIS is a project of the Bar Association of San Francsico. It helps
     low-income SF tenants who are living in supportive housing or are supported by
     other city services find resolutions with their landlords (often non-profits)
@@ -163,7 +164,7 @@ records:
     order) to call and meet with the staff to discuss options.
 - code: bpri
   title: Dolores Street
-  unique_identifier: "Free for SF residents but is often at capacity:"
+  unique_identifier: 'Free for SF residents but is often at capacity:'
   description: Dolores Street's legal services focus on deportation defense. Dolores
     Street provides free deportation defense to SF residents, but given the demand,
     they can only accept a portion of the deportation cases that come to them.
@@ -180,7 +181,7 @@ records:
     to low-income residents of the east bay.
 - code: fbgl
   title: East Bay Sanctuary Covenant
-  unique_identifier: "In East Bay:"
+  unique_identifier: 'In East Bay:'
   description: East Bay Sanctuary Covenant provides immigration services to low-income
     Bay Area residents, especially in the areas of asylum, DACA, family-based petitions,
     naturalization, TPS, adjustment of status, SIJS, and TPS.
@@ -227,7 +228,7 @@ records:
     for people who do not have lawyers in family law cases.
 - code: qayf
   title: GetCalFresh.org
-  unique_identifier: "To apply online:"
+  unique_identifier: 'To apply online:'
   description: This easy online interface helps clients apply for CalFresh benefits
     easily. This service was created by   - code for America in partnership with many
     government agencies.
@@ -248,7 +249,7 @@ records:
     variety of housing-related issues.
 - code: xlpe
   title: 'Human Services Agency of San Francisco: General Assistance'
-  unique_identifier: "If client needs to apply for benefit:"
+  unique_identifier: 'If client needs to apply for benefit:'
   description: You can apply for GA by visiting the CAAP Office on 1235 Mission Street.
 - code: uqnj
   title: International Institute of the Bay Area, Redwood City
@@ -264,7 +265,7 @@ records:
     elsewhere).
 - code: dwcn
   title: Independent Living Resource Center
-  unique_identifier: "If your client needs help applying:"
+  unique_identifier: 'If your client needs help applying:'
   description: |-
     ILRC provides informational Benefits Eligibility Workshops that cover SSI benefits and applications. Given that very few legal providers help with SSI applications (they usually help at the appeal stage), this can be a helpful resource.
 
@@ -282,7 +283,8 @@ records:
     also has expertise in non-citizens'' eligibility for public benefits.'
 - code: gkde
   title: Justice & Diversity Center of the Bar Association of San Francisco (JDC)
-  unique_identifier: "For the Low-Income Taxpayer Clinic (free help) or referral to a private attorney:"
+  unique_identifier: 'For the Low-Income Taxpayer Clinic (free help) or referral to
+    a private attorney:'
   description: "This is a legal intake line that connects callers to private lawyers
     AND screens clients for help through the Justice and Diversity Center (pro bono
     services). \n\nThe JDC primarily provides pro bono assistance in the following
@@ -290,7 +292,7 @@ records:
     simple wills, and tort defense."
 - code: yeoa
   title: La Raza Centro Legal (LRCL)
-  unique_identifier: "If on CalWORKS or PAES:"
+  unique_identifier: 'If on CalWORKS or PAES:'
   description: La Raza Centro Legal provides services to low-income SF residents,
     with a focus on Spanish-speakers, in the areas of immigration, worker's rights,
     housing, and senior law.
@@ -329,7 +331,7 @@ records:
     should first be directed to the Family and Children's Law Center.
 - code: fvag
   title: Legal Services for Children (LSC)
-  unique_identifier: "If under 21:"
+  unique_identifier: 'If under 21:'
   description: 'LSC primarily handles the following matters on behalf of young people:
     guardianship, foster care, emancipation, school cases, immigration, and tickets.'
 - code: rgws
@@ -352,7 +354,7 @@ records:
     scheduled to meet with the SF Bar Association at MEDA.
 - code: duom
   title: Pangea Legal Services
-  unique_identifier: "Non-profit in SF that typically charges:"
+  unique_identifier: 'Non-profit in SF that typically charges:'
   description: Pangea offers a wide range of immigration legal services on a sliding
     scale. A few cases are done for free (pro bono), but most carry low fees. The
     focus of Pangea's work is deportation defense.
@@ -442,7 +444,7 @@ records:
     Swords also helps veterans access the benefits they have earned, avoid or escape homelessness, increase financial stability, and focus on long-term health and well-being.
 - code: tqvi
   title: Transgender Law Center
-  unique_identifier: "Information for transgendered clients:"
+  unique_identifier: 'Information for transgendered clients:'
   description: Through its helpline, the Transgender Law Center provides information
     and advice about issues related to gender expression (gender and name change,
     employment discrimination, health care access, public accommodations discrimination,
@@ -450,7 +452,7 @@ records:
     legal impact.
 - code: mfnb
   title: Warrants Clinic
-  unique_identifier: "For out-of-county warrants:"
+  unique_identifier: 'For out-of-county warrants:'
   description: |-
     This is a good resource for clients with warrants outside of SF, or those who are curious if they have warrants. If a client has a warrant in SF, he/she should be directed to the SF Public Defender.
 

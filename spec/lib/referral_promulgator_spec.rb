@@ -37,7 +37,7 @@ describe 'Referral Promulgators' do
 
   it 'populates secondary referrals' do
     expect {
-      Promulgators::SecondaryReferral.new(files: [:test_secondary]).promulgate!
+      Promulgators::Referral.new(files: [:test_secondary]).promulgate!
     }.to change { Referral.count }.by(2)
   end
 
