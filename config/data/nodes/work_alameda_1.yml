@@ -11,6 +11,8 @@ records:
   - vrps
   secondary_referrals:
   - Understanding Credit Reports and Scores
+  - How to Get Free Credit Reports
+  - Credit Reports and Employment
   code: 00a274e3f701bc1a
 - title: 'Consumer: legal help'
   description: Debt lawsuit, student loan debt, predatory loans, foreclosure, etc.
@@ -19,6 +21,8 @@ records:
   - yxpb
   secondary_referrals:
   - Understanding Credit Reports and Scores
+  - How to Get Free Credit Reports
+  - Credit Reports and Employment
   code: 175ba584969f7f5e
 - title: Driver's license
   description: Legal help is sometimes available for getting a driver's license out
@@ -27,6 +31,7 @@ records:
   - myxi
   secondary_referrals:
   - California Suspended Drivers License Information
+  - General Information on Suspended Drivers Licenses
   code: 6b87ca50996b2efd
 - title: Work and family
   description: Pregnancy leaves, family medical leaves, pregnancy discrimination,
@@ -42,6 +47,7 @@ records:
   - ugci
   secondary_referrals:
   - Credit Reports and Employment
+  - CA Rights as a Worker
   code: 011c68046fc6037d
 - title: Other
   description: Please hit 'Next' and then describe your client's issue and request
