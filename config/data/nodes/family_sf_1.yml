@@ -3,7 +3,6 @@ defaults:
   tip: family_sf_two
   question: Is your client experiencing or concerned about domestic violence?
   include_in_summary: true
-
 records:
 - title: 'Yes'
   code: a1651ed3445cb259

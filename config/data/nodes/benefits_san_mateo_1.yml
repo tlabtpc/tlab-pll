@@ -9,6 +9,7 @@ records:
   - rgws
   secondary_referrals:
   - California CalWorks (TANF)
+  - California Benefits Information
   code: 3f5b688e4329e5fe
 - title: Foster benefits
   description: Cash and other assistance for foster care-involved youth.
