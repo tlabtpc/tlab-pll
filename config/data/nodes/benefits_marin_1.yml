@@ -29,6 +29,7 @@ records:
   description: Some benefits are available to non-citizens, and others carry risks.
   primary_referrals:
   - lewp
+  - avut
   code: 851dd8c3d14f3cba
 - title: SSI/SSDI
   description: Cash assistance for disabled or elderly individuals.
