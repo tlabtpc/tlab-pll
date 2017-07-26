@@ -1,6 +1,4 @@
 class Promulgators::Master < Promulgators::Base
-  OTHER_BENEFITS_CODE = "c4d889fca8dda5f8".freeze
-
   def promulgate!
     Promulgators::Referral.new(files: [:special, :primary, :secondary]).promulgate!
     Promulgators::Node.new(files: [:root, :counties_suburbs, :categories_suburbs]).promulgate!
@@ -9,11 +7,6 @@ class Promulgators::Master < Promulgators::Base
     Node.categories.each do |category|
       Promulgators::Node.new(files: files_for(category), parent: category).promulgate!
     end
-
-    Promulgators::Node.new(
-      files: [:other_benefits_sf_1],
-      parent: Node.find_by(code: OTHER_BENEFITS_CODE)
-    )
   end
 
   private

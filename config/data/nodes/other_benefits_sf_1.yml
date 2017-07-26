@@ -44,7 +44,6 @@ records:
   - 07a9d96346bcf117
   code: c6ac4e85b30651c5
 - title: Other issue
-  terminal: true
   description: 'We are unable to suggest a referral.     Select "Next" to describe your client''s situation and request a cross-check from
     Project Legal Link.'
   code: 0e326af301e3a8f1

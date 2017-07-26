@@ -38,7 +38,6 @@ records:
   icon: work
   code: a627c4f2f0b398e0
 - title: Other issues
-  terminal: true
   description: 'For example: Gender or name change, personal injury, police misconduct,
     taxes, end of life support'
   icon: other
