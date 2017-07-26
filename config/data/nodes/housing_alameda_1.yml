@@ -27,6 +27,6 @@ records:
   code: 6cceb3973e616ee3
 - title: I don't know
   terminal: true
-  description: 'That''s OK.     Select ''Next'' to describe your client''s situation and request a cross-check
-    from Project Legal Link.'
+  description: That's OK. For the next step we will ask you to describe your client's
+    situation and PLL will provide a cross-check.
   code: 1809b8fa8c7b19b9
