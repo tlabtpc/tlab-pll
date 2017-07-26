@@ -3,6 +3,6 @@ class Views::Fields::Text::Show < Views::Base
   needs :field
 
   def content
-    span { markdown(field.data) }
+    span { text markdown(field.data) }
   end
 end
