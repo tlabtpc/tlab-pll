@@ -45,14 +45,30 @@ class Views::AssessmentReferrals::Index < Views::Base
 
   def featured_referral(referral)
     i(referral.unique_identifier)
+
     li(class: "assessment-referrals__primary-referral") do
-      h4 class: "assessment-referrals__title" do
-        fa_icon "telegram"
-        text referral.title
+      div(class: 'assessment-referrals__primary-referral-inside') do
+        h4 class: "assessment-referrals__title" do
+          fa_icon "telegram"
+          text referral.title
+        end
+
+        p(referral.description, class: "assessment-referrals__referral-description")
+
+        link_to "GET REFERRAL INFO",
+          primary_referral_path(referral),
+          class: "button--submit assessment-referrals__button"
+
+        div(class: 'assessment-referrals__referral-usefulness') do
+          p  'Is this referral useful?',
+            class: 'assessment-referrals__referral-usefulness-text'
+
+          button 'YES', class: 'assessment-referrals__referral-usefulness-button'
+          button 'NO', class: 'assessment-referrals__referral-usefulness-button'
+        end
       end
-      p referral.description
-      link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
     end
+
     # TODO: is this useful?
   end
 end
