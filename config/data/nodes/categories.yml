@@ -5,7 +5,7 @@ defaults:
 records:
 - title: Benefits
   description: 'For example: CalFresh, CalWORKS, CAAP, Foster care, Health care, SSI/SSDI,
-    Veteran''s, Work-related'
+    VA, Work-related'
   icon: benefits
   code: 7ca46412c79f8741
   tip: benefits_sf_one

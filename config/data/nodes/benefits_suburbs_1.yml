@@ -19,7 +19,7 @@ records:
 - title: SSI/SSDI
   description: Cash assistance for disabled or elderly individuals.
   code: 356b6806ad758e2b
-- title: Veterans benefits
+- title: VA benefits
   description: Assistance with accessing veterans benefits.
   code: 6effa6a4ce5e51d5
 - title: Work-related

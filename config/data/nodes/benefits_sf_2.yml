@@ -59,13 +59,13 @@ records:
   secondary_referrals:
   - 'Short-term and Long-Term Disability Programs: Introduction to SDI, SSI, and SSDI'
   code: 0f58b33e20407e21
-- title: Veteran's benefits
+- title: VA benefits
   description: Assistance with accessing veterans benefits.
   terminal: true
   primary_referrals:
   - akgb
   secondary_referrals:
-  - Veterans Benefits Information
+  - VA Benefits Information
   code: d3f0c00073980d2c
 - title: Non-citizen benefits
   description: Some benefits are available to non-citizens, and others carry risks.
