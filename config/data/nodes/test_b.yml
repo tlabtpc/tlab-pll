@@ -7,7 +7,7 @@ records:
   primary_referrals:
   - cccc
   secondary_referrals:
-  - Secondary1
+  - 2616cd0efc2afbf3
   code: 189c16fa3510e2fc
 - title: TestB2
   code: 3c2880e58f7387fd

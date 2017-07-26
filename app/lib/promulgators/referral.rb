@@ -1,4 +1,4 @@
-class Promulgators::PrimaryReferral < Promulgators::Base
+class Promulgators::Referral < Promulgators::Base
   private
 
   def build_model_params(attrs, record, index)

@@ -13,7 +13,7 @@ class Node < ApplicationRecord
   end
 
   def secondary_referrals=(titles)
-    set_referrals(referral_class: SecondaryReferral, records: titles, find_by: :title)
+    set_referrals(referral_class: SecondaryReferral, records: titles, find_by: :code)
   end
 
   def self.root

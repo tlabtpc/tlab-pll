@@ -52,8 +52,8 @@ describe Node do
       ["aaaa", "bbbb", "cccc"].each do |code|
         create(:primary_referral, code: code)
       end
-      ["first", "second", "third"].each do |title|
-        create(:secondary_referral, title: title)
+      ["first", "second", "third"].each do |code|
+        create(:secondary_referral, code: code)
       end
     end
 
@@ -70,7 +70,7 @@ describe Node do
       }.to_not change { node.reload.referrals.count }
     end
 
-    it "deals with unknown secondary referral titles" do
+    it "deals with unknown secondary referral codes" do
       expect {
         node.secondary_referrals = ["first", "whomp"]
       }.to_not raise_error
