@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726230404) do
+ActiveRecord::Schema.define(version: 20170725230922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20170726230404) do
     t.boolean  "is_useful",     default: false, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.boolean  "useful",        default: false
     t.index ["assessment_id"], name: "index_assessment_referrals_on_assessment_id", using: :btree
     t.index ["referral_id"], name: "index_assessment_referrals_on_referral_id", using: :btree
   end
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170726230404) do
   end
 
   create_table "cross_checks", force: :cascade do |t|
+    t.integer  "assessment_id"
     t.text     "details"
     t.text     "deadlines"
     t.string   "first_name"
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 20170726230404) do
     t.integer  "support_level"
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.integer  "assessment_id",                                   null: false
     t.jsonb    "action_items",                       default: [], null: false
     t.string   "last_name"
     t.integer  "county_node_id"
     t.integer  "client_has_attorney_representation"
+    t.index ["assessment_id"], name: "index_cross_checks_on_assessment_id", using: :btree
   end
 
   create_table "node_referrals", force: :cascade do |t|
@@ -91,11 +91,11 @@ ActiveRecord::Schema.define(version: 20170726230404) do
 
   create_table "referrals", force: :cascade do |t|
     t.string   "type"
+    t.string   "title"
     t.text     "markdown_content"
+    t.string   "link"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.string   "link"
-    t.string   "title"
     t.text     "markdown_content_es"
     t.text     "description"
     t.string   "unique_identifier"
