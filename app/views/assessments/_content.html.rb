@@ -11,11 +11,7 @@ class Views::Assessments::Content < Views::Base
     end
 
     p class: "assessments__reference" do
-      text "Reference # "
-
-      link_to assessment.display_reference_id,
-        assessment_url(assessment),
-        class: "assessments__link"
+      text "Reference # #{assessment.display_reference_id}"
     end
 
     div class: "assessments__summary" do
