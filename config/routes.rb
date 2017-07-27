@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :assessment_referrals, only: :index
-  put 'assessment_referrals', to: 'assessment_referrals#update'
 
   resources :cross_checks, only: [] do
     CrossCheck::STEPS.each { |step| get step, on: :collection }

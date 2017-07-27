@@ -7,16 +7,8 @@ class Views::AssessmentReferrals::Index < Views::Base
     set_progress_bar! index: REFERRAL_INDEX
 
     content_for :card do
-      form_options = {
-        method: 'PUT',
-        class: 'assessment-referrals',
-        id: 'assessment-referrals-form'
-      }
-
-      form_tag(assessment_referrals_path, form_options) do
-        h4 "Here are referrals that may help your client with this issue:",
-          class: "assessment-referrals__title"
-
+      div class: "assessment-referrals" do
+        h4 "Here are referrals that may help your client with this issue:", class: "assessment-referrals__title"
         ul do
           assessment.featured_referrals.each { |referral| featured_referral(referral) }
         end
@@ -44,7 +36,7 @@ class Views::AssessmentReferrals::Index < Views::Base
     end
 
     content_for :next do
-      button(type: 'submit', id: 'assessment-referrals-submit', class: "button button--submit") do
+      link_to start_cross_checks_path, class: "button button--submit" do
         text "NEXT"
         fa_icon 'arrow-right'
       end
@@ -71,26 +63,8 @@ class Views::AssessmentReferrals::Index < Views::Base
           p  'Is this referral useful?',
             class: 'assessment-referrals__referral-usefulness-text'
 
-          input \
-            id: 'assessment_referrals_usefulness-true',
-            name: "assessment-referrals[#{referral.id}][usefulness]",
-            class: 'assessment-referrals__usefulness-checkbox',
-            value: 'true',
-            type: 'radio'
-
-          label 'YES',
-            for: 'assessment_referrals_usefulness-true',
-            class: 'assessment-referrals__referral-usefulness-button'
-
-          input \
-            id: 'assessment_referrals_usefulness-false',
-            name: "assessment-referrals[#{referral.id}][usefulness]",
-            class: 'assessment-referrals__usefulness-checkbox',
-            value: 'false',
-            type: 'radio'
-          label 'NO',
-            for: 'assessment_referrals_usefulness-false',
-            class: 'assessment-referrals__referral-usefulness-button'
+          button 'YES', class: 'assessment-referrals__referral-usefulness-button'
+          button 'NO', class: 'assessment-referrals__referral-usefulness-button'
         end
       end
     end

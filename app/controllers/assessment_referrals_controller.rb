@@ -7,12 +7,4 @@ class AssessmentReferralsController < ApplicationController
   def index
     @special_referrals = SpecialReferral.all
   end
-
-  def update
-    puts '*'*89
-    puts params
-    puts '*'*89
-
-    redirect_to start_cross_checks_path
-  end
 end
