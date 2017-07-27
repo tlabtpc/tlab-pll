@@ -57,10 +57,16 @@ class CrossCheck < ApplicationRecord
     end
   end
 
+  def issue_county_unknown?
+    Assessment.find(assessment_id).nodes.where(code: '55e4fc7107115758').present?
+  end
+
   def step_valid?(action_name)
     case action_name.to_s
+    when 'residence'
+      !issue_county_unknown?
     when 'county_select'
-      !client_is_in_sf?
+      !client_is_in_issue_county?
     when 'representation'
       consulted_yes?
     else

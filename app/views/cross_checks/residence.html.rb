@@ -8,7 +8,7 @@ class Views::CrossChecks::Residence < Views::Base
     content_for :card do
       h4 "Does your client also reside in #{cross_check.assessment.decorate.county_name} County?"
       cross_check_form do |f|
-        f.text_field :client_is_in_sf, id: :square_value, type: :hidden
+        f.text_field :client_is_in_issue_county, id: :square_value, type: :hidden
         div class: "square-collection" do
           render partial: "square", locals: {
             value: 1,

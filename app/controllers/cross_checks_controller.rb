@@ -52,7 +52,7 @@ class CrossChecksController < ApplicationController
       :caseworker_organization,
       :client_is_long_term,
       :client_is_homeless,
-      :client_is_in_sf,
+      :client_is_in_issue_county,
       :client_has_consulted_attorney,
       :client_has_attorney_representation,
       :support_level,
