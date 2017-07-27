@@ -5,6 +5,14 @@ class AssessmentDecorator < Draper::Decorator
     object.reference_id.gsub('-','')
   end
 
+  def issue_description
+    [
+      assessment.category_name,
+      include_in_summary_nodes.pluck(:question).join(','),
+      assessment.sub_category_name
+    ].join(',')
+  end
+
   def display_submitted_at
     object.submitted_at&.strftime('%m/%d/%y')
   end

@@ -23,6 +23,10 @@ class Assessment < ApplicationRecord
     -> { where(terminal: false) },
     through: :assessment_nodes, source: :node
 
+  has_many :include_in_summary_nodes,
+    -> { where(include_in_summary: true) },
+    through: :assessment_nodes, source: :node
+
   has_one :cross_check
 
   has_many :assessment_referrals
