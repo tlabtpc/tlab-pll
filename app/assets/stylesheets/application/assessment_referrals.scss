@@ -7,44 +7,11 @@
   &__primary-referral {
     border: 1px solid $dust;
     border-radius: 4px;
+    padding: 0 15px 15px 15px;
     box-shadow: 0 0 2px $black;
     max-width: 450px;
     margin: 20px auto;
     i { margin-right: 15px; }
-  }
-
-  &__primary-referral-inside {
-    padding: 0;
-  }
-
-  &__referral-description {
-    padding: 0 15px 15px 15px;
-  }
-
-  &__referral-usefulness {
-    margin-top: 15px;
-    padding: 15px;
-    padding-bottom: 0;
-    background-color: $puget;
-    font-style: italic;
-    border-top: 1px solid $dust;
-  }
-
-  &__referral-usefulness-button {
-    border: 1px solid $gossamer;
-    border-radius: 4px;
-    color: $gossamer;
-    background-color: $seagull;
-    height: 30px;
-    width: 70px;
-    font-weight: bold;
-    font-size: 12px;
-    margin-right: 15px;
-  }
-
-  &__referral-usefulness-text {
-    display: inline-block;
-    margin-right: 30px;
   }
 
   &__list-item {
