@@ -6,10 +6,13 @@ defaults:
 records:
 - title: San Francisco
   code: a1180fafde511548
+  position: 4
 - title: Other County
   code: aaf2e385d710aedd
+  position: 5
 - title: I don't know
   description: That's OK. For the next step we will ask you to describe your client's
     situation and PLL will provide a cross-check.
   code: 55e4fc7107115758
+  position: 6
   terminal: true

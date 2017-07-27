@@ -6,11 +6,15 @@ defaults:
 records:
 - title: Alameda
   code: e0875cffab846793
+  position: 0
 - title: Contra Costa
   code: 17581f035ad8c2e2
+  position: 1
 - title: Marin
   code: 00dfc22a70e0b170
 - title: San Mateo
   code: e9b98d514b558b0b
+  position: 2
 - title: Santa Clara
   code: 31fa044e1e34da5d
+  position: 3
