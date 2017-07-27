@@ -1,11 +1,11 @@
 ---
 defaults:
   question: Do you know if your client is in private housing or public?
-  include_in_summary: true
 records:
 - title: Private
   description: Private landlord paid for with private funds
   code: 13ef87b08b13d211
+  include_in_summary: true
 - title: Public housing or subsidy
   description: Public housing, Section 8, or other public subsidies
   terminal: true
@@ -17,3 +17,5 @@ records:
   code: 73ff470885490547
 - title: I don't know
   code: d297f019601b234b
+  include_in_summary: true
+

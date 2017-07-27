@@ -26,6 +26,14 @@ describe 'rake db:seed' do
     )
   end
 
+  it "should order the counties by positions in yaml files" do
+    load_seeds
+
+    root = Node.find_by(root: true)
+    expect(root.children.first.title).to eq "Alameda"
+    expect(root.children.last.title).to eq "I don't know"
+  end
+
   it 'should populate the root node' do
     load_seeds
 

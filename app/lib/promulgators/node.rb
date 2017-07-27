@@ -19,7 +19,7 @@ class Promulgators::Node < Promulgators::Base
   private
 
   def build_model_params(attrs, record, index)
-    super.merge(position: index)
+    super.reverse_merge(position: index)
   end
 
   def resource
