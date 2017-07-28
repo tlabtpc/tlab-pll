@@ -72,24 +72,24 @@ class Views::AssessmentReferrals::Index < Views::Base
             class: 'assessment-referrals__referral-usefulness-text'
 
           input \
-            id: 'assessment_referrals_usefulness-true',
-            name: "assessment-referrals[#{referral.id}][usefulness]",
+            id: "assessment_referrals_#{referral.id}_usefulness-true",
+            name: "assessment_referrals[#{referral.id}][useful]",
             class: 'assessment-referrals__usefulness-checkbox',
             value: 'true',
             type: 'radio'
 
           label 'YES',
-            for: 'assessment_referrals_usefulness-true',
+            for: "assessment_referrals_#{referral.id}_usefulness-true",
             class: 'assessment-referrals__referral-usefulness-button'
 
           input \
-            id: 'assessment_referrals_usefulness-false',
-            name: "assessment-referrals[#{referral.id}][usefulness]",
+            id: "assessment_referrals_#{referral.id}_usefulness-false",
+            name: "assessment_referrals[#{referral.id}][useful]",
             class: 'assessment-referrals__usefulness-checkbox',
             value: 'false',
             type: 'radio'
           label 'NO',
-            for: 'assessment_referrals_usefulness-false',
+            for: "assessment_referrals_#{referral.id}_usefulness-false",
             class: 'assessment-referrals__referral-usefulness-button'
         end
       end

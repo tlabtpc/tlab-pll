@@ -9,10 +9,16 @@ class AssessmentReferralsController < ApplicationController
   end
 
   def update
-    puts '*'*89
-    puts params
-    puts '*'*89
+    assessment_referral_params.each do |id, attrs|
+      AssessmentReferral.find(id).update_attributes(attrs)
+    end
 
     redirect_to start_cross_checks_path
+  end
+
+  private
+
+  def assessment_referral_params
+    params.require(:assessment_referrals).permit!
   end
 end
