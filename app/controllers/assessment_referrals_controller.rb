@@ -9,8 +9,10 @@ class AssessmentReferralsController < ApplicationController
   end
 
   def update
-    assessment_referral_params.each do |id, attrs|
-      AssessmentReferral.find(id).update_attributes(attrs)
+    if params[:assessment_referrals].present?
+      assessment_referral_params.each do |id, attrs|
+        AssessmentReferral.find(id).update_attributes(attrs)
+      end
     end
 
     redirect_to start_cross_checks_path
