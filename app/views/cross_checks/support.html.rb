@@ -13,7 +13,7 @@ class Views::CrossChecks::Support < Views::Base
           render partial: "square", locals: {
             value: "low",
             label: "Low",
-            description: "I think we found the right referral but any additional resources from Project Legal Link would be helpful",
+            description: "I think we found the right referral, but any additional resources from Project Legal Link would be helpful",
             icon: nil
           }
           render partial: "square", locals: {
