@@ -117,7 +117,7 @@ describe "assessment", js: true do
       expect_page_to_have_progress_bar
 
       # SF residency step
-      expect(page).to have_content "reside in FooBar County"
+      expect(page).to have_content "live in FooBar County"
       click_square_and_next(index: 1)
       expect_page_to_have_progress_bar
 
@@ -194,7 +194,7 @@ describe "assessment", js: true do
       expect_page_to_have_progress_bar
 
       # County residency step
-      expect(page).to have_content "reside in FooBar County"
+      expect(page).to have_content "live in FooBar County"
       click_square_and_next
       expect_page_to_have_progress_bar
 
