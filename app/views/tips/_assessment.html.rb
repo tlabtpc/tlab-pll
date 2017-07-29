@@ -4,7 +4,7 @@ class Views::Tips::Assessment < Views::Base
       i class: "fa fa-lightbulb-o"
       span "If your client is self-represented:"
     end
-    p "Coach your client to be on time + meet deadlines, get help with paperwork at self-help center. Respectfully self-advocate"
+    p "Coach your client to be on time + meet deadlines, get help with paperwork at self-help center, and respectfully self-advocate."
 
     h4 class: 'tips__header' do
       i class: "fa fa-lightbulb-o"
