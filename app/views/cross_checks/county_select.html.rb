@@ -13,7 +13,7 @@ class Views::CrossChecks::CountySelect < Views::Base
         f.text_field :county_node_id, id: :square_value, type: :hidden
 
         div class: "square-collection" do
-          Node.counties.where.not(title: "San Francisco").each do |county_node|
+          Node.counties.each do |county_node|
             render partial: "square", locals: {
               value: county_node.id,
               label: county_node.title,
