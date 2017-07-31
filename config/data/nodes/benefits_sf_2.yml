@@ -81,5 +81,6 @@ records:
   - e62ffb4276e90b72
   code: c8925389790b3dab
 - title: Other
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   terminal: true
   code: c4d889fca8dda5f8

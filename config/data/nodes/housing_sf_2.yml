@@ -5,7 +5,6 @@ defaults:
   include_in_summary: true
 records:
 - title: 'Yes'
-  description: There is limited legal help and sometimes a remedy for this.
   code: ec81fbeee11e1271
 - title: 'No'
   code: aa8e7d8d4239cd08

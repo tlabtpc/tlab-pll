@@ -9,7 +9,7 @@ class Views::Tips::Referrals < Views::Base
     TEXT
     p <<-TEXT.html_safe
       If you would like PLL to review your client's issue and provide
-      additional resources, please request a <strong>PLL Cross Check</strong>
+      additional resources, please request a <strong>PLL Cross-Check</strong>
       on the next screen
     TEXT
 
