@@ -14,9 +14,9 @@ class Views::PrimaryReferrals::Show < Views::Base
 
         h1 primary_referral.title, class: "primary-referral__title"
 
-        p primary_referral.description
-
         div(data: { locale: "English" }, class: 'primary-referrals__markdown') do
+          p primary_referral.description
+
           rawtext markdown(primary_referral.markdown_content)
         end
 
