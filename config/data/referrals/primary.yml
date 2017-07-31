@@ -469,7 +469,7 @@ records:
     expunged and the best way to go about having a record expunged.
 - code: bshu
   title: Asian Law Alliance
-  description: Provides legal assistance to low income people.
+  description: Provides legal assistance to Asian/Pacific and low income people.
 - code: qwer
   title: Root + Rebound
   description: Root + Rebound provides information and advice to the re-entry community
@@ -484,6 +484,3 @@ records:
 - code: albd
   title: Katharine & George Alexander Community Law Center
   description: Provides pro bono advice and representation for low-income residents in the areas of workers’ rights, consumer rights, and immigration rights.
-- code: najd
-  title: Asian Law Alliance
-  description: Provides legal assistance to Asian/Pacific and low income people.

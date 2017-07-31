@@ -8,8 +8,8 @@ records:
     have a bracelet, be in immigration supervision, have a court date, and/or have
     paperwork from a border location.
   primary_referrals:
-  - jnqc
-  - wkrt
+  - duom
+  - ekyb
   secondary_referrals:
   - 04abc6c237234767
   code: 38c9da6b17c19213
@@ -18,13 +18,15 @@ records:
     has other naturalization-related questions.
   primary_referrals:
   - jnqc
+  - kdso
   secondary_referrals:
   - 8cbd6b3cf352573d
   code: eccb334389acd266
 - title: Other
   primary_referrals:
-  - yrfz
-  - jnqc
+  - albd
+  - aypz
+  - ekyb
   secondary_referrals:
   - 130e999b4a4c9e06
   code: 684e7ecc2a9422c9
