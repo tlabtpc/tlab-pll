@@ -12,7 +12,9 @@ class Views::PrimaryReferrals::Show < Views::Base
         end
         hr class: "no-print"
 
-        h1 primary_referral.title, class: "primary-referral__title"
+        h1 do
+          strong primary_referral.title, class: "primary-referral__title"
+        end
 
         div(data: { locale: "English" }, class: 'primary-referrals__markdown') do
           p primary_referral.description
