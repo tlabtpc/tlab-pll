@@ -475,3 +475,15 @@ records:
   description: Root + Rebound provides information and advice to the re-entry community
     on a large range of topics and has a self-help manual for re-entering individuals
     and their advocates to use.
+- code: djba
+  title: Law Foundation of Silicon Valley
+  description: Law Foundation of Silicon Valley provides a range of legal services to various populations, especially in the areas of housing discrimination, child welfare, and for those with chronic health conditions and mental health and developmental disabilities. They also host a weekly eviction defense clinic to assist people facing evictions.
+- code: kdso
+  title: Center for Employment Training, Immigration and Citizenship Program
+  description: BIA accredited agency providing immigration information and services in Santa Clara County.
+- code: albd
+  title: Katharine & George Alexander Community Law Center
+  description: Provides pro bono advice and representation for low-income residents in the areas of workers’ rights, consumer rights, and immigration rights.
+- code: najd
+  title: Asian Law Alliance
+  description: Provides legal assistance to Asian/Pacific and low income people.
