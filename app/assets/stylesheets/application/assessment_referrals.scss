@@ -30,6 +30,10 @@
     border-top: 1px solid $dust;
   }
 
+  &__usefulness-checkbox {
+    display: none;
+  }
+
   &__referral-usefulness-button {
     border: 1px solid $gossamer;
     border-radius: 4px;
@@ -39,10 +43,13 @@
     width: 70px;
     font-weight: bold;
     font-size: 12px;
-    margin-right: 15px;
+    margin-right: 0 !important;
+    vertical-align: middle !important;
+    line-height: 28px;
+    font-style: normal;
   }
 
-  &__referral-usefulness-text {
+ &__referral-usefulness-text {
     display: inline-block;
     margin-right: 30px;
   }
@@ -69,4 +76,9 @@
     &:hover { color: $seagull; }
     font-weight: bold;
   }
+}
+
+input[type=radio]:checked + .assessment-referrals__referral-usefulness-button {
+  background-color: $gossamer;
+  color: $seagull;
 }

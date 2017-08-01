@@ -7,8 +7,16 @@ class Views::AssessmentReferrals::Index < Views::Base
     set_progress_bar! index: REFERRAL_INDEX
 
     content_for :card do
-      div class: "assessment-referrals" do
-        h4 "Here are referrals that may help your client with this issue:", class: "assessment-referrals__title"
+      form_options = {
+        method: 'PUT',
+        class: 'assessment-referrals',
+        id: 'assessment-referrals-form'
+      }
+
+      form_tag(assessment_referrals_path, form_options) do
+        h4 "Here are referrals that may help your client with this issue:",
+          class: "assessment-referrals__title"
+
         ul do
           assessment.featured_referrals.each { |referral| featured_referral(referral) }
         end
@@ -36,7 +44,7 @@ class Views::AssessmentReferrals::Index < Views::Base
     end
 
     content_for :next do
-      link_to start_cross_checks_path, class: "button button--submit" do
+      button(type: 'submit', id: 'assessment-referrals-submit', class: "button button--submit") do
         text "NEXT"
         fa_icon 'arrow-right'
       end
@@ -85,8 +93,6 @@ class Views::AssessmentReferrals::Index < Views::Base
             class: 'assessment-referrals__referral-usefulness-button'
         end
       end
-
-      link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
     end
   end
 end
