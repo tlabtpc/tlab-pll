@@ -9,4 +9,8 @@ class AssessmentReferral < ApplicationRecord
           "assessment_referrals.referral_id = referrals.id"
       )
   end
+
+  def has_usefulness?
+    self.useful != nil
+  end
 end

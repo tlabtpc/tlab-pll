@@ -7,18 +7,14 @@ class Views::AssessmentReferrals::Index < Views::Base
     set_progress_bar! index: REFERRAL_INDEX
 
     content_for :card do
-      form_options = {
-        method: 'PUT',
-        class: 'assessment-referrals',
-        id: 'assessment-referrals-form'
-      }
-
-      form_tag(assessment_referrals_path, form_options) do
+      div(class: 'assessment-referrals', 'data-update-path' => assessment_referral_path(0)) do
         h4 "Here are referrals that may help your client with this issue:",
           class: "assessment-referrals__title"
 
         ul do
-          assessment.featured_referrals.each { |referral| featured_referral(referral) }
+          assessment.featured_assessment_referrals.each do |assessment_referral|
+            featured_assessment_referrals(assessment_referral)
+          end
         end
 
         if assessment.secondary_referrals.any?
@@ -44,17 +40,27 @@ class Views::AssessmentReferrals::Index < Views::Base
     end
 
     content_for :next do
-      button(type: 'submit', id: 'assessment-referrals-submit', class: "button button--submit") do
+      link_to start_cross_checks_path, class: "button button--submit" do
         text "NEXT"
         fa_icon 'arrow-right'
       end
     end
   end
 
-  def featured_referral(referral)
+  def featured_assessment_referrals(assessment_referral)
+    referral = assessment_referral.referral
     i(referral.unique_identifier)
 
-    li(class: "assessment-referrals__primary-referral") do
+    referral_attrs = {
+      class: 'assessment-referrals__primary-referral',
+      'data-assessment-referral-id' => assessment_referral.id
+    }
+
+    if assessment_referral.has_usefulness?
+      referral_attrs['data-useful'] = assessment_referral.useful.to_s
+    end
+
+    li(referral_attrs) do
       div(class: 'assessment-referrals__primary-referral-inside') do
         h4 class: "assessment-referrals__title" do
           fa_icon "telegram"
@@ -88,6 +94,7 @@ class Views::AssessmentReferrals::Index < Views::Base
             class: 'assessment-referrals__usefulness-checkbox',
             value: 'false',
             type: 'radio'
+
           label 'NO',
             for: "assessment_referrals_#{referral.id}_usefulness-false",
             class: 'assessment-referrals__referral-usefulness-button'

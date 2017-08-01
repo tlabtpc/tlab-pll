@@ -27,11 +27,11 @@ describe Assessment do
 
 
   it "has assessment nodes" do
-    expect(assessment.assessment_nodes).to eq [assessment_node, assessment_terminal_node]
+    expect(assessment.assessment_nodes).to match_array [assessment_node, assessment_terminal_node]
   end
 
   it "has nodes" do
-    expect(assessment.nodes).to eq [intro_node, final_node]
+    expect(assessment.nodes).to match_array [intro_node, final_node]
   end
 
   it "has non terminal nodes" do
@@ -73,6 +73,17 @@ describe Assessment do
     it "orders by node_referral priority" do
       expect(assessment.featured_referrals.first).to eq(primary_referral_first)
       expect(assessment.featured_referrals.last).to eq(special_referral)
+    end
+  end
+
+  describe '#featured_assessment_referrals' do
+    it 'includes special and primary assessment_referrals' do
+      expect(assessment.featured_assessment_referrals).to match_array [assessment_special_referral, assessment_primary_referral, assessment_primary_referral_two]
+    end
+
+    it "orders by node_referral priority" do
+      expect(assessment.featured_assessment_referrals.first.referral).to eq(primary_referral_first)
+      expect(assessment.featured_assessment_referrals.last.referral).to eq(special_referral)
     end
   end
 

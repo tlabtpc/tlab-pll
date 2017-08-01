@@ -43,6 +43,25 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
+  def featured_assessment_referrals
+    ordered_primary_assessment_referrals + secondary_assessment_referrals
+  end
+
+  def ordered_primary_assessment_referrals
+    assessment_referrals
+      .joins(:referral)
+      .where('referrals.type' => 'PrimaryReferral')
+      .joins(referral: :node_referrals)
+      .where('node_referrals.node_id' => terminal_nodes.pluck(:id))
+      .order('node_referrals.position')
+  end
+
+  def secondary_assessment_referrals
+    assessment_referrals
+      .joins(:referral)
+      .where('referrals.type' => 'SpecialReferral')
+  end
+
   def featured_referrals
     ordered_primary_referrals + special_referrals
   end
