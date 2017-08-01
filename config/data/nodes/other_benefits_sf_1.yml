@@ -1,5 +1,6 @@
 ---
 defaults:
+  question: Here are some other issues. Can you tell which one your client needs help with?
   terminal: true
 records:
 - title: Gender and name changes
