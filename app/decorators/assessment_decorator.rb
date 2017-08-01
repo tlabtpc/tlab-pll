@@ -8,7 +8,6 @@ class AssessmentDecorator < Draper::Decorator
   def issue_description
     [
       category_name,
-      include_in_summary_nodes.map{|n| "#{n.question}: #{n.title}"},
       sub_category_name
     ].flatten.join(', ')
   end

@@ -18,6 +18,9 @@ class Views::Assessments::Content < Views::Base
       h2 "Summary of Issue", class: "assessments__title"
       assessment_info "Location: ", assessment.county_name
       assessment_info "Issue: ", assessment.issue_description
+      assessment.include_in_summary_nodes.each do |node|
+        assessment_info "#{node.question}: ", node.title
+      end
       assessment_info "Description: ", assessment.details
       assessment_info "Deadlines: ", assessment.deadlines
       assessment_info "Attorney: ", assessment.attorney_status
