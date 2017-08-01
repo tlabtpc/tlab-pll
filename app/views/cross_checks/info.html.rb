@@ -6,7 +6,7 @@ class Views::CrossChecks::Info < Views::Base
     set_progress_bar! index: 10
 
     content_for :card do
-      h4 "Please provide the following:"
+      card_title "Please provide the following:"
       cross_check_form do |f|
         f.label 'Your first name *', for: :cross_check_first_name
         f.text_field :first_name, required: true, class: "cross-checks__input--required"

@@ -4,7 +4,7 @@ class Views::CrossChecks::Represented < Views::Base
 
   def content
     content_for :card do
-      h4 "Does your client have an attorney representing him/her?"
+      card_title "Does your client have an attorney representing him/her?"
       cross_check_form do |f|
         f.text_field :client_is_represented, id: :square_value, type: :hidden
         div class: "square-collection" do

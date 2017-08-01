@@ -7,7 +7,7 @@ class Views::Assessments::New < Views::Base
     content_for(:card) do
       div class: "assessments__form" do
         form_for :assessment, url: assessments_path do |f|
-          h4 'Before we start, please confirm the following:', class: 'assessments__title'
+          card_title 'Before we start, please confirm the following:'
 
           assessment_check 'My client and I have enough time to work on this now.',
             'If not today, try to schedule a date and time to follow-up with your client.',

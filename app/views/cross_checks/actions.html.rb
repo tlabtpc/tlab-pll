@@ -7,7 +7,7 @@ class Views::CrossChecks::Actions < Views::Base
 
     content_for :card do
       cross_check_form do |f|
-        h4 "Here are some actions that might help your client. Which of these are you able to support your client with?"
+        card_title "Here are some actions that might help your client. Which of these are you able to support your client with?"
 
         h5 "Prepare", class: "action-items__header"
         action_item f, "Make a plan for next steps + help client document the plan"

@@ -6,7 +6,7 @@ class Views::CrossChecks::Start < Views::Base
     set_progress_bar! index: 9
 
     content_for :card do
-      h4 "Would you like a PLL Cross-Check?"
+      card_title "Would you like a PLL Cross-Check?"
 
       cross_check_form do |f|
         div class: "square-collection" do

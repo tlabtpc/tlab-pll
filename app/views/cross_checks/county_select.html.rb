@@ -6,7 +6,7 @@ class Views::CrossChecks::CountySelect < Views::Base
     set_progress_bar! index: 12
 
     content_for :card do
-      h4 "What county does your client live in? If homeless, where does your "\
+      card_title "What county does your client live in? If homeless, where does your "\
         "client stay?"
 
       cross_check_form do |f|

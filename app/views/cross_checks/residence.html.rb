@@ -6,7 +6,7 @@ class Views::CrossChecks::Residence < Views::Base
     set_progress_bar! index: 12
 
     content_for :card do
-      h4 "Does your client also live in #{cross_check.assessment.decorate.county_name} County?"
+      card_title "Does your client also live in #{cross_check.assessment.decorate.county_name} County?"
       cross_check_form do |f|
         f.text_field :client_is_in_issue_county, id: :square_value, type: :hidden
         div class: "square-collection" do

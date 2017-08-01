@@ -16,6 +16,10 @@ module Views
       end
     end
 
+    def card_title(text)
+      h4 text, class: 'assessments__title'
+    end
+
     def back_button(url, options = {})
       link_to url, options.merge(class: "button button--back") do
         fa_icon 'arrow-left'

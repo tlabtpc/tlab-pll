@@ -6,7 +6,7 @@ class Views::CrossChecks::Representation < Views::Base
     set_progress_bar! index: 13
 
     content_for :card do
-      h4 "Does your client have an attorney representing him/her?"
+      card_title "Does your client have an attorney representing him/her?"
 
       cross_check_form do |f|
         f.text_field :client_has_attorney_representation,

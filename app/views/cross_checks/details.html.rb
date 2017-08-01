@@ -6,7 +6,7 @@ class Views::CrossChecks::Details < Views::Base
     set_progress_bar! index: 9
 
     content_for :card do
-      h4 "Please use the text box to give us additional details about your client's issue:"
+      card_title "Please use the text box to give us additional details about your client's issue:"
       cross_check_form do |f|
         f.text_area :details,
           class: "cross-checks__textarea cross-checks__input--required",
