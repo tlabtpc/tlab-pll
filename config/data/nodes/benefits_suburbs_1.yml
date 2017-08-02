@@ -28,6 +28,7 @@ records:
   code: 46a00b75b8452537
 - title: Other
   terminal: true
+  no_referrals: true
   description: Please hit 'Next' and then describe your client's issue and request
     support from PLL.
   code: 32e068d60afac0a1

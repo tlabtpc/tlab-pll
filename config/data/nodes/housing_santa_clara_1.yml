@@ -28,6 +28,6 @@ records:
   code: 323e68ddea0151e0
 - title: I don't know
   terminal: true
-  description: That's OK. For the next step we will ask you to describe your client's
-    situation and PLL will provide a cross-check.
+  no_referrals: true
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: 8c9989886f0e2d2e

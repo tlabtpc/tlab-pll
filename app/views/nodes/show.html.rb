@@ -1,6 +1,7 @@
 class Views::Nodes::Show < Views::Base
   needs :node
   needs :assessment
+  needs :special_referrals_exist
 
   START_PAGE_OFFSET = 2
   MAXIMUM_ASSESS_BAR_INDEX = 6
@@ -18,12 +19,7 @@ class Views::Nodes::Show < Views::Base
 
       ul(class: "square-collection") do
         children.each do |child|
-          render partial: "square", locals: {
-            value: child.id,
-            label: child.title,
-            description: child.description,
-            icon: child.icon
-          }
+          render partial: "square", locals: locals_for(child)
         end
       end
     end
@@ -51,5 +47,23 @@ class Views::Nodes::Show < Views::Base
     render "tips/#{node.tip}"
   rescue ActionView::MissingTemplate
     render "tips/not_found" if Rails.env.development?
+  end
+
+  def locals_for child
+    if special_referrals_exist && child.no_referrals?
+      {
+        value: child.id,
+        label: child.title,
+        description: nil,
+        icon: child.icon
+      }
+    else
+      {
+        value: child.id,
+        label: child.title,
+        description: child.description,
+        icon: child.icon
+      }
+    end
   end
 end

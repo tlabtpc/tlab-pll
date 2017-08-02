@@ -7,12 +7,10 @@ records:
 - title: San Francisco
   code: a1180fafde511548
   position: 4
-- title: Other County
+- title: Other / I don't know
   code: aaf2e385d710aedd
   position: 5
-- title: I don't know
-  description: That's OK. For the next step we will ask you to describe your client's
-    situation and PLL will provide a cross-check.
+  no_referrals: true
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: 55e4fc7107115758
-  position: 6
   terminal: true

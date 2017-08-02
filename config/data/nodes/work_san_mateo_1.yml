@@ -51,6 +51,7 @@ records:
   - c63ad4b8d28f1e10
   code: e8d35a399ec895f5
 - title: Other
+  no_referrals: true
   description: Please hit 'Next' and then describe your client's issue and request
     support from PLL.
   code: 15bcda197cc39613

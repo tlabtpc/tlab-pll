@@ -26,6 +26,6 @@ records:
   code: acc278c47bcb3404
 - title: I don't know
   terminal: true
-  description: That's OK. For the next step we will ask you to describe your client's
-    situation and PLL will provide a cross-check.
+  no_referrals: true
+  description: Please hit 'Next' and then describe your client's issue and request support from PLL.
   code: 938f62737df62fc4

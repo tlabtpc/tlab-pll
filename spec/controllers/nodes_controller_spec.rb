@@ -23,5 +23,22 @@ describe NodesController do
       expect(response).to render_template 'nodes/show'
       expect(assigns[:node]).to eq node
     end
+
+    context "when the user has selected a special referral on the intro page" do
+      let(:special_referral) {create(:special_referral)}
+      before do
+        assessment.referrals << special_referral
+      end
+      context "and the assessment path results in no primary or secondary referrals" do
+        before do
+          assessment.nodes << create(:node, no_referrals: true, parent_node: node)
+        end
+        it "they are not shown a tooltip that says they will go to cross-check next" do
+          get :show, params: { id: node.id, assessment: assessment.token }
+
+          expect(assigns[:special_referrals_exist]).to be true
+        end
+      end
+    end
   end
 end

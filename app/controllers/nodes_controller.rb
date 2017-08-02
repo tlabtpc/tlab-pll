@@ -5,6 +5,7 @@ class NodesController < ApplicationController
   before_action :require_assessment, only: :show
 
   def show
+    @special_referrals_exist = assessment.special_referrals.any?
     @node = Node.find(params[:id])
   end
 end

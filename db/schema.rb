@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727192519) do
+ActiveRecord::Schema.define(version: 20170801233150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20170727192519) do
     t.string   "icon"
     t.string   "code"
     t.boolean  "include_in_summary"
+    t.boolean  "no_referrals",       default: false
     t.index ["parent_node_id"], name: "index_nodes_on_parent_node_id", using: :btree
   end
 

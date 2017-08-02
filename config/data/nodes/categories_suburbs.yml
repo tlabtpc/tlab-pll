@@ -39,6 +39,7 @@ records:
   code: a627c4f2f0b398e0
 - title: Other / I don't know
   terminal: true
+  no_referrals: true
   description: Please hit 'Next' and then describe your clients issue and request support from PLL.
   icon: i_dont_know
   code: 6a43bc0c3f41cbd0
