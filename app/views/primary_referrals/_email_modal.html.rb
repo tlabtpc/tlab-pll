@@ -19,6 +19,7 @@ class Views::PrimaryReferrals::EmailModal < Views::Base
 
       form_tag send_email_primary_referral_path, id: 'primary_referral_email_form', method: :post do
         hidden_field_tag 'id', primary_referral.id
+        hidden_field_tag 'primary_referral[email_language]', 'English', id: 'email_language'
 
         label_tag 'primary_referral_email_address', 'Email'
         email_field_tag \

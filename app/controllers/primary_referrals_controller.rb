@@ -8,9 +8,9 @@ class PrimaryReferralsController < ApplicationController
   end
 
   def send_email
-    # TODO: put in queuing system to background emails
-    PrimaryReferralsMailer.show(primary_referral, to: email_address).deliver_now
-    flash[:info] = "Referral successfully sent to #{email_address}"
+    render_spanish = primary_referral_params[:email_language] == "Spanish"
+    PrimaryReferralsMailer.show(primary_referral, render_spanish, to: email_address).deliver_now
+    flash[:info] = "Referral successfully sent to #{email_address} in #{primary_referral_params[:email_language]}"
   rescue ActionController::ParameterMissing
     flash[:error] = "No email address provided"
   ensure
@@ -19,8 +19,12 @@ class PrimaryReferralsController < ApplicationController
 
   private
 
+  def primary_referral_params
+    params.require(:primary_referral).permit(:email_language, :email_address, :client_confirmation)
+  end
+
   def email_address
-    @email_address ||= params.require(:primary_referral).require(:email_address)
+    @email_address ||= primary_referral_params[:email_address]
   end
 
   def primary_referral

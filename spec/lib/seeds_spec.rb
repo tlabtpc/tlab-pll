@@ -12,7 +12,7 @@ describe 'rake db:seed' do
     load_seeds
 
     expect(Node.where(root: true).count).to eq 1
-    expect(Node.counties.count).to eq 8
+    expect(Node.counties.count).to eq 7
 
     sf_other_idontknow_county_count = 3
     categories_for_sf_other_idontknow = 7
@@ -31,7 +31,7 @@ describe 'rake db:seed' do
 
     root = Node.find_by(root: true)
     expect(root.children.first.title).to eq "Alameda"
-    expect(root.children.last.title).to eq "I don't know"
+    expect(root.children.last.title).to eq "Other / I don't know"
   end
 
   it 'should populate the root node' do
