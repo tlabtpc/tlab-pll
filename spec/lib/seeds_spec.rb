@@ -12,16 +12,17 @@ describe 'rake db:seed' do
     load_seeds
 
     expect(Node.where(root: true).count).to eq 1
-    expect(Node.counties.count).to eq 7
 
-    sf_other_idontknow_county_count = 3
-    categories_for_sf_other_idontknow = 7
-
+    sf_county_count = 1
+    other_county_count = 1
     suburb_county_count = 5
-    categories_suburb_count = 6
+    expect(Node.counties.count).to eq (sf_county_count+other_county_count+suburb_county_count)
+
+    categories_for_sf = 8
+    categories_suburb_count = 7
 
     expect(Node.categories.count).to eq(
-      (sf_other_idontknow_county_count * categories_for_sf_other_idontknow)+
+      (sf_county_count * categories_for_sf) +
         (suburb_county_count * categories_suburb_count)
     )
   end

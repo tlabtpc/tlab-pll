@@ -12,5 +12,4 @@ records:
   position: 5
   no_referrals: true
   description: Please hit 'Next' and then describe your client's issue and request support from PLL.
-  code: 55e4fc7107115758
   terminal: true
