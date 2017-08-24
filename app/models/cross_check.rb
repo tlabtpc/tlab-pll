@@ -13,7 +13,7 @@ class CrossCheck < ApplicationRecord
   ).freeze
 
   belongs_to :assessment, required: true
-  belongs_to :county_node
+  belongs_to :county_node, class_name: 'Node'
 
   enum client_is_long_term: %w(yes no i_dont_know).freeze
 
