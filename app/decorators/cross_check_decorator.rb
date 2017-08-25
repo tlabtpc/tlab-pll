@@ -2,11 +2,11 @@ class CrossCheckDecorator < Draper::Decorator
   delegate_all
 
   def reference_id
-    object.assessment.reference_id
+    object.assessment&.reference_id
   end
 
   def county
-    object.assessment.nodes.find_by(is_county: true)&.title
+    nodes.find_by(is_county: true)&.title
   end
 
   def home_county
@@ -18,12 +18,11 @@ class CrossCheckDecorator < Draper::Decorator
   end
 
   def category
-    object.assessment.nodes.find_by(is_category: true)&.title
+    nodes.find_by(is_category: true)&.title
   end
 
   def subcategory
-    # TODO
-    # object.assessment.nodes[4].title if category == 'Benefits'
+    nodes[4]&.title
   end
 
   def action_items
@@ -72,6 +71,10 @@ class CrossCheckDecorator < Draper::Decorator
     when "consulted_no"          then "No"
     when "consulted_i_dont_know" then "I don't know"
     end
+  end
+
+  def nodes
+    @nodes ||= object.assessment&.nodes || Node.none
   end
 
 end
