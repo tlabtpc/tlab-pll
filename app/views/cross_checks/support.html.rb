@@ -8,7 +8,7 @@ class Views::CrossChecks::Support < Views::Base
     content_for :card do
       card_title "What level of support do you think you will need from PLL in order to support your client?"
       cross_check_form do |f|
-        f.text_field :client_has_consulted_attorney, id: :square_value, type: :hidden
+        f.text_field :support_level, id: :square_value, type: :hidden
         div class: "square-collection" do
           render partial: "square", locals: {
             value: "low",

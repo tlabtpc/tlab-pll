@@ -8,22 +8,24 @@ class CrossChecksController < ApplicationController
   before_action :require_assessment
 
   def next_step
-    if cross_check_skipped? || cross_check_complete?
+    if cross_check_skipped?
       redirect_to assessment_path(assessment)
     else
       cross_check.attributes = cross_check_params
       needs_email = cross_check.caseworker_email_changed?
 
       if cross_check.update(cross_check_params)
-        if needs_email
-          AssessmentsMailer.show(
-            assessment,
-            to: cross_check_params[:caseworker_email],
-            cross_check: true
-          ).deliver_now
-        end
+        AssessmentsMailer.show(
+          assessment,
+          to: cross_check_params[:caseworker_email],
+          cross_check: true
+        ).deliver_now if needs_email
 
-        redirect_to send("#{next_step_name}_cross_checks_path")
+        if cross_check_complete?
+          redirect_to assessment_path(assessment)
+        else
+          redirect_to send("#{next_step_name}_cross_checks_path")
+        end
       else
         render params[:current_step]
       end
