@@ -13,7 +13,7 @@ class CrossCheckDecorator < Draper::Decorator
     if object.client_is_in_issue_county
       county
     else
-      object.county_node.title
+      object.county_node&.title
     end
   end
 
