@@ -35,7 +35,8 @@ class CrossCheckDashboard < Administrate::BaseDashboard
     county_node_id: Field::Number,
     client_has_attorney_representation: Field::String.with_options(searchable: false),
     primary_referral_titles: Field::String,
-    created_at: Field::DateTime
+    created_at_date: Field::String,
+    created_at_time: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -49,25 +50,30 @@ class CrossCheckDashboard < Administrate::BaseDashboard
     :caseworker_email,
   ].freeze
 
+  TITLE_MAP = {
+    reference_id: "Reference Number",
+    created_at_date: "Date Created",
+    created_at_time: "Timestamp",
+    first_name: "Caseworker First Name",
+    last_name: "Caseworker Last Name",
+    caseworker_phone: "Caseworker Phone",
+    caseworker_email: "Caseworker Email",
+    caseworker_organization: "Caseworker Organization",
+    category: "Category of legal help",
+    subcategory: "Sub-category of legal help",
+    county: "Issue county",
+    home_county: "Client's home county",
+    details: "Details",
+    primary_referral_titles: "Primary Referrals provided",
+    action_items: "Support actions selected",
+    client_has_consulted_attorney: "Client has consulted attorney",
+    deadlines: "Deadlines",
+    support_level: "Level of caseworker support",
+    client_is_long_term: "Client > 2 months?",
+    client_is_homeless: "Client in housing search?"
+  }.freeze
+
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :reference_id,
-    :created_at,
-    :first_name,
-    :last_name,
-    :caseworker_phone,
-    :caseworker_organization,
-    :county,
-    :home_county,
-    :category,
-    :subcategory,
-    :details,
-    :deadlines,
-    :client_has_consulted_attorney,
-    :support_level,
-    :client_is_long_term,
-    :primary_referral_titles,
-    :action_items
-  ].freeze
+  SHOW_PAGE_ATTRIBUTES = TITLE_MAP.keys.freeze
 end

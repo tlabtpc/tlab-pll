@@ -28,7 +28,7 @@ module Admin
 
     def export_csv
       CSV.generate(headers: true) do |csv|
-        csv << export_attrs.map(&:to_s).map(&:titleize)
+        csv << CrossCheckDashboard::TITLE_MAP.values
         CrossCheck.find_each do |cross_check|
           csv << export_attrs.map { |attr| cross_check.decorate.send(attr) }
         end

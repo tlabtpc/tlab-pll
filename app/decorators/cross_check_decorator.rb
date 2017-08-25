@@ -22,7 +22,8 @@ class CrossCheckDecorator < Draper::Decorator
   end
 
   def subcategory
-    object.assessment.nodes[4].title if category == 'Benefits'
+    # TODO
+    # object.assessment.nodes[4].title if category == 'Benefits'
   end
 
   def action_items
@@ -49,8 +50,20 @@ class CrossCheckDecorator < Draper::Decorator
     end
   end
 
+  def client_is_homeless
+    if object.client_is_homeless then 'Yes' else 'No' end
+  end
+
+  def created_at_date
+    object.created_at.to_date
+  end
+
+  def created_at_time
+    object.created_at.strftime('%H:%M %P')
+  end
+
   def support_level
-    object.support_level.humanize
+    object.support_level.to_s.humanize
   end
 
   def client_has_attorney_representation
