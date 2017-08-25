@@ -42,11 +42,15 @@ class CrossCheckDecorator < Draper::Decorator
   end
 
   def client_is_long_term
-    case object.client_has_consulted_attorney
+    case object.client_is_long_term
     when "yes"         then "Yes"
     when "no"          then "No"
     when "i_dont_know" then "I don't know"
     end
+  end
+
+  def support_level
+    object.support_level.humanize
   end
 
   def client_has_attorney_representation
