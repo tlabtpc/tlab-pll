@@ -30,7 +30,7 @@ class CrossCheckDecorator < Draper::Decorator
   end
 
   def primary_referral_titles
-    object.assessment.primary_referrals.map(&:title).join(', ')
+    primary_referrals.map(&:title).join(', ')
   end
 
   def client_has_consulted_attorney
@@ -71,6 +71,12 @@ class CrossCheckDecorator < Draper::Decorator
     when "consulted_no"          then "No"
     when "consulted_i_dont_know" then "I don't know"
     end
+  end
+
+  private
+
+  def primary_referrals
+    @primary_referrals ||= object.assessment&.primary_referrals || PrimaryReferral.none
   end
 
   def nodes
