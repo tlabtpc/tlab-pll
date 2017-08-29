@@ -17,8 +17,12 @@ class Views::Assessments::New < Views::Base
             'Documents from a court, government agency, or attorney often include response times, appeal deadlines, and other important information.',
             'paperwork'
 
-          assessment_check 'I understand that Project Legal Link does not provide legal representation for my client.',
-            'This tool does not collect client-identifying information and does not create any attorney-client relationships.',
+          assessment_check 'I understand that this tool is for me, the staff person, to find referrals and get support from Project Legal Link.',
+            'This tool does not collect any client-identifying information and still requires that the client contact the legal referrals directly to get help.',
+            'client'
+
+          assessment_check 'I have read to my client the following:',
+            'I am using a tool that non-profit lawyers from Project Legal Link created to help us find the right legal referrals. Using this tool does not make Project Legal Link your attorney.',
             'legal'
 
           div(class: "assessments__special-referrals") do
