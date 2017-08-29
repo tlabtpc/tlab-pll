@@ -261,7 +261,7 @@ describe "assessment", js: true do
       # select "Spanish", from: "primary_referral_code" # :-(
       # expect(page).to have_content primary_referral.markdown_content_es
 
-      click_on "BACK"
+      click_on "BACK TO REFERRALS"
       expect(page).to have_content "Here are referrals that may help"
     end
   end
