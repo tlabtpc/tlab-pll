@@ -1,6 +1,7 @@
 def create_initial_assessment(choose_special: true)
   click_for "agree_schedule"
   click_for "agree_paperwork"
+  click_for "agree_client"
 
   expect(page).to_not have_css ".assessments__special-referrals"
   click_for "agree_legal"
