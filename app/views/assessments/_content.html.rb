@@ -74,6 +74,7 @@ class Views::Assessments::Content < Views::Base
   end
 
   def featured_referral(referral)
+    i(referral.unique_identifier)
     h4 class: "tips__header" do
       i class: "fa fa-telegram"
       span referral.title
