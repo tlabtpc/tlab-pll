@@ -3,6 +3,7 @@ defaults:
   tip: family_sf_two
   question: Is your client experiencing or concerned about domestic violence?
   terminal: true
+  include_in_summary: true
 records:
 - title: 'Yes'
   primary_referrals:

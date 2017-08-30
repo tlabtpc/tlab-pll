@@ -9,7 +9,7 @@ class AssessmentDecorator < Draper::Decorator
     [
       category_name,
       sub_category_name
-    ].flatten.join(', ')
+    ].compact.join(', ')
   end
 
   def display_submitted_at
@@ -25,7 +25,7 @@ class AssessmentDecorator < Draper::Decorator
   end
 
   def sub_category_name
-    terminal_nodes.pluck(:title).first
+    terminal_nodes.where.not(include_in_summary: true).pluck(:title).first
   end
 
   def caseworker_first_name

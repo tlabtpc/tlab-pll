@@ -6,6 +6,7 @@ records:
 - title: 'Yes'
   description: Make an immediate referral! Press “next” to proceed to the Refer stage.
   terminal: true
+  include_in_summary: true
   primary_referrals:
   - hyop
   secondary_referrals:
