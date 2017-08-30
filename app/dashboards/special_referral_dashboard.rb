@@ -13,6 +13,7 @@ class SpecialReferralDashboard < Administrate::BaseDashboard
     unique_identifier: Field::String,
     title: Field::String,
     intro: Field::String,
+    link: Field::String,
     description: Field::Text,
     markdown_content: Field::Text,
     markdown_content_es: Field::Text,
@@ -42,6 +43,7 @@ class SpecialReferralDashboard < Administrate::BaseDashboard
     :intro,
     :unique_identifier,
     :description,
+    :link,
     :markdown_content,
     :markdown_content_es,
     :created_at,
@@ -56,6 +58,7 @@ class SpecialReferralDashboard < Administrate::BaseDashboard
     :title,
     :intro,
     :description,
+    :link,
     :markdown_content,
     :markdown_content_es
   ].freeze
