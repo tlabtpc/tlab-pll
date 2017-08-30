@@ -92,7 +92,7 @@ class Views::Assessments::Content < Views::Base
 
   def link_for(referral)
     if context == :email && referral.link.present?
-      referral.link
+      referral.link_with_protocol
     else
       primary_referral_url(referral)
     end

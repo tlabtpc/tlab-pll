@@ -7,4 +7,8 @@ class Referral < ApplicationRecord
   scope :special,   -> { where(type: "SpecialReferral") }
   scope :featured, -> { where.not(type: "SecondaryReferral") }
   scope :hand_edited, -> { where.not(markdown_content: nil) }
+
+  def link_with_protocol(scheme = "https")
+    URI.parse(self.link).tap { |uri| uri.scheme ||= scheme }.to_s
+  end
 end
