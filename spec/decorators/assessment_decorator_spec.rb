@@ -4,7 +4,7 @@ describe AssessmentDecorator do
   let(:assessment) {create(:assessment).decorate}
 
   let(:category_node) {create(:node, is_category: true, title: "Housing")}
-  let(:terminal_node) {create(:node, title: "Security deposit", terminal: true)}
+  let(:terminal_node) {create(:node, title: "Security deposit", terminal: true, include_in_summary: false)}
 
   describe "issue_description" do
     before(:each) do
