@@ -29,8 +29,10 @@ class Views::PrimaryReferrals::Show < Views::Base
       end
     end
 
-    content_for :back do
-      back_button assessment_referrals_path
+    content_for :next do
+      link_to assessment_referrals_path, class: "button button--submit" do
+        text "BACK TO REFERRALS"
+      end
     end
   end
 
