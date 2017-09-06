@@ -34,6 +34,14 @@ class Views::PrimaryReferrals::Show < Views::Base
         text "CLOSE REFERRAL"
       end
     end
+
+    content_for :flash do
+      text <<-TEXT
+        This screen contains information that may be valuable to your client.
+        Please provide them with a print or email copy and ask your client to
+        follow-up with the organization.
+      TEXT
+    end
   end
 
   # I couldn't get select_tag to work.... :(

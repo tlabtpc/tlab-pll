@@ -46,7 +46,11 @@ class Views::Layouts::Application < Views::Base
         end
 
         div(class: "footer no-print") do
-          div(class: "footer-flash")
+          if content_for?(:flash)
+            div(class: "footer-flash footer-flash--visible") { yield(:flash) }
+          else
+            div(class: "footer-flash")
+          end
 
           div(class: "footer__buttons-container") do
             div(class: "footer__buttons") do
