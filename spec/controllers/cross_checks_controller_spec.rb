@@ -33,7 +33,7 @@ describe CrossChecksController do
     it 'redirects to the assessment show page if no cross check is wanted' do
       start_params[:cross_check][:perform_check] = "0"
       post :next_step, params: start_params.merge(current_step: :start)
-      expect(response).to redirect_to assessment_path(assessment)
+      expect(response).to redirect_to assessment_path(assessment.id)
     end
 
     it 'saves data to the cross check' do
