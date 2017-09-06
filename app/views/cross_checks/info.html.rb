@@ -28,6 +28,7 @@ class Views::CrossChecks::Info < Views::Base
 
         long_term_radios(f)
         client_is_homeless(f)
+        remember_my_info(f)
       end
     end
 
@@ -61,5 +62,12 @@ class Views::CrossChecks::Info < Views::Base
 
     f.radio_button :client_is_homeless, false, id: :client_is_homeless_no
     f.label 'No', for: :client_is_homeless_no
+  end
+
+  def remember_my_info(f)
+    div do
+      f.check_box :remember_my_info, class: "cross-checks__checkbox"
+      f.label 'Remember my info', for: "cross_check_remember_my_info"
+    end
   end
 end
