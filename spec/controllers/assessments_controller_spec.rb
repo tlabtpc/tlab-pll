@@ -15,6 +15,11 @@ describe AssessmentsController do
       assessment.update(submitted_at: 1.day.ago)
       expect { get :show, params: { id: assessment.id } }.to_not change { assessment.submitted_at }
     end
+
+    it 'redirects to the home page if it cant find the assessment' do
+      get :show, params: { id: :notanid }
+      expect(response).to redirect_to root_path
+    end
   end
 
   describe 'new' do
