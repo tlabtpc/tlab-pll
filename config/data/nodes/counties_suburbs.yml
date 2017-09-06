@@ -3,7 +3,7 @@ defaults:
   is_county: true
   tip: category
   question: Let's work one issue at a time. What county is the issue in?
-  description: Link provides basic referrals for this county. Please request a "cross-check" so we can provide additional suggestions.
+  description: After you get a referral, please request a "cross-check" so we can provide additional suggestions for this County.
 records:
 - title: Alameda
   code: e0875cffab846793
