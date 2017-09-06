@@ -61,10 +61,6 @@ class CrossCheckDecorator < Draper::Decorator
     object.created_at.strftime('%H:%M %P')
   end
 
-  def support_level
-    object.support_level.to_s.humanize
-  end
-
   def client_has_attorney_representation
     case object.client_has_consulted_attorney
     when "consulted_yes"         then "Yes"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801233150) do
+ActiveRecord::Schema.define(version: 20170906183645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20170801233150) do
     t.boolean  "client_is_homeless"
     t.boolean  "client_is_in_issue_county"
     t.integer  "client_has_consulted_attorney"
-    t.integer  "support_level"
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.jsonb    "action_items",                       default: [], null: false
