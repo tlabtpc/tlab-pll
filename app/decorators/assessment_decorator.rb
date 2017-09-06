@@ -16,10 +16,6 @@ class AssessmentDecorator < Draper::Decorator
     object.submitted_at&.strftime('%m/%d/%y')
   end
 
-  def county_name
-    nodes.counties.pluck(:title).first
-  end
-
   def category_name
     nodes.categories.pluck(:title).first
   end
