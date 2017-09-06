@@ -67,7 +67,7 @@ class Views::CrossChecks::Info < Views::Base
   def remember_my_info(f)
     div do
       f.check_box :remember_my_info, class: "cross-checks__checkbox"
-      f.label 'Remember my info'
+      f.label 'Remember my info', for: "cross_check_remember_my_info"
     end
   end
 end
