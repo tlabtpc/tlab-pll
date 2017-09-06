@@ -51,7 +51,7 @@ class Views::AssessmentReferrals::Index < Views::Base
         text referral.title
       end
       p referral.description
-      link_to "GET REFERRAL INFO", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
+      link_to "OPEN REFERRAL", primary_referral_path(referral), class: "button--submit assessment-referrals__button"
     end
     # TODO: is this useful?
   end

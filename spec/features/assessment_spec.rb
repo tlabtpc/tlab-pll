@@ -254,20 +254,20 @@ describe "assessment", js: true do
 
   def view_primary_resource
     step 'view primary resource' do
-      first(:link, "GET REFERRAL INFO").click
+      first(:link, "OPEN REFERRAL").click
       expect(page).to have_content primary_referral.markdown_content
 
       # TODO: make this pass (it works in-app)
       # select "Spanish", from: "primary_referral_code" # :-(
       # expect(page).to have_content primary_referral.markdown_content_es
 
-      click_on "BACK TO REFERRALS"
+      click_on "CLOSE REFERRAL"
       expect(page).to have_content "Here are referrals that may help"
     end
   end
 
   def expect_to_have_referral_links(count:)
-    expect(all(:link, "GET REFERRAL INFO").size).to eq(count)
+    expect(all(:link, "OPEN REFERRAL").size).to eq(count)
   end
 
   def fill_in_assessment
