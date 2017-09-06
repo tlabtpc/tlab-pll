@@ -23,6 +23,8 @@ class CrossCheck < ApplicationRecord
   belongs_to :assessment, required: true
   belongs_to :county_node, class_name: 'Node'
 
+  attr_accessor :remember_my_info
+
   enum client_is_long_term: %w(yes no i_dont_know).freeze
 
   enum client_has_attorney_representation: %w(

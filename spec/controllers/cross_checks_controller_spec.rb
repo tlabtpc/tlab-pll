@@ -37,6 +37,13 @@ describe CrossChecksController do
       expect(cc.caseworker_email).to eq previous_cross_check.caseworker_email
     end
 
+    it 'stores info if remember_my_info is set' do
+      cross_check
+      cross_check_params[:cross_check][:remember_my_info] = true
+      post :next_step, params: cross_check_params
+      expect(cookies[:previous_assessment]).to eq assessment.token
+    end
+
     it 'continues on if perform_check is true for start step' do
       cross_check
       post :next_step, params: start_params.merge(current_step: :start)
