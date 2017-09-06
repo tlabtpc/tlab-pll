@@ -9,11 +9,13 @@ describe AssessmentsController do
       expect(response).to render_template 'assessments/show'
       expect(assigns[:assessment]).to eq assessment
       expect(assessment.reload.submitted_at).to be_present
+      expect(cookies[:previous_assessment]).to eq assessment.token
     end
 
     it 'does not updated submitted_at if it is already set' do
       assessment.update(submitted_at: 1.day.ago)
       expect { get :show, params: { id: assessment.id } }.to_not change { assessment.submitted_at }
+      expect(cookies[:previous_assessment]).to be_nil
     end
 
     it 'redirects to the home page if it cant find the assessment' do

@@ -39,7 +39,13 @@ class CrossChecksController < ApplicationController
   private
 
   def cross_check
-    @cross_check ||= assessment.cross_check.presence || assessment.create_cross_check
+    @cross_check ||= assessment.cross_check.presence || assessment.create_cross_check.tap do |cc|
+      cc.update(previous_cross_check.as_json.slice(*CrossCheck::SAVED)) if previous_cross_check
+    end
+  end
+
+  def previous_cross_check
+    @previous ||= Assessment.find_by(token: cookies[:previous_assessment])&.cross_check
   end
 
   def cross_check_params

@@ -12,6 +12,14 @@ class CrossCheck < ApplicationRecord
     support
   ).freeze
 
+  SAVED = %w(
+    first_name
+    last_name
+    caseworker_email
+    caseworker_phone
+    caseworker_organization
+  )
+
   belongs_to :assessment, required: true
   belongs_to :county_node, class_name: 'Node'
 

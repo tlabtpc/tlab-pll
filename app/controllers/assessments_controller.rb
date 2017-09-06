@@ -5,7 +5,7 @@ class AssessmentsController < ApplicationController
   before_action :set_unpadded_card, only: :show
 
   def show
-    assessment.update(submitted_at: Time.current) unless assessment.submitted_at
+    submit_assessment unless assessment.submitted_at
   end
 
   def new
@@ -37,6 +37,12 @@ class AssessmentsController < ApplicationController
 
   def assessment
     @assessment ||= Assessment.find(params[:id]).decorate
+  end
+
+  def submit_assessment
+    assessment.update(submitted_at: Time.current)
+    cookies[:previous_assessment] = assessment.token
+    assessment
   end
 
   def assessment_params
