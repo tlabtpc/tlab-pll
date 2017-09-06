@@ -9,7 +9,7 @@ class CrossChecksController < ApplicationController
 
   def next_step
     if cross_check_skipped?
-      redirect_to assessment_path(assessment)
+      redirect_to assessment_path(assessment.id)
     else
       cross_check.attributes = cross_check_params
       needs_email = cross_check.caseworker_email_changed?
@@ -22,7 +22,7 @@ class CrossChecksController < ApplicationController
         ).deliver_now if needs_email
 
         if cross_check_complete?
-          redirect_to assessment_path(assessment)
+          redirect_to assessment_path(assessment.id)
         else
           redirect_to send("#{next_step_name}_cross_checks_path")
         end
