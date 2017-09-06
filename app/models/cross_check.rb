@@ -9,7 +9,6 @@ class CrossCheck < ApplicationRecord
     consulted
     representation
     actions
-    support
   ).freeze
 
   belongs_to :assessment, required: true
@@ -28,8 +27,6 @@ class CrossCheck < ApplicationRecord
     consulted_no
     consulted_i_dont_know
   )
-
-  enum support_level: %w(low medium high).freeze
 
   attr_accessor :perform_check
 

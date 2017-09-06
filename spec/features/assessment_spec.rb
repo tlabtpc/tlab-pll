@@ -137,11 +137,6 @@ describe "assessment", js: true do
       # action items step
       expect(page).to have_content "actions that might help your client"
       click_next
-      expect_page_to_have_progress_bar
-
-      # support level step
-      expect(page).to have_content "What level of support do you think you will need"
-      click_square_and_next
     end
 
     view_assessment_page
@@ -206,11 +201,6 @@ describe "assessment", js: true do
       # action items step
       expect(page).to have_content "actions that might help your client"
       click_next
-      expect_page_to_have_progress_bar
-
-      # support level step
-      expect(page).to have_content "What level of support do you think you will need"
-      click_square_and_next
     end
 
     view_assessment_page

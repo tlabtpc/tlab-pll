@@ -27,7 +27,6 @@ class CrossCheckDashboard < Administrate::BaseDashboard
     client_is_homeless: Field::Boolean,
     client_is_in_issue_county: Field::Boolean,
     client_has_consulted_attorney: Field::String.with_options(searchable: false),
-    support_level: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     action_items: Field::String.with_options(searchable: false),
@@ -68,7 +67,6 @@ class CrossCheckDashboard < Administrate::BaseDashboard
     action_items: "Support actions selected",
     client_has_consulted_attorney: "Client has consulted attorney",
     deadlines: "Deadlines",
-    support_level: "Level of caseworker support",
     client_is_long_term: "Client > 2 months?",
     client_is_homeless: "Client in housing search?"
   }.freeze

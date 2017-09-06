@@ -18,7 +18,7 @@ describe CrossCheck do
     end
 
     it 'last step passed' do
-      expect(subject.next_step_for('support')).to eq nil
+      expect(subject.next_step_for('actions')).to eq nil
     end
 
     describe "when assessment issue county is not known" do
