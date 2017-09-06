@@ -5,6 +5,7 @@ describe Assessment do
 
   let!(:intro_node) { create(:node, title: "new-assessment") }
   let!(:final_node) { create(:node, title: "to-referral", terminal: true) }
+  let!(:county_node) { create(:node, title: "Alameda", is_county: true) }
 
   let!(:assessment_node) { create(:assessment_node, assessment: assessment, node: intro_node) }
   let!(:assessment_terminal_node) { create(:assessment_node, assessment: assessment, node: final_node) }
@@ -98,11 +99,18 @@ describe Assessment do
   end
 
   describe '#to_param' do
-    it 'should combine id + created_at' do
+    before do
       subject.created_at = Time.zone.local(2017, 7, 8)
       subject.id = 10
+    end
 
+    it 'should combine id + created_at' do
       expect(subject.to_param).to eq('10-20170708')
+    end
+
+    it 'should add county name if it exists' do
+      subject.nodes << county_node
+      expect(subject.tap(&:save).to_param).to eq('alameda-10-20170708')
     end
   end
 end

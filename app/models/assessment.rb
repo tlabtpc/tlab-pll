@@ -64,7 +64,7 @@ class Assessment < ApplicationRecord
   end
 
   def to_param
-    [county_name, id, created_at.strftime("%Y%m%d")].compact.join('-')
+    [county_name&.downcase, id, created_at.strftime("%Y%m%d")].compact.join('-')
   end
   alias :reference_id :to_param
 
