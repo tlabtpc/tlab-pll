@@ -66,7 +66,10 @@ class Assessment < ApplicationRecord
   def to_param
     [county_name&.downcase, id, created_at.strftime("%Y%m%d")].compact.join('-')
   end
-  alias :reference_id :to_param
+
+  def reference_id
+    [id, created_at.strftime("%Y%m%d")].join('-')
+  end
 
   def county_name
     nodes.counties.pluck(:title).first
