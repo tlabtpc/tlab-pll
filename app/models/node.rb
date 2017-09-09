@@ -21,7 +21,16 @@ class Node < ApplicationRecord
   end
 
   def to_param
-    [id, title.parameterize].join("-")
+    [id, county_name, title.parameterize].compact.join("-")
+  end
+
+  def county_name
+    return if root
+    if parent_node.is_county
+      parent_node.title.downcase.parameterize
+    else
+      parent_node.county_name
+    end
   end
 
   private

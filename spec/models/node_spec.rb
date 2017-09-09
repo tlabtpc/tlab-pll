@@ -2,9 +2,16 @@ require 'rails_helper'
 
 describe Node do
   describe "#to_param" do
+    let(:root)   { create(:node, root: true) }
+    let(:parent) { create(:node, parent_node: root, is_county: true, title: "San Francisco") }
+    let(:node)   { create(:node, parent_node: parent, title: "Subcategory") }
+
     it "should use the parameterized node title" do
-      node = build(:node, title: "San Francisco")
-      expect(node.to_param).to eq [node.id, node.title.parameterize].join("-")
+      expect(parent.to_param).to eq [parent.id, parent.title.parameterize].join("-")
+    end
+
+    it 'should use the county name if it has one in ancestry' do
+      expect(node.to_param).to eq [node.id, parent.title.parameterize, node.title.parameterize].join('-')
     end
   end
 
