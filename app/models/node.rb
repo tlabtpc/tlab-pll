@@ -25,7 +25,7 @@ class Node < ApplicationRecord
   end
 
   def county_name
-    return if root
+    return unless parent_node
     if parent_node.is_county
       parent_node.title.downcase.parameterize
     else
