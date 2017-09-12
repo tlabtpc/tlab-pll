@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   respond_to :html
 
   rescue_from(StandardError) { |e| apologize_and_go_home(e) }
-  rescue_from(ActiveRecord::RecordNotFound) { |e| apologize_and_go_home(e, info: "Sorry, we couldn't find that. It may have been deleted.") }
+  rescue_from(ActiveRecord::RecordNotFound) { |e| apologize_and_go_home(e, warning: "Sorry, we couldn't find that. It may have been deleted.") }
 
   def basic_auth
     basic_auth_name, basic_auth_password = ENV.fetch("BASIC_AUTH", "").split(":")
@@ -59,11 +59,11 @@ class ApplicationController < ActionController::Base
     @layout_modifiers[:container] << :unpadded
   end
 
-  def apologize_and_go_home(e, info: "We're sorry, something went wrong. We're looking at it now! In the meantime, please try again.")
+  def apologize_and_go_home(e, warning: "We're sorry, something went wrong. We're looking at it now! In the meantime, please try again.")
     if Rails.env.development?
       raise e
     else
-      flash[:info] = info
+      flash[:warn] = warning
       redirect_to root_path
     end
   end
