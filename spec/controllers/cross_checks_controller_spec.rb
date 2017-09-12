@@ -37,6 +37,12 @@ describe CrossChecksController do
       expect(cc.caseworker_email).to eq previous_cross_check.caseworker_email
     end
 
+    it 'deletes previous assessment info' do
+      cookies[:previous_assessment] = previous_assessment.token
+      post :next_step, params: cross_check_params.merge(remember_my_info: "0")
+      expect(cookies[:previous_assessment]).to be_nil
+    end
+
     it 'stores info if remember_my_info is set' do
       cross_check
       cross_check_params[:cross_check][:remember_my_info] = true

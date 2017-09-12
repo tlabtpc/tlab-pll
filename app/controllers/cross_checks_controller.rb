@@ -12,7 +12,7 @@ class CrossChecksController < ApplicationController
       redirect_to assessment_path(assessment.id)
     else
       cross_check.attributes = cross_check_params
-      cookies[:previous_assessment] = cross_check.assessment.token if cross_check.remember_my_info
+      handle_previous_assessment
       needs_email = cross_check.caseworker_email_changed?
 
       if cross_check.update(cross_check_params)
@@ -68,6 +68,15 @@ class CrossChecksController < ApplicationController
       :county_node_id,
       action_items: []
     )
+  end
+
+  def handle_previous_assessment
+    return unless cross_check_params[:remember_my_info].present?
+    if cross_check_params[:remember_my_info].to_i.zero?
+      cookies.delete :previous_assessment
+    else
+      cookies[:previous_assessment] = cross_check.assessment.token
+    end
   end
 
   def cross_check_skipped?
