@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   respond_to :html
 
   rescue_from(StandardError) { |e| apologize_and_go_home(e) }
-  rescue_from(ActiveRecord::RecordNotFound) { |e| apologize_and_go_home(e, warning: "Sorry, we couldn't find that. It may have been deleted.") }
+  rescue_from(ActiveRecord::RecordNotFound) { |e| apologize_and_go_home(e, warning: "Sorry we couldn't find that page. It may have been deleted because it is out of date. Use the tool to find a new referral.") }
 
   def basic_auth
     basic_auth_name, basic_auth_password = ENV.fetch("BASIC_AUTH", "").split(":")
