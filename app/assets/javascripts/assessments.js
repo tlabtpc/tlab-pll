@@ -10,5 +10,11 @@ $(function() {
 
     // show the special referrals panel
     $('.assessments__special-referrals').toggle(allChecked)
+
+    if (allChecked) {
+      $('.container').animate({
+        scrollTop: $('.assessments__special-referrals').offset().top
+      }, 500)
+    }
   })
 })

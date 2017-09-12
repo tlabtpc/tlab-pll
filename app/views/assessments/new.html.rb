@@ -23,7 +23,8 @@ class Views::Assessments::New < Views::Base
 
           assessment_check 'I have read to my client the following:',
             'I am using a tool that non-profit lawyers from Project Legal Link created to help us find the right legal referrals. Using this tool does not make Project Legal Link your attorney.',
-            'legal'
+            'legal',
+            last: true
 
           div(class: "assessments__special-referrals") do
             h4 <<-TEXT
@@ -50,9 +51,9 @@ class Views::Assessments::New < Views::Base
     end
   end
 
-  def assessment_check(title, subtitle, id)
+  def assessment_check(title, subtitle, id, last: false)
     input(class: "assessments__checkbox-input", id: "agree_#{id}", type: "checkbox")
-    label(class: "assessments__checkbox-label assessments__checkbox-label-agreements", for: "agree_#{id}") do
+    label(class: "assessments__checkbox-label assessments__checkbox-label-agreements #{('assessments__checkbox-label-agreements--last' if last)}", for: "agree_#{id}") do
       div(class: "assessments__checkbox-label-check") { fa_icon('check', 'fa-lg') }
       div(class: "assessments__checkbox-label-text") do
         strong title

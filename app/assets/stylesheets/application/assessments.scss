@@ -47,8 +47,9 @@ h4 {
   &__checkbox-label-agreements {
     font-size: 18px;
     line-height: 21px;
-    border:solid 1px $dust;
-    border-radius:10px;
+    border-color: $dust;
+    border-top: 1px solid;
+    &--last { border-bottom: 1px solid; }
   }
 
   &__checkbox-label-text p {
