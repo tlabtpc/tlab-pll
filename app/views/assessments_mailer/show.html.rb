@@ -4,9 +4,6 @@ class Views::AssessmentsMailer::Show < Views::Shared::Mailer
   def content
     cross_check_summary
     legal_signature
-
-    hr
-
     render "assessments/content", context: :email
   end
 
@@ -16,12 +13,9 @@ class Views::AssessmentsMailer::Show < Views::Shared::Mailer
     return unless cross_check
 
     p do
-      text "Hi #{assessment.caseworker_first_name},"
-
-      br
-
-      text "Here is a summary of your issue. "\
-        "Your reference # is #{assessment.to_param}."
+      div "Hi #{assessment.caseworker_first_name},"
+      div "Here is a summary of your issue. Project Legal Link will perform a cross-check and follow-up with you within 2 working days"
+      div "Your reference # is #{assessment.reference_id}"
     end
   end
 end
