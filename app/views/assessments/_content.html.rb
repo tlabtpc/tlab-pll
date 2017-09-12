@@ -5,15 +5,6 @@ class Views::Assessments::Content < Views::Base
   needs :context
 
   def content
-    if assessment.caseworker_email
-      p "Project Legal Link will provide a cross-check and will follow-up with you.", class: "assessments__reference"
-      p "A summary of this issue has been sent to #{assessment.caseworker_email}", class: "assessments__reference"
-    end
-
-    p class: "assessments__reference" do
-      text "Reference # #{assessment.display_reference_id}"
-    end
-
     div class: "assessments__summary" do
       h2 "Summary of Issue", class: "assessments__title"
       assessment_info "Location: ", assessment.county_name
@@ -27,7 +18,7 @@ class Views::Assessments::Content < Views::Base
     end
 
     div class: "assessments__summary" do
-      h2 "Referrals", class: "assessments__title"
+      h2 "#{assessment.featured_referrals.count} Referrals", class: "assessments__title"
       assessment.featured_referrals.each { |referral| featured_referral(referral) }
     end
 

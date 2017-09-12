@@ -16,8 +16,13 @@ class Views::Assessments::Show < Views::Base
         else
           h1 "Thank you!", class: "assessments__title"
         end
+
+        if assessment.caseworker_email
+          p "Project Legal link will perform a cross-check and follow-up with you within 2 working days. A summary of this issue has been sent to #{assessment.caseworker_email}."
+        end
       end
 
+      p "Reference # #{assessment.reference_id}"
       render "content", context: :app
       render "logos"
     end
