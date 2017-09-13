@@ -2,37 +2,28 @@ require 'csv'
 
 module Admin
   class CrossChecksController < Admin::ApplicationController
-    # To customize the behavior of this controller,
-    # you can overwrite any of the RESTful actions. For example:
-    #
-    # def index
-    #   super
-    #   @resources = CrossCheck.
-    #     page(params[:page]).
-    #     per(10)
-    # end
-
-    # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   CrossCheck.find_by!(slug: param)
-    # end
-
-    # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
-    # for more information
-
     def export
       send_data export_csv, filename: "cross-checks.csv"
+    end
+
+    def unprocessed
+      index
     end
 
     private
 
     def export_csv
+      raise "Invalid scope" unless ['all', 'unprocessed'].include?(params[:scope])
       CSV.generate(headers: true) do |csv|
         csv << CrossCheckDashboard::TITLE_MAP.values
-        CrossCheck.find_each do |cross_check|
+        export_resources.find_each do |cross_check|
           csv << export_attrs.map { |attr| cross_check.decorate.send(attr) }
         end
-      end
+      end.tap { export_resources.update_all(processed: true) }
+    end
+
+    def export_resources
+      @export_resources ||= CrossCheck.send(params[:scope])
     end
 
     def requested_resource

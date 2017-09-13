@@ -35,7 +35,8 @@ class CrossCheckDashboard < Administrate::BaseDashboard
     client_has_attorney_representation: Field::String.with_options(searchable: false),
     primary_referral_titles: Field::String,
     created_at_date: Field::String,
-    created_at_time: Field::String
+    created_at_time: Field::String,
+    processed: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -47,6 +48,7 @@ class CrossCheckDashboard < Administrate::BaseDashboard
     :created_at,
     :caseworker_organization,
     :caseworker_email,
+    :processed
   ].freeze
 
   TITLE_MAP = {

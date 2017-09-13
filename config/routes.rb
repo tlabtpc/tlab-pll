@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :secondary_referrals, except: [:destroy, :new, :create]
     resources :cross_checks, only: [:show, :index] do
       get :export, on: :collection
+      get :unprocessed, on: :collection
     end
   end
 end
