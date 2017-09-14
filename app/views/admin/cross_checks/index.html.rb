@@ -41,8 +41,15 @@ class Views::Admin::CrossChecks::Index < Views::Base
 
       div do
         link_to(
+          "Show unprocessed cross checks",
+          [:unprocessed, namespace, "#{page.resource_path}s"],
+          class: "button",
+        )
+      end
+      div do
+        link_to(
           "#{t("administrate.actions.export")}",
-          [:export, namespace, "#{page.resource_path}s"],
+          [:export, namespace, "#{page.resource_path}s", {scope: :all}],
           class: "button",
         ) if valid_action? :export
       end

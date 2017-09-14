@@ -39,6 +39,7 @@ class CrossCheck < ApplicationRecord
   )
 
   attr_accessor :perform_check
+  scope :unprocessed, -> { where(processed: false) }
 
   def previous_step_for(action_name)
     unless action_name.to_s == STEPS.first
