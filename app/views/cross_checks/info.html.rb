@@ -65,6 +65,7 @@ class Views::CrossChecks::Info < Views::Base
   end
 
   def remember_my_info(f)
+    cross_check.remember_my_info = cookies[:previous_assessment].present?
     div do
       f.check_box :remember_my_info, class: "cross-checks__checkbox"
       f.label 'Remember my info', for: "cross_check_remember_my_info"
