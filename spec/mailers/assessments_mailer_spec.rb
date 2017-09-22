@@ -17,7 +17,21 @@ describe AssessmentsMailer do
       expect(email.from).to eq ['no-reply@projectlegallink.org']
       expect(email.to).to eq ['caseworker@example.com']
       expect(email.bcc).to eq ['sacha@example.com']
-      expect(email.subject).to eq "Project Legal Link referral request ##{assessment.reference_id}"
+      expect(email.subject).to eq "Summary assessment ##{assessment.reference_id}"
     end
+  end
+
+  it 'does not send an email to PLL if not this is not a cross check creation' do
+    allow(ENV).to receive(:[]).with("SASS_PATH")
+    allow(ENV).to receive(:[]).with("ASSESSMENT_MAIL_BCC").and_return("sacha@example.com")
+
+    email = AssessmentsMailer.show(
+      assessment,
+      to: "client@example.com"
+    )
+
+    expect(email.from).to eq ['no-reply@projectlegallink.org']
+    expect(email.to).to eq ['client@example.com']
+    expect(email.bcc).to be_empty
   end
 end
