@@ -47,6 +47,45 @@ class Assessment < ApplicationRecord
     through: :assessment_referrals,
     source: :referral
 
+  scope :by_county, -> {
+     joins(:assessment_nodes)
+    .joins("INNER JOIN nodes ON nodes.id = assessment_nodes.node_id AND nodes.is_county IS TRUE")
+    .group("nodes.title")
+    .count
+  }
+
+  scope :by_category, -> {
+     joins(:assessment_nodes)
+    .joins("INNER JOIN nodes ON nodes.id = assessment_nodes.node_id AND nodes.is_category IS TRUE")
+    .group("nodes.title")
+    .count
+  }
+
+  scope :by_week, -> {
+     select("date_trunc('week', created_at::date) as week")
+    .select("COUNT(id) as count")
+    .group("week")
+    .reduce({}) { |hash, result| hash[result.week.to_date] = result.count; hash }
+  }
+
+  scope :by_submitted_at, -> {
+     group("submitted_at IS NOT NULL")
+    .count
+  }
+
+  scope :by_cross_check, -> {
+     joins("LEFT OUTER JOIN (
+      SELECT assessments.id,
+        CASE WHEN cross_checks.caseworker_email IS NOT NULL THEN 'Sent to caseworker'
+             WHEN cross_checks.id               IS NOT NULL THEN 'Requested, but left incomplete'
+             ELSE                                                'No cross check requested'
+             END
+        AS status
+      FROM assessments LEFT OUTER JOIN cross_checks ON cross_checks.assessment_id = assessments.id) a ON a.id = assessments.id")
+    .group("status")
+    .count
+  }
+
   def featured_referrals
     ordered_primary_referrals + special_referrals
   end

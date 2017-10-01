@@ -10,3 +10,20 @@ ol, ul {
 ul > li {
   margin-left: 10px;
 }
+
+.admin-assessments-index__metrics {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+}
+
+.admin-assessments-index__metric {
+  min-width: 500px;
+  margin: 15px;
+}
+
+.admin-assessments-index {
+  text-align: center;
+}
