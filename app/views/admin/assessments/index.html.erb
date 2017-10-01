@@ -1,0 +1,28 @@
+<%= javascript_include_tag 'admin' %>
+<section class="main-content__body main-content__body--flush admin-assessments-index">
+  <h1><%= Assessment.count %> Assessments created since <%= Assessment.minimum(:created_at).to_date %></h1>
+  <div class="admin-assessments-index__metrics">
+    <div class= "admin-assessments-index__metrics">
+      <div class= "admin-assessments-index__metric">
+        <label>By county</label>
+        <%= bar_chart(Assessment.by_county) %>
+      </div>
+      <div class= "admin-assessments-index__metric">
+        <label>By category</label>
+        <%= bar_chart(Assessment.by_category) %>
+      </div>
+      <div class= "admin-assessments-index__metric">
+        <label>By week</label>
+        <%= line_chart(Assessment.by_week) %>
+      </div>
+      <div class= "admin-assessments-index__metric">
+        <label>Assessments which have issued referrals</label>
+        <%= pie_chart(Assessment.by_submitted_at, colors: ["#CCCCCC", "#99B2E5"]) %>
+      </div>
+      <div class= "admin-assessments-index__metric">
+        <label>Cross checks</label>
+        <%= pie_chart(Assessment.by_cross_check, colors: ["#FF98A9", "#CCCCCC", "#99B2E5"]) %>
+      </div>
+    </div>
+  </div>
+</section>

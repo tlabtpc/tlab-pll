@@ -23,6 +23,7 @@ gem "uglifier", ">= 1.3.0"
 gem "administrate", "~> 0.7"
 gem "draper"
 gem "premailer-rails"
+gem "chartkick"
 
 group :test do
   gem "database_cleaner"
