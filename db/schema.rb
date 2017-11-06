@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913171404) do
+ActiveRecord::Schema.define(version: 20171106102246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20170913171404) do
   create_table "assessments", force: :cascade do |t|
     t.string   "token"
     t.datetime "submitted_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "test",         default: false, null: false
   end
 
   create_table "cross_checks", force: :cascade do |t|
@@ -53,9 +54,9 @@ ActiveRecord::Schema.define(version: 20170913171404) do
     t.boolean  "client_is_homeless"
     t.boolean  "client_is_in_issue_county"
     t.integer  "client_has_consulted_attorney"
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.jsonb    "action_items",                       default: [], null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.jsonb    "action_items",                       default: [],    null: false
     t.string   "last_name"
     t.integer  "county_node_id"
     t.integer  "client_has_attorney_representation"

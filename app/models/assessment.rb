@@ -48,28 +48,32 @@ class Assessment < ApplicationRecord
     source: :referral
 
   scope :by_county, -> {
-     joins(:assessment_nodes)
+     where(test: false)
+    .joins(:assessment_nodes)
     .joins("INNER JOIN nodes ON nodes.id = assessment_nodes.node_id AND nodes.is_county IS TRUE")
     .group("nodes.title")
     .count
   }
 
   scope :by_category, -> {
-     joins(:assessment_nodes)
+     where(test: false)
+    .joins(:assessment_nodes)
     .joins("INNER JOIN nodes ON nodes.id = assessment_nodes.node_id AND nodes.is_category IS TRUE")
     .group("nodes.title")
     .count
   }
 
   scope :by_week, -> {
-     select("date_trunc('week', created_at::date) as week")
+     where(test: false)
+    .select("date_trunc('week', created_at::date) as week")
     .select("COUNT(id) as count")
     .group("week")
     .reduce({}) { |hash, result| hash[result.week.to_date] = result.count; hash }
   }
 
   scope :by_submitted_at, -> {
-    joins("LEFT OUTER JOIN (
+     where(test: false)
+    .joins("LEFT OUTER JOIN (
       SELECT assessments.id,
         CASE WHEN submitted_at IS NULL THEN 'Left incomplete'
              WHEN a.count > 0          THEN 'Completed, but no referrals issued'
@@ -88,7 +92,8 @@ class Assessment < ApplicationRecord
   }
 
   scope :by_cross_check, -> {
-     joins("LEFT OUTER JOIN (
+     where(test: false)
+    .joins("LEFT OUTER JOIN (
       SELECT assessments.id,
         CASE WHEN jsonb_array_length(cross_checks.action_items) > 1 THEN 'Completed'
              WHEN cross_checks.caseworker_email IS NOT NULL         THEN 'Caseworker entered information'
