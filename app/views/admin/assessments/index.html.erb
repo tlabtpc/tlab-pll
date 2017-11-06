@@ -17,11 +17,18 @@
       </div>
       <div class= "admin-assessments-index__metric">
         <label>Assessments which have issued referrals</label>
-        <%= pie_chart(Assessment.by_submitted_at, colors: ["#CCCCCC", "#FFEEA1", "#99B2E5"]) %>
+        <%= pie_chart(Assessment.by_submitted_at, colors: [
+          ENV.fetch('GREY_COLOR', "#CCCCCC"),
+          ENV.fetch('YELLOW_COLOR', "#FFEEA1"),
+          ENV.fetch('BLUE_COLOR', "#99B2E5")]) %>
       </div>
       <div class= "admin-assessments-index__metric">
         <label>Cross checks</label>
-        <%= pie_chart(Assessment.by_cross_check, colors: ["#FF98A9", "#CCCCCC", "#FFEEA1", "#99B2E5"]) %>
+        <%= pie_chart(Assessment.by_cross_check, colors: [
+          ENV.fetch('RED_COLOR', "#FF98A9"),
+          ENV.fetch('GREY_COLOR', "#CCCCCC"),
+          ENV.fetch('YELLOW_COLOR', "#FFEEA1"),
+          ENV.fetch('BLUE_COLOR', "#99B2E5")]) %>
       </div>
     </div>
   </div>
