@@ -69,16 +69,31 @@ class Assessment < ApplicationRecord
   }
 
   scope :by_submitted_at, -> {
-     group("submitted_at IS NOT NULL")
+    joins("LEFT OUTER JOIN (
+      SELECT assessments.id,
+        CASE WHEN submitted_at IS NULL THEN 'Left incomplete'
+             WHEN a.count > 0          THEN 'Completed, but no referrals issued'
+             ELSE                           'Completed and offered referrals'
+             END
+      AS status
+      FROM assessments LEFT OUTER JOIN (
+        SELECT count(*) as count, assessment_referrals.assessment_id as assessment_id
+        FROM assessments
+        INNER JOIN assessment_referrals ON assessment_referrals.assessment_id = assessments.id
+        GROUP BY assessment_referrals.assessment_id
+      ) a ON a.assessment_id = assessments.id
+      ) b ON b.id = assessments.id")
+    .group("status")
     .count
   }
 
   scope :by_cross_check, -> {
      joins("LEFT OUTER JOIN (
       SELECT assessments.id,
-        CASE WHEN cross_checks.caseworker_email IS NOT NULL THEN 'Sent to caseworker'
-             WHEN cross_checks.id               IS NOT NULL THEN 'Requested, but left incomplete'
-             ELSE                                                'No cross check requested'
+        CASE WHEN jsonb_array_length(cross_checks.action_items) > 1 THEN 'Completed'
+             WHEN cross_checks.caseworker_email IS NOT NULL         THEN 'Caseworker entered information'
+             WHEN cross_checks.id               IS NOT NULL         THEN 'Requested, but left incomplete'
+             ELSE                                                        'No cross check requested'
              END
         AS status
       FROM assessments LEFT OUTER JOIN cross_checks ON cross_checks.assessment_id = assessments.id) a ON a.id = assessments.id")

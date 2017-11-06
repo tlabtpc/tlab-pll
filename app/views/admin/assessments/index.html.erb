@@ -17,11 +17,11 @@
       </div>
       <div class= "admin-assessments-index__metric">
         <label>Assessments which have issued referrals</label>
-        <%= pie_chart(Assessment.by_submitted_at, colors: ["#CCCCCC", "#99B2E5"]) %>
+        <%= pie_chart(Assessment.by_submitted_at, colors: ["#CCCCCC", "#FFEEA1", "#99B2E5"]) %>
       </div>
       <div class= "admin-assessments-index__metric">
         <label>Cross checks</label>
-        <%= pie_chart(Assessment.by_cross_check, colors: ["#FF98A9", "#CCCCCC", "#99B2E5"]) %>
+        <%= pie_chart(Assessment.by_cross_check, colors: ["#FF98A9", "#CCCCCC", "#FFEEA1", "#99B2E5"]) %>
       </div>
     </div>
   </div>
