@@ -11,7 +11,10 @@ class AssessmentNodesController < ApplicationController
       end
 
       if !assessment.nodes.include?(node)
-        assessment.nodes << node if node.terminal?
+        if node.terminal?
+          assessment.nodes << node
+          assessment.update(has_terminal_node: true)
+        end
         assessment.referrals << node.referrals
       end
     end
@@ -24,6 +27,7 @@ class AssessmentNodesController < ApplicationController
       last_nonterminal_node = assessment.non_terminal_nodes.last
       assessment.terminal_assessment_nodes.last&.destroy
       assessment.non_terminal_assessment_nodes.last.destroy
+      assessment.update(has_terminal_node: false)
       redirect_to last_nonterminal_node
     else
       assessment.destroy
