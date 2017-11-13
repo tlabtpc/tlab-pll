@@ -75,11 +75,11 @@ class Assessment < ApplicationRecord
      where(test: false)
     .joins("LEFT OUTER JOIN (
       SELECT assessments.id,
-        CASE WHEN assessments.has_terminal_node IS FALSE THEN '1 - Incomplete, no referrals given'
-             WHEN c.id IS NULL                           THEN '2 - Completed, but no cross check requested'
-             WHEN c.caseworker_email IS NULL             THEN '3 - Cross check requested, abandoned before email entered'
-             WHEN jsonb_array_length(c.action_items) = 0 THEN '4 - Cross check requested, abandoned before complete'
-             ELSE                                             '5 - Completed assessment and completed cross check'
+        CASE WHEN assessments.has_terminal_node IS FALSE THEN 'Incomplete, no referrals given'
+             WHEN c.id IS NULL                           THEN 'Completed, but no cross check requested'
+             WHEN c.caseworker_email IS NULL             THEN 'Cross check requested, abandoned before email entered'
+             WHEN jsonb_array_length(c.action_items) = 0 THEN 'Cross check requested, abandoned before complete'
+             ELSE                                             'Completed assessment and completed cross check'
              END
       AS status
       FROM assessments
