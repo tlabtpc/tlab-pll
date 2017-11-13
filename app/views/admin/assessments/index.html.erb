@@ -1,6 +1,6 @@
 <%= javascript_include_tag 'admin' %>
 <section class="main-content__body main-content__body--flush admin-assessments-index">
-  <h1><%= Assessment.count %> Assessments created since <%= Assessment.minimum(:created_at).to_date %></h1>
+  <h1><%= Assessment.where(test: false).count %> Assessments created since <%= Assessment.where(test: false).minimum(:created_at).to_date %></h1>
   <div class="admin-assessments-index__metrics">
     <div class= "admin-assessments-index__metrics">
       <div class= "admin-assessments-index__metric">
